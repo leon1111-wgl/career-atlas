@@ -30,3 +30,9 @@ python3 scripts/verify-model.py web/models/qwen3/resolve/main
 ```
 
 公开发布状态请以仓库的 [GitHub Actions](https://github.com/leon1111-wgl/career-atlas/actions) 为准；统计采集状态请以网站“数据与方法”页的来源级时间记录为准。
+
+## GitHub 云端验收
+
+首次 Pages 发布 [38758840187](https://github.com/leon1111-wgl/career-atlas/actions/runs/38758840187) 成功；随后手动触发完整数据更新与部署 [38758953850](https://github.com/leon1111-wgl/career-atlas/actions/runs/38758953850) 成功。云端 16 路来源更新成功，BLS 职业表 HTTP 403 后保留了原始核验时间与快照。网站通过 HTTPS 返回实际页面。
+
+首次线上交互检查发现手机导航收起依赖异步路由事件，已改为点击导航即收起；本地 10 组端到端检查再次全部通过。后续线上与模型下载结果以相应运行记录和实际页面为准。
