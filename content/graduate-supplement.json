@@ -1,0 +1,197 @@
+{
+  "reviewedAt": "2026-10-15T17:50:33+00:00",
+  "groups": [
+    {
+      "id": "hust-icare-energy-2025-destination",
+      "title": "华中科技大学中欧能源学院：新能源科学与工程学硕毕业去向（2025届）",
+      "region": "CN",
+      "majorIds": [
+        "energy"
+      ],
+      "period": "2025届（截至2025-12-08）",
+      "source": {
+        "title": "中欧清洁与可再生能源学院2025届毕业生就业质量报告",
+        "url": "https://icare.hust.edu.cn/info/1011/9107.htm",
+        "publishedAt": "2026-03-10"
+      },
+      "groupType": "destination",
+      "population": "华中科技大学中欧清洁与可再生能源学院2025届全日制学术型硕士67人；不含硕转博8人。学院报告明确为新能源科学与工程专业，分母为这67名毕业生，不限于已就业者。",
+      "denominator": "67名全日制学术型硕士毕业生；协议/合同就业61人，升学4人，自主创业1人，未签劳动合同且计划升学1人。",
+      "rows": [
+        {
+          "occupation": "协议和合同就业",
+          "share": 91.04,
+          "soc": null
+        },
+        {
+          "occupation": "升学深造",
+          "share": 5.97,
+          "soc": null
+        },
+        {
+          "occupation": "自主创业",
+          "share": 1.49,
+          "soc": null
+        },
+        {
+          "occupation": "暂未签订劳动合同（计划升学）",
+          "share": 1.49,
+          "soc": null
+        }
+      ],
+      "limitations": [
+        "单校单专业硕士小样本，不是全国能源专业去向，更不是本科毕业生去向或个人录取/就业概率。",
+        "报告中的就业率含升学，本组只呈现互斥去向类别，不能把91.04%解释为个人拿到offer的概率。",
+        "四舍五入合计99.99%；未把未签合同者计为已经升学。",
+        "报告后续行业、地区段落出现不同分母口径，本补充未把制造业23人等数值除以不确定分母生成行业占比。"
+      ],
+      "sourceLocation": "网页“毕业生规模”“就业率与毕业去向”段落及表2",
+      "verifiedAt": "2026-10-15T17:50:33+00:00",
+      "dataKind": "destination_distribution",
+      "metric": "毕业去向分布（含升学等）",
+      "educationLevel": "master"
+    },
+    {
+      "id": "xidian-2025-undergraduate-destination",
+      "title": "西安电子科技大学：本科毕业去向（2025届，全校样本）",
+      "region": "CN",
+      "majorIds": [],
+      "period": "2025届（截至2025年12月）",
+      "source": {
+        "title": "西安电子科技大学2025届毕业生就业质量年度报告",
+        "url": "https://job.xidian.edu.cn/attachment/xidian/ueditor/file/20260128/3325_%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62025%E5%B1%8A%E5%B0%B1%E4%B8%9A%E8%B4%A8%E9%87%8F%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf",
+        "publishedAt": "2026-01-28",
+        "publicationUrl": "https://job.xidian.edu.cn/news/view/aid/338382/tag/tzgg"
+      },
+      "groupType": "destination",
+      "population": "西安电子科技大学2025届本科毕业生5399人；全校本科去向分布，不是某个专业，也不限定为已就业者。",
+      "denominator": "全体2025届本科毕业生5399人；原表1-5本科列百分比。",
+      "rows": [
+        {
+          "occupation": "单位就业",
+          "share": 41.51,
+          "soc": null
+        },
+        {
+          "occupation": "升学",
+          "share": 54.1,
+          "soc": null
+        },
+        {
+          "occupation": "自由职业",
+          "share": 0.72,
+          "soc": null
+        },
+        {
+          "occupation": "自主创业",
+          "share": 0.06,
+          "soc": null
+        },
+        {
+          "occupation": "待就业",
+          "share": 1.98,
+          "soc": null
+        },
+        {
+          "occupation": "暂不就业",
+          "share": 1.63,
+          "soc": null
+        }
+      ],
+      "limitations": [
+        "这是西安电子科技大学全校本科样本，不是全国数据，不映射到计算机等任何单一专业。",
+        "升学与单位就业不同，不能把升学比例加入就业行业分布。",
+        "描述历史去向，不是个人录取率、就业成功率或该行业未来招聘需求。"
+      ],
+      "sourceLocation": "PDF第19页（封面计第1页），报告印刷第14页，表1-5；报告印刷第4、7页给出统计期和本科总人数。",
+      "verifiedAt": "2026-10-15T17:50:33+00:00",
+      "dataKind": "destination_distribution",
+      "metric": "毕业去向分布（含升学等）",
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "xidian-2025-undergraduate-industry",
+      "title": "西安电子科技大学：本科签约行业前列（2025届，全校样本）",
+      "region": "CN",
+      "majorIds": [],
+      "period": "2025届（截至2025年12月）",
+      "source": {
+        "title": "西安电子科技大学2025届毕业生就业质量年度报告",
+        "url": "https://job.xidian.edu.cn/attachment/xidian/ueditor/file/20260128/3325_%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62025%E5%B1%8A%E5%B0%B1%E4%B8%9A%E8%B4%A8%E9%87%8F%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf",
+        "publishedAt": "2026-01-28",
+        "publicationUrl": "https://job.xidian.edu.cn/news/view/aid/338382/tag/tzgg"
+      },
+      "groupType": "industry",
+      "population": "西安电子科技大学2025届纳入学校签约行业流向统计的本科毕业生；这是已经进入就业行业分布的全校本科样本，不是全体5399名本科毕业生。",
+      "denominator": "学校签约流向统计中的本科就业行业样本；表1-6未单独披露该有效行业样本人数，因此不能反推行业人数或当作全体毕业生的比例。",
+      "rows": [
+        {
+          "occupation": "信息传输、软件和信息技术服务业",
+          "share": 39.95,
+          "soc": null
+        },
+        {
+          "occupation": "制造业",
+          "share": 26.94,
+          "soc": null
+        },
+        {
+          "occupation": "科学研究和技术服务业",
+          "share": 9.84,
+          "soc": null
+        },
+        {
+          "occupation": "教育业",
+          "share": 3.87,
+          "soc": null
+        },
+        {
+          "occupation": "金融业",
+          "share": 2.15,
+          "soc": null
+        }
+      ],
+      "limitations": [
+        "单校全校本科的已就业/签约行业分布，不是全国、单专业或全体毕业生去向；majorIds留空。",
+        "这里只摘录原表列出的五个主要行业，合计82.75%；未编造“其他”类别，也不要求本组加总100%。",
+        "原表未披露有效行业分母人数，不能用5399乘这些百分比推算人数。",
+        "行业类别不是职业岗位，不能据此得到个人录用概率、起薪或全国行业需求。"
+      ],
+      "sourceLocation": "PDF第20页（封面计第1页），报告印刷第15页，表1-6本科列；已渲染并目视核验。",
+      "verifiedAt": "2026-10-15T17:50:33+00:00",
+      "dataKind": "industry_distribution",
+      "metric": "签约就业样本的行业分布",
+      "educationLevel": "bachelor"
+    }
+  ],
+  "reports": [
+    {
+      "id": "hust-icare-2025",
+      "title": "中欧清洁与可再生能源学院2025届毕业生就业质量报告",
+      "region": "CN",
+      "period": "2025届；数据截至2025-12-08",
+      "url": "https://icare.hust.edu.cn/info/1011/9107.htm",
+      "publisher": "华中科技大学中欧清洁与可再生能源学院",
+      "population": "新能源科学与工程专业2025届全日制学术型硕士67人（不含硕转博8人）",
+      "coverage": "实际提取4项毕业去向及其67人分母；未把口径不一致的行业/地区数字变成百分比。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-15T17:50:33+00:00",
+      "publishedAt": "2026-03-10"
+    },
+    {
+      "id": "xidian-2025",
+      "title": "西安电子科技大学2025届毕业生就业质量年度报告",
+      "region": "CN",
+      "period": "2025届；学校就业数据截至2025年12月",
+      "url": "https://job.xidian.edu.cn/news/view/aid/338382/tag/tzgg",
+      "publisher": "西安电子科技大学",
+      "population": "全校2025届毕业生10076人，其中本科5399人；本补充仅提取本科全体去向和本科签约行业分布。",
+      "coverage": "PDF表1-5本科列6项毕业去向、表1-6本科列5项主要行业，逐项提取并区分分母。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-15T17:50:33+00:00",
+      "publishedAt": "2026-01-28",
+      "documentUrl": "https://job.xidian.edu.cn/attachment/xidian/ueditor/file/20260128/3325_%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62025%E5%B1%8A%E5%B0%B1%E4%B8%9A%E8%B4%A8%E9%87%8F%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf",
+      "documentSha256": "f4aa1e00ddc25b645db48bccce47c0a36f64e39c8c4a499a750545d09ae9a99b"
+    }
+  ]
+}

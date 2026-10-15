@@ -45,3 +45,19 @@ The question “智能体应用工程师在不同公司里工作有什么特点�
 ## Neutral palette follow-up (2026-10-16)
 
 Following further user feedback, all sage/green text, borders, tags and tinted panels were changed to neutral greys. Deep blue is restricted mainly to navigation, links and charts, with muted orange on search and the active-nav rule. The six main pages were rendered again at 1440px and 390px: all 12 widths fit and no uncaught JS errors were recorded. Additional rendered checks covered the orange search action and blue/orange score-bar legend in role details at both sizes. Search-button text contrast exceeds 4.5:1. Local evidence: `qa/designer/palette-results.json`, `qa/palette-qa.json`, and `qa/palette-*.png`.
+
+## Reading comfort follow-up (2026-10-16)
+
+This pass changes typography and spacing while retaining the white/grey/blue/orange palette and Leon Wang attribution. It uses three deliberate reading levels rather than enlarging every element equally:
+
+- Long descriptions, research notes, reports, and occupation detail paragraphs: 15px, approximately 1.95 line height.
+- Occupation summaries, entry preparation, industry descriptions, and table data: 14px, approximately 1.85–1.9 line height.
+- Supporting source periods, labels, controls, score tags, and metadata: generally 12px or larger. SVG axis font units remain adjusted for their scaled viewBox instead of being assigned a misleading literal 12px.
+
+Page headings remain around 23–25px; occupation titles are 18px. Paragraphs have room to breathe, while the industry directory stays comparatively compact. Phone occupation actions occupy a separate line when metadata needs the width. Source tables scroll inside their wrapper at a minimum width that preserves readable source descriptions and complete observation periods.
+
+New research classes (`research-grid`, `research-block`, `source-line`, `policy-list`, `policy-item`, `major-guide`, `score-breakdown`) use the same reading scale and existing borders/backgrounds. They provide document structure without an additional ornamental visual language.
+
+Rendered checks used local Google Chrome through Playwright at 1440px and 390px. All six main routes were loaded at both sizes: 12/12 document widths matched the viewport, and no uncaught JavaScript errors were recorded. Actual screenshots inspected included desktop/mobile homepage, mobile occupations and sources, plus occupation details and consultation/model settings. The first screenshots revealed mobile subtitle wrapping and overly narrow date cells; both were corrected. Evidence: `qa/designer/typography-results.json`, `platform-*.png`, and `platform-detail-*.png`. This typography pass does not change statistics, model behaviour, wording, or scoring.
+
+For the content owner's review, visible implementation terminology can be simplified without obscuring evidence: “方法 v1” → “探索指数怎么算”; “编辑量规” → “研究判断”; “透明匹配” → “按专业和偏好匹配”; “轻量意图识别” → “先查询本站资料”. Technical uncertainty explanations and exact scoring definitions should remain available in a secondary method disclosure. The designer has not edited application text.

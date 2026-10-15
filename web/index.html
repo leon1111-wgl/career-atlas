@@ -9,8 +9,12 @@
       content="向野 Career Atlas：基于可追溯中美官方数据，理解行业、比较岗位、探索适合自己的职业方向。浏览器本地小模型，中文职业分析。"
     />
     <title>向野 · 行业分析与职业研究 | Leon Wang</title>
-    <link rel="icon" href="./favicon.svg?v=20261016-neutral" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20261016-neutral" />
+    <link
+      rel="icon"
+      href="./favicon.svg?v=20261016-data"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20261016-data" />
   </head>
   <body>
     <a href="#main" class="skip-link">跳到主要内容</a>
@@ -103,17 +107,16 @@
         <summary>可选：Qwen 本地语言模型</summary>
         <div class="model-intro">
           <p>
-            默认用轻量意图识别和本地资料库整理回答，无需下载大模型。Qwen
-            0.6B可进一步筛选证据。
+            直接查询本站的专业、岗位、政策与就业资料，也可在本机加载模型辅助整理。
           </p>
           <div class="model-actions">
-            <button id="load-model" class="button">加载Qwen模型</button
+            <button id="load-model" class="button">加载本机助手</button
             ><button id="unload-model" class="button subtle" hidden>
               停止并释放内存
             </button>
           </div>
           <small id="model-status" role="status"
-            >Qwen首次约335 MiB，需要WebGPU。问题保留在当前设备。</small
+            >首次加载约335 MiB，需要兼容浏览器。问题保留在当前设备。</small
           ><progress
             id="model-progress"
             max="1"
@@ -159,11 +162,9 @@
           停止
         </button>
       </form>
-      <p class="chat-footnote">
-        本地问题分类与资料检索 · 非实时招聘广告 · Leon Wang
-      </p>
+      <p class="chat-footnote">职业资料咨询 · Leon Wang</p>
     </dialog>
     <div id="toast" role="status" class="toast" hidden></div>
-    <script type="module" src="./app.js?v=20261016-neutral"></script>
+    <script type="module" src="./app.js?v=20261016-data"></script>
   </body>
 </html>

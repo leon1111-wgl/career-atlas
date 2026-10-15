@@ -1,0 +1,4683 @@
+{
+  "reviewedAt": "2026-10-16",
+  "methodology": [
+    "数值按已浏览的官方表格逐行提取；未将发布日期或核验日期当成统计期。",
+    "US组是学位持有者在职职业分布；CN组是单校专业毕业去向落实率。metric与dataKind决定解释，不可混合排名。",
+    "同一统计组可关联多个专业，不重复制造细分专业数字。没有直接对应的专业保留缺口。"
+  ],
+  "groups": [
+    {
+      "id": "bls-fod-agriculture",
+      "title": "农业：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "agriculture",
+        "veterinary",
+        "food"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Agriculture",
+        "url": "https://www.bls.gov/ooh/field-of-degree/agriculture/agriculture-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Agriculture学科组的在职学位持有者；本组就业人数689,520。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Farmers, ranchers, and other agricultural managers",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Veterinarians",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Farmworkers and laborers, crop, nursery, and greenhouse",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Soil and plant scientists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Sales representatives, wholesale and manufacturing, except technical and scientific products",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of retail sales workers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 689520,
+        "advancedDegreeShare": 28,
+        "bachelorsRequiredOccupationShare": 44,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "动物与水产仅映射农业组中的动物科学方向，此组不是兽医学专业学位或水产专业的单独结果。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-architecture",
+      "title": "建筑学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "architecture"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Architecture",
+        "url": "https://www.bls.gov/ooh/field-of-degree/architecture/architecture-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Architecture学科组的在职学位持有者；本组就业人数497,230。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Architects, except landscape and naval",
+          "share": 26.0,
+          "soc": null
+        },
+        {
+          "occupation": "Set and exhibit designers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Construction managers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Landscape architects",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Urban and regional planners",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 497230,
+        "advancedDegreeShare": 41,
+        "bachelorsRequiredOccupationShare": 71,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-biology",
+      "title": "生物学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "bio"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Biology",
+        "url": "https://www.bls.gov/ooh/field-of-degree/biology/biology-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Biology学科组的在职学位持有者；本组就业人数3,584,600。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Physicians, all other",
+          "share": 13.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physical scientists, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Dentists, general",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Pharmacists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Medical scientists, except epidemiologists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Biological scientists, all other",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 3584600,
+        "advancedDegreeShare": 59,
+        "bachelorsRequiredOccupationShare": 70,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-business",
+      "title": "商科：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "finance",
+        "accounting",
+        "business",
+        "logistics",
+        "hospitality"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Business",
+        "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Business学科组的在职学位持有者；本组就业人数13,736,300。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Accountants and auditors",
+          "share": 8.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Financial managers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Human resources specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of retail sales workers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Sales representatives, wholesale and manufacturing, except technical and scientific products",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "General and operations managers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 13736300,
+        "advancedDegreeShare": 26,
+        "bachelorsRequiredOccupationShare": 55,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-communications",
+      "title": "传播学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "journalism"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Communications",
+        "url": "https://www.bls.gov/ooh/field-of-degree/communications/communications-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Communications学科组的在职学位持有者；本组就业人数3,079,130。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Marketing managers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Market research analysts and marketing specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Human resources specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Producers and directors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 3079130,
+        "advancedDegreeShare": 24,
+        "bachelorsRequiredOccupationShare": 55,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-communications-technology",
+      "title": "传播技术：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Communications technology",
+        "url": "https://www.bls.gov/ooh/field-of-degree/communications-technology/communications-technology-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Communications technology学科组的在职学位持有者；本组就业人数148,660。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Graphic designers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Art directors",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Audio and video technicians",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Producers and directors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of retail sales workers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Set and exhibit designers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Film and video editors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 148660,
+        "advancedDegreeShare": 12,
+        "bachelorsRequiredOccupationShare": 48,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-construction",
+      "title": "建设工程：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "civil"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Construction",
+        "url": "https://www.bls.gov/ooh/field-of-degree/construction/construction-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Construction学科组的在职学位持有者；本组就业人数165,280。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Construction managers",
+          "share": 30.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Civil engineers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Cost estimators",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "General and operations managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Construction laborers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Carpenters",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of construction trades and extraction workers",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 165280,
+        "advancedDegreeShare": 13,
+        "bachelorsRequiredOccupationShare": 68,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-culture-and-group-studies",
+      "title": "文化与群体研究：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Culture and group studies",
+        "url": "https://www.bls.gov/ooh/field-of-degree/culture-and-group-studies/culture-and-group-studies-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-09-19"
+      },
+      "population": "美国ACS 2023年，BLS归入Culture and group studies学科组的在职学位持有者；本组就业人数344,780。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Lawyers",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social and community service managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 344780,
+        "advancedDegreeShare": 51,
+        "bachelorsRequiredOccupationShare": 65,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-education",
+      "title": "教育：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "education"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Education",
+        "url": "https://www.bls.gov/ooh/field-of-degree/education/education-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Education学科组的在职学位持有者；本组就业人数5,551,650。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 29.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Special education teachers, kindergarten and elementary school",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Preschool teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Substitute teachers, short-term",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Teaching assistants, except postsecondary",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secretaries and administrative assistants, except legal, medical, and executive",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 5551650,
+        "advancedDegreeShare": 51,
+        "bachelorsRequiredOccupationShare": 68,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-engineering-technologies",
+      "title": "工程技术：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Engineering technologies",
+        "url": "https://www.bls.gov/ooh/field-of-degree/engineering-technologies/engineering-technologies-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Engineering technologies学科组的在职学位持有者；本组就业人数531,280。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Software developers",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Engineers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Industrial engineers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Mechanical engineers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer occupations, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Construction managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Electrical engineers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 531280,
+        "advancedDegreeShare": 26,
+        "bachelorsRequiredOccupationShare": 58,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-english",
+      "title": "英语：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "language"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: English",
+        "url": "https://www.bls.gov/ooh/field-of-degree/english/english-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入English学科组的在职学位持有者；本组就业人数1,943,540。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Writers and authors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Editors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secretaries and administrative assistants, except legal, medical, and executive",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 1943540,
+        "advancedDegreeShare": 48,
+        "bachelorsRequiredOccupationShare": 63,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-family-and-consumer-sciences",
+      "title": "家庭与消费者科学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Family and consumer sciences",
+        "url": "https://www.bls.gov/ooh/field-of-degree/family-and-consumer-sciences/family-and-consumer-sciences-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Family and consumer sciences学科组的在职学位持有者；本组就业人数539,380。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Preschool teachers, except special education",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social workers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secretaries and administrative assistants, except legal, medical, and executive",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Teaching assistants, except postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social and community service managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Educational, guidance, and career counselors and advisors",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 539380,
+        "advancedDegreeShare": 35,
+        "bachelorsRequiredOccupationShare": 55,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-fine-and-performing-arts",
+      "title": "美术与表演艺术：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "art",
+        "performing"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Fine and performing arts",
+        "url": "https://www.bls.gov/ooh/field-of-degree/fine-arts/fine-arts-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Fine and performing arts学科组的在职学位持有者；本组就业人数3,067,160。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Graphic designers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Art directors",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Set and exhibit designers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Substitute teachers, short-term",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of retail sales workers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Retail salespersons",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 3067160,
+        "advancedDegreeShare": 26,
+        "bachelorsRequiredOccupationShare": 52,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-foreign-language",
+      "title": "外语：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "language"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Foreign language",
+        "url": "https://www.bls.gov/ooh/field-of-degree/foreign-language/foreign-language-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Foreign language学科组的在职学位持有者；本组就业人数870,640。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 870640,
+        "advancedDegreeShare": 51,
+        "bachelorsRequiredOccupationShare": 63,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-history",
+      "title": "历史：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "history"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: History",
+        "url": "https://www.bls.gov/ooh/field-of-degree/history/history-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入History学科组的在职学位持有者；本组就业人数1,292,450。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Lawyers",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of retail sales workers",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 1292450,
+        "advancedDegreeShare": 50,
+        "bachelorsRequiredOccupationShare": 60,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-interdisciplinary-studies",
+      "title": "跨学科研究：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Interdisciplinary studies",
+        "url": "https://www.bls.gov/ooh/field-of-degree/interdisciplinary-studies/interdisciplinary-studies-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Interdisciplinary studies学科组的在职学位持有者；本组就业人数696,040。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Dietitians and nutritionists",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 696040,
+        "advancedDegreeShare": 43,
+        "bachelorsRequiredOccupationShare": 60,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-law-and-legal-studies",
+      "title": "法律与法律研究：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "law"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Law and legal studies",
+        "url": "https://www.bls.gov/ooh/field-of-degree/law-and-legal-studies/law-and-legal-studies-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Law and legal studies学科组的在职学位持有者；本组就业人数147,700。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Lawyers",
+          "share": 14.0,
+          "soc": null
+        },
+        {
+          "occupation": "Paralegals and legal assistants",
+          "share": 12.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secretaries and administrative assistants, except legal, medical, and executive",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Accountants and auditors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Police and sheriff's patrol officers",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Retail salespersons",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 147700,
+        "advancedDegreeShare": 38,
+        "bachelorsRequiredOccupationShare": 47,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-liberal-arts",
+      "title": "通识教育：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Liberal arts",
+        "url": "https://www.bls.gov/ooh/field-of-degree/liberal-arts/liberal-arts-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Liberal arts学科组的在职学位持有者；本组就业人数790,310。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Retail salespersons",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 790310,
+        "advancedDegreeShare": 32,
+        "bachelorsRequiredOccupationShare": 54,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-library-science",
+      "title": "图书馆学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Library science",
+        "url": "https://www.bls.gov/ooh/field-of-degree/library-science/library-science-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Library science学科组的在职学位持有者；本组就业人数26,710。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Librarians and media collections specialists",
+          "share": 36.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Receptionists and information clerks",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Library assistants, clerical",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer user support specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Cashiers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secretaries and administrative assistants, except legal, medical, and executive",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 26710,
+        "advancedDegreeShare": 71,
+        "bachelorsRequiredOccupationShare": 69,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-mathematics",
+      "title": "数学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "math"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Mathematics",
+        "url": "https://www.bls.gov/ooh/field-of-degree/mathematics/mathematics-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Mathematics学科组的在职学位持有者；本组就业人数1,013,150。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Software developers",
+          "share": 8.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Data scientists",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Actuaries",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Accountants and auditors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 1013150,
+        "advancedDegreeShare": 50,
+        "bachelorsRequiredOccupationShare": 73,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-mechanics-and-repair",
+      "title": "机械与维修：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Mechanics and repair",
+        "url": "https://www.bls.gov/ooh/field-of-degree/mechanics-and-repair/mechanics-and-repair-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Mechanics and repair学科组的在职学位持有者；本组就业人数25,410。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Managers, all other",
+          "share": 8.0,
+          "soc": null
+        },
+        {
+          "occupation": "Automotive service technicians and mechanics",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Aircraft mechanics and service technicians",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of non-retail sales workers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Heavy and tractor-trailer truck drivers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Welders, cutters, solderers, and brazers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Inspectors, testers, sorters, samplers, and weighers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Set and exhibit designers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Carpenters",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 25410,
+        "advancedDegreeShare": 20,
+        "bachelorsRequiredOccupationShare": 28,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-military",
+      "title": "军事：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Military",
+        "url": "https://www.bls.gov/ooh/field-of-degree/military/military-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Military学科组的在职学位持有者；本组就业人数5,860。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Managers, all other",
+          "share": 12.0,
+          "soc": null
+        },
+        {
+          "occupation": "Airline pilots, copilots, and flight engineers",
+          "share": 8.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Construction laborers",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Heavy and tractor-trailer truck drivers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Production workers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Operations research analysts",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of office and administrative support workers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Logisticians",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Home health and personal care aides",
+          "share": 3.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 5860,
+        "advancedDegreeShare": 27,
+        "bachelorsRequiredOccupationShare": 40,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-natural-resources",
+      "title": "自然资源：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "agriculture",
+        "environment"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Natural resources",
+        "url": "https://www.bls.gov/ooh/field-of-degree/natural-resources/natural-resources-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Natural resources学科组的在职学位持有者；本组就业人数584,450。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Managers, all other",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Conservation scientists",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Biological scientists, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Environmental scientists and specialists, including health",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physical scientists, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 584450,
+        "advancedDegreeShare": 31,
+        "bachelorsRequiredOccupationShare": 53,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-personal-and-culinary-services",
+      "title": "个人与烹饪服务：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Personal and culinary services",
+        "url": "https://www.bls.gov/ooh/field-of-degree/personal-and-culinary-services/personal-and-culinary-services.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Personal and culinary services学科组的在职学位持有者；本组就业人数61,340。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Chefs and head cooks",
+          "share": 16.0,
+          "soc": null
+        },
+        {
+          "occupation": "Cooks, restaurant",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Morticians, undertakers, and funeral arrangers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Food service managers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Bakers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Heavy and tractor-trailer truck drivers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Retail salespersons",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "First-line supervisors of food preparation and serving workers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 61340,
+        "advancedDegreeShare": 11,
+        "bachelorsRequiredOccupationShare": 24,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-philosophy-and-religion",
+      "title": "哲学与宗教：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "philosophy"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Philosophy and religion",
+        "url": "https://www.bls.gov/ooh/field-of-degree/philosophy-and-religion/philosophy-and-religion-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Philosophy and religion学科组的在职学位持有者；本组就业人数543,810。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Lawyers",
+          "share": 10.0,
+          "soc": null
+        },
+        {
+          "occupation": "Clergy",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 543810,
+        "advancedDegreeShare": 59,
+        "bachelorsRequiredOccupationShare": 67,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-physical-science",
+      "title": "物理科学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "physics",
+        "chem",
+        "geo"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Physical science",
+        "url": "https://www.bls.gov/ooh/field-of-degree/physical-science/physical-science-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Physical science学科组的在职学位持有者；本组就业人数1,984,110。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Physicians, all other",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physical scientists, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chemists",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Engineers, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 1984110,
+        "advancedDegreeShare": 54,
+        "bachelorsRequiredOccupationShare": 67,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-psychology",
+      "title": "心理学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "psychology"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Psychology",
+        "url": "https://www.bls.gov/ooh/field-of-degree/psychology/psychology-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Psychology学科组的在职学位持有者；本组就业人数3,655,640。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social workers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Psychologists, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Educational, guidance, and career counselors and advisors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Substance abuse, behavioral disorder, and mental health counselors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Therapists, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 3655640,
+        "advancedDegreeShare": 51,
+        "bachelorsRequiredOccupationShare": 62,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-public-policy-and-social-services",
+      "title": "公共政策与社会服务：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "publicadmin",
+        "sociology"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Public policy and social services",
+        "url": "https://www.bls.gov/ooh/field-of-degree/public-policy-and-social-services/public-policy-and-social-services-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Public policy and social services学科组的在职学位持有者；本组就业人数994,200。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Social workers, all other",
+          "share": 16.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social and community service managers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Therapists, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Substance abuse, behavioral disorder, and mental health counselors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Medical and health services managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Educational, guidance, and career counselors and advisors",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 994200,
+        "advancedDegreeShare": 49,
+        "bachelorsRequiredOccupationShare": 63,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-recreation-and-fitness",
+      "title": "休闲与健身：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "sports"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Recreation and fitness",
+        "url": "https://www.bls.gov/ooh/field-of-degree/recreation-and-fitness/recreation-and-fitness-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Recreation and fitness学科组的在职学位持有者；本组就业人数976,080。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Physical therapists",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Registered nurses",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Coaches and scouts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Exercise trainers and group fitness instructors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 976080,
+        "advancedDegreeShare": 36,
+        "bachelorsRequiredOccupationShare": 52,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-science-technologies",
+      "title": "科学技术：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Science technologies",
+        "url": "https://www.bls.gov/ooh/field-of-degree/science-technologies/science-technologies-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Science technologies学科组的在职学位持有者；本组就业人数21,970。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Radiologic technologists and technicians",
+          "share": 23.0,
+          "soc": null
+        },
+        {
+          "occupation": "Magnetic resonance imaging technologists",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Diagnostic medical sonographers",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physical scientists, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Cardiovascular technologists and technicians",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Medical and health services managers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social and community service managers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 21970,
+        "advancedDegreeShare": 29,
+        "bachelorsRequiredOccupationShare": 36,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-security-and-protective-service",
+      "title": "安全与保护服务：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Security and protective service",
+        "url": "https://www.bls.gov/ooh/field-of-degree/security-and-protective-service/security-and-protective-service-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Security and protective service学科组的在职学位持有者；本组就业人数1,427,240。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Police and sheriff's patrol officers",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Lawyers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Security guards",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Probation officers and correctional treatment specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Detectives and criminal investigators",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Social workers, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Paralegals and legal assistants",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 1427240,
+        "advancedDegreeShare": 25,
+        "bachelorsRequiredOccupationShare": 37,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-theology",
+      "title": "神学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Theology",
+        "url": "https://www.bls.gov/ooh/field-of-degree/theology/theology-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Theology学科组的在职学位持有者；本组就业人数400,980。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Clergy",
+          "share": 25.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Heavy and tractor-trailer truck drivers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Secondary school teachers, except special and career/technical education",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Substitute teachers, short-term",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Directors, religious activities and education",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 400980,
+        "advancedDegreeShare": 46,
+        "bachelorsRequiredOccupationShare": 60,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-transportation",
+      "title": "交通运输：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Transportation",
+        "url": "https://www.bls.gov/ooh/field-of-degree/transportation/transportation-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Transportation学科组的在职学位持有者；本组就业人数187,530。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Airline pilots, copilots, and flight engineers",
+          "share": 25.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Air traffic controllers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Aircraft mechanics and service technicians",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Heavy and tractor-trailer truck drivers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "General and operations managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Customer service representatives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Captains, mates, and pilots of water vessels",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 187530,
+        "advancedDegreeShare": 22,
+        "bachelorsRequiredOccupationShare": 29,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "本组已收录官方统计，但与当前44个专业族没有足够直接的学位对应关系，暂不映射专业。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-computer-and-information-technology",
+      "title": "计算机与信息技术：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "cs"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Computer and information technology",
+        "url": "https://www.bls.gov/ooh/field-of-degree/computer-and-information/computer-and-information-technology-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Computer and information technology学科组的在职学位持有者；本组就业人数2,991,550。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Software developers",
+          "share": 24.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer occupations, all other",
+          "share": 5.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer and information systems managers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer programmers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer user support specialists",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Computer systems analysts",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Information security analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 2991550,
+        "advancedDegreeShare": 30,
+        "bachelorsRequiredOccupationShare": 73,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-engineering",
+      "title": "工程：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "mech",
+        "electrical",
+        "electronics",
+        "materials",
+        "chemical",
+        "civil",
+        "environment",
+        "energy",
+        "aerospace"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Engineering",
+        "url": "https://www.bls.gov/ooh/field-of-degree/engineering/engineering-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Engineering学科组的在职学位持有者；本组就业人数5,568,160。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Software developers",
+          "share": 9.0,
+          "soc": null
+        },
+        {
+          "occupation": "Engineers, all other",
+          "share": 7.0,
+          "soc": null
+        },
+        {
+          "occupation": "Civil engineers",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Mechanical engineers",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Electrical engineers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Industrial engineers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Project management specialists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Architectural and engineering managers",
+          "share": 2.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 5568160,
+        "advancedDegreeShare": 42,
+        "bachelorsRequiredOccupationShare": 73,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-healthcare-and-related",
+      "title": "医疗卫生及相关：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "nursing",
+        "pharmacy",
+        "publichealth",
+        "rehab"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Healthcare and related",
+        "url": "https://www.bls.gov/ooh/field-of-degree/healthcare-and-related/healthcare-and-related-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Healthcare and related学科组的在职学位持有者；本组就业人数5,729,840。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Registered nurses",
+          "share": 35.0,
+          "soc": null
+        },
+        {
+          "occupation": "Nurse practitioners",
+          "share": 4.0,
+          "soc": null
+        },
+        {
+          "occupation": "Medical and health services managers",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Pharmacists",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physicians, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Physical therapists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Speech-language pathologists",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Occupational therapists",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 5729840,
+        "advancedDegreeShare": 39,
+        "bachelorsRequiredOccupationShare": 76,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。",
+        "医疗卫生本科统计组不等于美国医师或牙医学专业学位；未据此给临床与口腔医学作一一映射。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "bls-fod-social-science",
+      "title": "社会科学：美国学位持有者主要职业",
+      "region": "US",
+      "majorIds": [
+        "economics",
+        "politics",
+        "sociology"
+      ],
+      "period": "2023",
+      "metric": "在职学位持有者的职业占比",
+      "dataKind": "occupation_distribution",
+      "source": {
+        "title": "BLS Field of degree: Social science",
+        "url": "https://www.bls.gov/ooh/field-of-degree/social-science/social-science-field-of-degree.htm",
+        "publishedAt": null,
+        "modifiedAt": "2025-08-28"
+      },
+      "population": "美国ACS 2023年，BLS归入Social science学科组的在职学位持有者；本组就业人数5,226,990。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "rows": [
+        {
+          "occupation": "Lawyers",
+          "share": 8.0,
+          "soc": null
+        },
+        {
+          "occupation": "Managers, all other",
+          "share": 6.0,
+          "soc": null
+        },
+        {
+          "occupation": "Chief executives",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Health specialties teachers, postsecondary",
+          "share": 3.0,
+          "soc": null
+        },
+        {
+          "occupation": "Elementary school teachers, except special education",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Management analysts",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Financial managers",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Accountants and auditors",
+          "share": 2.0,
+          "soc": null
+        },
+        {
+          "occupation": "Software developers",
+          "share": 1.0,
+          "soc": null
+        },
+        {
+          "occupation": "Education administrators, kindergarten through secondary",
+          "share": 1.0,
+          "soc": null
+        }
+      ],
+      "degreeStats": {
+        "period": "2023",
+        "employedCount": 5226990,
+        "advancedDegreeShare": 45,
+        "bachelorsRequiredOccupationShare": 60,
+        "definitions": {
+          "advancedDegreeShare": "该学科组在职学位持有者中拥有研究生或专业学位的比例，单位百分比。",
+          "bachelorsRequiredOccupationShare": "该学科组在职人员处于通常要求至少学士学位的职业中的比例；不等于专业对口率。"
+        }
+      },
+      "limitations": [
+        "这是美国相关本科学科组学位持有者的在职职业分布，包含已取得研究生学位者；不是应届生调查、就业率或录用概率。",
+        "只摘录原表前十职业，比例为原表整数，未列职业及四舍五入使合计不必为100%。",
+        "站内专业与美国统计学科组是编辑匹配；同一groupId供多专业共用，不能作为这些细分专业各自的独立统计。",
+        "本表不转录职业增长预测或薪资；不能由历史分布推断个人收入、资格或未来录用。"
+      ],
+      "educationLevel": "mixed-employed-degree-holders"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-01",
+      "title": "上海商学院2025届本科·工商管理",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院工商管理学院2025届工商管理本科毕业生63人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 63,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-02",
+      "title": "上海商学院2025届本科·市场营销",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院工商管理学院2025届市场营销本科毕业生57人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 57,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-03",
+      "title": "上海商学院2025届本科·经济统计学",
+      "region": "CN",
+      "majorIds": [
+        "economics"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务经济学院2025届经济统计学本科毕业生39人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 39,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-04",
+      "title": "上海商学院2025届本科·朝鲜语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务外语学院2025届朝鲜语本科毕业生34人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 34,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-05",
+      "title": "上海商学院2025届本科·物联网工程",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务信息学院2025届物联网工程本科毕业生78人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 78,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-06",
+      "title": "上海商学院2025届本科·物流管理",
+      "region": "CN",
+      "majorIds": [
+        "logistics"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务信息学院2025届物流管理本科毕业生51人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 51,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-07",
+      "title": "上海商学院2025届本科·信息管理与信息系统",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务信息学院2025届信息管理与信息系统本科毕业生59人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 59,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-08",
+      "title": "上海商学院2025届本科·社会工作",
+      "region": "CN",
+      "majorIds": [
+        "sociology"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院文法学院2025届社会工作本科毕业生58人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 58,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-09",
+      "title": "上海商学院2025届本科·服装与服饰设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院艺术设计学院2025届服装与服饰设计本科毕业生41人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 41,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-10",
+      "title": "上海商学院2025届本科·视觉传达设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院艺术设计学院2025届视觉传达设计本科毕业生82人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 100.0,
+          "soc": null
+        }
+      ],
+      "sampleSize": 82,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-11",
+      "title": "上海商学院2025届本科·酒店管理",
+      "region": "CN",
+      "majorIds": [
+        "hospitality"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院酒店管理学院2025届酒店管理本科毕业生89人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 97.75,
+          "soc": null
+        }
+      ],
+      "sampleSize": 89,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-12",
+      "title": "上海商学院2025届本科·旅游管理",
+      "region": "CN",
+      "majorIds": [
+        "hospitality"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院酒店管理学院2025届旅游管理本科毕业生68人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 97.06,
+          "soc": null
+        }
+      ],
+      "sampleSize": 68,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-13",
+      "title": "上海商学院2025届本科·电子商务（中外合作办学）",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院上海洛桑酒店管理学院2025届电子商务（中外合作办学）本科毕业生32人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 96.88,
+          "soc": null
+        }
+      ],
+      "sampleSize": 32,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-14",
+      "title": "上海商学院2025届本科·食品质量与安全",
+      "region": "CN",
+      "majorIds": [
+        "food"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院酒店管理学院2025届食品质量与安全本科毕业生62人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 96.77,
+          "soc": null
+        }
+      ],
+      "sampleSize": 62,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-15",
+      "title": "上海商学院2025届本科·商务英语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务外语学院2025届商务英语本科毕业生61人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 96.72,
+          "soc": null
+        }
+      ],
+      "sampleSize": 61,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-16",
+      "title": "上海商学院2025届本科·国际经济与贸易",
+      "region": "CN",
+      "majorIds": [
+        "economics"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务经济学院2025届国际经济与贸易本科毕业生115人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 96.52,
+          "soc": null
+        }
+      ],
+      "sampleSize": 115,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-17",
+      "title": "上海商学院2025届本科·零售业管理",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院工商管理学院2025届零售业管理本科毕业生54人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 96.3,
+          "soc": null
+        }
+      ],
+      "sampleSize": 54,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-18",
+      "title": "上海商学院2025届本科·税收学",
+      "region": "CN",
+      "majorIds": [
+        "accounting"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务经济学院2025届税收学本科毕业生68人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 95.59,
+          "soc": null
+        }
+      ],
+      "sampleSize": 68,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-19",
+      "title": "上海商学院2025届本科·法学",
+      "region": "CN",
+      "majorIds": [
+        "law"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院文法学院2025届法学本科毕业生79人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 94.94,
+          "soc": null
+        }
+      ],
+      "sampleSize": 79,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-20",
+      "title": "上海商学院2025届本科·财务管理",
+      "region": "CN",
+      "majorIds": [
+        "accounting"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院工商管理学院2025届财务管理本科毕业生76人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 94.74,
+          "soc": null
+        }
+      ],
+      "sampleSize": 76,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-21",
+      "title": "上海商学院2025届本科·日语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务外语学院2025届日语本科毕业生56人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 94.64,
+          "soc": null
+        }
+      ],
+      "sampleSize": 56,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-22",
+      "title": "上海商学院2025届本科·广告学",
+      "region": "CN",
+      "majorIds": [
+        "journalism"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院文法学院2025届广告学本科毕业生71人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 94.37,
+          "soc": null
+        }
+      ],
+      "sampleSize": 71,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-23",
+      "title": "上海商学院2025届本科·计算机科学与技术",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务信息学院2025届计算机科学与技术本科毕业生93人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 93.55,
+          "soc": null
+        }
+      ],
+      "sampleSize": 93,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-24",
+      "title": "上海商学院2025届本科·酒店管理（中外合作办学）",
+      "region": "CN",
+      "majorIds": [
+        "hospitality"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院上海洛桑酒店管理学院2025届酒店管理（中外合作办学）本科毕业生31人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 93.55,
+          "soc": null
+        }
+      ],
+      "sampleSize": 31,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-25",
+      "title": "上海商学院2025届本科·环境设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院艺术设计学院2025届环境设计本科毕业生43人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 93.02,
+          "soc": null
+        }
+      ],
+      "sampleSize": 43,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-26",
+      "title": "上海商学院2025届本科·电子商务",
+      "region": "CN",
+      "majorIds": [
+        "business"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务信息学院2025届电子商务本科毕业生57人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 92.98,
+          "soc": null
+        }
+      ],
+      "sampleSize": 57,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-27",
+      "title": "上海商学院2025届本科·园林",
+      "region": "CN",
+      "majorIds": [
+        "agriculture"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院艺术设计学院2025届园林本科毕业生55人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 92.73,
+          "soc": null
+        }
+      ],
+      "sampleSize": 55,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-28",
+      "title": "上海商学院2025届本科·商务经济学",
+      "region": "CN",
+      "majorIds": [
+        "economics"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务经济学院2025届商务经济学本科毕业生68人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 92.65,
+          "soc": null
+        }
+      ],
+      "sampleSize": 68,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-29",
+      "title": "上海商学院2025届本科·会计学",
+      "region": "CN",
+      "majorIds": [
+        "accounting"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院工商管理学院2025届会计学本科毕业生121人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 92.56,
+          "soc": null
+        }
+      ],
+      "sampleSize": 121,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    },
+    {
+      "id": "cn-sbs-2025-undergraduate-30",
+      "title": "上海商学院2025届本科·金融学",
+      "region": "CN",
+      "majorIds": [
+        "finance"
+      ],
+      "period": "2025届；截至2025-08-28",
+      "metric": "初次毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "上海商学院2025届毕业生就业质量年度报告·表1-2",
+        "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+        "publishedAt": "2026-03-23"
+      },
+      "population": "上海商学院商务经济学院2025届金融学本科毕业生80人；本校该专业样本，不是全国同专业。",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等，非纯就业）",
+          "share": 92.5,
+          "soc": null
+        }
+      ],
+      "sampleSize": 80,
+      "limitations": [
+        "单校单届统计，不能推广为全国同专业就业率；专业族映射只为检索关联。",
+        "指标包含升学等已落实去向，不等同劳动就业率、专业对口率或稳定工作比例。",
+        "原报告表1-2提供比例与毕业人数，未提供本专业各职业占比；不推算职业分布或具体雇主录用。",
+        "统计截至2025-08-28，发布时间与本站核验时间不改变数据届别。"
+      ],
+      "educationLevel": "bachelor"
+    }
+  ],
+  "reports": [
+    {
+      "id": "bls-fod-agriculture",
+      "title": "BLS Field of degree: Agriculture",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/agriculture/agriculture-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Agriculture学科组的在职学位持有者；本组就业人数689,520。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-architecture",
+      "title": "BLS Field of degree: Architecture",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/architecture/architecture-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Architecture学科组的在职学位持有者；本组就业人数497,230。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-biology",
+      "title": "BLS Field of degree: Biology",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/biology/biology-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Biology学科组的在职学位持有者；本组就业人数3,584,600。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-business",
+      "title": "BLS Field of degree: Business",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Business学科组的在职学位持有者；本组就业人数13,736,300。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-communications",
+      "title": "BLS Field of degree: Communications",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/communications/communications-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Communications学科组的在职学位持有者；本组就业人数3,079,130。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-communications-technology",
+      "title": "BLS Field of degree: Communications technology",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/communications-technology/communications-technology-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Communications technology学科组的在职学位持有者；本组就业人数148,660。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-construction",
+      "title": "BLS Field of degree: Construction",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/construction/construction-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Construction学科组的在职学位持有者；本组就业人数165,280。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-culture-and-group-studies",
+      "title": "BLS Field of degree: Culture and group studies",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/culture-and-group-studies/culture-and-group-studies-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Culture and group studies学科组的在职学位持有者；本组就业人数344,780。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-education",
+      "title": "BLS Field of degree: Education",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/education/education-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Education学科组的在职学位持有者；本组就业人数5,551,650。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-engineering-technologies",
+      "title": "BLS Field of degree: Engineering technologies",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/engineering-technologies/engineering-technologies-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Engineering technologies学科组的在职学位持有者；本组就业人数531,280。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-english",
+      "title": "BLS Field of degree: English",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/english/english-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入English学科组的在职学位持有者；本组就业人数1,943,540。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-family-and-consumer-sciences",
+      "title": "BLS Field of degree: Family and consumer sciences",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/family-and-consumer-sciences/family-and-consumer-sciences-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Family and consumer sciences学科组的在职学位持有者；本组就业人数539,380。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-fine-and-performing-arts",
+      "title": "BLS Field of degree: Fine and performing arts",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/fine-arts/fine-arts-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Fine and performing arts学科组的在职学位持有者；本组就业人数3,067,160。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-foreign-language",
+      "title": "BLS Field of degree: Foreign language",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/foreign-language/foreign-language-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Foreign language学科组的在职学位持有者；本组就业人数870,640。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-history",
+      "title": "BLS Field of degree: History",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/history/history-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入History学科组的在职学位持有者；本组就业人数1,292,450。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-interdisciplinary-studies",
+      "title": "BLS Field of degree: Interdisciplinary studies",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/interdisciplinary-studies/interdisciplinary-studies-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Interdisciplinary studies学科组的在职学位持有者；本组就业人数696,040。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-law-and-legal-studies",
+      "title": "BLS Field of degree: Law and legal studies",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/law-and-legal-studies/law-and-legal-studies-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Law and legal studies学科组的在职学位持有者；本组就业人数147,700。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-liberal-arts",
+      "title": "BLS Field of degree: Liberal arts",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/liberal-arts/liberal-arts-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Liberal arts学科组的在职学位持有者；本组就业人数790,310。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-library-science",
+      "title": "BLS Field of degree: Library science",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/library-science/library-science-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Library science学科组的在职学位持有者；本组就业人数26,710。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-mathematics",
+      "title": "BLS Field of degree: Mathematics",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/mathematics/mathematics-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Mathematics学科组的在职学位持有者；本组就业人数1,013,150。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-mechanics-and-repair",
+      "title": "BLS Field of degree: Mechanics and repair",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/mechanics-and-repair/mechanics-and-repair-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Mechanics and repair学科组的在职学位持有者；本组就业人数25,410。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-military",
+      "title": "BLS Field of degree: Military",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/military/military-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Military学科组的在职学位持有者；本组就业人数5,860。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-natural-resources",
+      "title": "BLS Field of degree: Natural resources",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/natural-resources/natural-resources-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Natural resources学科组的在职学位持有者；本组就业人数584,450。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-personal-and-culinary-services",
+      "title": "BLS Field of degree: Personal and culinary services",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/personal-and-culinary-services/personal-and-culinary-services.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Personal and culinary services学科组的在职学位持有者；本组就业人数61,340。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-philosophy-and-religion",
+      "title": "BLS Field of degree: Philosophy and religion",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/philosophy-and-religion/philosophy-and-religion-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Philosophy and religion学科组的在职学位持有者；本组就业人数543,810。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-physical-science",
+      "title": "BLS Field of degree: Physical science",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/physical-science/physical-science-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Physical science学科组的在职学位持有者；本组就业人数1,984,110。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-psychology",
+      "title": "BLS Field of degree: Psychology",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/psychology/psychology-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Psychology学科组的在职学位持有者；本组就业人数3,655,640。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-public-policy-and-social-services",
+      "title": "BLS Field of degree: Public policy and social services",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/public-policy-and-social-services/public-policy-and-social-services-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Public policy and social services学科组的在职学位持有者；本组就业人数994,200。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-recreation-and-fitness",
+      "title": "BLS Field of degree: Recreation and fitness",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/recreation-and-fitness/recreation-and-fitness-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Recreation and fitness学科组的在职学位持有者；本组就业人数976,080。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-science-technologies",
+      "title": "BLS Field of degree: Science technologies",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/science-technologies/science-technologies-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Science technologies学科组的在职学位持有者；本组就业人数21,970。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-security-and-protective-service",
+      "title": "BLS Field of degree: Security and protective service",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/security-and-protective-service/security-and-protective-service-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Security and protective service学科组的在职学位持有者；本组就业人数1,427,240。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-theology",
+      "title": "BLS Field of degree: Theology",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/theology/theology-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Theology学科组的在职学位持有者；本组就业人数400,980。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-transportation",
+      "title": "BLS Field of degree: Transportation",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/transportation/transportation-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Transportation学科组的在职学位持有者；本组就业人数187,530。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-computer-and-information-technology",
+      "title": "BLS Field of degree: Computer and information technology",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/computer-and-information/computer-and-information-technology-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Computer and information technology学科组的在职学位持有者；本组就业人数2,991,550。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-engineering",
+      "title": "BLS Field of degree: Engineering",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/engineering/engineering-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Engineering学科组的在职学位持有者；本组就业人数5,568,160。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-healthcare-and-related",
+      "title": "BLS Field of degree: Healthcare and related",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/healthcare-and-related/healthcare-and-related-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Healthcare and related学科组的在职学位持有者；本组就业人数5,729,840。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "bls-fod-social-science",
+      "title": "BLS Field of degree: Social science",
+      "region": "US",
+      "period": "2023",
+      "url": "https://www.bls.gov/ooh/field-of-degree/social-science/social-science-field-of-degree.htm",
+      "publisher": "U.S. Bureau of Labor Statistics；职业分布原始数据来自U.S. Census Bureau ACS",
+      "population": "美国ACS 2023年，BLS归入Social science学科组的在职学位持有者；本组就业人数5,226,990。本科专业统计包含后来取得更高学位者，不限应届生。",
+      "coverage": "原表Table 2前十职业比例；Table 1就业人数及两项教育结构指标。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "cn-sbs-2025",
+      "title": "上海商学院2025届毕业生就业质量年度报告",
+      "region": "CN",
+      "period": "2025届；截至2025-08-28",
+      "url": "https://xxgk.sbs.edu.cn/xxgklm/xsswgl/bysjyzlndbg/8548fecb7c45406caf712f4d91ac73b4.htm",
+      "publisher": "上海商学院",
+      "population": "该校2025届毕业生；本次结构化提取限30个本科专业、1941名本科毕业生。",
+      "coverage": "已提取表1-2各本科专业毕业人数与初次毕业去向落实率；未冒充全国数据，未推算职业比例。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "cn-ncwu-2025",
+      "title": "华北水利水电大学2025届毕业生就业质量年度报告",
+      "region": "CN",
+      "period": "2025届",
+      "url": "https://www2.ncwu.edu.cn/xxgk/info/1048/2904.htm",
+      "publisher": "华北水利水电大学就业指导中心",
+      "population": "该校2025届毕业生，精确统计范围尚待报告正文核对。",
+      "coverage": "仅核验2026-06-29官方发布页及附件存在；附件需验证码，未提取统计，不进入数值推荐。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "cn-shupl-2024",
+      "title": "上海政法学院2024届毕业生就业质量年度报告",
+      "region": "CN",
+      "period": "2024届",
+      "url": "https://xxgk.shupl.edu.cn/2025/0217/c4059a137231/page.htm",
+      "publisher": "上海政法学院",
+      "population": "该校2024届毕业生，统计分母尚待报告正文核对。",
+      "coverage": "仅核验官方报告发布页；未提取比例，不进入数值推荐。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-16"
+    }
+  ]
+}

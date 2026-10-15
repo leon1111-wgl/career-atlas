@@ -1,0 +1,170 @@
+{
+  "generatedAt": "2026-10-15T18:30:49.894000+00:00",
+  "regions": {
+    "CN": {
+      "sampleGroups": 96,
+      "reportedNumericCells": 217,
+      "missingCells": 5,
+      "structuredSourceDocuments": 5,
+      "coveredMajorIds": [
+        "accounting",
+        "agriculture",
+        "architecture",
+        "art",
+        "bio",
+        "business",
+        "chem",
+        "chemical",
+        "cs",
+        "economics",
+        "education",
+        "electrical",
+        "electronics",
+        "energy",
+        "environment",
+        "finance",
+        "food",
+        "geo",
+        "history",
+        "hospitality",
+        "journalism",
+        "language",
+        "law",
+        "logistics",
+        "math",
+        "performing",
+        "physics",
+        "psychology",
+        "publicadmin",
+        "sociology",
+        "sports"
+      ],
+      "missingMajorIds": [
+        "aerospace",
+        "civil",
+        "materials",
+        "mech",
+        "medicine",
+        "nursing",
+        "pharmacy",
+        "philosophy",
+        "politics",
+        "publichealth",
+        "rehab",
+        "trades",
+        "veterinary"
+      ],
+      "unresolvedDenominatorGroups": [
+        "cn-ecnu-2025-bachelor-further-study"
+      ],
+      "unspecifiedEducationGroups": 57
+    },
+    "US": {
+      "sampleGroups": 37,
+      "reportedNumericCells": 370,
+      "missingCells": 0,
+      "structuredSourceDocuments": 37,
+      "coveredMajorIds": [
+        "accounting",
+        "aerospace",
+        "agriculture",
+        "architecture",
+        "art",
+        "bio",
+        "business",
+        "chem",
+        "chemical",
+        "civil",
+        "cs",
+        "economics",
+        "education",
+        "electrical",
+        "electronics",
+        "energy",
+        "environment",
+        "finance",
+        "food",
+        "geo",
+        "history",
+        "hospitality",
+        "journalism",
+        "language",
+        "law",
+        "logistics",
+        "materials",
+        "math",
+        "mech",
+        "nursing",
+        "performing",
+        "pharmacy",
+        "philosophy",
+        "physics",
+        "politics",
+        "psychology",
+        "publicadmin",
+        "publichealth",
+        "rehab",
+        "sociology",
+        "sports",
+        "veterinary"
+      ],
+      "missingMajorIds": [
+        "medicine",
+        "trades"
+      ],
+      "unresolvedDenominatorGroups": [],
+      "unspecifiedEducationGroups": 0
+    }
+  },
+  "recruitment": {
+    "requirements": 6,
+    "employerGroups": [
+      "中国建设银行集团"
+    ],
+    "hiringOutcomeSamples": 0,
+    "eligibleForDifficultyOrSchoolScore": 0
+  },
+  "featureReadiness": {
+    "cnIndustryWage": {
+      "status": "usable_as_industry_context",
+      "target": "broad_industry_not_entry_role"
+    },
+    "graduateDestinations": {
+      "status": "descriptive_only",
+      "target": "original_school_cohort_population"
+    },
+    "jobEligibility": {
+      "status": "named_historical_sample_only",
+      "target": "named_employer_cohort_position"
+    },
+    "cnEntryRolePay": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "actualWorkingHours": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "workload": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "jobStability": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "hiringDifficulty": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "schoolTierAdvantage": {
+      "status": "missing",
+      "scoringEnabled": false
+    },
+    "majorPopularity": {
+      "status": "missing",
+      "scoringEnabled": false
+    }
+  },
+  "aggregationRule": "Do not sum overlapping cohorts or mix school results with application-to-hire rates."
+}

@@ -1,15 +1,25 @@
 import {
+  normalizePreferences,
+  rankPreferredRoles,
+} from "./preferences.js?v=20261016-data";
+import { roleOutcomes, resolveMajor } from "./research.js?v=20261016-data";
+import {
+  majorGuideHTML,
+  industryResearchHTML,
+  policiesHTML,
+  evidenceLibraryHTML,
+} from "./research-views.js?v=20261016-data";
+import {
   scoreRole,
   industryScore,
-  fitScore,
   roleObservation,
   freshness,
   DIMENSIONS,
-} from "./scoring.js";
-import { sparkline, lineChart } from "./charts.js?v=20261016-neutral";
-import { advise } from "./advisor.js";
-import { ModelClient } from "./model.js";
-import { evidenceTask, selectEvidence } from "./grounded.js";
+} from "./scoring.js?v=20261016-data";
+import { sparkline, lineChart } from "./charts.js?v=20261016-data";
+import { advise } from "./advisor.js?v=20261016-data";
+import { ModelClient } from "./model.js?v=20261016-data";
+import { evidenceTask, selectEvidence } from "./grounded.js?v=20261016-data";
 const $ = (s, root = document) => root.querySelector(s);
 const esc = (s) =>
   String(s ?? "").replace(
@@ -49,7 +59,7 @@ const state = {
   sort: "score",
   limit: 24,
   compare: [],
-  prefs: { major: "", priority: "balanced", ...saved() },
+  prefs: normalizePreferences(saved()),
   trendIndicator: "unemployment",
   modelLoaded: false,
   generating: false,
@@ -59,6 +69,10 @@ let catalog,
   data,
   ecosystem,
   reportText,
+  research,
+  outcomes,
+  policies,
+  recruitment,
   toastTimer,
   model = new ModelClient();
 const regions = { CN: "中国大陆", US: "美国" },
@@ -107,7 +121,8 @@ const latest = (rows) => rows?.at(-1);
 const dateLabel = (s) =>
   s
     ? new Date(s).toLocaleString("zh-CN", {
-        timeZone: "Asia/Shanghai",
+        timeZone: "Asia/Taipei",
+        year: "numeric",
         month: "2-digit",
         day: "2-digit",
         hour: "2-digit",
@@ -143,22 +158,23 @@ function metric(
 function industryCard(industry) {
   const s = industryScore(industry, catalog, state.region, data),
     roles = catalog.roles.filter((r) => r.industryId === industry.id);
-  return `<button class="industry-card" data-industry="${industry.id}"><div class="industry-card-top"><div><h3>${esc(industry.name)}</h3><span class="industry-category">${roles.length}个岗位方向 · ${esc(industry.cities?.[state.region]?.slice(0, 3).join(" / ") || regions[state.region])}</span></div><span class="score-pill">探索指数 ${s.score ?? "—"}</span></div><p class="industry-summary">${esc(industry.summary)}</p><div class="chip-row">${roles
+  return `<button class="industry-card" data-industry="${industry.id}"><div class="industry-card-top"><div><h3>${esc(industry.name)}</h3><span class="industry-category">${roles.length}个岗位方向 · ${esc(industry.cities?.[state.region]?.slice(0, 3).join(" / ") || regions[state.region])}</span></div><span class="score-pill">统计参考指数 ${s.score ?? "—"}</span></div><p class="industry-summary">${esc(industry.summary)}</p><div class="chip-row">${roles
     .slice(0, 3)
     .map((r) => `<span class="chip">${esc(r.title)}</span>`)
     .join(
       "",
-    )}</div><div class="industry-card-foot"><span>统计与判断覆盖 ${s.coverage}%</span><span>产业链 / 公司 / 岗位</span></div></button>`;
+    )}</div><div class="industry-card-foot"><span>${s.evidenceGroups} 组统计口径</span><span>产业链 / 公司 / 岗位</span></div></button>`;
 }
 function scoreNote() {
-  return `<p class="section-note"><strong>如何看这个分数：</strong>指数结合统计指标与编辑判断，行业分为目录中典型岗位的均值；覆盖率包含两类指标。仅用于同一地区的探索排序，缺失项与主观量规均可查看，<a href="#sources" class="text-link">了解计算方法 ↗</a></p>`;
+  return `<p class="section-note"><strong>分数和依据一起看：</strong>指数仅使用可核对统计，未验证的研究判断不加分。中国行业工资共用同一门类数据，不能区分每个细分岗位的就业好坏。<a href="#sources" class="text-link">查看计算依据 ↗</a></p>`;
 }
-function roleCard(role, { fit = false } = {}) {
+
+function roleCard(role, { preference = null } = {}) {
   const industry = industryFor(role),
     s = scoreRole(role, industry, state.region, data),
     selected = state.compare.includes(role.id),
     reality = role.jobReality;
-  return `<article class="role-card">${fit ? `<div class="fit-line"><span>偏好规则匹配</span><strong>${fitScore(role, state.prefs)} / 100</strong></div>` : ""}<div class="role-card-header"><div><h3><button class="role-title" data-role="${role.id}">${esc(role.title)}</button></h3><span class="minor">${esc(industry.name)} · ${regions[state.region]}</span></div><span class="score-pill">探索指数 ${s.score ?? "待补"}</span></div><div class="role-main"><div><p class="role-summary">${esc(reality?.deliverables?.[0] || role.daily[0])}</p><div class="chip-row">${role.skills
+  return `<article class="role-card">${preference ? `<div class="fit-line"><span>${preference.majorMatch ? "目录中的相关专业方向" : state.prefs.major ? "跨专业探索，先核对资格" : "未限定专业"}</span></div>` : ""}<div class="role-card-header"><div><h3><button class="role-title" data-role="${role.id}">${esc(role.title)}</button></h3><span class="minor">${esc(industry.name)} · ${regions[state.region]}</span></div><span class="score-pill">统计参考指数 ${s.score ?? "待补"}</span></div><div class="role-main"><div><p class="role-summary">${esc(reality?.deliverables?.[0] || role.daily[0])}</p><div class="chip-row">${role.skills
     .slice(0, 4)
     .map((k) => `<span class="chip">${esc(k)}</span>`)
     .join(
@@ -168,7 +184,7 @@ function roleCard(role, { fit = false } = {}) {
       ?.slice(0, 2)
       .map((x) => x.type)
       .join(" / ") || "不同公司职责不同",
-  )} · 指标覆盖 ${s.coverage}%</span><span><button class="button subtle" data-compare="${role.id}" aria-pressed="${selected}">${selected ? "已选" : "加入比较"}</button><button class="button" data-role="${role.id}">岗位详情</button></span></div></article>`;
+  )} · ${esc(s.evidenceLabel)}</span><span><button class="button subtle" data-compare="${role.id}" aria-pressed="${selected}">${selected ? "已选" : "加入比较"}</button><button class="button" data-role="${role.id}">岗位详情</button></span></div></article>`;
 }
 function macroIndicators() {
   if (state.region === "CN")
@@ -282,7 +298,7 @@ function overview() {
     )
     .join(
       "",
-    )}</div></section><div class="page-shortcuts"><a href="#industry/ai"><strong>人工智能岗位专题</strong><span>应用开发、研究与数据工程的区别</span></a><a href="#careers"><strong>按专业找方向</strong><span>44个专业族与相邻职业</span></a><a href="#public"><strong>考公与公共部门</strong><span>报考条件、岗位类型与核对入口</span></a><a href="#reports"><strong>经济与行业动态</strong><span>最近发布、历史趋势与统计口径</span></a></div><div class="portal-layout"><section class="results-column"><div class="filter-panel"><div class="filter-row"><span class="filter-label">行业</span><div class="filter-selects"><select id="home-industry" aria-label="按行业筛选"><option value="">各行业典型岗位</option>${catalog.industries.map((i) => `<option value="${i.id}" ${state.industryId === i.id ? "selected" : ""}>${esc(i.name)}</option>`).join("")}</select><label for="home-major">所学专业</label><select id="home-major"><option value="">不限专业</option>${catalog.majors.map((m) => `<option value="${m.id}" ${state.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></div></div></div><div class="results-heading"><h2>${state.industryId ? "相关岗位" : "岗位方向"}</h2><span>${roles.length}个研究条目 · 可选2—3个比较</span><a href="#careers" class="text-link">全部111个岗位</a></div><p class="result-disclaimer">以下为职业研究资料。职责、入门准备与公司情境用于求职核对，不代表正在招聘。</p><div class="role-grid">${roles.map((r) => roleCard(r)).join("") || '<div class="empty-state">暂无对应条目，可放宽专业或行业筛选。</div>'}</div></section>${researchSidebar()}</div>`;
+    )}</div></section><div class="page-shortcuts"><a href="#industry/ai"><strong>人工智能岗位专题</strong><span>应用开发、研究与数据工程的区别</span></a><a href="#careers"><strong>按专业找方向</strong><span>44个专业类别与相邻职业</span></a><a href="#public"><strong>考公与公共部门</strong><span>报考条件、岗位类型与核对入口</span></a><a href="#reports"><strong>经济与行业动态</strong><span>最近发布、历史趋势与统计口径</span></a></div><div class="portal-layout"><section class="results-column"><div class="filter-panel"><div class="filter-row"><span class="filter-label">行业</span><div class="filter-selects"><select id="home-industry" aria-label="按行业筛选"><option value="">各行业典型岗位</option>${catalog.industries.map((i) => `<option value="${i.id}" ${state.industryId === i.id ? "selected" : ""}>${esc(i.name)}</option>`).join("")}</select><label for="home-major">所学专业</label><select id="home-major"><option value="">不限专业</option>${catalog.majors.map((m) => `<option value="${m.id}" ${state.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></div></div></div><div class="results-heading"><h2>${state.industryId ? "相关岗位" : "岗位方向"}</h2><span>${roles.length}个研究条目 · 可选2—3个比较</span><a href="#careers" class="text-link">全部111个岗位</a></div><p class="result-disclaimer">以下为职业研究资料。职责、入门准备与公司情境用于求职核对，不代表正在招聘。</p><div class="role-grid">${roles.map((r) => roleCard(r)).join("") || '<div class="empty-state">暂无对应条目，可放宽专业或行业筛选。</div>'}</div></section>${researchSidebar()}</div>`;
 }
 function industries() {
   const cats = ["全部", ...new Set(catalog.industries.map((i) => i.category))];
@@ -298,7 +314,7 @@ function industries() {
       : (industryScore(b, catalog, state.region, data)[state.sort] ?? -1) -
         (industryScore(a, catalog, state.region, data)[state.sort] ?? -1),
   );
-  return `${toolbar()}${heading("行业分类", "查看商业模式、产业链、公司样本与细分岗位。")}<div class="filters"><span class="micro-label">${rows.length} 个行业</span><select id="industry-sort" aria-label="行业排序"><option value="score" ${state.sort === "score" ? "selected" : ""}>按探索指数</option><option value="coverage" ${state.sort === "coverage" ? "selected" : ""}>按指标覆盖</option><option value="name" ${state.sort === "name" ? "selected" : ""}>按名称</option></select>${state.query ? `<button class="button subtle" data-clear-search>清除搜索「${esc(state.query)}」×</button>` : ""}</div><div class="filter-chips">${cats.map((c) => `<button data-category="${esc(c)}" class="${c === state.category ? "active" : ""}">${esc(c)}</button>`).join("")}</div>${scoreNote()}<div class="industry-grid">${rows.map(industryCard).join("") || '<div class="empty-state">没有符合条件的行业。可以换个关键词或清除筛选。</div>'}</div>`;
+  return `${toolbar()}${heading("行业分类", "查看商业模式、产业链、公司样本与细分岗位。")}<div class="filters"><span class="micro-label">${rows.length} 个行业</span><select id="industry-sort" aria-label="行业排序"><option value="score" ${state.sort === "score" ? "selected" : ""}>按统计参考指数</option><option value="observedCoverage" ${state.sort === "observedCoverage" ? "selected" : ""}>按统计依据完整度</option><option value="name" ${state.sort === "name" ? "selected" : ""}>按名称</option></select>${state.query ? `<button class="button subtle" data-clear-search>清除搜索「${esc(state.query)}」×</button>` : ""}</div><div class="filter-chips">${cats.map((c) => `<button data-category="${esc(c)}" class="${c === state.category ? "active" : ""}">${esc(c)}</button>`).join("")}</div>${scoreNote()}<div class="industry-grid">${rows.map(industryCard).join("") || '<div class="empty-state">没有符合条件的行业。可以换个关键词或清除筛选。</div>'}</div>`;
 }
 function careers() {
   const cats = ["全部", ...new Set(catalog.majors.map((m) => m.category))],
@@ -327,7 +343,7 @@ function careers() {
           .toLowerCase()
           .includes(state.query.toLowerCase())),
   );
-  return `${toolbar()}${heading("专业与岗位", `${catalog.majors.length} 个专业族，${catalog.roles.length} 个岗位入口。按专业、行业与关键词筛选，比较工作内容和入门准备。`)}<div class="filters"><label for="career-industry">行业</label><select id="career-industry"><option value="">全部行业</option>${catalog.industries.map((i) => `<option value="${i.id}" ${state.industryId === i.id ? "selected" : ""}>${esc(i.name)}</option>`).join("")}</select><label class="micro-label" for="major-category">专业门类</label><select id="major-category">${cats.map((c) => `<option ${c === state.majorCategory ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>${state.query ? `<button class="button subtle" data-clear-search>清除搜索「${esc(state.query)}」×</button>` : ""}</div><div class="filters"><label for="major-select">具体专业</label><select id="major-select"><option value="">全部专业</option>${majors.map((m) => `<option value="${m.id}" ${state.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select><span class="section-note">选择专业后查看细分方向与岗位入口</span></div>${selected ? `<div class="major-advice"><strong>${esc(selected.name)}：</strong>${esc(selected.advice)}<p style="margin:8px 0 0">细分方向：${selected.directions.map(esc).join(" · ")}</p></div>` : ""}<div class="section-heading"><div><h2>${selected ? esc(selected.name) + "的岗位入口" : "岗位资料"}</h2><p>${roles.length} 个匹配岗位 · 最多选择三个岗位横向对比</p></div></div><div class="role-grid">${
+  return `${toolbar()}${heading("专业与岗位", `${catalog.majors.length} 个专业类别，${catalog.roles.length} 个岗位入口。按专业、行业与关键词筛选，比较工作内容和入门准备。`)}<div class="filters"><label for="career-industry">行业</label><select id="career-industry"><option value="">全部行业</option>${catalog.industries.map((i) => `<option value="${i.id}" ${state.industryId === i.id ? "selected" : ""}>${esc(i.name)}</option>`).join("")}</select><label class="micro-label" for="major-category">专业门类</label><select id="major-category">${cats.map((c) => `<option ${c === state.majorCategory ? "selected" : ""}>${esc(c)}</option>`).join("")}</select>${state.query ? `<button class="button subtle" data-clear-search>清除搜索「${esc(state.query)}」×</button>` : ""}</div><div class="filters"><label for="major-select">具体专业</label><select id="major-select"><option value="">全部专业</option>${majors.map((m) => `<option value="${m.id}" ${state.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select><span class="section-note">选择专业后查看细分方向与岗位入口</span></div>${selected ? `<div class="major-advice"><strong>${esc(selected.name)} · 细分方向</strong><p style="margin:8px 0 0">${selected.directions.map(esc).join(" · ")}</p></div>` : ""}${selected ? majorGuideHTML(selected.id, catalog, research, outcomes, state.region) : ""}<div class="section-heading"><div><h2>${selected ? esc(selected.name) + "的岗位入口" : "岗位资料"}</h2><p>${roles.length} 个匹配岗位 · 最多选择三个岗位横向对比</p></div></div><div class="role-grid">${
     roles
       .slice(0, state.limit)
       .map((r) => roleCard(r))
@@ -342,27 +358,16 @@ function careers() {
     .join("")}</div>`;
 }
 function match() {
-  let roles = catalog.roles
-    .slice()
-    .sort((a, b) => fitScore(b, state.prefs) - fitScore(a, state.prefs));
-  return `${toolbar()}${heading("职业定位", "结合所学专业和当前偏好，整理岗位清单与四周准备计划。")}<div class="match-layout"><section class="panel match-controls"><h2>我的探索偏好</h2><p class="section-note">这些选择只用于本页面的透明匹配。</p><form id="match-form"><div class="field"><label for="pref-major">我的专业 / 学习背景</label><select id="pref-major"><option value="">还不确定 / 不限专业</option>${catalog.majors.map((m) => `<option value="${m.id}" ${state.prefs.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></div><div class="field"><label for="pref-priority">现阶段，我更看重</label><select id="pref-priority">${[
-    ["balanced", "均衡探索"],
-    ["moat", "积累专业壁垒"],
-    ["ai", "与 AI 协作的空间"],
-    ["access", "较容易开始实践"],
-  ]
-    .map(
-      ([id, name]) =>
-        `<option value="${id}" ${state.prefs.priority === id ? "selected" : ""}>${name}</option>`,
-    )
-    .join(
-      "",
-    )}</select></div><button class="button primary" type="submit">更新我的清单 ↗</button><button class="button subtle" type="button" id="save-prefs">仅在这台设备保存偏好</button><button class="button subtle" type="button" id="reset-prefs">清除偏好</button></form><p class="form-note spaced">匹配规则：专业相符 60 分，未选专业 40 分，跨专业 25 分；偏好对应量规贡献最多 40 分。它衡量资料匹配，不预测就业成功。<br>没有收集姓名、联系方式或身份信息。</p></section><section><div class="section-heading" style="margin-top:0"><div><h2>匹配岗位与准备计划</h2><p>${regions[state.region]} · 相同匹配分不代表有优劣之分</p></div><button class="text-link" id="download-plan">下载行动计划 ↗</button></div><div class="role-grid">${roles
+  const ranked = rankPreferredRoles(catalog, state.region, data, state.prefs);
+  return `${toolbar()}${heading("职业定位", "先核对专业关联与真实统计，再比较具体岗位的要求。")}
+  <div class="match-layout"><section class="panel match-controls"><h2>我的探索方向</h2><form id="match-form"><div class="field"><label for="pref-major">我的专业 / 学习背景</label><select id="pref-major"><option value="">还不确定 / 不限专业</option>${catalog.majors.map((m) => `<option value="${m.id}" ${state.prefs.major === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></div>
+  <div class="field"><label for="pref-priority">排序依据</label><select id="pref-priority"><option value="" ${!state.prefs.priorities.length ? "selected" : ""}>相关方向，按目录顺序</option><option value="pay" ${state.prefs.priorities.includes("pay") ? "selected" : ""}>${state.region === "CN" ? "行业薪资统计优先" : "职业薪资统计优先"}</option></select></div><button class="button primary" type="submit">更新我的清单 ↗</button><button class="button subtle" type="button" id="save-prefs">仅在这台设备保存偏好</button><button class="button subtle" type="button" id="reset-prefs">清除偏好</button></form><p class="form-note spaced">先列出与所选专业关联的方向，再按所选统计排序。同口径数值相同则并列；专业关联不等于符合招聘资格。</p><p class="form-note">工时、录用难度与院校背景优势的数据正在补充，目前不参与排序。中国行业均薪不是岗位报价。</p></section>
+  <section><div class="section-heading" style="margin-top:0"><div><h2>岗位与准备计划</h2><p>${regions[state.region]} · 查看具体要求后再作选择</p></div><button class="text-link" id="download-plan">下载行动计划 ↗</button></div><div class="role-grid">${ranked
     .slice(0, 8)
-    .map((r) => roleCard(r, { fit: true }))
+    .map(({ role, assessment }) => roleCard(role, { preference: assessment }))
     .join(
       "",
-    )}</div><div class="evidence-note">跨专业可以探索，但医学、法律、教育等受监管岗位通常有额外学历或资格要求。请在岗位详情中逐项核对。城市分布见行业详情，是产业观察入口，不是当前招聘数量。</div></section></div>`;
+    )}</div><div class="evidence-note">医学、法律、教育等岗位有额外学历或资格要求；是否可以报考、能否被录用，需要分别核实。</div></section></div>`;
 }
 function reportPage() {
   const nbs = source("nbs-wages")?.value,
@@ -370,7 +375,7 @@ function reportPage() {
   const industries = catalog.industries
     .map((i) => ({ ...i, ...industryScore(i, catalog, state.region, data) }))
     .sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
-  return `${toolbar()}${heading("经济与行业动态", "按最近发布的统计期阅读趋势，年度背景与月度变化分开呈现。")}${currentStrip()}${currentTrend()}<div class="report-actions"><a class="button primary" href="./data/report.md" download="向野-中美行业观察.md">下载完整报告 ↓</a><button class="button" id="print-report">打印 / 保存 PDF</button><a class="button subtle" href="./data/observations.json" download>下载数据快照</a></div><div class="evidence-note">报告采用固定统计模板生成，未经模型改写。中国工资期 ${nbs?.year ?? "缺失"} 年；美国职业预测期 ${bls?.period ?? "缺失"}，工资期 ${bls?.wageYear ?? "缺失"} 年。所有值均来自当前有效快照。</div><div class="two-col"><section class="panel report-body"><h2>年度历史背景</h2>${[
+  return `${toolbar()}${heading("经济与行业动态", "按最近发布的统计期阅读趋势，年度背景与月度变化分开呈现。")}${currentStrip()}${currentTrend()}${policiesHTML(policies, state.region)}${evidenceLibraryHTML(outcomes, state.region)}<div class="report-actions"><a class="button primary" href="./data/report.md" download="向野-中美行业观察.md">下载完整报告 ↓</a><button class="button" id="print-report">打印 / 保存 PDF</button><a class="button subtle" href="./data/observations.json" download>下载数据快照</a></div><div class="evidence-note">中国工资期 ${nbs?.year ?? "缺失"} 年；美国职业预测期 ${bls?.period ?? "缺失"}，工资期 ${bls?.wageYear ?? "缺失"} 年。所有值均来自当前有效快照。</div><div class="two-col"><section class="panel report-body"><h2>年度历史背景</h2>${[
     "CN",
     "US",
   ]
@@ -381,7 +386,7 @@ function reportPage() {
     })
     .join(
       "",
-    )}<a class="text-link" href="#sources">查看指标定义与源数据 ↗</a></section><section class="panel report-body"><h2>再把机会拆到岗位</h2><p>AI、能源、医疗等行业内部，研发、交付、生产、销售和支持岗位的门槛与发展路径各不相同。先比较实际工作内容，再看分数。</p><p>职业开放机会包含替代离职者的需求，因此“机会多”不一定意味着扩张快；高工资也可能反映更长的培养期。</p><p>本期没有足够可比的行业盈利、AI 专属资本开支与人均净利润数据，这些维度保留缺失。</p></section></div><div class="section-heading"><div><h2>${regions[state.region]} · 行业探索索引</h2><p>典型岗位样本均值 · 按探索优先指数排序 · 不进行跨国排名</p></div></div><div class="table-wrap"><table><thead><tr><th>行业</th><th>探索指数</th><th>指标覆盖</th><th>有分岗位 / 目录岗位</th></tr></thead><tbody>${industries.map((i) => `<tr><td><button class="text-link" data-industry="${i.id}">${esc(i.name)} ↗</button></td><td>${i.score ?? "不足以评分"}</td><td>${i.coverage}%</td><td>${i.scoredRoles} / ${i.roleCount}</td></tr>`).join("")}</tbody></table></div><div class="section-heading"><div><h2>来自官方的最新发布</h2><p>以下是发布日期，不是所有统计值的观测期</p></div></div><section class="panel"><ul class="release-list">${(
+    )}<a class="text-link" href="#sources">查看指标定义与源数据 ↗</a></section><section class="panel report-body"><h2>再把机会拆到岗位</h2><p>AI、能源、医疗等行业内部，研发、交付、生产、销售和支持岗位的门槛与发展路径各不相同。先比较实际工作内容，再看分数。</p><p>职业开放机会包含替代离职者的需求，因此“机会多”不一定意味着扩张快；高工资也可能反映更长的培养期。</p><p>本期没有足够可比的行业盈利、AI 专属资本开支与人均净利润数据，这些维度保留缺失。</p></section></div><div class="section-heading"><div><h2>${regions[state.region]} · 行业探索索引</h2><p>按去重后的统计组汇总 · 同一地区内参考 · 不进行跨国排名</p></div></div><div class="table-wrap"><table><thead><tr><th>行业</th><th>统计参考指数</th><th>统计依据</th><th>有分岗位 / 目录岗位</th></tr></thead><tbody>${industries.map((i) => `<tr><td><button class="text-link" data-industry="${i.id}">${esc(i.name)} ↗</button></td><td>${i.score ?? "不足以评分"}</td><td>${i.evidenceGroups} 组</td><td>${i.scoredRoles} / ${i.roleCount}</td></tr>`).join("")}</tbody></table></div><div class="section-heading"><div><h2>来自官方的最新发布</h2><p>以下是发布日期，不是所有统计值的观测期</p></div></div><section class="panel"><ul class="release-list">${(
     source("nbs-news")?.value ?? []
   )
     .slice(0, 8)
@@ -409,17 +414,27 @@ function sourcePeriod(s) {
   return "详见原表";
 }
 function sourcesPage() {
-  return `${toolbar()}${heading("数据来源与研究方法", "数据、编辑判断和个人偏好各自回答不同问题。这里记录每条来源的口径、状态与推荐规则。")}<div class="evidence-note">本项目每 6 小时尝试采集一次，源数据按各机构节奏发布。最新抓取不等于最新观测。自动任务可能延迟；始终以本页实际时间和状态为准。</div><div class="table-wrap"><table><thead><tr><th>数据源 / 原始入口</th><th>观测期</th><th>发布频率</th><th>上次有效获取（UTC+8）</th><th>采集状态</th></tr></thead><tbody>${Object.values(
+  return `${toolbar()}${heading("数据来源与研究方法", "查看统计年份、样本范围，以及每项判断的依据。")}
+  <p class="section-note">每 6 小时检查官方更新。采集时间与统计所属期分别记录，抓取失败时保留原日期和已有资料。</p>
+  <div class="table-wrap"><table><thead><tr><th>统计来源</th><th>数据所属期</th><th>发布频率</th><th>上次有效获取</th><th>状态</th></tr></thead><tbody>${Object.values(
     data.sources,
   )
     .map((s) => {
       const f = freshness(s);
-      return `<tr><td><a class="source-row-title" href="${esc(safeURL(s.url))}" target="_blank" rel="noopener">${esc(s.title)} ↗</a>${s.retrieval ? `<p class="section-note" style="margin:4px 0">${esc(s.retrieval)}</p>` : ""}${s.error ? `<p class="section-note" style="margin:4px 0">最近尝试失败；保留旧值。</p>` : ""}</td><td>${esc(sourcePeriod(s))}</td><td>${esc(s.frequency ?? "年度")}</td><td>${esc(dateLabel(s.lastSuccess))}</td><td><span class="source-status ${f.tone === "warn" ? "warn" : ""}">${f.label}</span></td></tr>`;
+      return `<tr><td><a class="source-row-title" href="${esc(safeURL(s.url))}" target="_blank" rel="noopener">${esc(s.title)} ↗</a></td><td>${esc(sourcePeriod(s))}</td><td>${esc(s.frequency || "年度")}</td><td>${esc(dateLabel(s.lastSuccess))}</td><td><span class="source-status ${f.tone === "warn" ? "warn" : ""}">${f.label}</span></td></tr>`;
     })
-    .join(
-      "",
-    )}</tbody></table></div><div class="section-heading"><div><h2>探索优先指数 · 方法 v1</h2><p>先说明它是什么，再看它能帮助你做什么</p></div><a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/blob/main/web/scoring.js" target="_blank" rel="noopener">查看计算代码 ↗</a></div><div class="method-grid"><section class="panel"><h3>统计事实与编辑量规</h3><p>就业、工资来自官方统计；壁垒、AI 互补与入门可行性来自原创编辑量规，是可争论、可修改的主观判断。维度得分经过公开尺度映射，不是训练得到的预测。</p><div class="table-wrap"><table><thead><tr><th>维度</th><th>权重</th><th>计算或缺失情况</th></tr></thead><tbody>${DIMENSIONS.map(([key, name, w]) => `<tr><td>${name}</td><td>${w}%</td><td>${{ growth: "美国十年预测：−10% → 0，20% → 100", openings: "年均开放 / 基期就业：0% → 0，15% → 100", pay: "当地薪资 / 全国同口径基准：0.5倍 → 0，3倍 → 100", payGrowth: "中国行业工资同比：−5% → 0，15% → 100", profit: "首版无同口径完整样本，保持缺失", moat: "编辑 1–5 级 × 20，见每个岗位理由", ai: "编辑 1–5 级 × 20，见每个岗位理由", access: "编辑 1–5 级 × 20，见每个岗位理由" }[key]}</td></tr>`).join("")}</tbody></table></div></section><section class="panel"><h3>缺失不会被“补成一个数字”</h3><div class="method-formula">指数 = Σ（有效得分 × 权重） / Σ有效权重</div><p>各维度映射在 0–100 之间截断。覆盖率不足 50% 时不出总分；统计覆盖单独列示。中国通常只有行业工资相关统计，美国有职业预测与工资，不能直接比较两国指数。</p><p><strong>缺失边界：</strong>把缺失维度分别设为 0 与 100，得到全权重下的可能范围。这是缺失敏感性范围，<strong>不是统计置信区间</strong>。</p><p><strong>行业分：</strong>目录内能评分岗位的简单平均，反映我们选取的岗位样本，不按行业就业人数加权。共用 SOC 或中国门类的细分方向不拥有独立统计数据。</p><p><strong>开放机会：</strong>包含离开职业和转岗形成的替代需求，不是净新增岗位，更不是今天的招聘广告量。</p><p><strong>工资：</strong>中国为城镇单位行业年平均工资，美国为职业年薪中位数；均不是应届生起薪。不跨币种换算排名。</p></section><section class="panel"><h3>怎样使用行业判断框架</h3><p>需求与增长、政策技术、竞争盈利、周期、人才资本都是调查问题。首版将能持续取得的数据纳入评分，其余列为行业详情中的“待观察变量”。</p>${list(["不使用统一渗透率阈值判断所有行业的拐点。", "不把公司总资本开支当作 AI 专属投资；不混用财年、自然年与季度。", "不把行业卖课多、融资热或单家公司利润当作红利期的充分证据。", "不以 MBTI、性别或家庭背景决定适合什么工作。"])}</section><section class="panel"><h3>我们的小模型，如何工作</h3><p>基座：Qwen3 0.6B（MLC 4-bit）；运行时：WebLLM。我们部署模型文件，建立自己的岗位知识库、检索和证据约束。没有宣称从零训练或未经执行的微调。</p><p>模型只在点击加载后下载，在浏览器 WebGPU 上推理；首版采用证据筛选式回答，只展示程序校验过的原文片段。问题不发送到远程推理服务。小模型可能误解或遗漏资料，来源链接由程序单独呈现，不能只凭模型语气判断可信度。</p><p>模型下载约 335 MiB，建议留出约 1.5 GB 图形内存；不支持的设备可继续使用资料检索。停止模型会释放当前运行资源，已缓存文件由浏览器管理。</p><a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/blob/main/docs/MODEL_CARD.md" target="_blank" rel="noopener">阅读模型卡与验证记录 ↗</a></section></div><div class="section-heading"><div><h2>开源同行，怎样被使用</h2><p>星数是 ${esc(ecosystem.checkedAt?.slice(0, 10))} 的 API 快照；受欢迎不等于可靠或适合复制</p></div></div><div class="resource-grid">${ecosystem.projects.map((p) => `<article class="resource-card"><h3><a href="${esc(safeURL(p.url))}" target="_blank" rel="noopener">${esc(p.name)} ↗</a></h3><small>★ ${num(p.stars)} · ${esc(p.license || "未明确许可证")}</small><p>${esc(p.why)}</p><p>${p.id === "mlc-ai/web-llm" ? "已集成：本地推理运行时，保留 Apache 2.0 许可。" : p.name.includes("zhangxuefeng") ? "作为职业提问框架的参考；不运行第三方技能，不冒充本人或声称授权。" : p.name.includes("developer-roadmap") ? "提供外部学习路线入口；遵循其专有许可，不转载路线图内容。" : "作为外部资料入口；项目中的分析和量规为原创，未直接运行或复制该仓库。"}</p></article>`).join("")}</div><p class="section-note">遇到数据问题，可以在 <a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/issues" target="_blank" rel="noopener">GitHub 提交问题 ↗</a>。请附指标、统计期和原始链接，帮助我们复核。</p>`;
+    .join("")}</tbody></table></div>
+  <div class="section-heading"><h2>统计参考指数怎么算</h2><a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/blob/main/docs/SCORING.md" target="_blank" rel="noopener">完整方法与计算代码 ↗</a></div>
+  <div class="method-grid"><section class="panel"><h3>统计数据与研究判断分开看</h3><p>中国目前使用行业工资及其同比，美国使用职业预测与薪酬。未经真实样本支持的职业壁垒、AI 互补和准入难度暂停数值计分，保留为阅读参考。</p><div class="table-wrap"><table><thead><tr><th>维度</th><th>权重</th><th>依据</th></tr></thead><tbody>${DIMENSIONS.map(([k, n, w]) => `<tr><td>${n}</td><td>${w}%</td><td>${{ growth: "美国十年职业就业变化预测", pay: "同一地区、同口径工资相对全国基准", payGrowth: "中国行业工资名义同比", profit: "可比盈利资料不足，暂留缺失", moat: "尚无可比样本，暂停计分", ai: "尚无可比样本，暂停计分", access: "尚无招聘竞争样本，暂停计分" }[k]}</td></tr>`).join("")}</tbody></table></div></section>
+  <section class="panel"><h3>资料少，分数也要克制</h3><p>指数以 50 为中性参考，只让已有依据推动分数上移或下移。缺失资料保留为空，不推算工资或就业人数；仅在指数合成时，缺失权重停留在中性参考值。</p><div class="method-formula">50 + Σ［权重 ×（已知维度分 − 50）］</div><p>至少两个有效统计指标、合计权重至少 35% 才显示统计参考指数。统计数据距今超过两年、年份无效或口径不明时不参与计算。分数是探索工具，不是录用概率。</p><p>行业汇总先合并共用的统计组，再取均值；重复添加同一岗位不会增加证据。中国细分行业共用宽行业工资，不能据此判断哪个细分岗位更容易就业。</p></section>
+  <section class="panel"><h3>报告如何进入分析</h3><p>毕业去向表提取为专业、职业分布、统计年和样本范围，直接进入专业详情与资料咨询。去向比例说明常见路径，不代表专业对口率、应届起薪或进入成功率。</p><p>政策原文与岗位影响分开记录：先看实施状态，再看资金、项目、订单与招聘是否兑现。政策不直接加分；尚未实施的措施也不会当作已创造的岗位。</p><p>美国的职业分布只用于美国；中国院校报告保留学校和毕业届别，不能外推为全国专业结果。单纯增加报告数量不会提高分数。</p></section>
+  <section class="panel"><h3>几个容易混淆的数字</h3><p>年均开放岗位含退休、离开职业与转岗形成的替代需求，已移出指数，仍作为职业规模背景展示。</p><p>中国行业平均工资和美国职业工资中位数，均不是应届生起薪；两国指数不横向排名。工业产量增长、融资额或公司资本开支也不能直接当作岗位增长。</p><p>权重和归一化尺度由项目设定；分数目前只概括已有统计背景，不是综合职业推荐或经过就业结果验证的预测。</p></section></div>
+  ${evidenceLibraryHTML(outcomes, state.region)}
+  <details class="panel spaced"><summary>政策核对记录</summary>${(policies?.sources || []).map((s) => `<p><a href="${esc(safeURL(s.url))}" target="_blank" rel="noopener">${esc(s.title)} ↗</a> · ${esc({ ok: "核对成功", cached: "保留已核对资料", reviewed: "人工核对", unavailable: "暂不可用", error: "待重试" }[s.status] || "待核对")} · ${esc(s.lastSuccess ? dateLabel(s.lastSuccess) : "待核对")}</p>`).join("")}</details>
+  <details class="panel spaced"><summary>资料助手与开源参考</summary><p>助手从本站的统计、专业研究和政策资料中检索依据。可选在设备上加载语言模型，问题保留在当前设备。<a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/blob/main/docs/MODEL_CARD.md" target="_blank" rel="noopener">技术说明 ↗</a></p><div class="resource-grid">${ecosystem.projects.map((p) => `<article class="resource-card"><h3><a href="${esc(safeURL(p.url))}" target="_blank" rel="noopener">${esc(p.name)} ↗</a></h3><p>${esc(p.why)}</p></article>`).join("")}</div></details>
+  <p class="section-note">发现数据问题可在 <a class="text-link" href="https://github.com/leon1111-wgl/career-atlas/issues" target="_blank" rel="noopener">GitHub 反馈 ↗</a>。</p>`;
 }
+
 function render() {
   const hash = decodeURIComponent(location.hash.slice(1));
   let page = hash.split(/[=/]/)[0] || "overview";
@@ -451,6 +466,7 @@ function render() {
   else if (/^major[=/]/.test(hash)) {
     const id = hash.split(/[=/]/)[1];
     state.major = id;
+    state.majorCategory = "全部";
     history.replaceState(null, "", "#careers");
     render();
   } else if ($("#detail-dialog").open) $("#detail-dialog").close();
@@ -495,7 +511,7 @@ function showIndustry(id) {
     wages = source("nbs-wages")?.value?.sectors?.[i.cnWageIndustry],
     fred = source("fred-" + fredMap[id]);
   openDetail(
-    `${dialogHeader(i.name, regions[state.region] + " / 行业与产业链")}<div class="dialog-body"><p class="detail-intro">${esc(i.summary)}</p><div class="detail-grid"><section class="panel"><h3>这个行业，靠什么赚钱</h3><p>${esc(i.businessModel)}</p><div class="chip-row">${(i.cities[state.region] ?? []).map((c) => `<span class="chip">${esc(c)}</span>`).join("")}</div><p class="micro-label" style="margin-bottom:0">城市为编辑观察入口，不能视为当前招聘数量。</p></section><section class="panel"><h3>典型岗位的探索指数</h3><div class="detail-score">${scores.score ?? "—"} <small>/ 100</small></div><p>指标覆盖 ${scores.coverage}% · ${scores.scoredRoles} / ${scores.roleCount} 个岗位可评分。${scores.score === null ? "数据不足，暂不评分。" : "这是目录岗位简单均值，不是整个行业的预测。"}</p><a class="text-link" href="#sources" data-close="detail-dialog">查看完整方法 ↗</a></section></div><div class="section-heading"><h2>沿着产业链，把工作串起来</h2></div><div class="chain">${i.chain.map((s) => `<section class="chain-item"><h4>${esc(s.stage)} →</h4><p>${esc(s.description)}</p></section>`).join("")}</div><div class="detail-grid"><section class="panel"><h3>增长可能由什么驱动</h3>${list(i.drivers)}</section><section class="panel"><h3>进入之前，留意这些约束</h3>${list(i.risks)}</section></div><section class="panel spaced"><h3>接下来要观察的变量</h3>${list(i.watch)}</section>${
+    `${dialogHeader(i.name, regions[state.region] + " / 行业与产业链")}<div class="dialog-body"><p class="detail-intro">${esc(i.summary)}</p><div class="detail-grid"><section class="panel"><h3>这个行业，靠什么赚钱</h3><p>${esc(i.businessModel)}</p><div class="chip-row">${(i.cities[state.region] ?? []).map((c) => `<span class="chip">${esc(c)}</span>`).join("")}</div><p class="micro-label" style="margin-bottom:0">城市为编辑观察入口，不能视为当前招聘数量。</p></section><section class="panel"><h3>典型岗位的统计参考指数</h3><div class="detail-score">${scores.score ?? "—"} <small>/ 100</small></div><p>${scores.evidenceGroups} 组统计口径 · ${scores.scoredRoles} / ${scores.roleCount} 个岗位有评分依据。${scores.score === null ? "数据不足，暂不评分。" : "共用统计的方向先合并，不把目录条目数当作证据数量。"}</p><a class="text-link" href="#sources" data-close="detail-dialog">查看完整方法 ↗</a></section></div>${industryResearchHTML(i.id, research)}${policiesHTML(policies, state.region, i.id)}<div class="section-heading"><h2>沿着产业链，把工作串起来</h2></div><div class="chain">${i.chain.map((s) => `<section class="chain-item"><h4>${esc(s.stage)} →</h4><p>${esc(s.description)}</p></section>`).join("")}</div><div class="detail-grid"><section class="panel"><h3>增长可能由什么驱动</h3>${list(i.drivers)}</section><section class="panel"><h3>进入之前，留意这些约束</h3>${list(i.risks)}</section></div><section class="panel spaced"><h3>接下来要观察的变量</h3>${list(i.watch)}</section>${
       state.region === "CN"
         ? `<section class="panel spaced"><h3>工资背景 · ${esc(i.cnWageIndustry)}</h3><p class="section-note">${source("nbs-wages")?.value?.year} 年 · 人民币/年 · 该门类可能包含多个细分行业；不是岗位起薪。</p><div class="table-wrap"><table><thead><tr><th>单位类型</th><th>本期年均工资</th><th>上期年均工资</th><th>名义同比</th></tr></thead><tbody>${[
             ["private", "城镇私营单位"],
@@ -515,7 +531,7 @@ function showIndustry(id) {
   );
 }
 function dimensionBars(s) {
-  return `<div class="dimensions">${s.dimensions.map((d) => `<div class="dimension"><span>${d.name} · ${d.weight}%</span><span class="bar">${d.value !== null ? `<span class="${d.kind === "编辑判断" ? "editorial" : ""}" style="width:${d.value}%"></span>` : ""}</span><span>${d.value === null ? "缺失" : Math.round(d.value) + " /100"}</span></div>`).join("")}</div>`;
+  return `<div class="dimensions">${s.dimensions.map((d) => `<div class="dimension"><span>${d.name} · ${d.weight}%</span><span class="bar">${d.value !== null ? `<span class="${d.kind === "研究判断" ? "editorial" : ""}" style="width:${d.value}%"></span>` : ""}</span><span>${d.value === null ? "缺失" : Math.round(d.value) + " /100"}</span></div>`).join("")}</div>`;
 }
 function wageText(obs) {
   if (!obs.record) return "暂无同口径数据";
@@ -528,6 +544,11 @@ function jobRealityHTML(r) {
   if (!j) return "";
   return `<section class="panel spaced"><h3>工作成果与入门路线</h3><div class="detail-grid"><div><h4>通常交付什么</h4>${list(j.deliverables)}</div><div><h4>可以怎样准备</h4>${list(j.entryRoutes)}</div></div></section><section class="panel spaced"><h3>同一岗位，不同公司有什么差别</h3><p class="section-note">以下为岗位研究框架，用于核对具体团队，不是对所有雇主的概括。</p><div class="table-wrap"><table><thead><tr><th>公司 / 组织类型</th><th>工作重点</th><th>选择时核对</th></tr></thead><tbody>${j.companyTypes.map((x) => `<tr><th>${esc(x.type)}</th><td>${esc(x.work)}</td><td>${esc(x.tradeoff)}</td></tr>`).join("")}</tbody></table></div><h4>面试或从业者访谈时可以问</h4>${list(j.interviewChecks)}</section>`;
 }
+function roleOutcomeHTML(role) {
+  const evidence = roleOutcomes(outcomes, role, state.region);
+  if (!evidence.length) return "";
+  return `<section class="panel spaced"><h3>哪些专业的毕业生进入这个职业</h3><p class="source-line">比例的分母是相应学科的已就业学位持有人，不是该职业的员工构成，也不是今年毕业生的录用概率。</p><div class="table-wrap"><table><thead><tr><th>学科样本</th><th>从事对应职业的比例</th><th>统计期</th></tr></thead><tbody>${evidence.map(({ group: g, row: r }) => `<tr><td><a class="text-link" href="${esc(safeURL(g.source.url))}" target="_blank" rel="noopener">${esc(g.title)} ↗</a></td><td>${r.share}% · ${esc(r.occupationZh || r.occupation)}</td><td>${esc(g.period)}</td></tr>`).join("")}</tbody></table></div></section>`;
+}
 function showRole(id) {
   const r = catalog.roles.find((x) => x.id === id);
   if (!r) {
@@ -538,7 +559,7 @@ function showRole(id) {
     s = scoreRole(r, i, state.region, data),
     obs = s.observation;
   openDetail(
-    `${dialogHeader(r.title, regions[state.region] + " / " + i.name)}<div class="dialog-body"><button class="text-link" data-industry="${i.id}">← 回到行业：${esc(i.name)}</button><p class="detail-intro spaced">${esc(r.summary)}</p><div class="detail-grid"><section class="panel"><h3>日常具体在做什么</h3>${list(r.daily)}<h3 class="spaced">需要积累的能力</h3><div class="chip-row">${r.skills.map((k) => `<span class="chip">${esc(k)}</span>`).join("")}</div></section><section class="panel"><h3>探索优先指数 · 可解释</h3><div class="detail-score">${s.score ?? "—"} <small>/ 100</small></div><p>统计覆盖 ${s.observedCoverage}%；编辑判断 ${s.coverage - s.observedCoverage}%。${s.score !== null ? `缺失敏感性范围 ${s.lower}–${s.upper}，不是置信区间。` : "总覆盖不足 50%，不出总分。"}</p>${dimensionBars(s)}<p class="micro-label">蓝色为统计映射，橙色为编辑量规。</p></section></div><section class="panel spaced"><h3>先核对，怎样才能开始</h3><p class="detail-intro">${esc(r.regions?.[state.region]?.entry ?? r.entry)}</p><p class="section-note"><strong>学历与资格：</strong>${esc(r.regions?.[state.region]?.credential ?? r.education)}</p><h3>用一个小项目验证兴趣</h3><p class="detail-intro">${esc(r.portfolio)}</p><div class="chip-row">${r.majors
+    `${dialogHeader(r.title, regions[state.region] + " / " + i.name)}<div class="dialog-body"><button class="text-link" data-industry="${i.id}">← 回到行业：${esc(i.name)}</button><p class="detail-intro spaced">${esc(r.summary)}</p><div class="detail-grid"><section class="panel"><h3>日常具体在做什么</h3>${list(r.daily)}<h3 class="spaced">需要积累的能力</h3><div class="chip-row">${r.skills.map((k) => `<span class="chip">${esc(k)}</span>`).join("")}</div></section><section class="panel"><h3>统计参考指数与依据</h3><div class="detail-score">${s.score ?? "—"} <small>/ 100</small></div><p>${esc(s.evidenceLabel)}。</p><p class="source-line">${s.score !== null ? `有效统计贡献 ${s.coverage}% 权重，其余权重暂按中性参考值计算。` : "有效统计依据不足，暂不显示指数。"}</p>${dimensionBars(s)}<p class="source-line">仅统计数据参与计算，未验证维度保留缺失。</p><details><summary>资料缺失如何影响分数</summary><p>保留真实数据的缺失状态；仅在指数中把缺失权重放在中性参考值 50。完整资料下的可能范围为 ${s.lower}–${s.upper}，不是预测区间。</p>${s.issues.map((x) => `<p>${esc(x)}</p>`).join("")}</details></section></div><section class="panel spaced"><h3>先核对，怎样才能开始</h3><p class="detail-intro">${esc(r.regions?.[state.region]?.entry ?? r.entry)}</p><p class="section-note"><strong>学历与资格：</strong>${esc(r.regions?.[state.region]?.credential ?? r.education)}</p><h3>用一个小项目验证兴趣</h3><p class="detail-intro">${esc(r.portfolio)}</p><div class="chip-row">${r.majors
       .map((id) => catalog.majors.find((m) => m.id === id))
       .filter(Boolean)
       .map(
@@ -547,12 +568,12 @@ function showRole(id) {
       )
       .join(
         "",
-      )}</div></section>${jobRealityHTML(r)}<div class="detail-grid"><section class="panel"><h3>AI 更容易覆盖的任务</h3>${list(r.ai.automated)}</section><section class="panel"><h3>与 AI 协作，仍值得积累什么</h3>${list(r.ai.complement)}</section></div><section class="panel spaced"><h3>统计背景 · ${esc(obs.kind)}</h3><p class="detail-intro">${esc(wageText(obs))}</p>${state.region === "US" && obs.record ? `<p class="section-note">SOC ${esc(r.soc)} · ${esc(obs.record.name)}<br>${obs.period} 就业变化预测 ${num(obs.record.growth, 1)}%；年均开放机会 ${num(obs.record.openings)} 人，含替代需求。</p>` : `<p class="section-note">统计门类：${esc(i.cnWageIndustry)}。整个门类均值，不是 ${esc(r.title)} 的薪资报价。</p>`}<p class="evidence-note">${state.region === "US" ? "SOC 为广义职业代理，不能代表所有细分岗位；工资为中位数。" : "行业均值受到城市、岗位和经验构成影响，私营与非私营单位须分开。"} 不是应届生起薪，也不预测你的收入。<br>来源状态：${freshness(obs.source).label} · 上次有效获取 ${dateLabel(obs.source?.lastSuccess)}</p><a class="text-link" href="${esc(safeURL(obs.source?.url ?? ""))}" target="_blank" rel="noopener">核对原始统计表 ↗</a></section><section class="panel spaced"><h3>编辑量规的理由</h3>${Object.entries(
+      )}</div></section>${jobRealityHTML(r)}${roleOutcomeHTML(r)}${policiesHTML(policies, state.region, r.industryId)}<div class="detail-grid"><section class="panel"><h3>AI 更容易覆盖的任务</h3>${list(r.ai.automated)}</section><section class="panel"><h3>与 AI 协作，仍值得积累什么</h3>${list(r.ai.complement)}</section></div><section class="panel spaced"><h3>统计背景 · ${esc(obs.kind)}</h3><p class="detail-intro">${esc(wageText(obs))}</p>${state.region === "US" && obs.record ? `<p class="section-note">SOC ${esc(r.soc)} · ${esc(obs.record.name)}<br>${obs.period} 就业变化预测 ${num(obs.record.growth, 1)}%；年均开放机会 ${num(obs.record.openings)} 人，含替代需求。</p>` : `<p class="section-note">统计门类：${esc(i.cnWageIndustry)}。整个门类均值，不是 ${esc(r.title)} 的薪资报价。</p>`}<p class="evidence-note">${state.region === "US" ? "SOC 为广义职业代理，不能代表所有细分岗位；工资为中位数。" : "行业均值受到城市、岗位和经验构成影响，私营与非私营单位须分开。"} 不是应届生起薪，也不预测你的收入。<br>来源状态：${freshness(obs.source).label} · 上次有效获取 ${dateLabel(obs.source?.lastSuccess)}</p><a class="text-link" href="${esc(safeURL(obs.source?.url ?? ""))}" target="_blank" rel="noopener">核对原始统计表 ↗</a></section><section class="panel spaced"><h3>研究判断的理由</h3>${Object.entries(
       r.rubric,
     )
       .map(
         ([k, v]) =>
-          `<p class="detail-intro"><strong>${{ moat: "职业壁垒", ai: "AI 互补", access: "入门可行" }[k]} ${v.value}/5：</strong>${esc(v.reason)}</p>`,
+          `<p class="detail-intro"><strong>${{ moat: "职业壁垒", ai: "AI 互补", access: "入门可行" }[k]} ：</strong>${esc(v.reason)}</p>`,
       )
       .join(
         "",
@@ -589,10 +610,10 @@ function showCompare() {
   const rows = [
     ["行业", (r) => esc(industryFor(r).name)],
     [
-      "探索指数",
+      "统计参考指数",
       (r) => {
         const s = scoreRole(r, industryFor(r), state.region, data);
-        return `${s.score ?? "—"} /100；覆盖 ${s.coverage}%`;
+        return `${s.score ?? "—"} /100；${esc(s.evidenceLabel)}`;
       },
     ],
     [
@@ -636,10 +657,9 @@ function download(text, filename, type = "text/markdown;charset=utf-8") {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 function downloadPlan() {
-  const roles = catalog.roles
-    .slice()
-    .sort((a, b) => fitScore(b, state.prefs) - fitScore(a, state.prefs))
-    .slice(0, 3);
+  const roles = rankPreferredRoles(catalog, state.region, data, state.prefs)
+    .slice(0, 3)
+    .map((x) => x.role);
   const major = catalog.majors.find((m) => m.id === state.prefs.major);
   const lines = [
     "# 向野 · 我的四周职业探索计划",
@@ -654,7 +674,7 @@ function downloadPlan() {
     const s = scoreRole(r, industryFor(r), state.region, data);
     lines.push(
       `## ${r.title}`,
-      `规则匹配：${fitScore(r, state.prefs)}/100；探索指数：${s.score ?? "证据不足"}；指标覆盖：${s.coverage}%。`,
+      `统计参考：${s.score ?? "证据不足"}；统计依据：${s.statisticalCount}项。专业关联不等于招聘资格或录用概率。`,
       "",
       `日常：${r.daily.join("；")}`,
       `进入要求：${r.regions?.[state.region]?.credential ?? r.education}`,
@@ -678,7 +698,7 @@ function evidenceURL(url) {
   return safeURL(url);
 }
 function evidenceHTML(evidence) {
-  return `<div class="chat-evidence">本次检索依据（${regions[state.region]}）：${evidence.map((d, i) => `<a href="${esc(evidenceURL(d.url))}" ${d.url.startsWith("#") ? "data-evidence-internal" : 'target="_blank" rel="noopener"'}>[${i + 1}] ${esc(d.title)} · ${["official-fact", "macro-fact"].includes(d.kind) ? "官方统计" : d.kind === "public-path" ? "官方入口" : "编辑资料"}</a>`).join("")}</div>`;
+  return `<div class="chat-evidence">本次检索依据（${regions[state.region]}）：${evidence.map((d, i) => `<a href="${esc(evidenceURL(d.url))}" ${d.url.startsWith("#") ? "data-evidence-internal" : 'target="_blank" rel="noopener"'}>[${i + 1}] ${esc(d.title)} · ${["official-fact", "macro-fact", "graduate-fact"].includes(d.kind) ? "官方统计" : d.kind === "recruitment-fact" ? "官方招聘条件" : d.kind === "public-path" ? "官方入口" : d.kind === "policy-fact" ? "政策原文与分析" : "研究资料"}</a>`).join("")}</div>`;
 }
 function appendChat(kind, text) {
   const el = document.createElement("div");
@@ -709,8 +729,7 @@ async function loadModel() {
         `正在加载 ${Math.round((p.progress || 0) * 100)}% · 首次需要下载模型，完成后浏览器可缓存`;
     });
     state.modelLoaded = true;
-    $("#model-status").textContent =
-      "本地模型已就绪 · Qwen3 0.6B · 问题留在当前设备";
+    $("#model-status").textContent = "资料助手已就绪 · 问题留在当前设备";
     $("#load-model").hidden = true;
     $("#unload-model").textContent = "卸载并释放内存";
     $("#send-chat").textContent = "问一问 ↗";
@@ -743,18 +762,23 @@ async function ask(question) {
   if (!question) return;
   $("#chat-input").value = "";
   appendChat("user", question);
-  const result = advise(question, catalog, data, state.region, intentModel);
+  const result = advise(question, catalog, data, state.region, intentModel, {
+    research,
+    outcomes,
+    policies,
+    recruitment,
+  });
   const evidence = result.evidence;
   const bubble = appendChat("assistant", "");
   const label = document.createElement("div");
   label.className = "answer-label";
   label.textContent = state.modelLoaded
-    ? "本地小模型 · 证据筛选与整理"
-    : `${intentModel ? "轻量问题分类" : "通用检索"} · ${result.label}`;
+    ? "资料整理"
+    : `资料咨询 · ${result.label}`;
   bubble.append(label);
   const answer = document.createElement("div");
   bubble.append(answer);
-  if (!evidence.length) {
+  if (!result.sections.length) {
     answer.textContent =
       "当前资料中没有找到足够相关的依据。可以补充一个行业、专业或岗位名称，我会继续帮你找。";
     return;
@@ -765,13 +789,14 @@ async function ask(question) {
       result.sections
         .map(
           (section) =>
-            `<section><h3>${esc(section.title)} <small>[${evidence.findIndex((d) => d.id === section.source) + 1}]</small></h3>${list(section.items)}</section>`,
+            `<section><h3>${esc(section.title)} ${evidence.some((d) => d.id === section.source) ? `<small>[${evidence.findIndex((d) => d.id === section.source) + 1}]</small>` : ""}</h3>${list(section.items)}</section>`,
         )
         .join("") + `<p class="section-note">${esc(result.note)}</p>`;
   };
   renderAnswer();
-  if (!state.modelLoaded) {
-    bubble.insertAdjacentHTML("beforeend", evidenceHTML(evidence));
+  if (!state.modelLoaded || !evidence.length) {
+    if (evidence.length)
+      bubble.insertAdjacentHTML("beforeend", evidenceHTML(evidence));
     $("#chat-log").scrollTop = $("#chat-log").scrollHeight;
     return;
   }
@@ -779,25 +804,25 @@ async function ask(question) {
   $("#send-chat").disabled = true;
   $("#stop-chat").hidden = false;
   let full = "";
-  label.textContent = "Qwen 正在本地筛选补充依据…";
+  label.textContent = "正在核对补充资料…";
   try {
     const task = evidenceTask(question, evidence);
     full = await model.generate(
       task.messages,
       () => {
-        label.textContent = "Qwen 正在本地筛选补充依据…";
+        label.textContent = "正在核对补充资料…";
       },
       task.schema,
     );
     const selected = selectEvidence(full, task.choices);
-    label.textContent = `本地 Qwen 证据筛选 · ${result.label}`;
+    label.textContent = `资料整理 · ${result.label}`;
     answer.insertAdjacentHTML(
       "beforeend",
       `<details><summary>模型选中的补充依据</summary>${selected.map((c) => `<p>[${c.docIndex + 1}] ${esc(c.text)}</p>`).join("")}</details>`,
     );
     full = "";
   } catch (e) {
-    label.textContent = `Qwen 本次未完成，保留资料回答 · ${result.label}`;
+    label.textContent = `保留已查到的资料 · ${result.label}`;
     state.modelLoaded = model.loaded;
     if (!model.loaded) {
       $("#load-model").hidden = false;
@@ -863,6 +888,7 @@ document.addEventListener("click", (e) => {
   if (b.dataset.majorLink) {
     closeDetail();
     state.major = b.dataset.majorLink;
+    state.majorCategory = "全部";
     location.hash = "careers";
     render();
     return;
@@ -945,7 +971,7 @@ document.addEventListener("click", (e) => {
       try {
         localStorage.removeItem("career-atlas-preferences");
       } catch {}
-      state.prefs = { major: "", priority: "balanced" };
+      state.prefs = normalizePreferences({});
       render();
       toast("已清除本地偏好");
       break;
@@ -984,19 +1010,22 @@ document.addEventListener("change", (e) => {
 document.addEventListener("submit", (e) => {
   if (e.target.id === "global-search") {
     e.preventDefault();
-    state.query = $("#search-input").value.trim();
+    const query = $("#search-input").value.trim();
+    const major = resolveMajor(catalog, query);
+    state.query = major ? "" : query;
     state.industryId = "";
-    state.major = "";
+    state.majorCategory = "全部";
+    state.major = major?.id || "";
     state.limit = 24;
     location.hash = "careers";
     render();
   }
   if (e.target.id === "match-form") {
     e.preventDefault();
-    state.prefs = {
+    state.prefs = normalizePreferences({
       major: $("#pref-major").value,
-      priority: $("#pref-priority").value,
-    };
+      priorities: [$("#pref-priority").value],
+    });
     render();
   }
   if (e.target.id === "chat-form") {
@@ -1038,14 +1067,32 @@ async function init() {
     })
     .catch(() => {});
   try {
-    [catalog, data, ecosystem, reportText] = await Promise.all(
-      ["catalog.json", "observations.json", "ecosystem.json", "report.md"].map(
-        async (p) => {
-          const r = await fetch(new URL("./data/" + p, import.meta.url));
-          if (!r.ok) throw new Error("数据文件暂不可用");
-          return p.endsWith(".md") ? r.text() : r.json();
-        },
-      ),
+    [
+      catalog,
+      data,
+      ecosystem,
+      reportText,
+      research,
+      outcomes,
+      policies,
+      recruitment,
+    ] = await Promise.all(
+      [
+        "catalog.json",
+        "observations.json",
+        "ecosystem.json",
+        "report.md",
+        "research.json",
+        "graduate-outcomes.json",
+        "policies.json",
+        "recruitment-evidence.json",
+      ].map(async (p) => {
+        const r = await fetch(new URL("./data/" + p, import.meta.url), {
+          cache: "no-cache",
+        });
+        if (!r.ok) throw new Error("数据文件暂不可用");
+        return p.endsWith(".md") ? r.text() : r.json();
+      }),
     );
     render();
   } catch (e) {

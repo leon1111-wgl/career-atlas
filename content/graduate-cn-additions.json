@@ -1,0 +1,4923 @@
+{
+  "reviewedAt": "2026-10-16",
+  "methodology": [
+    "仅补充中国大陆官方资料；校级、专业级及各学历层次独立保存，数字只用于描述分析，不给排名或机会评分加分。",
+    "publishedAt、period与asOf分别表示发布日、届别及统计截止；未知精确分母或学历保留缺口。",
+    "school对象用于学校筛选；不能通过专业ID把全校数据分摊至个人或专业。"
+  ],
+  "groups": [
+    {
+      "id": "cn-ecnu-2025-all-destination",
+      "title": "华东师范大学2025届·全体毕业生",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "mixed",
+      "studyMode": "full-time-and-part-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "华东师范大学2025届全体毕业生10010人；单校该学历/学习方式范围。",
+      "sampleSize": 10010,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等）",
+          "share": 96.47,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "limitations": [
+        "这是单校2025届统计，不代表全国同学历，也不是个人获得工作的概率。",
+        "去向落实包含继续深造等去向，不等于劳动就业、签约或专业对口。",
+        "全校与各学历、全日制与全部毕业生存在包含关系，不可将组人数或比例相加。",
+        "本页未提供分专业去向，majorIds留空；不得将学校层面数据下放到某专业。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_groups",
+      "cohortBreakdown": [
+        {
+          "label": "全日制",
+          "count": 8259
+        },
+        {
+          "label": "非全日制",
+          "count": 1751
+        }
+      ]
+    },
+    {
+      "id": "cn-ecnu-2025-fulltime-destination",
+      "title": "华东师范大学2025届·全日制毕业生",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "mixed",
+      "studyMode": "full-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "华东师范大学2025届全日制毕业生8259人；单校该学历/学习方式范围。",
+      "sampleSize": 8259,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等）",
+          "share": 96.25,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "limitations": [
+        "这是单校2025届统计，不代表全国同学历，也不是个人获得工作的概率。",
+        "去向落实包含继续深造等去向，不等于劳动就业、签约或专业对口。",
+        "全校与各学历、全日制与全部毕业生存在包含关系，不可将组人数或比例相加。",
+        "本页未提供分专业去向，majorIds留空；不得将学校层面数据下放到某专业。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_groups"
+    },
+    {
+      "id": "cn-ecnu-2025-bachelor-destination",
+      "title": "华东师范大学2025届·全日制本科毕业生",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "bachelor",
+      "studyMode": "full-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "华东师范大学2025届全日制本科毕业生3605人；单校该学历/学习方式范围。其中含公费师范生1009人；不能据本组比例推断公费与非公费子群各自结果。",
+      "sampleSize": 3605,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等）",
+          "share": 96.67,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "limitations": [
+        "这是单校2025届统计，不代表全国同学历，也不是个人获得工作的概率。",
+        "去向落实包含继续深造等去向，不等于劳动就业、签约或专业对口。",
+        "全校与各学历、全日制与全部毕业生存在包含关系，不可将组人数或比例相加。",
+        "本页未提供分专业去向，majorIds留空；不得将学校层面数据下放到某专业。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_groups",
+      "cohortBreakdown": [
+        {
+          "label": "公费师范生（本科子群）",
+          "count": 1009,
+          "share": 27.99,
+          "denominator": 3605,
+          "subgroup": true
+        }
+      ]
+    },
+    {
+      "id": "cn-ecnu-2025-master-destination",
+      "title": "华东师范大学2025届·全日制硕士毕业生",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "master",
+      "studyMode": "full-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "华东师范大学2025届全日制硕士毕业生3801人；单校该学历/学习方式范围。",
+      "sampleSize": 3801,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等）",
+          "share": 97.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "limitations": [
+        "这是单校2025届统计，不代表全国同学历，也不是个人获得工作的概率。",
+        "去向落实包含继续深造等去向，不等于劳动就业、签约或专业对口。",
+        "全校与各学历、全日制与全部毕业生存在包含关系，不可将组人数或比例相加。",
+        "本页未提供分专业去向，majorIds留空；不得将学校层面数据下放到某专业。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_groups"
+    },
+    {
+      "id": "cn-ecnu-2025-doctorate-destination",
+      "title": "华东师范大学2025届·全日制博士毕业生",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "doctorate",
+      "studyMode": "full-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "毕业去向落实率（含升学等）",
+      "dataKind": "destination_status",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "华东师范大学2025届全日制博士毕业生853人；单校该学历/学习方式范围。",
+      "sampleSize": 853,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "已落实毕业去向（包含升学等）",
+          "share": 91.09,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "limitations": [
+        "这是单校2025届统计，不代表全国同学历，也不是个人获得工作的概率。",
+        "去向落实包含继续深造等去向，不等于劳动就业、签约或专业对口。",
+        "全校与各学历、全日制与全部毕业生存在包含关系，不可将组人数或比例相加。",
+        "本页未提供分专业去向，majorIds留空；不得将学校层面数据下放到某专业。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_groups"
+    },
+    {
+      "id": "cn-ecnu-2025-bachelor-further-study",
+      "title": "华东师范大学2025届·本科升学",
+      "region": "CN",
+      "majorIds": [],
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "schoolScope": "institution",
+      "educationLevel": "bachelor",
+      "studyMode": "full-time",
+      "period": "2025届；截至2025-10-31",
+      "asOf": "2025-10-31",
+      "metric": "本科毕业生升学率（原页公布；精确分母待核）",
+      "dataKind": "further_study_rate",
+      "source": {
+        "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+        "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+        "publishedAt": "2026-09-01"
+      },
+      "population": "原页称本科毕业生升学率；同页本科规模3605人含公费师范生1009人，但未单列升学人数及本指标精确分母。",
+      "sampleSize": null,
+      "cohortSize": 3605,
+      "denominatorStatus": "unresolved",
+      "rows": [
+        {
+          "occupation": "继续深造（本科毕业生）",
+          "share": 59.96,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "valueStatus": "source-reported-denominator-unresolved"
+        }
+      ],
+      "limitations": [
+        "保留官方原页公布的59.96%，不把发布时间2026-09-01改成2026届观测。",
+        "若以3605为分母，59.96%按常规四舍五入无法对应整数升学人数；精确分母或处理规则尚未明示，故sampleSize与count不填。",
+        "升学属于已落实去向的一部分，不能与本科落实率直接相加；不推算就业率或非升学去向。",
+        "公费师范生与非公费生的升学比例未单列，不能作子群比较。"
+      ],
+      "analysisUse": "descriptive_only_denominator_caveat_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics"
+    },
+    {
+      "id": "cn-hbnu-2025-major-01",
+      "title": "湖北师范大学2025届·智能电网信息工程",
+      "region": "CN",
+      "majorIds": [
+        "electrical"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "智能电网信息工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届智能电网信息工程专业毕业生1人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 1,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 100.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "100.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 100.0,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "100.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": null,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "-",
+          "valueStatus": "not-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": null,
+        "comparisonStatus": "not-comparable-missing-value"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-02",
+      "title": "湖北师范大学2025届·书法学",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "书法学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届书法学专业毕业生27人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 27,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 100.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "100.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 85.19,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "85.19%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 14.81,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "14.81%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-03",
+      "title": "湖北师范大学2025届·舞蹈学",
+      "region": "CN",
+      "majorIds": [
+        "performing"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "舞蹈学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届舞蹈学专业毕业生19人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 19,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 100.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "100.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 100.0,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "100.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": null,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "-",
+          "valueStatus": "not-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": null,
+        "comparisonStatus": "not-comparable-missing-value"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-04",
+      "title": "湖北师范大学2025届·舞蹈表演",
+      "region": "CN",
+      "majorIds": [
+        "performing"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "舞蹈表演",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届舞蹈表演专业毕业生77人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 77,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 98.7,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "98.70%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 88.31,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "88.31%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 10.39,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "10.39%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-05",
+      "title": "湖北师范大学2025届·国际经济与贸易",
+      "region": "CN",
+      "majorIds": [
+        "economics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "国际经济与贸易",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届国际经济与贸易专业毕业生66人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 66,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 98.48,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "98.48%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 89.39,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "89.39%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 9.09,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "9.09%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-06",
+      "title": "湖北师范大学2025届·汉语国际教育",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "汉语国际教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届汉语国际教育专业毕业生50人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 50,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 98.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "98.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 80.0,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "80.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 18.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "18.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-07",
+      "title": "湖北师范大学2025届·食品科学与工程",
+      "region": "CN",
+      "majorIds": [
+        "food"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "食品科学与工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届食品科学与工程专业毕业生50人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 50,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 98.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "98.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 58.0,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "58.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 40.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "40.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-08",
+      "title": "湖北师范大学2025届·环境工程",
+      "region": "CN",
+      "majorIds": [
+        "environment"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "环境工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届环境工程专业毕业生89人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 89,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 97.75,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "97.75%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 79.78,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "79.78%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.98,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.98%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-09",
+      "title": "湖北师范大学2025届·广播电视学",
+      "region": "CN",
+      "majorIds": [
+        "journalism"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "广播电视学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届广播电视学专业毕业生44人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 44,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 97.73,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "97.73%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 84.09,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "84.09%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 13.64,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "13.64%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-10",
+      "title": "湖北师范大学2025届·视觉传达设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "视觉传达设计",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届视觉传达设计专业毕业生112人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 112,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 97.32,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "97.32%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 93.75,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "93.75%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 3.57,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "3.57%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-11",
+      "title": "湖北师范大学2025届·环境设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "环境设计",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届环境设计专业毕业生106人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 106,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 97.17,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "97.17%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 91.51,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "91.51%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.66,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.66%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-12",
+      "title": "湖北师范大学2025届·经济学",
+      "region": "CN",
+      "majorIds": [
+        "economics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "经济学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届经济学专业毕业生59人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 59,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 96.61,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "96.61%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 91.53,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "91.53%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.08,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.08%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-13",
+      "title": "湖北师范大学2025届·轨道交通信号与控制",
+      "region": "CN",
+      "majorIds": [
+        "electrical"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "轨道交通信号与控制",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届轨道交通信号与控制专业毕业生28人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 28,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 96.43,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "96.43%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 78.57,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "78.57%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.86,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.86%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-14",
+      "title": "湖北师范大学2025届·社会体育指导与管理",
+      "region": "CN",
+      "majorIds": [
+        "sports"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "社会体育指导与管理",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届社会体育指导与管理专业毕业生53人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 53,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 96.23,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "96.23%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 90.57,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "90.57%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.66,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.66%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-15",
+      "title": "湖北师范大学2025届·法语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "法语",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届法语专业毕业生23人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 23,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 95.65,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "95.65%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 91.3,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "91.30%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 4.35,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "4.35%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-16",
+      "title": "湖北师范大学2025届·地理信息科学",
+      "region": "CN",
+      "majorIds": [
+        "geo"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "地理信息科学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届地理信息科学专业毕业生45人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 45,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 95.56,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "95.56%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 75.56,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "75.56%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 20.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "20.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-17",
+      "title": "湖北师范大学2025届·体育教育",
+      "region": "CN",
+      "majorIds": [
+        "sports"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "体育教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届体育教育专业毕业生135人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 135,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 95.56,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "95.56%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 82.96,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "82.96%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 12.59,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "12.59%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-18",
+      "title": "湖北师范大学2025届·数学与应用数学",
+      "region": "CN",
+      "majorIds": [
+        "math"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "数学与应用数学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届数学与应用数学专业毕业生201人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 201,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.53,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.53%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 76.62,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "76.62%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.91,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.91%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-education-technology",
+      "title": "湖北师范大学2025届·教育技术学",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "教育技术学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届教育技术学专业毕业生105人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 105,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.29,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.29%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 77.14,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "77.14%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.14,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.14%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-preschool",
+      "title": "湖北师范大学2025届·学前教育",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "学前教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届学前教育专业毕业生120人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 120,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.17,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.17%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 89.17,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "89.17%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-21",
+      "title": "湖北师范大学2025届·行政管理",
+      "region": "CN",
+      "majorIds": [
+        "publicadmin"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "行政管理",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届行政管理专业毕业生34人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 34,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.12,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.12%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 85.29,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "85.29%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 8.82,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "8.82%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-22",
+      "title": "湖北师范大学2025届·计算机科学与技术",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "计算机科学与技术",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届计算机科学与技术专业毕业生424人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 424,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.1,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.10%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 87.97,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "87.97%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 6.13,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "6.13%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-23",
+      "title": "湖北师范大学2025届·旅游管理与服务教育",
+      "region": "CN",
+      "majorIds": [
+        "hospitality"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "旅游管理与服务教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届旅游管理与服务教育专业毕业生101人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 101,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.06,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.06%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 90.1,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "90.10%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 3.96,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "3.96%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-24",
+      "title": "湖北师范大学2025届·应用化学",
+      "region": "CN",
+      "majorIds": [
+        "chem"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "应用化学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届应用化学专业毕业生117人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 117,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.02,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.02%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 48.72,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "48.72%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 45.3,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "45.30%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-25",
+      "title": "湖北师范大学2025届·产品设计",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "产品设计",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届产品设计专业毕业生50人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 50,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 94.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "94.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 84.0,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "84.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 10.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "10.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-26",
+      "title": "湖北师范大学2025届·法学",
+      "region": "CN",
+      "majorIds": [
+        "law"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "法学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届法学专业毕业生116人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 116,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 93.97,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "93.97%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 85.34,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "85.34%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 8.62,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "8.62%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-27",
+      "title": "湖北师范大学2025届·数字媒体技术",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "数字媒体技术",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第25页；印刷页22"
+      },
+      "population": "湖北师范大学2025届数字媒体技术专业毕业生48人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 48,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 93.75,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "93.75%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 83.33,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "83.33%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 10.42,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "10.42%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-28",
+      "title": "湖北师范大学2025届·通信工程",
+      "region": "CN",
+      "majorIds": [
+        "electronics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "通信工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届通信工程专业毕业生44人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 44,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 93.18,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "93.18%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 93.18,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "93.18%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": null,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "-",
+          "valueStatus": "not-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": null,
+        "comparisonStatus": "not-comparable-missing-value"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-29",
+      "title": "湖北师范大学2025届·电子信息工程",
+      "region": "CN",
+      "majorIds": [
+        "electronics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "电子信息工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届电子信息工程专业毕业生116人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 116,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 93.1,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "93.10%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 73.28,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "73.28%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 19.83,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "19.83%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-30",
+      "title": "湖北师范大学2025届·电气工程及其自动化",
+      "region": "CN",
+      "majorIds": [
+        "electrical"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "电气工程及其自动化",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届电气工程及其自动化专业毕业生242人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 242,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 92.98,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "92.98%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 83.47,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "83.47%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 9.5,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "9.50%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-31",
+      "title": "湖北师范大学2025届·化学工程与工艺",
+      "region": "CN",
+      "majorIds": [
+        "chemical"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "化学工程与工艺",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届化学工程与工艺专业毕业生40人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 40,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 92.5,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "92.50%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 37.5,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "37.50%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 55.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "55.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-32",
+      "title": "湖北师范大学2025届·社会工作",
+      "region": "CN",
+      "majorIds": [
+        "sociology"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "社会工作",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届社会工作专业毕业生88人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 88,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 92.05,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "92.05%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 73.86,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "73.86%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 18.18,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "18.18%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-33",
+      "title": "湖北师范大学2025届·化学",
+      "region": "CN",
+      "majorIds": [
+        "chem"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "化学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届化学专业毕业生148人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 148,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.89,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.89%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 70.95,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "70.95%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 20.95,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "20.95%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-34",
+      "title": "湖北师范大学2025届·软件工程",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "软件工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届软件工程专业毕业生49人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 49,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.84,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.84%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 77.55,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "77.55%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 14.29,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "14.29%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-35",
+      "title": "湖北师范大学2025届·思想政治教育",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "思想政治教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届思想政治教育专业毕业生121人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 121,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.74,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.74%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 79.34,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "79.34%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 12.4,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "12.40%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-primary-education",
+      "title": "湖北师范大学2025届·小学教育",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "小学教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届小学教育专业毕业生204人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 204,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.67,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.67%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 86.27,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "86.27%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.39,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.39%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-special-education",
+      "title": "湖北师范大学2025届·特殊教育",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "特殊教育",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届特殊教育专业毕业生35人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 35,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.43,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.43%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 74.29,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "74.29%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.14,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.14%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-38",
+      "title": "湖北师范大学2025届·美术学",
+      "region": "CN",
+      "majorIds": [
+        "art"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "美术学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届美术学专业毕业生116人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 116,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 91.38,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "91.38%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 86.21,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "86.21%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 5.17,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "5.17%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-39",
+      "title": "湖北师范大学2025届·英语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "英语",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届英语专业毕业生310人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 310,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 90.65,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "90.65%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 78.71,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "78.71%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 11.94,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "11.94%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-40",
+      "title": "湖北师范大学2025届·历史学",
+      "region": "CN",
+      "majorIds": [
+        "history"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "历史学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届历史学专业毕业生135人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 135,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 90.37,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "90.37%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 81.48,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "81.48%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 8.89,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "8.89%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-41",
+      "title": "湖北师范大学2025届·人文地理与城乡规划",
+      "region": "CN",
+      "majorIds": [
+        "architecture"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "人文地理与城乡规划",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届人文地理与城乡规划专业毕业生41人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 41,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 90.24,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "90.24%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 73.17,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "73.17%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 17.07,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "17.07%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-applied-psychology",
+      "title": "湖北师范大学2025届·应用心理学",
+      "region": "CN",
+      "majorIds": [
+        "psychology"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "应用心理学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届应用心理学专业毕业生30人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 30,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 90.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "90.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 73.33,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "73.33%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 16.67,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "16.67%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-43",
+      "title": "湖北师范大学2025届·汉语言文学",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "汉语言文学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届汉语言文学专业毕业生305人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 305,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 89.84,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "89.84%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 81.64,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "81.64%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 8.2,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "8.20%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-44",
+      "title": "湖北师范大学2025届·日语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "日语",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届日语专业毕业生68人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 68,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 89.71,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "89.71%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 79.41,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "79.41%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 10.29,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "10.29%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-45",
+      "title": "湖北师范大学2025届·生物科学",
+      "region": "CN",
+      "majorIds": [
+        "bio"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "生物科学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届生物科学专业毕业生165人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 165,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 89.7,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "89.70%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 57.58,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "57.58%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 32.12,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "32.12%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-46",
+      "title": "湖北师范大学2025届·物理学",
+      "region": "CN",
+      "majorIds": [
+        "physics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "物理学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届物理学专业毕业生194人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 194,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 89.18,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "89.18%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 67.01,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "67.01%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 22.16,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "22.16%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-47",
+      "title": "湖北师范大学2025届·音乐学",
+      "region": "CN",
+      "majorIds": [
+        "performing"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "音乐学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届音乐学专业毕业生119人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 119,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 89.08,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "89.08%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 79.83,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "79.83%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 9.24,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "9.24%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-48",
+      "title": "湖北师范大学2025届·自动化",
+      "region": "CN",
+      "majorIds": [
+        "electrical"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "自动化",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届自动化专业毕业生41人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 41,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 87.8,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "87.80%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 53.66,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "53.66%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 34.15,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "34.15%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-49",
+      "title": "湖北师范大学2025届·生物技术",
+      "region": "CN",
+      "majorIds": [
+        "bio"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "生物技术",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届生物技术专业毕业生49人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 49,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 87.76,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "87.76%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 57.14,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "57.14%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 30.61,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "30.61%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.01,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-50",
+      "title": "湖北师范大学2025届·音乐表演",
+      "region": "CN",
+      "majorIds": [
+        "performing"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "音乐表演",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届音乐表演专业毕业生65人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 65,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 87.69,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "87.69%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 81.54,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "81.54%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 6.15,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "6.15%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-51",
+      "title": "湖北师范大学2025届·商务英语",
+      "region": "CN",
+      "majorIds": [
+        "language"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "商务英语",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届商务英语专业毕业生71人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 71,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 87.32,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "87.32%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 78.87,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "78.87%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 8.45,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "8.45%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-52",
+      "title": "湖北师范大学2025届·地理科学",
+      "region": "CN",
+      "majorIds": [
+        "geo"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "地理科学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届地理科学专业毕业生139人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 139,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 84.17,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "84.17%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 70.5,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "70.50%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 13.67,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "13.67%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-53",
+      "title": "湖北师范大学2025届·财务管理",
+      "region": "CN",
+      "majorIds": [
+        "accounting"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "财务管理",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届财务管理专业毕业生98人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 98,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 83.67,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "83.67%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 73.47,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "73.47%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 10.2,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "10.20%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-54",
+      "title": "湖北师范大学2025届·统计学",
+      "region": "CN",
+      "majorIds": [
+        "math"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "统计学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届统计学专业毕业生39人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 39,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 82.05,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "82.05%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 58.97,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "58.97%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 23.08,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "23.08%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": 0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-education",
+      "title": "湖北师范大学2025届·教育学",
+      "region": "CN",
+      "majorIds": [
+        "education"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "教育学",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届教育学专业毕业生44人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 44,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 81.82,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "81.82%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 65.91,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "65.91%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 15.91,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "15.91%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": -0.0,
+        "comparisonStatus": "consistent-with-rounding"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-56",
+      "title": "湖北师范大学2025届·人工智能",
+      "region": "CN",
+      "majorIds": [
+        "cs"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "人工智能",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届人工智能专业毕业生47人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 47,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 68.09,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "68.09%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": 68.09,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "68.09%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": null,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "-",
+          "valueStatus": "not-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": null,
+        "comparisonStatus": "not-comparable-missing-value"
+      }
+    },
+    {
+      "id": "cn-hbnu-2025-major-57",
+      "title": "湖北师范大学2025届·光电信息科学与工程",
+      "region": "CN",
+      "majorIds": [
+        "electronics"
+      ],
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "schoolScope": "major",
+      "majorName": "光电信息科学与工程",
+      "majorMappingScope": "同名专业或清晰的专业族归属，仅用于检索，不将本专业数字复制到同族其他专业。",
+      "educationLevel": "unspecified",
+      "educationScope": "原报告该专业表未明确标注学历层次；本次不凭专业名推定本科，也不标成已知混合学历。",
+      "studyMode": "unspecified",
+      "period": "2025届；截至2025年末",
+      "asOf": "2025-12-31",
+      "asOfPrecision": "year-end",
+      "metric": "分专业毕业去向指标（不相加）",
+      "dataKind": "outcome_indicators",
+      "source": {
+        "title": "湖北师范大学2025届毕业生就业质量年度报告·表2-2-2-3",
+        "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+        "publishedAt": "2026-01-06",
+        "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+        "locator": "表2-2-2-3；PDF第26页；印刷页23"
+      },
+      "population": "湖北师范大学2025届光电信息科学与工程专业毕业生2人；原表该专业全体为三列比例共同分母。",
+      "sampleSize": 2,
+      "denominatorStatus": "reported-cohort",
+      "rows": [
+        {
+          "occupation": "毕业去向落实率（包含就业与升学）",
+          "share": 50.0,
+          "soc": null,
+          "metricKey": "destination_rate",
+          "sourceValue": "50.00%",
+          "valueStatus": "source-reported"
+        },
+        {
+          "occupation": "就业率（原报告就业分类，不等于签约率）",
+          "share": null,
+          "soc": null,
+          "metricKey": "employment_rate",
+          "sourceValue": "-",
+          "valueStatus": "not-reported"
+        },
+        {
+          "occupation": "升学率",
+          "share": 50.0,
+          "soc": null,
+          "metricKey": "further_study_rate",
+          "sourceValue": "50.00%",
+          "valueStatus": "source-reported"
+        }
+      ],
+      "rowsMutuallyExclusive": false,
+      "limitations": [
+        "单校单届专业样本；不代表全国、其他学校或下一届毕业生结果。",
+        "三列分别是落实率、就业率、升学率，分母同为该专业毕业生人数；落实率包含后两列，不能把三列相加。",
+        "就业分类包含其他录用形式和自由职业等，不等同签协议或劳动合同就业，未据此推断稳定性或工资。",
+        "学历在该表未明示；educationLevel保留unspecified，不用于限定本科或硕博的比较。",
+        "数据来自报告所列就业管理系统，截至2025年末；未混入第三方问卷满意度与对口度指标。",
+        "原表“—”保留为null及sourceValue，不视作已确认的0%；小样本比例不能用于专业排名或个人概率。"
+      ],
+      "analysisUse": "descriptive_only_no_ranking_bonus",
+      "aggregationPolicy": "do_not_sum_overlapping_metrics",
+      "validation": {
+        "settlementMinusEmploymentAndStudyPercentagePoints": null,
+        "comparisonStatus": "not-comparable-missing-value"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "cn-ecnu-2025-official-summary",
+      "title": "华东师范大学2025届毕业生规模、结构、就业率、就业流向",
+      "region": "CN",
+      "period": "2025届；截至2025-10-31",
+      "url": "https://xxgk.ecnu.edu.cn/fb/44/c29049a785220/page.htm",
+      "publisher": "华东师范大学信息公开网",
+      "publishedAt": "2026-09-01",
+      "school": {
+        "name": "华东师范大学",
+        "aliases": [
+          "华东师大",
+          "ECNU",
+          "East China Normal University"
+        ],
+        "domain": "ecnu.edu.cn"
+      },
+      "educationLevel": "mixed",
+      "population": "全体10010人；其中全日制8259人、非全日制1751人。本科3605、硕士3801、博士853为全日制分组。",
+      "coverage": "结构化5项不同学历/学习方式落实率及1项本科升学率；升学率精确分母未能重建，单独标记，不提取分母未明的行业比例。",
+      "kind": "统计表",
+      "verifiedAt": "2026-10-16"
+    },
+    {
+      "id": "cn-hbnu-2025-all-majors",
+      "title": "湖北师范大学2025届毕业生就业质量年度报告",
+      "region": "CN",
+      "period": "2025届；截至2025年末",
+      "url": "https://xxgk.hbnu.edu.cn/_upload/article/files/d5/a8/1357a204472580237eedf7c92e53/5f16c549-8888-4d7e-b685-fab12dee30ee.pdf",
+      "publicationUrl": "https://xxgk.hbnu.edu.cn/2026/0106/c3308a189333/page.htm",
+      "publisher": "湖北师范大学信息公开网",
+      "publishedAt": "2026-01-06",
+      "school": {
+        "name": "湖北师范大学",
+        "aliases": [
+          "湖北师大",
+          "HBNU",
+          "Hubei Normal University"
+        ],
+        "domain": "hbnu.edu.cn"
+      },
+      "educationLevel": "unspecified",
+      "population": "完整表2-2-2-3的57专业、5465名毕业生；该表未明确标注学历，不从专业名称推断。",
+      "coverage": "已核对报告说明、表头和PDF第25—26页图像；完整提取57专业人数及落实/就业/升学三列，共171单元格，其中166个数值、5个原表破折号保留null。",
+      "kind": "就业质量报告",
+      "verifiedAt": "2026-10-16"
+    }
+  ],
+  "validation": {
+    "checkedAt": "2026-10-16",
+    "ecnuFullTimeSum": 8259,
+    "ecnuOverallSum": 10010,
+    "ecnuPublicFundedSubset": {
+      "count": 1009,
+      "denominator": 3605,
+      "roundedShare": 27.99
+    },
+    "hbnuTableColumns": [
+      "专业名称",
+      "专业人数",
+      "落实率",
+      "就业率",
+      "升学率"
+    ],
+    "ecnuBachelorFurtherStudyIntegerCountCompatible": false,
+    "notes": [
+      "未将比例乘总人数后四舍五入为官方公布人数。",
+      "完整57专业人数合计与原表总计一致；52个三项均有数值的专业，分项率之和与落实率最多差0.01个百分点。5个缺失单元格不按零填充，不参与三项合计判断。",
+      "ECNU本科升学率的整数分母问题作为数据边界记录，不自行修正官方数字。"
+    ],
+    "hbnuMajorCount": 57,
+    "hbnuTotalPopulation": 5465,
+    "hbnuTableMatchesReportedPopulation": true,
+    "hbnuMetricCells": 171,
+    "hbnuNumericCells": 166,
+    "hbnuMissingCells": [
+      {
+        "major": "智能电网信息工程",
+        "metricKey": "further_study_rate",
+        "sourceValue": "-"
+      },
+      {
+        "major": "舞蹈学",
+        "metricKey": "further_study_rate",
+        "sourceValue": "-"
+      },
+      {
+        "major": "通信工程",
+        "metricKey": "further_study_rate",
+        "sourceValue": "-"
+      },
+      {
+        "major": "人工智能",
+        "metricKey": "further_study_rate",
+        "sourceValue": "-"
+      },
+      {
+        "major": "光电信息科学与工程",
+        "metricKey": "employment_rate",
+        "sourceValue": "-"
+      }
+    ],
+    "hbnuComparableRows": 52,
+    "hbnuMaxSettlementSumDifferencePercentagePoints": 0.01,
+    "hbnuIntegerCountIncompatibilities": [],
+    "hbnuColumnOrderVerified": true
+  }
+}

@@ -1,3 +1,5 @@
+import { scoreRole } from "./scoring.js?v=20261016-data";
+import { knowledgeDocuments } from "./research.js?v=20261016-data";
 /** Local lexical retrieval. It makes no requests and never treats catalog prose as instructions. */
 const safeText = (value) => String(value ?? "");
 const flatten = (value) =>
@@ -124,7 +126,7 @@ function cnFacts(industry, source) {
   );
   return facts.join("");
 }
-export function buildDocuments(catalog, data, region = "CN") {
+export function buildDocuments(catalog, data, region = "CN", knowledge = {}) {
   if (!["CN", "US"].includes(region))
     throw new RangeError("region must be CN or US");
   const docs = [];
@@ -136,6 +138,12 @@ export function buildDocuments(catalog, data, region = "CN") {
     docs.push({ id, title, text, url, kind, region });
   for (const role of catalog?.roles || []) {
     const local = role.regions?.[region];
+    const index = scoreRole(
+      role,
+      industries.get(role.industryId),
+      region,
+      data,
+    );
     add(
       `role:${role.id}`,
       role.title,
@@ -151,8 +159,11 @@ export function buildDocuments(catalog, data, region = "CN") {
         `公司情境：${flatten(role.jobReality?.companyTypes)}`,
         `面试核对：${flatten(role.jobReality?.interviewChecks)}`,
         `人工智能：可覆盖${flatten(role.ai?.automated)}；互补${flatten(role.ai?.complement)}`,
-        `编辑判断（主观先验，非实测）：${flatten(role.rubric)}`,
+        `研究提示（不参与计分）：${Object.values(role.rubric || {})
+          .map((x) => x.reason)
+          .join("；")}`,
         `行业：${industries.get(role.industryId)?.name || "未分类"}`,
+        `统计参考指数：${index.score ?? "依据不足"}；${index.evidenceLabel}。各维度：${index.dimensions.map((d) => `${d.name} ${d.value === null ? "缺失" : Math.round(d.value) + "/100"}，权重${d.weight}%`).join("；")}。不把研究判断算作实测数据。`,
         `目录复核：${catalog.reviewedAt || "未记录"}`,
       ].join("\n"),
       `#role=${encodeURIComponent(role.id)}`,
@@ -218,10 +229,27 @@ export function buildDocuments(catalog, data, region = "CN") {
         item.url,
         "macro-fact",
       );
+  if (region === "US")
+    for (const [key, label, unit] of [
+      ["fred-UNRATE", "美国失业率（季调）", "%"],
+      ["fred-PAYEMS", "美国非农就业人数（季调）", "千人"],
+    ]) {
+      const s = sources[key],
+        point = s?.value?.at(-1);
+      if (point)
+        add(
+          `macro:${key}`,
+          label,
+          `${point.date}，${label} ${point.value}${unit}。${stamp(s)}。月度就业背景不代表具体专业就业率。`,
+          s.url,
+          "macro-fact",
+        );
+    }
+  docs.push(...knowledgeDocuments(knowledge, catalog, region));
   add(
     "method:scope",
     "来源、评分方法与数据缺失",
-    `当前地区${region}。行业、岗位与专业分开。编辑1—5分是主观先验，不是就业概率。缺失不补零，旧数据保留来源状态和日期。美国职业中位数与中国行业均值口径不同，不跨国换算比较。模型仅解释资料，不承诺收入或录用。公司示例不代表空缺。目录复核${catalog?.reviewedAt || "未记录"}。`,
+    `当前地区${region}。行业、岗位与专业分开。研究判断不进入数值计算；准入难度、工时和院校优势没有可比真实样本时保留缺失。原始数据缺失保留为空；合成指数的缺失权重停留在中性参考值50。至少两个有效统计指标、权重合计至少35%才显示统计参考指数，不能据此代表综合职业前景。旧数据保留来源状态和日期。美国职业中位数与中国行业均值口径不同，不跨国换算比较。模型仅解释资料，不承诺收入或录用。公司示例不代表空缺。目录复核${catalog?.reviewedAt || "未记录"}。`,
     "#sources",
     "methodology",
   );

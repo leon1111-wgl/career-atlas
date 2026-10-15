@@ -37,6 +37,11 @@ jobs:
         if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh)
         continue-on-error: true
         run: python -m pipeline.collect
+      - name: 核对政策与发现官方新发布
+        id: policy
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh)
+        continue-on-error: true
+        run: python -m pipeline.policy
       - name: 验证统计与推荐逻辑
         run: |
           python -m unittest discover -s tests -p 'test_*.py'
