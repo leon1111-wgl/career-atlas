@@ -1,0 +1,72 @@
+name: 更新数据与发布向野
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: 抓取最新官方数据
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: career-atlas-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: 抓取与断源回退
+        id: collect
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh)
+        continue-on-error: true
+        run: python -m pipeline.collect
+      - name: 验证统计与推荐逻辑
+        run: |
+          python -m unittest discover -s tests -p 'test_*.py'
+          node --test tests/*.test.mjs
+      - name: 生成中文报告
+        run: python -m pipeline.build
+      - name: 保留公开统计快照
+        if: github.event_name != 'push'
+        run: |
+          git config user.name 'career-atlas-data'
+          git config user.email 'career-atlas-data@users.noreply.github.com'
+          git add web/data content/raw reports/latest.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: refresh official statistics and briefing'
+            git push
+          fi
+      - name: 加载我们托管的开放模型文件
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download model-qwen3-0.6b-v1 --pattern qwen3-model.tar.gz --dir /tmp
+          mkdir -p web/models/qwen3/resolve/main
+          tar -xzf /tmp/qwen3-model.tar.gz -C web/models/qwen3/resolve/main
+          python scripts/verify-model.py web/models/qwen3/resolve/main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - name: 明示采集失败
+        if: steps.collect.outcome == 'failure'
+        run: echo '::warning::本次来源更新存在失败，已发布带状态说明的最后有效快照。'

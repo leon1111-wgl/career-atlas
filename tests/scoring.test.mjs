@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { scoreRole, fitScore } from '../web/scoring.js';
+const role={soc:'15-1252',majors:['cs'],rubric:{moat:{value:4},ai:{value:3},access:{value:2}}};
+const industry={cnWageIndustry:'制造业'};
+const data={sources:{bls:{value:{occupations:{'15-1252':{growth:20,employment:1000,openings:100,medianWage:100000},'00-0000':{medianWage:50000}}}},'nbs-wages':{value:{sectors:{'制造业':{private:{wage:100000,growth:5}},'合计':{private:{wage:50000}}}}}}};
+test('Chinese score uses industry wage proxy, never US growth',()=>{const s=scoreRole(role,industry,'CN',data);assert.equal(s.coverage,55);assert.equal(s.dimensions.find(x=>x.key==='growth').value,null);assert.equal(s.observedCoverage,25);});
+test('missing wage does not become zero or earn a recommendation',()=>{const s=scoreRole(role,industry,'CN',{sources:{}});assert.equal(s.score,null);assert.equal(s.coverage,30);assert.equal(s.dimensions.find(x=>x.key==='pay').value,null);});
+test('missing dimensions widen uncertainty interval',()=>{const s=scoreRole(role,industry,'US',data);assert.equal(s.coverage,80);assert.ok(s.lower<=s.score && s.upper>=s.score);assert.equal(s.upper-s.lower,20);});
+test('US wage cannot use Chinese proxy when SOC missing',()=>{const s=scoreRole({...role,soc:null},industry,'US',data);assert.equal(s.score,null);});
+test('fit only uses stated major and preference',()=>{assert.ok(fitScore(role,{major:'cs',priority:'moat'})>fitScore(role,{major:'law',priority:'moat'}));});

@@ -1,0 +1,10 @@
+{
+  "model_id": "Qwen3-0.6B-q4f16_1-MLC",
+  "model": "./models/qwen3/resolve/main/",
+  "model_lib": "./vendor/qwen3-0.6b-webgpu.wasm",
+  "revision": "8c14ce481d4c692769976ad52afea453a102df19",
+  "weight_bytes": 335372288,
+  "repository_bytes": 351517143,
+  "runtime_version": "0.2.86",
+  "wasm_git_blob": "2074819d0f0d77654d4fe9b3ce7f2aa29212c04b"
+}

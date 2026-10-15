@@ -1,0 +1,3 @@
+# Keep downloaded runtime and audited source text byte-identical to their hashes.
+web/vendor/* -text -whitespace
+content/bls-extract.txt -text -whitespace
