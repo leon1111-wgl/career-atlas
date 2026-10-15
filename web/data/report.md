@@ -1,6 +1,6 @@
 # 向野 · 中美行业与职业观察
 
-最近采集尝试：2026-10-15T14:31:24+00:00
+最近采集尝试：2026-10-15T15:19:04+00:00
 
 这份报告由公开统计快照按固定规则生成。数据所属期见每项标注；不将采集日期当作统计期。评分是探索工具，不是收益或录用概率。
 
@@ -124,22 +124,22 @@
 ## 采集状态
 
 - BLS 职业就业预测与劳动者特征：cached；上次有效获取 2026-10-15T14:28:15+00:00。[来源](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm)
-- 国家统计局：城镇单位行业工资：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html)
-- 国家统计局最新发布：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
-- 世界银行：实际 GDP 增长：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=500)
-- 世界银行：居民消费价格涨幅：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=500)
-- 世界银行：制造业增加值占 GDP：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NV.IND.MANF.ZS?format=json&date=2014:2026&per_page=500)
-- 世界银行：失业率（ILO 模型估计）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/SL.UEM.TOTL.ZS?format=json&date=2014:2026&per_page=500)
-- FRED / BLS：美国失业率（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE&cosd=2014-01-01)
-- FRED / BLS：美国信息业就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USINFO&cosd=2014-01-01)
-- FRED / BLS：美国非农就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS&cosd=2014-01-01)
-- FRED / BLS：美国制造业就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=MANEMP&cosd=2014-01-01)
-- FRED / BLS：美国金融活动就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USFIRE&cosd=2014-01-01)
-- FRED / BLS：美国专业与商业服务就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USPBS&cosd=2014-01-01)
-- FRED / BLS：美国教育与卫生服务就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEHS&cosd=2014-01-01)
-- FRED / BLS：美国休闲与酒店就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USLAH&cosd=2014-01-01)
-- FRED / BLS：美国政府就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USGOVT&cosd=2014-01-01)
-- FRED / BLS：美国建筑业就业（季调）：ok；上次有效获取 2026-10-15T14:31:24+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USCONS&cosd=2014-01-01)
+- 国家统计局：城镇单位行业工资：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html)
+- 国家统计局最新发布：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
+- 世界银行：实际 GDP 增长：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=500)
+- 世界银行：居民消费价格涨幅：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=500)
+- 世界银行：制造业增加值占 GDP：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NV.IND.MANF.ZS?format=json&date=2014:2026&per_page=500)
+- 世界银行：失业率（ILO 模型估计）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/SL.UEM.TOTL.ZS?format=json&date=2014:2026&per_page=500)
+- FRED / BLS：美国失业率（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE&cosd=2014-01-01)
+- FRED / BLS：美国信息业就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USINFO&cosd=2014-01-01)
+- FRED / BLS：美国非农就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS&cosd=2014-01-01)
+- FRED / BLS：美国制造业就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=MANEMP&cosd=2014-01-01)
+- FRED / BLS：美国金融活动就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USFIRE&cosd=2014-01-01)
+- FRED / BLS：美国专业与商业服务就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USPBS&cosd=2014-01-01)
+- FRED / BLS：美国教育与卫生服务就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEHS&cosd=2014-01-01)
+- FRED / BLS：美国休闲与酒店就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USLAH&cosd=2014-01-01)
+- FRED / BLS：美国政府就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USGOVT&cosd=2014-01-01)
+- FRED / BLS：美国建筑业就业（季调）：ok；上次有效获取 2026-10-15T15:19:04+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USCONS&cosd=2014-01-01)
 
 ## 下一步行动
 
