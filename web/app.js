@@ -6,7 +6,7 @@ import {
   freshness,
   DIMENSIONS,
 } from "./scoring.js";
-import { sparkline, lineChart } from "./charts.js";
+import { sparkline, lineChart } from "./charts.js?v=20261016-neutral";
 import { advise } from "./advisor.js";
 import { ModelClient } from "./model.js";
 import { evidenceTask, selectEvidence } from "./grounded.js";
@@ -204,13 +204,13 @@ function currentStrip() {
   if (!items.length)
     return '<p class="evidence-note">最新指标暂不可用，请查看数据与方法中的来源状态。</p>';
   const years = items.map((x) => x.period.match(/\d{4}/)?.[0]).filter(Boolean);
-  return `<section class="latest-strip"><div class="latest-heading"><h2>${esc(regions[state.region])} · ${esc(years.sort().at(-1))} 最新数据</h2><a href="#reports">查看趋势与统计口径 →</a></div><div class="latest-grid" ${state.region === "US" ? 'style="grid-template-columns:repeat(2,minmax(0,1fr))"' : ""}>${items.map((x) => `<a class="latest-item" href="${esc(safeURL(x.url))}" target="_blank" rel="noopener"><span>${esc(x.label)}</span><strong>${num(x.value, 1)}<small>${esc(x.unit)}</small></strong><small>${esc(x.period)} · ${esc(x.changeLabel)}</small><small>${x.publishedAt ? "发布 " + esc(x.publishedAt) : "来源 BLS / FRED；发布时间未提供"}${(x.status || source("cn-current")?.status) === "cached" ? " · 沿用缓存" : ""}</small>${sparkline(x.series.slice(-12), "#6a8a83")}</a>`).join("")}</div><p class="section-note">${state.region === "CN" ? "来源：国家统计局。各指标按实际发布节奏更新；上半年 GDP 为累计同比，其他指标口径见各项。" : "来源：BLS / FRED。美国月度数据为季调值，可能修订。"} 短线图仅显示已采集的历史点。</p></section>`;
+  return `<section class="latest-strip"><div class="latest-heading"><h2>${esc(regions[state.region])} · ${esc(years.sort().at(-1))} 最新数据</h2><a href="#reports">查看趋势与统计口径 →</a></div><div class="latest-grid" ${state.region === "US" ? 'style="grid-template-columns:repeat(2,minmax(0,1fr))"' : ""}>${items.map((x) => `<a class="latest-item" href="${esc(safeURL(x.url))}" target="_blank" rel="noopener"><span>${esc(x.label)}</span><strong>${num(x.value, 1)}<small>${esc(x.unit)}</small></strong><small>${esc(x.period)} · ${esc(x.changeLabel)}</small><small>${x.publishedAt ? "发布 " + esc(x.publishedAt) : "来源 BLS / FRED；发布时间未提供"}${(x.status || source("cn-current")?.status) === "cached" ? " · 沿用缓存" : ""}</small>${sparkline(x.series.slice(-12), "#6485a9")}</a>`).join("")}</div><p class="section-note">${state.region === "CN" ? "来源：国家统计局。各指标按实际发布节奏更新；上半年 GDP 为累计同比，其他指标口径见各项。" : "来源：BLS / FRED。美国月度数据为季调值，可能修订。"} 短线图仅显示已采集的历史点。</p></section>`;
 }
 function currentTrend() {
   const items = macroIndicators().filter((x) => x.series.length >= 2);
   const item = items.find((x) => x.id === state.trendIndicator) || items[0];
   if (!item) return "";
-  return `<section class="panel current-trends"><div class="section-heading"><div><h2>近期变化</h2><p>同一指标、相同口径的历史观测</p></div><select id="trend-indicator" aria-label="选择趋势指标">${items.map((x) => `<option value="${x.id}" ${x.id === item.id ? "selected" : ""}>${esc(x.label)}</option>`).join("")}</select></div><div class="chart-container">${lineChart([{ name: item.label, values: item.series.slice(-24), color: "#5e8179" }], { unit: item.unit, label: item.label + " " + item.changeLabel })}</div><p class="trend-caption">${esc(item.changeLabel)} · ${esc(item.unit)}；${state.region === "CN" ? "数据点来自逐月官方发布，缺失月份不补值。GDP 目前只有一个已核验的累计观测，暂不绘制趋势。" : "显示最近24个已获取月份。"} 增速变化不等于规模变化，也不直接代表招聘增长。</p><details><summary>查看各期数值与来源</summary><div class="table-wrap"><table><thead><tr><th>统计期</th><th>${esc(item.unit)}</th><th>来源</th></tr></thead><tbody>${item.series
+  return `<section class="panel current-trends"><div class="section-heading"><div><h2>近期变化</h2><p>同一指标、相同口径的历史观测</p></div><select id="trend-indicator" aria-label="选择趋势指标">${items.map((x) => `<option value="${x.id}" ${x.id === item.id ? "selected" : ""}>${esc(x.label)}</option>`).join("")}</select></div><div class="chart-container">${lineChart([{ name: item.label, values: item.series.slice(-24), color: "#6485a9" }], { unit: item.unit, label: item.label + " " + item.changeLabel })}</div><p class="trend-caption">${esc(item.changeLabel)} · ${esc(item.unit)}；${state.region === "CN" ? "数据点来自逐月官方发布，缺失月份不补值。GDP 目前只有一个已核验的累计观测，暂不绘制趋势。" : "显示最近24个已获取月份。"} 增速变化不等于规模变化，也不直接代表招聘增长。</p><details><summary>查看各期数值与来源</summary><div class="table-wrap"><table><thead><tr><th>统计期</th><th>${esc(item.unit)}</th><th>来源</th></tr></thead><tbody>${item.series
     .slice(-24)
     .map(
       (x) =>
@@ -226,7 +226,7 @@ function researchSidebar() {
           {
             name: item.label,
             values: item.series.slice(-12),
-            color: "#5e8179",
+            color: "#6485a9",
           },
         ],
         { unit: "%", label: item.label + "近期趋势", height: 220 },
@@ -538,7 +538,7 @@ function showRole(id) {
     s = scoreRole(r, i, state.region, data),
     obs = s.observation;
   openDetail(
-    `${dialogHeader(r.title, regions[state.region] + " / " + i.name)}<div class="dialog-body"><button class="text-link" data-industry="${i.id}">← 回到行业：${esc(i.name)}</button><p class="detail-intro spaced">${esc(r.summary)}</p><div class="detail-grid"><section class="panel"><h3>日常具体在做什么</h3>${list(r.daily)}<h3 class="spaced">需要积累的能力</h3><div class="chip-row">${r.skills.map((k) => `<span class="chip">${esc(k)}</span>`).join("")}</div></section><section class="panel"><h3>探索优先指数 · 可解释</h3><div class="detail-score">${s.score ?? "—"} <small>/ 100</small></div><p>统计覆盖 ${s.observedCoverage}%；编辑判断 ${s.coverage - s.observedCoverage}%。${s.score !== null ? `缺失敏感性范围 ${s.lower}–${s.upper}，不是置信区间。` : "总覆盖不足 50%，不出总分。"}</p>${dimensionBars(s)}<p class="micro-label">绿色为统计映射，陶土色为编辑量规。</p></section></div><section class="panel spaced"><h3>先核对，怎样才能开始</h3><p class="detail-intro">${esc(r.regions?.[state.region]?.entry ?? r.entry)}</p><p class="section-note"><strong>学历与资格：</strong>${esc(r.regions?.[state.region]?.credential ?? r.education)}</p><h3>用一个小项目验证兴趣</h3><p class="detail-intro">${esc(r.portfolio)}</p><div class="chip-row">${r.majors
+    `${dialogHeader(r.title, regions[state.region] + " / " + i.name)}<div class="dialog-body"><button class="text-link" data-industry="${i.id}">← 回到行业：${esc(i.name)}</button><p class="detail-intro spaced">${esc(r.summary)}</p><div class="detail-grid"><section class="panel"><h3>日常具体在做什么</h3>${list(r.daily)}<h3 class="spaced">需要积累的能力</h3><div class="chip-row">${r.skills.map((k) => `<span class="chip">${esc(k)}</span>`).join("")}</div></section><section class="panel"><h3>探索优先指数 · 可解释</h3><div class="detail-score">${s.score ?? "—"} <small>/ 100</small></div><p>统计覆盖 ${s.observedCoverage}%；编辑判断 ${s.coverage - s.observedCoverage}%。${s.score !== null ? `缺失敏感性范围 ${s.lower}–${s.upper}，不是置信区间。` : "总覆盖不足 50%，不出总分。"}</p>${dimensionBars(s)}<p class="micro-label">蓝色为统计映射，橙色为编辑量规。</p></section></div><section class="panel spaced"><h3>先核对，怎样才能开始</h3><p class="detail-intro">${esc(r.regions?.[state.region]?.entry ?? r.entry)}</p><p class="section-note"><strong>学历与资格：</strong>${esc(r.regions?.[state.region]?.credential ?? r.education)}</p><h3>用一个小项目验证兴趣</h3><p class="detail-intro">${esc(r.portfolio)}</p><div class="chip-row">${r.majors
       .map((id) => catalog.majors.find((m) => m.id === id))
       .filter(Boolean)
       .map(

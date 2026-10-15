@@ -14,11 +14,13 @@ Details use ordinary document sections and tables for work tasks, preparation, c
 
 ## Visual system
 
-- White surfaces, a light grey page background, and muted teal/sage for navigation and principal actions.
+- White surfaces, a light neutral grey page background, deep blue navigation/links, and restrained orange for the search action. The earlier teal/sage wash was removed following user feedback.
 - Thin neutral rules, 3px corners, and no ornamental icons, gradients, glowing effects, card movement, or floating dashboard shadows.
-- Stronger title/body text with readable green-grey source periods and metadata. Statistics use tabular numerals and retain their observation dates.
+- Stronger title/body text with readable neutral grey source periods and metadata. Statistics use tabular numerals and retain their observation dates.
 - Real historical charts with visible axes, units, legends, and captions. Current values distinguish the observation period from the release date.
 - Compact table headings, stable row rules, alternating paper tints, and internal horizontal scrolling where full comparison fields require it.
+
+The current palette uses #303640 body text, #666d77 secondary text, #234b75 navigation, #bd521f search, #f5f6f8 page background and white panels. Charts and statistical bars use #6485a9; editorial bars use #b87945, with their legend updated to blue/orange.
 
 ## Mobile behaviour
 
@@ -39,3 +41,7 @@ Visual inspection covered the homepage, industry directory, occupation library, 
 The current-economic-data strip and current-indicator chart were then rendered at 1440px and 390px: all four page-width checks matched the viewport, with no uncaught JavaScript errors. The Chinese strip showed five indicators and the report selector offered four chartable indicators. The US two-indicator strip was separately checked at 390px with both items aligned in one row and no document overflow. Mobile charts use a full-width selector above the plot. Source-note spacing was tightened; long US values receive priority over decorative sparklines on narrow screens. Screenshots are named `final-home-*.png` and `final-trends-*.png`, with results in `current-strip-results.json`.
 
 The question “智能体应用工程师在不同公司里工作有什么特点” was also submitted to the default consultation mode at both widths. The rendered structured answer contained three company contexts, two verification questions, and an evidence qualifier. Section spacing, list leading, and source notes were inspected in `final-answer-1440.png` and `final-answer-390.png`. No model weights were loaded; these checks confirm presentation and the exercised retrieval flow, not model inference quality or complete keyboard/screen-reader coverage.
+
+## Neutral palette follow-up (2026-10-16)
+
+Following further user feedback, all sage/green text, borders, tags and tinted panels were changed to neutral greys. Deep blue is restricted mainly to navigation, links and charts, with muted orange on search and the active-nav rule. The six main pages were rendered again at 1440px and 390px: all 12 widths fit and no uncaught JS errors were recorded. Additional rendered checks covered the orange search action and blue/orange score-bar legend in role details at both sizes. Search-button text contrast exceeds 4.5:1. Local evidence: `qa/designer/palette-results.json`, `qa/palette-qa.json`, and `qa/palette-*.png`.
