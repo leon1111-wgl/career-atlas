@@ -1,37 +1,169 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#52675b"><meta name="description" content="向野 Career Atlas：基于可追溯中美官方数据，理解行业、比较岗位、探索适合自己的职业方向。浏览器本地小模型，中文职业分析。">
-<title>向野 · 给职业选择，多一点依据</title>
-<link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-<a href="#main" class="skip-link">跳到主要内容</a>
-<aside class="sidebar" id="sidebar">
-<a class="brand" href="#overview"><span class="brand-mark">↗</span><span>向野<small>CAREER ATLAS</small></span></a>
-<p class="nav-label">慢慢探索，认真选择</p>
-<nav aria-label="主导航">
-<a href="#overview" data-page="overview"><span>◫</span>探索总览</a>
-<a href="#industries" data-page="industries"><span>⌘</span>行业图谱<span class="nav-count">26</span></a>
-<a href="#careers" data-page="careers"><span>▤</span>专业与岗位</a>
-<a href="#match" data-page="match"><span>⌖</span>我的方向</a>
-<a href="#reports" data-page="reports"><span>▧</span>观察报告</a>
-<a href="#sources" data-page="sources"><span>⊞</span>数据与方法</a>
-</nav>
-<div class="sidebar-bottom">
-<button class="assistant-card" id="open-assistant"><span class="assistant-icon" aria-hidden="true">▤</span><strong>向野小助理</strong><small>查资料，也陪你理清思路</small><span class="model-tag">本地小模型 · 0.6B <span>↗</span></span></button>
-<a class="github-link" href="https://github.com/leon1111-wgl/career-atlas" target="_blank" rel="noopener">Guoliang · 开源项目 ↗</a>
-</div>
-</aside>
-<div class="workspace">
-<header class="topbar"><button class="icon-button mobile-menu" id="menu-button" aria-label="打开导航">☰</button><div class="breadcrumb">职业探索 <span>/</span> <strong id="breadcrumb-current">探索总览</strong></div><form id="global-search" class="global-search"><span aria-hidden="true">⌕</span><input id="search-input" aria-label="搜索行业、岗位或专业" placeholder="搜索行业、岗位或专业"><kbd>/</kbd></form><button class="icon-button" id="top-assistant" aria-label="打开职业小助理">▤</button></header>
-<main id="main" tabindex="-1"><div class="loading-state"><span class="loading-dot"></span><h1>正在整理你的探索地图</h1><p>载入行业资料与最近的数据快照…</p></div></main>
-<footer><span>向野 · 看得更清楚，选择更从容。</span><a href="#sources">方法透明 · 数据可追溯</a><span>© 2026 Guoliang</span></footer>
-</div>
-<div id="compare-bar" class="compare-bar" hidden></div>
-<dialog id="detail-dialog" class="detail-dialog"><div id="detail-content"></div></dialog>
-<dialog id="assistant-dialog" class="assistant-dialog"><header><div><span class="eyebrow">你的职业资料伙伴</span><h2>向野小助理 <span aria-hidden="true">▤</span></h2></div><button class="icon-button" data-close="assistant-dialog" aria-label="关闭助手">×</button></header><div class="model-intro"><p>先查资料，再一起理清方向。加载后由 <strong>Qwen3 0.6B</strong> 在你的设备上回答，问题不会发送到云端模型。</p><button id="load-model" class="button primary">加载本地小模型</button><button id="unload-model" class="button subtle" hidden>卸载并释放内存</button><small id="model-status" role="status">首次约 335 MiB（约 352 MB）· 需要支持 WebGPU；下载较慢时可取消并继续使用资料检索</small><progress id="model-progress" max="1" value="0" hidden aria-label="模型加载进度"></progress></div><div class="chat-log" id="chat-log" aria-live="polite"><div class="chat-bubble assistant"><p>你好，我可以从行业与岗位资料中帮你找线索。</p><p>试试问：<strong>“AI 应用工程师和算法研究有什么区别？”</strong></p></div></div><div class="prompt-chips"><button data-prompt="AI 应用工程师和算法研究有什么区别？">AI 岗位怎么选</button><button data-prompt="机械专业可以去哪些行业？">从专业找方向</button><button data-prompt="考公和事业单位招聘有什么区别？">了解公共部门</button></div><form id="chat-form"><label class="sr-only" for="chat-input">职业问题</label><textarea id="chat-input" maxlength="500" rows="2" placeholder="说说你想了解的方向…"></textarea><button id="send-chat" class="button primary" type="submit">查一查 ↗</button><button id="stop-chat" class="button subtle" type="button" hidden>停止</button></form><p class="chat-footnote">未加载模型时使用资料检索 · 编辑资料与统计证据分开显示 · 回答需要核对</p></dialog>
-<div id="toast" role="status" class="toast" hidden></div>
-<script type="module" src="./app.js"></script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#52675b" />
+    <meta
+      name="description"
+      content="向野 Career Atlas：基于可追溯中美官方数据，理解行业、比较岗位、探索适合自己的职业方向。浏览器本地小模型，中文职业分析。"
+    />
+    <title>向野 · 行业分析与职业研究 | Leon Wang</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">跳到主要内容</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#overview">向野<small>行业与职业研究</small></a>
+        <button
+          id="menu-button"
+          class="icon-button mobile-menu"
+          aria-label="打开导航"
+          aria-expanded="false"
+        >
+          菜单
+        </button>
+        <nav id="sidebar" class="header-nav" aria-label="主导航">
+          <a href="#overview" data-page="overview">首页</a
+          ><a href="#industries" data-page="industries">行业分类</a
+          ><a href="#careers" data-page="careers">专业与岗位</a
+          ><a href="#match" data-page="match">职业定位</a
+          ><a href="#reports" data-page="reports">研究资讯</a
+          ><a href="#sources" data-page="sources">数据说明</a>
+        </nav>
+        <div class="header-actions">
+          <button id="open-assistant" class="button">职业咨询</button
+          ><span class="author-mark">Leon Wang</span>
+        </div>
+      </div>
+    </header>
+    <section class="search-band">
+      <div class="search-inner">
+        <div class="search-caption">
+          <h1>查行业，找方向</h1>
+          <p>中国大陆 · 美国 · 26个行业 · 111个岗位</p>
+        </div>
+        <form id="global-search" class="global-search">
+          <input
+            id="search-input"
+            aria-label="搜索行业、岗位或专业"
+            placeholder="输入行业、岗位名称或所学专业"
+            autocomplete="off"
+          /><button type="submit" class="button primary">搜索</button>
+        </form>
+        <div class="search-suggestions">
+          <span>常用搜索</span><button data-search="人工智能">人工智能</button
+          ><button data-search="机械">机械制造</button
+          ><button data-search="护理">医疗护理</button
+          ><button data-search="考公">考公考编</button
+          ><button data-search="会计">财会</button
+          ><button data-search="新能源">新能源</button>
+        </div>
+      </div>
+    </section>
+    <div class="workspace">
+      <span id="breadcrumb-current" class="sr-only">首页</span>
+      <main id="main" tabindex="-1">
+        <div class="loading-state"><p>正在加载行业、岗位与统计资料…</p></div>
+      </main>
+      <footer>
+        <span>向野 · Leon Wang</span
+        ><span
+          ><a href="#sources">数据来源与方法</a> ·
+          <a
+            href="https://github.com/leon1111-wgl/career-atlas"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          ></span
+        ><span>© 2026 Leon Wang</span>
+      </footer>
+    </div>
+    <div id="compare-bar" class="compare-bar" hidden></div>
+    <dialog id="detail-dialog" class="detail-dialog">
+      <div id="detail-content"></div>
+    </dialog>
+    <dialog id="assistant-dialog" class="assistant-dialog">
+      <header>
+        <div>
+          <span class="eyebrow">Leon Wang · 职业资料库</span>
+          <h2>职业咨询</h2>
+        </div>
+        <button
+          class="icon-button"
+          data-close="assistant-dialog"
+          aria-label="关闭助手"
+        >
+          ×
+        </button>
+      </header>
+      <details class="model-settings">
+        <summary>可选：Qwen 本地语言模型</summary>
+        <div class="model-intro">
+          <p>
+            默认用轻量意图识别和本地资料库整理回答，无需下载大模型。Qwen
+            0.6B可进一步筛选证据。
+          </p>
+          <div class="model-actions">
+            <button id="load-model" class="button">加载Qwen模型</button
+            ><button id="unload-model" class="button subtle" hidden>
+              停止并释放内存
+            </button>
+          </div>
+          <small id="model-status" role="status"
+            >Qwen首次约335 MiB，需要WebGPU。问题保留在当前设备。</small
+          ><progress
+            id="model-progress"
+            max="1"
+            value="0"
+            hidden
+            aria-label="模型加载进度"
+          ></progress>
+          <p class="model-download-note">
+            <a
+              href="https://github.com/leon1111-wgl/career-atlas/releases/tag/model-qwen3-0.6b-v1"
+              target="_blank"
+              rel="noopener"
+              >下载模型包</a
+            >用于自行部署。网站首次加载需要下载模型，网络较慢时可取消，继续使用上面的资料咨询。
+          </p>
+        </div>
+      </details>
+      <div class="chat-log" id="chat-log" aria-live="polite">
+        <div class="chat-bubble assistant">
+          <p>可以查询岗位区别、入门准备、公司类型与行业风险。</p>
+          <p>试试问：<strong>“AI 应用工程师和算法研究有什么区别？”</strong></p>
+        </div>
+      </div>
+      <div class="prompt-chips">
+        <button data-prompt="AI 应用工程师和算法研究有什么区别？">
+          AI 岗位怎么选</button
+        ><button data-prompt="机械专业可以去哪些行业？">从专业找方向</button
+        ><button data-prompt="考公和事业单位招聘有什么区别？">
+          了解公共部门
+        </button>
+      </div>
+      <form id="chat-form">
+        <label class="sr-only" for="chat-input">职业问题</label
+        ><textarea
+          id="chat-input"
+          maxlength="500"
+          rows="2"
+          placeholder="例如：机械设计在整机厂和零部件公司有什么区别？"
+        ></textarea
+        ><button id="send-chat" class="button primary" type="submit">
+          查询</button
+        ><button id="stop-chat" class="button subtle" type="button" hidden>
+          停止
+        </button>
+      </form>
+      <p class="chat-footnote">
+        本地问题分类与资料检索 · 非实时招聘广告 · Leon Wang
+      </p>
+    </dialog>
+    <div id="toast" role="status" class="toast" hidden></div>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

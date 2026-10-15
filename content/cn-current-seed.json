@@ -1,0 +1,170 @@
+{
+  "id": "cn-current",
+  "title": "国家统计局：中国最新月度与季度指标",
+  "url": "https://www.stats.gov.cn/sj/zxfb/",
+  "status": "reviewed",
+  "lastSuccess": "2026-10-15T16:04:07+00:00",
+  "verifiedAt": "2026-10-15T16:04:07+00:00",
+  "frequency": "月度 / 季度",
+  "unit": "%",
+  "retrieval": "官方原页经HTTP读取与人工核验的初始快照；发布日期逐项保留",
+  "sourceURLs": [
+    "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+    "https://www.stats.gov.cn/sj/zxfb/202608/t20260817_1965056.html",
+    "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964121.html",
+    "https://www.stats.gov.cn/sj/zxfb/202607/t20260716_1964142.html",
+    "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+    "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965311.html"
+  ],
+  "value": {
+    "indicators": [
+      {
+        "id": "gdp",
+        "label": "实际 GDP 增长",
+        "value": 4.7,
+        "unit": "%",
+        "period": "2026年上半年",
+        "observationDate": "2026-06",
+        "frequency": "季度（累计）",
+        "publishedAt": "2026-07-16",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202607/t20260716_1964142.html",
+        "changeLabel": "累计同比（不变价）",
+        "series": []
+      },
+      {
+        "id": "unemployment",
+        "label": "城镇调查失业率",
+        "value": 5.3,
+        "unit": "%",
+        "period": "2026-08",
+        "observationDate": "2026-08",
+        "frequency": "月度",
+        "publishedAt": "2026-09-15",
+        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+        "changeLabel": "当月水平",
+        "series": [
+          {
+            "date": "2026-06",
+            "value": 5.0,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964121.html",
+            "publishedAt": "2026-07-15"
+          },
+          {
+            "date": "2026-07",
+            "value": 5.2,
+            "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260817_1965056.html",
+            "publishedAt": "2026-08-17"
+          },
+          {
+            "date": "2026-08",
+            "value": 5.3,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+            "publishedAt": "2026-09-15"
+          }
+        ]
+      },
+      {
+        "id": "industrial",
+        "label": "规模以上工业增加值",
+        "value": 5.2,
+        "unit": "%",
+        "period": "2026-08",
+        "observationDate": "2026-08",
+        "frequency": "月度",
+        "publishedAt": "2026-09-15",
+        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+        "changeLabel": "当月同比（实际增长）",
+        "series": [
+          {
+            "date": "2026-06",
+            "value": 5.3,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964121.html",
+            "publishedAt": "2026-07-15"
+          },
+          {
+            "date": "2026-07",
+            "value": 4.5,
+            "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260817_1965056.html",
+            "publishedAt": "2026-08-17"
+          },
+          {
+            "date": "2026-08",
+            "value": 5.2,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+            "publishedAt": "2026-09-15"
+          }
+        ]
+      },
+      {
+        "id": "retail",
+        "label": "社会消费品零售总额",
+        "value": 0.4,
+        "unit": "%",
+        "period": "2026-08",
+        "observationDate": "2026-08",
+        "frequency": "月度",
+        "publishedAt": "2026-09-15",
+        "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965311.html",
+        "changeLabel": "当月同比",
+        "series": [
+          {
+            "date": "2026-06",
+            "value": 1.0,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964121.html",
+            "publishedAt": "2026-07-15"
+          },
+          {
+            "date": "2026-07",
+            "value": 0.6,
+            "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260817_1965056.html",
+            "publishedAt": "2026-08-17"
+          },
+          {
+            "date": "2026-08",
+            "value": 0.4,
+            "url": "https://www.stats.gov.cn/sj/zxfb/202609/t20260915_1965311.html",
+            "publishedAt": "2026-09-15"
+          }
+        ]
+      },
+      {
+        "id": "cpi",
+        "label": "居民消费价格 CPI",
+        "value": 0.9,
+        "unit": "%",
+        "period": "2026-09",
+        "observationDate": "2026-09",
+        "frequency": "月度",
+        "publishedAt": "2026-10-14",
+        "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+        "changeLabel": "当月同比",
+        "series": [
+          {
+            "date": "2026-06",
+            "value": 1.0,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202607/t20260715_1964121.html",
+            "publishedAt": "2026-07-15"
+          },
+          {
+            "date": "2026-07",
+            "value": 0.5,
+            "url": "https://www.stats.gov.cn/sj/zxfb/202608/t20260817_1965056.html",
+            "publishedAt": "2026-08-17"
+          },
+          {
+            "date": "2026-08",
+            "value": 0.8,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202609/t20260915_1965307.html",
+            "publishedAt": "2026-09-15"
+          },
+          {
+            "date": "2026-09",
+            "value": 0.9,
+            "url": "https://www.stats.gov.cn/sj/zxfbhjd/202610/t20261014_1965477.html",
+            "publishedAt": "2026-10-14"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -94,6 +94,34 @@ class CatalogTests(unittest.TestCase):
                 self.assertGreater(len(note['entry']), 15)
                 self.assertGreater(len(note['credential']), 15)
 
+    def test_job_reality_is_complete_and_originally_differentiated(self):
+        deliveries = []
+        for role in DATA['roles']:
+            reality = role['jobReality']
+            self.assertEqual(set(reality), {'deliverables', 'entryRoutes', 'interviewChecks', 'companyTypes'})
+            self.assertIn(len(reality['deliverables']), (2, 3))
+            self.assertEqual(len(reality['entryRoutes']), 2)
+            self.assertEqual(len(reality['interviewChecks']), 2)
+            for field in ('deliverables', 'entryRoutes', 'interviewChecks'):
+                self.assertEqual(len(reality[field]), len(set(reality[field])))
+                self.assertTrue(all(isinstance(text, str) and len(text) >= 7 for text in reality[field]))
+            self.assertEqual(len(reality['companyTypes']), 3)
+            self.assertEqual(len({x['type'] for x in reality['companyTypes']}), 3)
+            for context in reality['companyTypes']:
+                self.assertEqual(set(context), {'type', 'work', 'tradeoff'})
+                self.assertTrue(all(isinstance(v, str) and len(v) >= 4 for v in context.values()))
+            deliveries.append(tuple(reality['deliverables']))
+        self.assertEqual(len(deliveries), len(set(deliveries)))
+
+    def test_industry_decision_checklists(self):
+        all_questions = []
+        for industry in DATA['industries']:
+            questions = industry['decisionChecklist']
+            self.assertEqual(len(questions), 3)
+            self.assertTrue(all(isinstance(q, str) and len(q) >= 20 and q.endswith('？') for q in questions))
+            all_questions.extend(questions)
+        self.assertEqual(len(all_questions), len(set(all_questions)))
+
     def test_no_invented_numeric_metrics(self):
         for role in DATA['roles']:
             self.assertFalse({'salary', 'wage', 'demand', 'growth', 'vacancies'} & set(role))

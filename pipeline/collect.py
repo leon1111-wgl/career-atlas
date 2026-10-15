@@ -1,5 +1,6 @@
 """Fetch official public data with bounded HTTP requests and explicit stale fallback."""
 import argparse, concurrent.futures, datetime as dt, gzip, hashlib, json, pathlib, subprocess, sys, re
+from pipeline.current import collect_current
 from pipeline.sources import parse_bls, parse_nbs, parse_worldbank, parse_fred, parse_news, with_failure
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 OUT=ROOT/'web/data/observations.json'
@@ -59,6 +60,8 @@ def main():
         if m and int(m.group(1))>sources.get('nbs-wages',{}).get('value',{}).get('year',0):
             _,record=collect_one('nbs-wages','国家统计局：城镇单位行业工资',item['url'],parse_nbs,sources,now,'人民币/年','年度')
             sources['nbs-wages']=record
+    sources['cn-current']=collect_current(fetch,sources.get('cn-current'),now,sources.get('nbs-news',{}).get('value',[]),save_raw)
+    print('cn-current',sources['cn-current']['status'],flush=True)
     result={'schemaVersion':1,'attemptedAt':now,'sources':sources}
     OUT.parent.mkdir(exist_ok=True);temporary=OUT.with_suffix('.tmp');temporary.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');temporary.replace(OUT)
     summary={s:sum(r['status']==s for r in sources.values()) for s in ('ok','cached','unavailable')}

@@ -1,26 +1,41 @@
-# Interface design review
+# Career Atlas interface review
 
-The visual direction is a Chinese career research desk: sage navigation, ivory reading surfaces, clay evidence notes, and clearly visible source metadata. The interface should feel useful during a long comparison session.
+The current design follows the user's preference for the category-rich structure of mature Chinese recruitment portals. The public interface uses the author name **Leon Wang**. The previous editorial dashboard direction is superseded.
 
-## Changes
+## Structure and typography
 
-- Raised body, caption, table, chip, and navigation contrast throughout the application. Main explanatory text is 13–14px; compact metadata is generally 11–12px, with no pale green paragraphs.
-- Turned the four headline figures into one divided statistical strip. This distinguishes official measurements from the independent industry exploration cards below.
-- Used a restrained 27–36px serif page headline, stronger sans-serif section hierarchy, compact squared controls, and generous paragraph leading.
-- Removed floating card movement and ornamental shadows. Industry cards show a clear title, score, explanation, and metadata in that order.
-- Styled charts with legible axes, stronger series colours, thin gridlines, and readable source captions. Chart styling does not add any real-time claims.
-- Gave data tables stable row rules, alternating paper tints, tabular figures, and readable headings. Wide source/comparison tables scroll inside their own boundary on phones.
-- Raised mobile explanatory text to 13px and native form text to 16px. Retained a compact two-column statistics strip, with single-column reading and comparison content below it.
-- Preserved all existing selectors and app interactions. Included visible keyboard focus, reduced-motion support, and print overrides.
+A white masthead contains the text brand, horizontal navigation, and a secondary consultation entry. A separate search band makes industry, occupation, and major queries the primary entry point. Content sits in a centered 1200px reading area against a light neutral background. Type is system sans-serif throughout; subpage headings are compact and descriptive.
 
-## Visual QA
+The homepage provides a compact current-economic-data strip, eight industry groups containing 26 industry links, four text-based subject entries, a single-column occupation list, and a secondary column for official releases and research context. These areas have distinct roles instead of repeating the same oversized card shape.
 
-Computed text contrast samples using WCAG relative luminance: body 11.09:1; introductory copy 5.17:1; panel metadata 5.10:1; industry paragraphs 5.31:1; table body 6.23:1; evidence notes 5.12:1; primary button 6.53:1. These samples exceed 4.5:1 for normal text, but are not a full accessibility audit.
+Occupation rows give priority to the title, actual work, skills, and entry preparation. The exploration score is a small secondary field. A consistent footer provides comparison and detail actions. Industry entries use a compact two-column directory layout on desktop and a single column on phones.
 
-Rendered with headless Google Chrome through Playwright at `http://localhost:4173` on 2026-10-15. Tested overview, industries, careers, match, reports, and sources at both 1440px and 390px viewport widths. All 12 page-width checks returned document width equal to viewport width. Initial loads reported no uncaught JavaScript errors.
+Details use ordinary document sections and tables for work tasks, preparation, company-type differences, statistical context, and sources. The assistant remains optional. Model controls are folded under an explicit settings disclosure rather than dominating the consultation flow.
 
-Screenshots are retained locally in `qa/designer/` (ignored QA artifacts), including the industry detail and unloaded assistant dialogs at both widths. Visually inspected desktop overview and sources; mobile overview, careers, match, and reports; and mobile detail/assistant plus desktop assistant. Wide tables intentionally scroll within their wrapper.
+## Visual system
 
-The first render exposed excess vertical space around the mobile SVG plot, caused by its fixed height and preserved viewBox ratio. Reduced phone plot height to 160px, kept its period label on a stable width, and reran all 12 page-width checks successfully. Enlarged SVG label units specifically for narrow viewports so the axis labels remain readable when the 670-unit chart scales down.
+- White surfaces, a light grey page background, and muted teal/sage for navigation and principal actions.
+- Thin neutral rules, 3px corners, and no ornamental icons, gradients, glowing effects, card movement, or floating dashboard shadows.
+- Stronger title/body text with readable green-grey source periods and metadata. Statistics use tabular numerals and retain their observation dates.
+- Real historical charts with visible axes, units, legends, and captions. Current values distinguish the observation period from the release date.
+- Compact table headings, stable row rules, alternating paper tints, and internal horizontal scrolling where full comparison fields require it.
 
-No model weights were loaded for visual QA. These checks verify layout and readability, not inference quality or keyboard/screen-reader coverage.
+## Mobile behaviour
+
+The header navigation opens below the masthead through the existing menu control. Search remains visible. Industry groups use two columns, subject entries use a 2×2 arrangement, occupation content becomes a single reading stack, and the research sidebar follows the main results. The economic strip uses two columns with the fifth item spanning the final row. Professional background selection should use the main agent's native select control rather than 44 always-visible chips.
+
+Phone SVG labels compensate for the fixed chart viewBox so they remain readable after scaling. Native input text is 16px where appropriate. Keyboard focus is visible, reduced-motion preferences are respected, and print styles remove navigation and interactive chrome.
+
+## Evidence boundaries
+
+The site contains occupational research entries, not verified live vacancies. Counts and actions must retain that distinction. Aggregate wage proxies keep their source, region, and observation period; scores keep their method and coverage. Layout does not add recruiter statuses, current openings, fabricated employers, or application actions.
+
+## Rendered QA
+
+The first portal pass was rendered locally in Google Chrome through Playwright at desktop 1440px and mobile 390px widths. Overview, industries, careers, match, reports, and sources were checked at both widths: 12/12 document-width checks matched the viewport; no uncaught JavaScript errors were recorded. Desktop/mobile screenshots are retained in the ignored `qa/designer/` directory as `platform-*.png`, with `platform-results.json` holding the machine-readable results.
+
+Visual inspection covered the homepage, industry directory, occupation library, matching page, reports, source table, expanded mobile navigation, occupation details, consultation, and expanded model settings. Observed issues fixed during that pass included the desktop menu display cascade, Chinese menu text wrapping, brand subtitle wrapping, native title-button borders, sidebar list bullets, intersecting metric padding, and excessive initial-chat whitespace.
+
+The current-economic-data strip and current-indicator chart were then rendered at 1440px and 390px: all four page-width checks matched the viewport, with no uncaught JavaScript errors. The Chinese strip showed five indicators and the report selector offered four chartable indicators. The US two-indicator strip was separately checked at 390px with both items aligned in one row and no document overflow. Mobile charts use a full-width selector above the plot. Source-note spacing was tightened; long US values receive priority over decorative sparklines on narrow screens. Screenshots are named `final-home-*.png` and `final-trends-*.png`, with results in `current-strip-results.json`.
+
+The question “智能体应用工程师在不同公司里工作有什么特点” was also submitted to the default consultation mode at both widths. The rendered structured answer contained three company contexts, two verification questions, and an evidence qualifier. Section spacing, list leading, and source notes were inspected in `final-answer-1440.png` and `final-answer-390.png`. No model weights were loaded; these checks confirm presentation and the exercised retrieval flow, not model inference quality or complete keyboard/screen-reader coverage.

@@ -6,7 +6,10 @@ def main():
     for name in ('catalog','ecosystem'):shutil.copyfile(ROOT/f'content/{name}.json',out/f'{name}.json')
     data=json.loads((out/'observations.json').read_text());s=data['sources'];catalog=json.loads((out/'catalog.json').read_text())
     latest=lambda k,r:s.get(k,{}).get('value',{}).get(r,[])[-1:]
-    text=['# 向野 · 中美行业与职业观察','',f"最近采集尝试：{data['attemptedAt']}",'','这份报告由公开统计快照按固定规则生成。数据所属期见每项标注；不将采集日期当作统计期。评分是探索工具，不是收益或录用概率。','', '## 经济背景','']
+    text=['# 向野 · 中美行业与职业观察','','作者：Leon Wang','',f"最近采集尝试：{data['attemptedAt']}",'','这份报告由公开统计快照按固定规则生成。数据所属期见每项标注；不将采集日期当作统计期。评分是探索工具，不是收益或录用概率。','', '## 最新月度与季度观察','']
+    for item in s.get('cn-current',{}).get('value',{}).get('indicators',[]):
+        text.append(f"- 中国大陆 · {item['label']}：{item['value']:g}{item['unit']}（{item['period']}；{item['changeLabel']}；发布于 {item['publishedAt']}）。[国家统计局原文]({item['url']})")
+    text+=['','以上是各项已发布的最新有效统计期，不要求所有指标属于同一月份。GDP为累计实际同比，失业率为当月水平，其余为当月同比；不混用同比、环比或累计变化。采集成功不代表观测期更新。','','## 年度历史背景','']
     for country,label in [('CN','中国大陆'),('US','美国')]:
         for key,title in [('wb-gdpGrowth','实际 GDP 增长'),('wb-unemployment','ILO 模型估计失业率'),('wb-inflation','CPI 年度涨幅')]:
             rows=latest(key,country)
@@ -24,7 +27,7 @@ def main():
         if r and r.get('type')=='Line item':
             val=lambda k:'缺失' if r.get(k) is None else f'{r[k]:,.0f}'
             text.append(f"| {role['title']} | {role['soc']} | {r['growth']}% | {val('openings')} | {val('medianWage')}{'及以上' if r.get('wageCensored') else ''} |")
-    text += ['',f"预测期：{bls.get('period')}；工资期：{bls.get('wageYear')}。[BLS 原表]({s['bls']['url']})",'','## 如何解读','','- 增长和薪资各自回答不同问题。行业工资较高，并不代表毕业生容易进入。','- 相同统计门类下的细分行业可能共用数据，人工智能、软件和通信不会因此被视为相同职业。','- 中国缺少本项目可持续抓取的同口径职业就业预测；缺失项保持缺失。','- 盈利质量、AI 专属资本开支和行业人均净利润尚无完整可比样本，不进入首版数字评分。','- 本地小模型基于 Qwen3 0.6B 和资料检索，负责解释；不修改统计值或评分规则。','', '## 采集状态','']
+    text += ['',f"预测期：{bls.get('period')}；工资期：{bls.get('wageYear')}。[BLS 原表]({s['bls']['url']})",'','## 如何解读','','- 增长和薪资各自回答不同问题。行业工资较高，并不代表毕业生容易进入。','- 相同统计门类下的细分行业可能共用数据，人工智能、软件和通信不会因此被视为相同职业。','- 中国缺少本项目可持续抓取的同口径职业就业预测；缺失项保持缺失。','- 盈利质量、AI 专属资本开支和行业人均净利润尚无完整可比样本，不进入首版数字评分。','- 轻量问题分类器与本地资料库整理回答；可选 Qwen3 0.6B 筛选依据，均不修改统计值或评分规则。','', '## 采集状态','']
     for record in s.values():text.append(f"- {record['title']}：{record['status']}；上次有效获取 {record.get('lastSuccess','无')}。[来源]({record['url']})")
     text+=['','## 下一步行动','','1. 选两个行业、三个岗位，阅读任务与入门要求。','2. 在目标城市收集真实招聘要求，核对是否接受应届和跨专业。','3. 约一位从业者访谈，完成一个能验证兴趣的小项目。','4. 用一周的体验修正选择，不把一次评分当结论。','']
     report='\n'.join(text);(ROOT/'reports/latest.md').write_text(report);(out/'report.md').write_text(report)

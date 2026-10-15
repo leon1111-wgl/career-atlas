@@ -1,0 +1,814 @@
+{
+  "version": 1,
+  "language": "zh-CN",
+  "authoring": "Original manually authored career questions; no template expansion or random train/test split.",
+  "split": "held-out",
+  "seed": 20261015,
+  "examples": [
+    {
+      "intent": "compare",
+      "text": "软件测试与质量工程两个方向有哪些异同"
+    },
+    {
+      "intent": "compare",
+      "text": "想对照看看审计和风险管理的日常"
+    },
+    {
+      "intent": "compare",
+      "text": "做护理或做药学我应该比较哪些方面"
+    },
+    {
+      "intent": "compare",
+      "text": "机器人研发和自动化调试有何差别"
+    },
+    {
+      "intent": "compare",
+      "text": "同为技术岗，研究与交付之间怎么取舍"
+    },
+    {
+      "intent": "compare",
+      "text": "酒店管理以及旅游策划哪个更需要现场沟通"
+    },
+    {
+      "intent": "compare",
+      "text": "把信息安全和网络运维的工作做个比较"
+    },
+    {
+      "intent": "compare",
+      "text": "环境监测相对于水处理工程有哪些不同"
+    },
+    {
+      "intent": "entry",
+      "text": "申请云平台运维前应该练好哪些基础"
+    },
+    {
+      "intent": "entry",
+      "text": "普通本科生想进制造厂需要准备什么"
+    },
+    {
+      "intent": "entry",
+      "text": "怎样从头学习并申请视觉设计工作"
+    },
+    {
+      "intent": "entry",
+      "text": "去做心理咨询必须满足什么准入要求"
+    },
+    {
+      "intent": "entry",
+      "text": "我能拿什么作品证明有数据清洗能力"
+    },
+    {
+      "intent": "entry",
+      "text": "转去嵌入式开发的第一步怎么安排"
+    },
+    {
+      "intent": "entry",
+      "text": "医疗检验人员需不需要特定学历证书"
+    },
+    {
+      "intent": "entry",
+      "text": "入职采购前是否应该先练习合同分析"
+    },
+    {
+      "intent": "salary",
+      "text": "社会工作者的年收入统计是多少"
+    },
+    {
+      "intent": "salary",
+      "text": "应聘时看到月薪一万应该如何理解"
+    },
+    {
+      "intent": "salary",
+      "text": "我关心芯片验证岗位的报酬水平"
+    },
+    {
+      "intent": "salary",
+      "text": "请解释薪酬区间与工资中位数的差别"
+    },
+    {
+      "intent": "salary",
+      "text": "养老照护的薪水有哪份统计可参考"
+    },
+    {
+      "intent": "salary",
+      "text": "老师的基本工资之外有哪些绩效构成"
+    },
+    {
+      "intent": "salary",
+      "text": "制造行业职工平均收入属于哪年"
+    },
+    {
+      "intent": "salary",
+      "text": "可否用全国行业薪资判断我的第一份工资"
+    },
+    {
+      "intent": "prospects",
+      "text": "人口结构变化会不会增加康复岗位的需求"
+    },
+    {
+      "intent": "prospects",
+      "text": "如果经济下行，审计职业的发展趋势会怎样"
+    },
+    {
+      "intent": "prospects",
+      "text": "可再生能源的人才缺口今后可能扩大吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "从预测看未来几年仓储工作还会增长吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "自动化对翻译职位的长期影响是什么"
+    },
+    {
+      "intent": "prospects",
+      "text": "行业处于上升周期能保证招聘变多吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "数字医疗的增长机会来自什么需求"
+    },
+    {
+      "intent": "prospects",
+      "text": "往后十年建筑行业有哪些不确定性"
+    },
+    {
+      "intent": "fit",
+      "text": "我读外语又喜欢分析资料，能探索什么方向"
+    },
+    {
+      "intent": "fit",
+      "text": "总觉得工作不适合自己该怎样做小实验"
+    },
+    {
+      "intent": "fit",
+      "text": "希望少出差并且能照顾家庭，怎么缩小选择"
+    },
+    {
+      "intent": "fit",
+      "text": "喜欢户外活动的人能从哪些职业了解起"
+    },
+    {
+      "intent": "fit",
+      "text": "我最擅长沟通，如何检验是否喜欢客户服务"
+    },
+    {
+      "intent": "fit",
+      "text": "不清楚自己的强项能做什么探索练习"
+    },
+    {
+      "intent": "fit",
+      "text": "如何把个人兴趣和大学所学一起考虑"
+    },
+    {
+      "intent": "fit",
+      "text": "如果重视创造力应当怎样调查岗位匹配"
+    },
+    {
+      "intent": "work",
+      "text": "药品注册专员实际上负责处理什么材料"
+    },
+    {
+      "intent": "work",
+      "text": "游戏制作里的关卡设计师平时干哪些事"
+    },
+    {
+      "intent": "work",
+      "text": "一天之中电网运维人员如何巡检"
+    },
+    {
+      "intent": "work",
+      "text": "用户研究岗位的产出通常长什么样"
+    },
+    {
+      "intent": "work",
+      "text": "水处理厂技术人员要完成哪些任务"
+    },
+    {
+      "intent": "work",
+      "text": "项目交付经理需要协调哪些团队"
+    },
+    {
+      "intent": "work",
+      "text": "请具体解释技术写作这个岗位的职责"
+    },
+    {
+      "intent": "work",
+      "text": "法庭之外法律助理还有什么日常工作"
+    },
+    {
+      "intent": "company",
+      "text": "哪个类型的机构会聘请生物信息分析人员"
+    },
+    {
+      "intent": "company",
+      "text": "哪里能看到储能厂商的官方人才页面"
+    },
+    {
+      "intent": "company",
+      "text": "列出影视制作领域的用人机构类型"
+    },
+    {
+      "intent": "company",
+      "text": "想看看半导体产业链上的雇主样本"
+    },
+    {
+      "intent": "company",
+      "text": "我该去什么组织寻找康复岗位"
+    },
+    {
+      "intent": "company",
+      "text": "做公共卫生能在哪些机构求职"
+    },
+    {
+      "intent": "company",
+      "text": "如何定位企业官网中的职位列表"
+    },
+    {
+      "intent": "company",
+      "text": "有哪些公司在做工业机器人并可能设研发团队"
+    },
+    {
+      "intent": "public",
+      "text": "公务员职位要求两年基层经历应该怎样核实"
+    },
+    {
+      "intent": "public",
+      "text": "想报名某市事业单位去哪里找原始公告"
+    },
+    {
+      "intent": "public",
+      "text": "国考的资格审查是否接受我的专业名称"
+    },
+    {
+      "intent": "public",
+      "text": "我想申请美国联邦机构应该先看什么入口"
+    },
+    {
+      "intent": "public",
+      "text": "准备申论时怎样辨别官方考试大纲"
+    },
+    {
+      "intent": "public",
+      "text": "应聘行政机关需要走公务员招录吗"
+    },
+    {
+      "intent": "public",
+      "text": "考事业编如何确认岗位表与报名截止日期"
+    },
+    {
+      "intent": "public",
+      "text": "地方公务员招考的专业条件谁说了算"
+    }
+  ],
+  "evaluation": {
+    "count": 64,
+    "correct": 43,
+    "accuracy": 0.6719,
+    "accepted": 48,
+    "acceptedAccuracy": 0.8958,
+    "fallback": 16,
+    "confusionMatrix": {
+      "compare": {
+        "compare": 3,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 0,
+        "fit": 0,
+        "work": 2,
+        "company": 0,
+        "public": 0,
+        "general": 3
+      },
+      "entry": {
+        "compare": 0,
+        "entry": 7,
+        "salary": 1,
+        "prospects": 0,
+        "fit": 0,
+        "work": 0,
+        "company": 0,
+        "public": 0,
+        "general": 0
+      },
+      "salary": {
+        "compare": 0,
+        "entry": 0,
+        "salary": 5,
+        "prospects": 0,
+        "fit": 0,
+        "work": 0,
+        "company": 1,
+        "public": 0,
+        "general": 2
+      },
+      "prospects": {
+        "compare": 0,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 3,
+        "fit": 0,
+        "work": 0,
+        "company": 0,
+        "public": 0,
+        "general": 5
+      },
+      "fit": {
+        "compare": 0,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 0,
+        "fit": 8,
+        "work": 0,
+        "company": 0,
+        "public": 0,
+        "general": 0
+      },
+      "work": {
+        "compare": 1,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 0,
+        "fit": 0,
+        "work": 5,
+        "company": 0,
+        "public": 0,
+        "general": 2
+      },
+      "company": {
+        "compare": 0,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 0,
+        "fit": 0,
+        "work": 0,
+        "company": 6,
+        "public": 0,
+        "general": 2
+      },
+      "public": {
+        "compare": 0,
+        "entry": 0,
+        "salary": 0,
+        "prospects": 0,
+        "fit": 0,
+        "work": 0,
+        "company": 0,
+        "public": 6,
+        "general": 2
+      }
+    },
+    "results": [
+      {
+        "intent": "compare",
+        "text": "软件测试与质量工程两个方向有哪些异同",
+        "predicted": "compare",
+        "score": 0.2163,
+        "matched": 7
+      },
+      {
+        "intent": "compare",
+        "text": "想对照看看审计和风险管理的日常",
+        "predicted": "general",
+        "score": 0.6135,
+        "matched": 1
+      },
+      {
+        "intent": "compare",
+        "text": "做护理或做药学我应该比较哪些方面",
+        "predicted": "compare",
+        "score": 0.3671,
+        "matched": 2
+      },
+      {
+        "intent": "compare",
+        "text": "机器人研发和自动化调试有何差别",
+        "predicted": "general",
+        "score": 0.6188,
+        "matched": 1
+      },
+      {
+        "intent": "compare",
+        "text": "同为技术岗，研究与交付之间怎么取舍",
+        "predicted": "work",
+        "score": 0.3167,
+        "matched": 4
+      },
+      {
+        "intent": "compare",
+        "text": "酒店管理以及旅游策划哪个更需要现场沟通",
+        "predicted": "work",
+        "score": 0.1289,
+        "matched": 3
+      },
+      {
+        "intent": "compare",
+        "text": "把信息安全和网络运维的工作做个比较",
+        "predicted": "compare",
+        "score": 0.2196,
+        "matched": 3
+      },
+      {
+        "intent": "compare",
+        "text": "环境监测相对于水处理工程有哪些不同",
+        "predicted": "general",
+        "score": 0.0483,
+        "matched": 5
+      },
+      {
+        "intent": "entry",
+        "text": "申请云平台运维前应该练好哪些基础",
+        "predicted": "entry",
+        "score": 0.4053,
+        "matched": 2
+      },
+      {
+        "intent": "entry",
+        "text": "普通本科生想进制造厂需要准备什么",
+        "predicted": "entry",
+        "score": 0.4458,
+        "matched": 3
+      },
+      {
+        "intent": "entry",
+        "text": "怎样从头学习并申请视觉设计工作",
+        "predicted": "entry",
+        "score": 0.288,
+        "matched": 4
+      },
+      {
+        "intent": "entry",
+        "text": "去做心理咨询必须满足什么准入要求",
+        "predicted": "entry",
+        "score": 0.4245,
+        "matched": 2
+      },
+      {
+        "intent": "entry",
+        "text": "我能拿什么作品证明有数据清洗能力",
+        "predicted": "entry",
+        "score": 0.3271,
+        "matched": 3
+      },
+      {
+        "intent": "entry",
+        "text": "转去嵌入式开发的第一步怎么安排",
+        "predicted": "entry",
+        "score": 0.4932,
+        "matched": 2
+      },
+      {
+        "intent": "entry",
+        "text": "医疗检验人员需不需要特定学历证书",
+        "predicted": "entry",
+        "score": 0.2925,
+        "matched": 3
+      },
+      {
+        "intent": "entry",
+        "text": "入职采购前是否应该先练习合同分析",
+        "predicted": "salary",
+        "score": 0.1174,
+        "matched": 2
+      },
+      {
+        "intent": "salary",
+        "text": "社会工作者的年收入统计是多少",
+        "predicted": "salary",
+        "score": 0.5371,
+        "matched": 4
+      },
+      {
+        "intent": "salary",
+        "text": "应聘时看到月薪一万应该如何理解",
+        "predicted": "general",
+        "score": 0.1127,
+        "matched": 1
+      },
+      {
+        "intent": "salary",
+        "text": "我关心芯片验证岗位的报酬水平",
+        "predicted": "general",
+        "score": 0.0964,
+        "matched": 3
+      },
+      {
+        "intent": "salary",
+        "text": "请解释薪酬区间与工资中位数的差别",
+        "predicted": "salary",
+        "score": 0.5681,
+        "matched": 7
+      },
+      {
+        "intent": "salary",
+        "text": "养老照护的薪水有哪份统计可参考",
+        "predicted": "salary",
+        "score": 0.4258,
+        "matched": 4
+      },
+      {
+        "intent": "salary",
+        "text": "老师的基本工资之外有哪些绩效构成",
+        "predicted": "company",
+        "score": 0.2297,
+        "matched": 5
+      },
+      {
+        "intent": "salary",
+        "text": "制造行业职工平均收入属于哪年",
+        "predicted": "salary",
+        "score": 0.4716,
+        "matched": 3
+      },
+      {
+        "intent": "salary",
+        "text": "可否用全国行业薪资判断我的第一份工资",
+        "predicted": "salary",
+        "score": 0.2388,
+        "matched": 6
+      },
+      {
+        "intent": "prospects",
+        "text": "人口结构变化会不会增加康复岗位的需求",
+        "predicted": "general",
+        "score": 0.0932,
+        "matched": 4
+      },
+      {
+        "intent": "prospects",
+        "text": "如果经济下行，审计职业的发展趋势会怎样",
+        "predicted": "general",
+        "score": 0.0545,
+        "matched": 5
+      },
+      {
+        "intent": "prospects",
+        "text": "可再生能源的人才缺口今后可能扩大吗",
+        "predicted": "general",
+        "score": 0.0792,
+        "matched": 3
+      },
+      {
+        "intent": "prospects",
+        "text": "从预测看未来几年仓储工作还会增长吗",
+        "predicted": "prospects",
+        "score": 0.5564,
+        "matched": 4
+      },
+      {
+        "intent": "prospects",
+        "text": "自动化对翻译职位的长期影响是什么",
+        "predicted": "general",
+        "score": 0.0539,
+        "matched": 9
+      },
+      {
+        "intent": "prospects",
+        "text": "行业处于上升周期能保证招聘变多吗",
+        "predicted": "prospects",
+        "score": 0.3721,
+        "matched": 2
+      },
+      {
+        "intent": "prospects",
+        "text": "数字医疗的增长机会来自什么需求",
+        "predicted": "prospects",
+        "score": 0.5625,
+        "matched": 4
+      },
+      {
+        "intent": "prospects",
+        "text": "往后十年建筑行业有哪些不确定性",
+        "predicted": "general",
+        "score": 0.0586,
+        "matched": 4
+      },
+      {
+        "intent": "fit",
+        "text": "我读外语又喜欢分析资料，能探索什么方向",
+        "predicted": "fit",
+        "score": 0.3654,
+        "matched": 5
+      },
+      {
+        "intent": "fit",
+        "text": "总觉得工作不适合自己该怎样做小实验",
+        "predicted": "fit",
+        "score": 0.5432,
+        "matched": 5
+      },
+      {
+        "intent": "fit",
+        "text": "希望少出差并且能照顾家庭，怎么缩小选择",
+        "predicted": "fit",
+        "score": 0.4467,
+        "matched": 2
+      },
+      {
+        "intent": "fit",
+        "text": "喜欢户外活动的人能从哪些职业了解起",
+        "predicted": "fit",
+        "score": 0.4276,
+        "matched": 5
+      },
+      {
+        "intent": "fit",
+        "text": "我最擅长沟通，如何检验是否喜欢客户服务",
+        "predicted": "fit",
+        "score": 0.3372,
+        "matched": 3
+      },
+      {
+        "intent": "fit",
+        "text": "不清楚自己的强项能做什么探索练习",
+        "predicted": "fit",
+        "score": 0.3381,
+        "matched": 7
+      },
+      {
+        "intent": "fit",
+        "text": "如何把个人兴趣和大学所学一起考虑",
+        "predicted": "fit",
+        "score": 0.1953,
+        "matched": 3
+      },
+      {
+        "intent": "fit",
+        "text": "如果重视创造力应当怎样调查岗位匹配",
+        "predicted": "fit",
+        "score": 0.2272,
+        "matched": 2
+      },
+      {
+        "intent": "work",
+        "text": "药品注册专员实际上负责处理什么材料",
+        "predicted": "general",
+        "score": 0.1047,
+        "matched": 1
+      },
+      {
+        "intent": "work",
+        "text": "游戏制作里的关卡设计师平时干哪些事",
+        "predicted": "work",
+        "score": 0.4247,
+        "matched": 4
+      },
+      {
+        "intent": "work",
+        "text": "一天之中电网运维人员如何巡检",
+        "predicted": "work",
+        "score": 0.5059,
+        "matched": 3
+      },
+      {
+        "intent": "work",
+        "text": "用户研究岗位的产出通常长什么样",
+        "predicted": "work",
+        "score": 0.1251,
+        "matched": 6
+      },
+      {
+        "intent": "work",
+        "text": "水处理厂技术人员要完成哪些任务",
+        "predicted": "work",
+        "score": 0.4225,
+        "matched": 4
+      },
+      {
+        "intent": "work",
+        "text": "项目交付经理需要协调哪些团队",
+        "predicted": "general",
+        "score": 0.0508,
+        "matched": 4
+      },
+      {
+        "intent": "work",
+        "text": "请具体解释技术写作这个岗位的职责",
+        "predicted": "work",
+        "score": 0.1451,
+        "matched": 6
+      },
+      {
+        "intent": "work",
+        "text": "法庭之外法律助理还有什么日常工作",
+        "predicted": "compare",
+        "score": 0.1707,
+        "matched": 5
+      },
+      {
+        "intent": "company",
+        "text": "哪个类型的机构会聘请生物信息分析人员",
+        "predicted": "company",
+        "score": 0.2395,
+        "matched": 4
+      },
+      {
+        "intent": "company",
+        "text": "哪里能看到储能厂商的官方人才页面",
+        "predicted": "company",
+        "score": 0.3864,
+        "matched": 4
+      },
+      {
+        "intent": "company",
+        "text": "列出影视制作领域的用人机构类型",
+        "predicted": "company",
+        "score": 0.5664,
+        "matched": 2
+      },
+      {
+        "intent": "company",
+        "text": "想看看半导体产业链上的雇主样本",
+        "predicted": "company",
+        "score": 0.6424,
+        "matched": 2
+      },
+      {
+        "intent": "company",
+        "text": "我该去什么组织寻找康复岗位",
+        "predicted": "general",
+        "score": 0.0239,
+        "matched": 2
+      },
+      {
+        "intent": "company",
+        "text": "做公共卫生能在哪些机构求职",
+        "predicted": "company",
+        "score": 0.458,
+        "matched": 8
+      },
+      {
+        "intent": "company",
+        "text": "如何定位企业官网中的职位列表",
+        "predicted": "general",
+        "score": 0.0294,
+        "matched": 3
+      },
+      {
+        "intent": "company",
+        "text": "有哪些公司在做工业机器人并可能设研发团队",
+        "predicted": "company",
+        "score": 0.4759,
+        "matched": 8
+      },
+      {
+        "intent": "public",
+        "text": "公务员职位要求两年基层经历应该怎样核实",
+        "predicted": "public",
+        "score": 0.462,
+        "matched": 7
+      },
+      {
+        "intent": "public",
+        "text": "想报名某市事业单位去哪里找原始公告",
+        "predicted": "public",
+        "score": 0.4785,
+        "matched": 9
+      },
+      {
+        "intent": "public",
+        "text": "国考的资格审查是否接受我的专业名称",
+        "predicted": "general",
+        "score": 0.0642,
+        "matched": 8
+      },
+      {
+        "intent": "public",
+        "text": "我想申请美国联邦机构应该先看什么入口",
+        "predicted": "public",
+        "score": 0.1676,
+        "matched": 3
+      },
+      {
+        "intent": "public",
+        "text": "准备申论时怎样辨别官方考试大纲",
+        "predicted": "general",
+        "score": 0.0792,
+        "matched": 4
+      },
+      {
+        "intent": "public",
+        "text": "应聘行政机关需要走公务员招录吗",
+        "predicted": "public",
+        "score": 0.6151,
+        "matched": 8
+      },
+      {
+        "intent": "public",
+        "text": "考事业编如何确认岗位表与报名截止日期",
+        "predicted": "public",
+        "score": 0.4927,
+        "matched": 4
+      },
+      {
+        "intent": "public",
+        "text": "地方公务员招考的专业条件谁说了算",
+        "predicted": "public",
+        "score": 0.5595,
+        "matched": 10
+      }
+    ],
+    "evaluationSha256": "7862a2eedc49f4fb4cf401bfe29f600651651ca410db6318a7f38aef1f86ad31"
+  }
+}

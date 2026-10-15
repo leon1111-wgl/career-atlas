@@ -1,0 +1,777 @@
+{
+  "version": 1,
+  "language": "zh-CN",
+  "authoring": "Original manually authored career questions; no template expansion or random train/test split.",
+  "split": "training",
+  "seed": 20261015,
+  "examples": [
+    {
+      "intent": "compare",
+      "text": "软件开发和数据分析的区别是什么"
+    },
+    {
+      "intent": "compare",
+      "text": "对比一下医生与药师这两种职业"
+    },
+    {
+      "intent": "compare",
+      "text": "后端和前端哪个更符合长期目标"
+    },
+    {
+      "intent": "compare",
+      "text": "金融分析师与会计有什么不同"
+    },
+    {
+      "intent": "compare",
+      "text": "我想把机械和电子岗位放在一起比较"
+    },
+    {
+      "intent": "compare",
+      "text": "研究岗和应用岗差在哪些方面"
+    },
+    {
+      "intent": "compare",
+      "text": "教师和企业培训师各有什么优缺点"
+    },
+    {
+      "intent": "compare",
+      "text": "做产品还是做设计怎么取舍"
+    },
+    {
+      "intent": "compare",
+      "text": "帮我横向看三种职业的差异"
+    },
+    {
+      "intent": "compare",
+      "text": "请比较电力行业与新能源行业"
+    },
+    {
+      "intent": "compare",
+      "text": "文案策划跟内容运营是一回事吗"
+    },
+    {
+      "intent": "compare",
+      "text": "两个工作方向放在一起看有哪些差别"
+    },
+    {
+      "intent": "compare",
+      "text": "土木设计与现场施工各自特点是什么"
+    },
+    {
+      "intent": "compare",
+      "text": "护理和康复岗位有什么共同点与区别"
+    },
+    {
+      "intent": "compare",
+      "text": "想从两个选项中做选择该比较什么"
+    },
+    {
+      "intent": "compare",
+      "text": "物流规划和采购相比哪个出差更多"
+    },
+    {
+      "intent": "compare",
+      "text": "创业公司与大企业岗位的异同在哪里"
+    },
+    {
+      "intent": "compare",
+      "text": "法务跟律师两条路有哪些不同"
+    },
+    {
+      "intent": "compare",
+      "text": "算法工程和软件工程的门槛差别"
+    },
+    {
+      "intent": "compare",
+      "text": "请给计算机和通信工作做个对照"
+    },
+    {
+      "intent": "compare",
+      "text": "销售与客户成功的任务区别"
+    },
+    {
+      "intent": "compare",
+      "text": "同样学化学做研发还是质检如何选"
+    },
+    {
+      "intent": "compare",
+      "text": "把银行柜员与风险分析师做一份对比"
+    },
+    {
+      "intent": "compare",
+      "text": "这两个岗位的工作内容有何差异"
+    },
+    {
+      "intent": "entry",
+      "text": "零基础怎么入门软件开发"
+    },
+    {
+      "intent": "entry",
+      "text": "转行数据分析需要先学什么"
+    },
+    {
+      "intent": "entry",
+      "text": "没有项目经验怎样开始做产品"
+    },
+    {
+      "intent": "entry",
+      "text": "成为护士需要什么资格证"
+    },
+    {
+      "intent": "entry",
+      "text": "想入行芯片设计要补哪些课"
+    },
+    {
+      "intent": "entry",
+      "text": "毕业生求职需要准备什么作品"
+    },
+    {
+      "intent": "entry",
+      "text": "机械岗位的最低学历要求是什么"
+    },
+    {
+      "intent": "entry",
+      "text": "如何为第一份前端工作搭建作品集"
+    },
+    {
+      "intent": "entry",
+      "text": "跨专业学金融应该从哪里开始"
+    },
+    {
+      "intent": "entry",
+      "text": "进实验室工作有什么证书要求"
+    },
+    {
+      "intent": "entry",
+      "text": "从文科转计算机的学习路线怎么排"
+    },
+    {
+      "intent": "entry",
+      "text": "人工智能工程师的入门步骤是什么"
+    },
+    {
+      "intent": "entry",
+      "text": "应届生申请供应链岗位该做哪些准备"
+    },
+    {
+      "intent": "entry",
+      "text": "学习电气设计需要哪些基础知识"
+    },
+    {
+      "intent": "entry",
+      "text": "法律行业的执业资格怎么获得"
+    },
+    {
+      "intent": "entry",
+      "text": "教师招聘一般需要什么学历和证照"
+    },
+    {
+      "intent": "entry",
+      "text": "第一次找运营工作要掌握什么技能"
+    },
+    {
+      "intent": "entry",
+      "text": "如何完成进入软件行业的第一个项目"
+    },
+    {
+      "intent": "entry",
+      "text": "医学相关岗位的准入门槛有哪些"
+    },
+    {
+      "intent": "entry",
+      "text": "建筑设计新人要会哪些工具"
+    },
+    {
+      "intent": "entry",
+      "text": "可以给一份入行机器人行业的练习计划吗"
+    },
+    {
+      "intent": "entry",
+      "text": "没有实习经历怎样证明自己的能力"
+    },
+    {
+      "intent": "entry",
+      "text": "培训转行与大学学历各自能补什么"
+    },
+    {
+      "intent": "entry",
+      "text": "想做审计需要满足哪些入职条件"
+    },
+    {
+      "intent": "salary",
+      "text": "程序员的工资一般有多少"
+    },
+    {
+      "intent": "salary",
+      "text": "数据分析师的薪资中位数是多少"
+    },
+    {
+      "intent": "salary",
+      "text": "医生年薪的统计口径是什么"
+    },
+    {
+      "intent": "salary",
+      "text": "私营企业平均工资如何理解"
+    },
+    {
+      "intent": "salary",
+      "text": "金融从业者收入大概处于什么水平"
+    },
+    {
+      "intent": "salary",
+      "text": "这份工作的待遇怎样查证"
+    },
+    {
+      "intent": "salary",
+      "text": "软件岗位起薪和资深薪水差多少"
+    },
+    {
+      "intent": "salary",
+      "text": "税前年薪与到手收入有什么区别"
+    },
+    {
+      "intent": "salary",
+      "text": "美国职业工资能直接换成人民币吗"
+    },
+    {
+      "intent": "salary",
+      "text": "中国行业平均薪酬包括哪些人"
+    },
+    {
+      "intent": "salary",
+      "text": "会计的薪水是否包含奖金"
+    },
+    {
+      "intent": "salary",
+      "text": "应届生报价能参考行业均薪吗"
+    },
+    {
+      "intent": "salary",
+      "text": "这个职业工资上涨了多少"
+    },
+    {
+      "intent": "salary",
+      "text": "想了解各地护士薪酬差异"
+    },
+    {
+      "intent": "salary",
+      "text": "月薪数据与年薪数据如何比较"
+    },
+    {
+      "intent": "salary",
+      "text": "销售提成算在工资里面吗"
+    },
+    {
+      "intent": "salary",
+      "text": "请查电气工程师的收入背景"
+    },
+    {
+      "intent": "salary",
+      "text": "不同经验年限的薪资如何调查"
+    },
+    {
+      "intent": "salary",
+      "text": "我应该如何判断一份薪酬报价"
+    },
+    {
+      "intent": "salary",
+      "text": "统计工资是平均数还是中位数"
+    },
+    {
+      "intent": "salary",
+      "text": "这类工作报酬是否稳定"
+    },
+    {
+      "intent": "salary",
+      "text": "工资中的基本薪资和绩效怎么区分"
+    },
+    {
+      "intent": "salary",
+      "text": "生活成本会怎样影响实际收入"
+    },
+    {
+      "intent": "salary",
+      "text": "高薪岗位的工资数字是否可信"
+    },
+    {
+      "intent": "prospects",
+      "text": "软件行业未来的就业前景怎么样"
+    },
+    {
+      "intent": "prospects",
+      "text": "哪些职业未来需求可能增长"
+    },
+    {
+      "intent": "prospects",
+      "text": "新能源岗位会持续扩张吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "人工智能会替代这份工作吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "制造业就业趋势有哪些变化"
+    },
+    {
+      "intent": "prospects",
+      "text": "未来十年护士需求预测是多少"
+    },
+    {
+      "intent": "prospects",
+      "text": "这个行业是在衰退还是在增长"
+    },
+    {
+      "intent": "prospects",
+      "text": "经济周期会怎样影响金融招聘"
+    },
+    {
+      "intent": "prospects",
+      "text": "数据工程的长期发展空间如何"
+    },
+    {
+      "intent": "prospects",
+      "text": "职业机会增加是不是意味着新增就业"
+    },
+    {
+      "intent": "prospects",
+      "text": "未来几年有哪些行业风险"
+    },
+    {
+      "intent": "prospects",
+      "text": "人口老龄化对医疗需求有何影响"
+    },
+    {
+      "intent": "prospects",
+      "text": "我想了解物流行业的增长动力"
+    },
+    {
+      "intent": "prospects",
+      "text": "就业预测和当前招聘空缺有什么区别"
+    },
+    {
+      "intent": "prospects",
+      "text": "技术进步会改变哪些工作任务"
+    },
+    {
+      "intent": "prospects",
+      "text": "这个方向未来还值得投入吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "房地产低迷时建筑岗位会怎样"
+    },
+    {
+      "intent": "prospects",
+      "text": "行业景气度能从哪些指标观察"
+    },
+    {
+      "intent": "prospects",
+      "text": "教育行业的长期人才需求怎么看"
+    },
+    {
+      "intent": "prospects",
+      "text": "机器人的普及会减少操作工吗"
+    },
+    {
+      "intent": "prospects",
+      "text": "行业红利期能否从利润推断"
+    },
+    {
+      "intent": "prospects",
+      "text": "请解释就业增长率意味着什么"
+    },
+    {
+      "intent": "prospects",
+      "text": "通信行业今后的机会和挑战是什么"
+    },
+    {
+      "intent": "prospects",
+      "text": "哪些因素可能让行业需求下降"
+    },
+    {
+      "intent": "fit",
+      "text": "我的兴趣适合哪些工作"
+    },
+    {
+      "intent": "fit",
+      "text": "学数学的人可以探索什么职业"
+    },
+    {
+      "intent": "fit",
+      "text": "我喜欢帮助别人能往什么方向发展"
+    },
+    {
+      "intent": "fit",
+      "text": "不喜欢频繁社交如何挑选工作"
+    },
+    {
+      "intent": "fit",
+      "text": "我重视生活平衡应该考虑哪些岗位"
+    },
+    {
+      "intent": "fit",
+      "text": "我擅长写作但不擅长编程怎么办"
+    },
+    {
+      "intent": "fit",
+      "text": "如何根据自己的优势选择职业"
+    },
+    {
+      "intent": "fit",
+      "text": "我的专业背景能对应哪些方向"
+    },
+    {
+      "intent": "fit",
+      "text": "喜欢动手做东西的人适合什么"
+    },
+    {
+      "intent": "fit",
+      "text": "我希望稳定又能积累技能该怎么选"
+    },
+    {
+      "intent": "fit",
+      "text": "兴趣测评能决定我适合什么吗"
+    },
+    {
+      "intent": "fit",
+      "text": "跨专业的人怎样评估自己与岗位的匹配"
+    },
+    {
+      "intent": "fit",
+      "text": "我不确定自己喜欢什么工作"
+    },
+    {
+      "intent": "fit",
+      "text": "性格内向是否影响职业选择"
+    },
+    {
+      "intent": "fit",
+      "text": "我更愿意研究问题有哪些可探索岗位"
+    },
+    {
+      "intent": "fit",
+      "text": "想结合艺术兴趣和理工背景找方向"
+    },
+    {
+      "intent": "fit",
+      "text": "身体条件与家庭安排会怎样影响选择"
+    },
+    {
+      "intent": "fit",
+      "text": "我的价值观更偏向公共服务"
+    },
+    {
+      "intent": "fit",
+      "text": "怎样验证一个职业是否适合自己"
+    },
+    {
+      "intent": "fit",
+      "text": "我愿意长期学习但不愿出差"
+    },
+    {
+      "intent": "fit",
+      "text": "缺乏自信时该怎么发现自己的能力"
+    },
+    {
+      "intent": "fit",
+      "text": "大学专业是不是限制了我的职业可能"
+    },
+    {
+      "intent": "fit",
+      "text": "我喜欢数字与逻辑能从哪些工作试起"
+    },
+    {
+      "intent": "fit",
+      "text": "怎样把个人偏好转化为探索清单"
+    },
+    {
+      "intent": "work",
+      "text": "后端工程师每天具体做什么"
+    },
+    {
+      "intent": "work",
+      "text": "护士一班的日常任务是什么"
+    },
+    {
+      "intent": "work",
+      "text": "会计工作的实际流程有哪些"
+    },
+    {
+      "intent": "work",
+      "text": "产品经理通常与谁合作"
+    },
+    {
+      "intent": "work",
+      "text": "数据分析师要交付哪些成果"
+    },
+    {
+      "intent": "work",
+      "text": "建筑施工现场工程师负责什么"
+    },
+    {
+      "intent": "work",
+      "text": "请描述算法研究员的一天"
+    },
+    {
+      "intent": "work",
+      "text": "销售岗位的主要职责是什么"
+    },
+    {
+      "intent": "work",
+      "text": "教师除了授课还有哪些工作"
+    },
+    {
+      "intent": "work",
+      "text": "仓储管理员通常处理什么事务"
+    },
+    {
+      "intent": "work",
+      "text": "风控分析师如何开展工作"
+    },
+    {
+      "intent": "work",
+      "text": "客户成功日常需要解决什么问题"
+    },
+    {
+      "intent": "work",
+      "text": "机械设计师要制作哪些图纸"
+    },
+    {
+      "intent": "work",
+      "text": "实验室技术员的任务清单是什么"
+    },
+    {
+      "intent": "work",
+      "text": "律师工作是否都在法庭上"
+    },
+    {
+      "intent": "work",
+      "text": "内容运营平时如何安排工作"
+    },
+    {
+      "intent": "work",
+      "text": "供应链规划的具体工作内容"
+    },
+    {
+      "intent": "work",
+      "text": "电气工程师在项目里承担什么角色"
+    },
+    {
+      "intent": "work",
+      "text": "临床研究人员要记录哪些材料"
+    },
+    {
+      "intent": "work",
+      "text": "交互设计师如何与开发配合"
+    },
+    {
+      "intent": "work",
+      "text": "工作中哪些任务需要现场操作"
+    },
+    {
+      "intent": "work",
+      "text": "这个职位的典型交付物是什么"
+    },
+    {
+      "intent": "work",
+      "text": "农业技术人员每天会去哪里工作"
+    },
+    {
+      "intent": "work",
+      "text": "一天里开会写报告和动手分别做什么"
+    },
+    {
+      "intent": "company",
+      "text": "哪些公司提供软件开发岗位"
+    },
+    {
+      "intent": "company",
+      "text": "想了解新能源行业的代表企业"
+    },
+    {
+      "intent": "company",
+      "text": "这个领域有哪些主要雇主"
+    },
+    {
+      "intent": "company",
+      "text": "数据分析师可以在哪些机构工作"
+    },
+    {
+      "intent": "company",
+      "text": "医院和企业都招聘护理人员吗"
+    },
+    {
+      "intent": "company",
+      "text": "请给我几家芯片公司的官网入口"
+    },
+    {
+      "intent": "company",
+      "text": "应届生去哪里找企业官方招聘页"
+    },
+    {
+      "intent": "company",
+      "text": "金融行业除了银行还有哪些雇主"
+    },
+    {
+      "intent": "company",
+      "text": "这条产业链有哪些公司参与"
+    },
+    {
+      "intent": "company",
+      "text": "哪个公司设有客户成功团队"
+    },
+    {
+      "intent": "company",
+      "text": "想看机械制造厂的机构例子"
+    },
+    {
+      "intent": "company",
+      "text": "医药研发常见的用人单位有哪些"
+    },
+    {
+      "intent": "company",
+      "text": "互联网平台和外包公司怎么找"
+    },
+    {
+      "intent": "company",
+      "text": "我想查一家公司的招聘信息在哪里"
+    },
+    {
+      "intent": "company",
+      "text": "相关公司总部通常在哪些城市"
+    },
+    {
+      "intent": "company",
+      "text": "哪些组织会雇佣实验室技术员"
+    },
+    {
+      "intent": "company",
+      "text": "教育科技领域有哪些机构示例"
+    },
+    {
+      "intent": "company",
+      "text": "如何核对雇主的官方网站"
+    },
+    {
+      "intent": "company",
+      "text": "物流岗位常见于哪类企业"
+    },
+    {
+      "intent": "company",
+      "text": "国企与民企的官方求职入口在哪里"
+    },
+    {
+      "intent": "company",
+      "text": "想从企业名单了解产业分工"
+    },
+    {
+      "intent": "company",
+      "text": "去哪里查看能源企业的人才计划"
+    },
+    {
+      "intent": "company",
+      "text": "有没有这类岗位的公司样本"
+    },
+    {
+      "intent": "company",
+      "text": "帮我找提供设计岗位的雇主类型"
+    },
+    {
+      "intent": "public",
+      "text": "公务员考试报名条件有哪些"
+    },
+    {
+      "intent": "public",
+      "text": "考公需要核对哪些资格"
+    },
+    {
+      "intent": "public",
+      "text": "事业单位招录信息从哪里查"
+    },
+    {
+      "intent": "public",
+      "text": "国家公务员局官网在哪里"
+    },
+    {
+      "intent": "public",
+      "text": "省考和国考的报名入口是什么"
+    },
+    {
+      "intent": "public",
+      "text": "应届生报考公务员要注意什么"
+    },
+    {
+      "intent": "public",
+      "text": "事业编制岗位的专业限制如何查"
+    },
+    {
+      "intent": "public",
+      "text": "行测与申论分别考什么"
+    },
+    {
+      "intent": "public",
+      "text": "公共部门招聘以哪个公告为准"
+    },
+    {
+      "intent": "public",
+      "text": "美国联邦政府职位如何申请"
+    },
+    {
+      "intent": "public",
+      "text": "考编年龄条件以什么规定为准"
+    },
+    {
+      "intent": "public",
+      "text": "公务员职位表在哪里下载"
+    },
+    {
+      "intent": "public",
+      "text": "事业单位笔试报名时间怎么核实"
+    },
+    {
+      "intent": "public",
+      "text": "如何核对公务员招录的学历要求"
+    },
+    {
+      "intent": "public",
+      "text": "报名国考能否使用海外学历"
+    },
+    {
+      "intent": "public",
+      "text": "公务员面试需要准备哪些材料"
+    },
+    {
+      "intent": "public",
+      "text": "公共机构选岗有哪些资格审查环节"
+    },
+    {
+      "intent": "public",
+      "text": "教师编制招考的官方通知去哪看"
+    },
+    {
+      "intent": "public",
+      "text": "省级人事考试网站怎么查"
+    },
+    {
+      "intent": "public",
+      "text": "考公专业目录中找不到自己的专业怎么办"
+    },
+    {
+      "intent": "public",
+      "text": "事业单位和公务员招录流程一样吗"
+    },
+    {
+      "intent": "public",
+      "text": "国家机关的公开招聘有哪些渠道"
+    },
+    {
+      "intent": "public",
+      "text": "基层公共服务岗位的考试规定在哪里"
+    },
+    {
+      "intent": "public",
+      "text": "行政职业能力测验如何安排复习"
+    }
+  ]
+}
