@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-18T04:35:53+00:00",
+  "checkedAt": "2026-10-18T11:06:25+00:00",
   "items": [
     {
       "id": "us-rural-delaware",
@@ -21,7 +21,7 @@
         "原文要求获资助者承诺在Delaware乡村执业五年，并至少50%执业服务合格乡村地区；还需确认具体申请资格和开放时间。"
       ],
       "evidenceQuote": "Recipients will commit to five years of practice in rural Delaware",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "Trump Administration Announces New Funding to Support Early Career Physicians Who Choose to Work in Rural Delaware",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -47,7 +47,7 @@
         "州级资助安排不代表每个申请者可获得奖金，也不代表53家机构已公布相同岗位；需逐机构确认执照、合同与服务义务。"
       ],
       "evidenceQuote": "education, training, recruitment, and retention initiatives",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "Trump Administration Announces $37.7 Million to Train and Recruit More Rural Healthcare Workers Across Louisiana",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -75,10 +75,10 @@
         "需要确认具体受资助机构、项目招生、地域与资格；合作协议和培训名额不能直接换算为新增就业人数。"
       ],
       "evidenceQuote": "internships, apprenticeships and hands-on projects",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
-      "bodySha256": "ab3ccfeaafcb70b277a187d22f52a6e2dd9bbca17318be1d5a1b39c2793f3a79"
+      "bodySha256": "a1ec82c48ac056432bb3c790417d2dc67c231b05b9ddebbb96dac8bab9bf4ca9"
     },
     {
       "id": "us-rural-health",
@@ -101,7 +101,7 @@
         "适用纽约具体计划；需核对受资助机构、采购、执照及岗位。财政年度2026不是自然年资金全部到位的保证。"
       ],
       "evidenceQuote": "enhanced clinical rotations, employer-based training programs",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "Trump Administration Announces $76 Million to Strengthen Regional Coordination and Modernize Healthcare Technology for New York",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -128,7 +128,7 @@
         "授奖、拨款、建设和招聘是不同阶段；里程碑延期会影响用工时间表，不能把宣布投资直接计为就业。"
       ],
       "evidenceQuote": "some milestones had fallen behind anticipated schedules",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "SEMICONDUCTORS: Commerce Needs Plan to Meet CHIPS for America R&D Requirements",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -155,11 +155,11 @@
         "意向书不是最终拨款，更不是已经创造岗位；需要最终协议、项目里程碑、所在地与具体招聘条件。"
       ],
       "evidenceQuote": "further diligence and approval by the Department before final awards are made",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "Department of Commerce Announces Letters of Intent With 7 Companies for $874 Million to Accelerate Semiconductor R&D for the Compute Supply Chain",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
-      "bodySha256": "6acfb9976fea712e225491699a4b7f3fc8eac2418482a5cdeb545b1ae810360b"
+      "bodySha256": "351608ebb68971335934e194ed657c7186ddc63f2f96294108cb13d2464ce7c7"
     },
     {
       "id": "cn-employment",
@@ -182,7 +182,7 @@
         "全国规划需经过地方实施、预算与项目采购；培训需求不等于新增正式编制。"
       ],
       "evidenceQuote": "职业技能培训和就业公共服务更加精准高效",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "国务院关于印发《实施就业优先战略“十五五”规划》的通知",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -211,7 +211,7 @@
         "需核对数据授权、系统权限、产品责任和实际客户需求；监管要求可能增加成本，也可能限制场景。"
       ],
       "evidenceQuote": "促进智能体规范应用与创新发展",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "智能体规范应用与创新发展实施意见",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -238,7 +238,7 @@
         "学校采购、未成年人保护、教育规律和安全评测构成落地条件；教师任教资格不会因使用AI自动豁免。"
       ],
       "evidenceQuote": "建立人工智能教育应用的安全测评标准",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "教育部等五部门关于印发《“人工智能+教育”行动计划》的通知",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -266,7 +266,7 @@
         "国会是否通过、州与联邦适用关系、实施细则均需后续核对；提议不能作为已确定补贴或招聘。"
       ],
       "evidenceQuote": "workforce development and skills training programs",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "President Donald J. Trump Unveils National AI Legislative Framework",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -296,7 +296,7 @@
         "目标和示范场景不是已实现成果；项目需工艺数据、产线验证、预算和企业订单，地区与企业进度不同。"
       ],
       "evidenceQuote": "推动智能芯片软硬协同发展",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "工业和信息化部等八部门关于印发《“人工智能+制造”专项行动实施意见》的通知",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -324,7 +324,7 @@
         "医疗质量、个人隐私、器械准入和职业执照是约束；AI辅助不等于可替代执业医生。"
       ],
       "evidenceQuote": "强化数据安全和个人隐私保护",
-      "verifiedAt": "2026-10-18T04:35:53+00:00",
+      "verifiedAt": "2026-10-18T11:06:25+00:00",
       "sourceTitle": "关于促进和规范“人工智能+医疗卫生”应用发展的实施意见",
       "verificationStatus": "http-verified",
       "implicationsLabel": "编辑研判：可能机制，不是政策承诺或实际招聘",
@@ -336,15 +336,15 @@
       "id": "cn-agents",
       "title": "智能体规范应用与创新发展实施意见",
       "url": "https://www.cac.gov.cn/2026-05/08/c_1779979789523320.htm",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "cn-cac-latest",
       "title": "中国网信网政策法规",
       "url": "https://www.cac.gov.cn/zcfg/index.htm",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
       "lastSuccess": null,
       "status": "unavailable",
       "error": "curl: (22) The requested URL returned error: 404"
@@ -353,71 +353,71 @@
       "id": "cn-education",
       "title": "教育部等五部门关于印发《“人工智能+教育”行动计划》的通知",
       "url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "cn-employment",
       "title": "国务院关于印发《实施就业优先战略“十五五”规划》的通知",
       "url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7072482.htm",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "cn-gov-latest",
       "title": "中国政府网最新政策",
       "url": "https://www.gov.cn/zhengce/zuixin/",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "cn-health",
       "title": "关于促进和规范“人工智能+医疗卫生”应用发展的实施意见",
       "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "cn-manufacturing",
       "title": "工业和信息化部等八部门关于印发《“人工智能+制造”专项行动实施意见》的通知",
       "url": "https://www.nda.gov.cn/sjj/zwgk/zcfb/0112/20260107214358696030895_pc.html",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-ai-framework",
       "title": "President Donald J. Trump Unveils National AI Legislative Framework",
       "url": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-chips-audit",
       "title": "SEMICONDUCTORS: Commerce Needs Plan to Meet CHIPS for America R&D Requirements",
       "url": "https://files.gao.gov/reports/GAO-26-109121/index.html",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-chips-intent",
       "title": "Department of Commerce Announces Letters of Intent With 7 Companies for $874 Million to Accelerate Semiconductor R&D for the Compute Supply Chain",
       "url": "https://www.nist.gov/news-events/news/2026/07/department-commerce-announces-letters-intent-7-companies-874-million",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-cms-latest",
       "title": "CMS新闻发布",
       "url": "https://www.cms.gov/newsroom/press-releases",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
       "lastSuccess": null,
       "status": "unavailable",
       "error": "curl: (22) The requested URL returned error: 404"
@@ -426,48 +426,48 @@
       "id": "us-cyber-workforce",
       "title": "NIST Awards More Than $1.7 Million to Support Cybersecurity Workforce Development Across 8 States",
       "url": "https://www.nist.gov/news-events/news/2026/09/nist-awards-more-17-million-support-cybersecurity-workforce-development",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-nist-latest",
       "title": "NIST最新新闻",
       "url": "https://www.nist.gov/news-events/news",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-rural-delaware",
       "title": "Trump Administration Announces New Funding to Support Early Career Physicians Who Choose to Work in Rural Delaware",
       "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-new-funding-support-early-career-physicians-who-choose-work-rural",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-rural-health",
       "title": "Trump Administration Announces $76 Million to Strengthen Regional Coordination and Modernize Healthcare Technology for New York",
       "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-76-million-strengthen-regional-coordination-modernize-healthcare",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-rural-louisiana",
       "title": "Trump Administration Announces $37.7 Million to Train and Recruit More Rural Healthcare Workers Across Louisiana",
       "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-announces-37-7-million-train-recruit-more-rural-healthcare-workers-across",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     },
     {
       "id": "us-whitehouse-latest",
       "title": "白宫最新发布",
       "url": "https://www.whitehouse.gov/releases/",
-      "lastAttempt": "2026-10-18T04:35:53+00:00",
-      "lastSuccess": "2026-10-18T04:35:53+00:00",
+      "lastAttempt": "2026-10-18T11:06:25+00:00",
+      "lastSuccess": "2026-10-18T11:06:25+00:00",
       "status": "ok"
     }
   ],
