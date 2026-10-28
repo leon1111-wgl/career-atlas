@@ -2,7 +2,7 @@
 
 作者：Leon Wang
 
-最近采集尝试：2026-10-28T05:43:13+00:00
+最近采集尝试：2026-10-28T12:55:32+00:00
 
 这份报告由公开统计快照按固定规则生成。数据所属期见每项标注；不将采集日期当作统计期。评分是探索工具，不是收益或录用概率。
 
@@ -136,23 +136,23 @@
 ## 采集状态
 
 - BLS 职业就业预测与劳动者特征：cached；上次有效获取 2026-10-15T14:28:15+00:00。[来源](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm)
-- 国家统计局：城镇单位行业工资：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html)
-- 国家统计局最新发布：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
-- 世界银行：实际 GDP 增长：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=500)
-- 世界银行：居民消费价格涨幅：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=500)
-- 世界银行：制造业增加值占 GDP：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NV.IND.MANF.ZS?format=json&date=2014:2026&per_page=500)
-- 世界银行：失业率（ILO 模型估计）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/SL.UEM.TOTL.ZS?format=json&date=2014:2026&per_page=500)
-- FRED / BLS：美国失业率（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE&cosd=2014-01-01)
-- FRED / BLS：美国信息业就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USINFO&cosd=2014-01-01)
-- FRED / BLS：美国非农就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS&cosd=2014-01-01)
-- FRED / BLS：美国制造业就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=MANEMP&cosd=2014-01-01)
-- FRED / BLS：美国金融活动就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USFIRE&cosd=2014-01-01)
-- FRED / BLS：美国专业与商业服务就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USPBS&cosd=2014-01-01)
-- FRED / BLS：美国教育与卫生服务就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEHS&cosd=2014-01-01)
-- FRED / BLS：美国休闲与酒店就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USLAH&cosd=2014-01-01)
-- FRED / BLS：美国政府就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USGOVT&cosd=2014-01-01)
-- FRED / BLS：美国建筑业就业（季调）：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USCONS&cosd=2014-01-01)
-- 国家统计局：中国最新月度与季度指标：ok；上次有效获取 2026-10-28T05:43:13+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
+- 国家统计局：城镇单位行业工资：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html)
+- 国家统计局最新发布：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
+- 世界银行：实际 GDP 增长：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=500)
+- 世界银行：居民消费价格涨幅：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=500)
+- 世界银行：制造业增加值占 GDP：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/NV.IND.MANF.ZS?format=json&date=2014:2026&per_page=500)
+- 世界银行：失业率（ILO 模型估计）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://api.worldbank.org/v2/country/CHN;USA/indicator/SL.UEM.TOTL.ZS?format=json&date=2014:2026&per_page=500)
+- FRED / BLS：美国失业率（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE&cosd=2014-01-01)
+- FRED / BLS：美国信息业就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USINFO&cosd=2014-01-01)
+- FRED / BLS：美国非农就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS&cosd=2014-01-01)
+- FRED / BLS：美国制造业就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=MANEMP&cosd=2014-01-01)
+- FRED / BLS：美国金融活动就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USFIRE&cosd=2014-01-01)
+- FRED / BLS：美国专业与商业服务就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USPBS&cosd=2014-01-01)
+- FRED / BLS：美国教育与卫生服务就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEHS&cosd=2014-01-01)
+- FRED / BLS：美国休闲与酒店就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USLAH&cosd=2014-01-01)
+- FRED / BLS：美国政府就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USGOVT&cosd=2014-01-01)
+- FRED / BLS：美国建筑业就业（季调）：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://fred.stlouisfed.org/graph/fredgraph.csv?id=USCONS&cosd=2014-01-01)
+- 国家统计局：中国最新月度与季度指标：ok；上次有效获取 2026-10-28T12:55:32+00:00。[来源](https://www.stats.gov.cn/sj/zxfb/)
 
 ## 政策如何传导到就业
 
@@ -161,84 +161,84 @@ US · 发布 2026-10-14 · 实施进展
 CMS介绍Delaware乡村医生培养与留任资助，包括合格医学生、住院医师相关支持及服务承诺。
 就业传导分析：编辑研判：符合训练阶段的人可核对州内教育及住房搬迁资助，医院或培训机构可调查项目管理和培养任务。
 落地约束：原文要求获资助者承诺在Delaware乡村执业五年，并至少50%执业服务合格乡村地区；还需确认具体申请资格和开放时间。
-[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-new-funding-support-early-career-physicians-who-choose-work-rural) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-new-funding-support-early-career-physicians-who-choose-work-rural) · 核对 2026-10-28T12:55:49+00:00
 
 ### Trump Administration Announces $37.7 Million to Train and Recruit More Rural Healthcare Workers Across Louisiana
 US · 发布 2026-10-09 · 实施进展
 CMS介绍Louisiana乡村医疗人才培养、招募和留任安排，涉及教育机构与医疗服务提供方的协作。
 就业传导分析：编辑研判：可核对参与院校与乡村医疗机构的培训、资格进阶、临床服务与项目协调机会。
 落地约束：州级资助安排不代表每个申请者可获得奖金，也不代表53家机构已公布相同岗位；需逐机构确认执照、合同与服务义务。
-[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-37-7-million-train-recruit-more-rural-healthcare-workers-across) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-37-7-million-train-recruit-more-rural-healthcare-workers-across) · 核对 2026-10-28T12:55:49+00:00
 
 ### NIST Awards More Than $1.7 Million to Support Cybersecurity Workforce Development Across 8 States
 US · 发布 2026-09-18 · 实施进展
 NIST宣布通过九项合作协议支持八州网络安全人才培养，强调教育供给与地方机构需求对接。这是具体培养项目进展，不是全国统一职位招聘。
 就业传导分析：编辑研判：可核对获资助教育机构的课程开发、实训、学徒与项目协作安排，再调查参与企业是否招聘。
 落地约束：需要确认具体受资助机构、项目招生、地域与资格；合作协议和培训名额不能直接换算为新增就业人数。
-[官方原文](https://www.nist.gov/news-events/news/2026/09/nist-awards-more-17-million-support-cybersecurity-workforce-development) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.nist.gov/news-events/news/2026/09/nist-awards-more-17-million-support-cybersecurity-workforce-development) · 核对 2026-10-28T12:55:49+00:00
 
 ### Trump Administration Announces $76 Million to Strengthen Regional Coordination and Modernize Healthcare Technology for New York
 US · 发布 2026-09-04 · 实施进展
 CMS介绍纽约州乡村医疗项目的区域协作、技术和人才培养安排，这是州内项目进展而非全国统一招聘计划。
 就业传导分析：编辑研判：可调查纽约乡村医疗机构的照护协调、临床培训和医疗信息化项目，而不是直接假设存在空缺。
 落地约束：适用纽约具体计划；需核对受资助机构、采购、执照及岗位。财政年度2026不是自然年资金全部到位的保证。
-[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-76-million-strengthen-regional-coordination-modernize-healthcare) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.cms.gov/newsroom/press-releases/trump-administration-announces-76-million-strengthen-regional-coordination-modernize-healthcare) · 核对 2026-10-28T12:55:49+00:00
 
 ### SEMICONDUCTORS: Commerce Needs Plan to Meet CHIPS for America R&D Requirements
 US · 发布 2026-08-06 · 实施进展
 GAO审计报告记录CHIPS项目进展及研发安排方面的问题，包含部分里程碑落后于预期的情况。它是审计进展，不是新增补贴政策。
 就业传导分析：编辑研判：项目治理、合规报告和研发管理可能有任务，但要从具体承包方与项目阶段核对，不能从审计建议推算招聘量。
 落地约束：授奖、拨款、建设和招聘是不同阶段；里程碑延期会影响用工时间表，不能把宣布投资直接计为就业。
-[官方原文](https://files.gao.gov/reports/GAO-26-109121/index.html) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://files.gao.gov/reports/GAO-26-109121/index.html) · 核对 2026-10-28T12:55:49+00:00
 
 ### Department of Commerce Announces Letters of Intent With 7 Companies for $874 Million to Accelerate Semiconductor R&D for the Compute Supply Chain
 US · 发布 2026-07-29 · 拟议措施
 NIST公布七家公司半导体研发激励意向，涉及光子、先进封装、材料与存储。原文明确最终授奖之前仍有尽调和审批。
 就业传导分析：编辑研判：可跟踪相关企业研发、封装测试与材料工程项目是否完成授奖并实际启动。
 落地约束：意向书不是最终拨款，更不是已经创造岗位；需要最终协议、项目里程碑、所在地与具体招聘条件。
-[官方原文](https://www.nist.gov/news-events/news/2026/07/department-commerce-announces-letters-intent-7-companies-874-million) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.nist.gov/news-events/news/2026/07/department-commerce-announces-letters-intent-7-companies-874-million) · 核对 2026-10-28T12:55:49+00:00
 
 ### 国务院关于印发《实施就业优先战略“十五五”规划》的通知
 CN · 发布 2026-06-17 · 行动计划
 规划部署就业优先、技能培训和公共就业服务。网页发布日期为2026年6月17日，文件成文于6月11日。
 就业传导分析：编辑研判：可调查地方公共就业服务、职业培训课程开发与人力资源服务项目，核对是否形成采购或岗位。
 落地约束：全国规划需经过地方实施、预算与项目采购；培训需求不等于新增正式编制。
-[官方原文](https://www.gov.cn/zhengce/zhengceku/202606/content_7072482.htm) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.gov.cn/zhengce/zhengceku/202606/content_7072482.htm) · 核对 2026-10-28T12:55:49+00:00
 
 ### 智能体规范应用与创新发展实施意见
 CN · 发布 2026-05-08 · 现行文件
 文件同时涉及智能体安全治理与制造等行业应用，不能简化为无条件鼓励部署。
 就业传导分析：编辑研判：围绕生产排程、缺陷识别等任务，可调查工业软件集成、测试评估与安全治理岗位。
 落地约束：需核对数据授权、系统权限、产品责任和实际客户需求；监管要求可能增加成本，也可能限制场景。
-[官方原文](https://www.cac.gov.cn/2026-05/08/c_1779979789523320.htm) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.cac.gov.cn/2026-05/08/c_1779979789523320.htm) · 核对 2026-10-28T12:55:49+00:00
 
 ### 教育部等五部门关于印发《“人工智能+教育”行动计划》的通知
 CN · 发布 2026-04-10 · 行动计划
 行动计划涉及人工智能人才培养、教师素养提升和教育应用安全。成文日期4月2日，政府网页首次发布4月10日。
 就业传导分析：编辑研判：可关注教师培训、教育产品评测、数据治理和教学工具实施岗位的具体项目。
 落地约束：学校采购、未成年人保护、教育规律和安全评测构成落地条件；教师任教资格不会因使用AI自动豁免。
-[官方原文](https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm) · 核对 2026-10-28T12:55:49+00:00
 
 ### President Donald J. Trump Unveils National AI Legislative Framework
 US · 发布 2026-03-20 · 拟议措施
 白宫发布面向国会的AI立法建议，包含人才技能与数据中心供电等议题。它是立法框架建议，不是该页面即已创设的完整法律义务。
 就业传导分析：编辑研判：可跟踪后续立法、许可和培训计划是否形成合规分析、能源工程或课程项目。
 落地约束：国会是否通过、州与联邦适用关系、实施细则均需后续核对；提议不能作为已确定补贴或招聘。
-[官方原文](https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/) · 核对 2026-10-28T12:55:49+00:00
 
 ### 工业和信息化部等八部门关于印发《“人工智能+制造”专项行动实施意见》的通知
 CN · 发布 2026-01-09 · 行动计划
 国家数据局公开专项行动文件，涉及算力供给、智能芯片、数据集及制造流程应用。文件成文于2025年12月25日，页面发布于2026年1月9日。
 就业传导分析：编辑研判：可沿设备预测性维护、视觉检测和边缘部署寻找工程验证、工业数据与系统集成任务。
 落地约束：目标和示范场景不是已实现成果；项目需工艺数据、产线验证、预算和企业订单，地区与企业进度不同。
-[官方原文](https://www.nda.gov.cn/sjj/zwgk/zcfb/0112/20260107214358696030895_pc.html) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.nda.gov.cn/sjj/zwgk/zcfb/0112/20260107214358696030895_pc.html) · 核对 2026-10-28T12:55:49+00:00
 
 ### 关于促进和规范“人工智能+医疗卫生”应用发展的实施意见
 CN · 发布 2025-11-04 · 现行文件
 这是2025年发布的实施意见，提出医疗智能辅助、应用基础与安全监管安排，不能标成2026年新政策。
 就业传导分析：编辑研判：可调查医学数据治理、临床系统实施、医疗器械验证与合规岗位；必须确认用人机构和项目阶段。
 落地约束：医疗质量、个人隐私、器械准入和职业执照是约束；AI辅助不等于可替代执业医生。
-[官方原文](https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm) · 核对 2026-10-28T05:43:33+00:00
+[官方原文](https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm) · 核对 2026-10-28T12:55:49+00:00
 
 
 ## 毕业去向资料
