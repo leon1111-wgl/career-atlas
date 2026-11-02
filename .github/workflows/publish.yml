@@ -53,10 +53,14 @@ jobs:
         run: |
           git config user.name 'career-atlas-data'
           git config user.email 'career-atlas-data@users.noreply.github.com'
-          git add web/data content/raw reports/latest.md
-          if ! git diff --cached --quiet; then
-            git commit -m 'data: refresh official statistics and briefing'
-            git push
+          # Commit only when a published value changed (or the committed snapshot is >3 days old);
+          # timestamp-only refreshes are still deployed below from the working tree.
+          if python scripts/data_changed.py; then
+            git add web/data content/raw reports/latest.md
+            if ! git diff --cached --quiet; then
+              git commit -m 'data: refresh official statistics and briefing'
+              git push
+            fi
           fi
       - name: 加载我们托管的开放模型文件
         env:

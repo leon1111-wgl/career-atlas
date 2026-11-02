@@ -1,4 +1,4 @@
-import { CreateMLCEngine } from './vendor/webllm.js?v=20261016-data';
+import { CreateMLCEngine } from './vendor/webllm.js?v=20261102';
 let engine = null;
 let busy = false;
 const send = (id, type, value) => self.postMessage({ id, type, value });

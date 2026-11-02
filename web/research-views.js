@@ -1,4 +1,5 @@
-import { majorEvidence, relevantPolicies } from "./research.js?v=20261016-data";
+import { majorEvidence, relevantPolicies } from "./research.js?v=20261102";
+import { shareBars } from "./charts.js?v=20261102";
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"']/g,
@@ -23,7 +24,7 @@ export function outcomeHTML(outcomes, majorId, region) {
   return groups
     .map(
       (g) =>
-        `<section class="research-block"><h3>${esc(g.title)} · ${esc(g.metric || "实际职业去向")}</h3><p class="source-line">${esc(g.period)} · ${esc(g.population)}</p><div class="table-wrap"><table><thead><tr><th>${esc(g.rowLabel || "去向类别")}</th><th>该样本中占比</th></tr></thead><tbody>${g.rows.map((r) => `<tr><td>${esc(r.occupationZh || r.occupation)}</td><td>${shareLabel(r)}</td></tr>`).join("")}</tbody></table></div>${g.degreeStats ? `<p class="source-line">样本中拥有更高学位者 ${g.degreeStats.advancedDegreeShare}%；从事通常要求至少学士学位的职业者 ${g.degreeStats.bachelorsRequiredOccupationShare}%。这是样本特征，不是读研必要性的结论。</p>` : ""}<details><summary>统计口径与适用范围</summary><p>${esc(g.limitations.join("；"))}</p></details><a class="text-link" href="${url(g.source.url)}" target="_blank" rel="noopener">${esc(g.source.title)} ↗</a></section>`,
+        `<section class="outcome"><div class="outcome-head"><h3>${esc(g.title)}</h3><p class="source-line">${esc(g.metric || "实际职业去向")} · ${esc(g.period)} · ${esc(g.population)}</p></div>${shareBars(g.rows, { label: (r) => r.occupationZh || r.occupation, max: /distribution/.test(g.dataKind || "") ? undefined : 100 })}${g.degreeStats ? `<p class="source-line">样本中拥有更高学位者 ${g.degreeStats.advancedDegreeShare}%；从事通常要求至少学士学位的职业者 ${g.degreeStats.bachelorsRequiredOccupationShare}%。这是样本特征，不是读研必要性的结论。</p>` : ""}<details><summary>统计口径与适用范围</summary><p class="source-line">${esc(g.limitations.join("；"))}</p></details><a class="text-link" href="${url(g.source.url)}" target="_blank" rel="noopener">${esc(g.source.title)} ↗</a></section>`,
     )
     .join("");
 }

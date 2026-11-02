@@ -1,5 +1,44 @@
 # Career Atlas interface review
 
+## 2026-11-02: the topographic atlas
+
+This pass replaces the recruitment-portal layout with an atlas you open. The data, scoring, retrieval and intent model are unchanged, and every evidence boundary keeps its meaning (a few sentences were shortened); only the interface, routing and chart styling moved.
+
+**Structure.** A cover page comes first:
+- the pitch;
+- a "start from my major" trailhead;
+- the current official indicators;
+- the industry map, with a legend.
+
+"进入图册" opens a console with six sections: 总览, 行业, 岗位, 专业, 路线, 数据. Industries, roles and majors are now full pages with their own URLs (`#/industry/power`, `#/role/nurse`, `#/major/cs`). Only the role comparison is still a dialog. Old links keep working: `#overview`, `#careers`, `#match`, `#reports`, `#sources`, `#public`, `#role=…`, `#industry=…`, `#major=…`.
+
+**Motif and signature interaction.** The 26 industries sit on a contour map as waypoints inside eight regions, with a graticule whose grid references (A–H, 1–5) reappear on industry pages and in the industry directory.
+- Choosing a major draws dashed trails from "you are here" to every industry where the catalogue links that major to a role, with a role count on each waypoint.
+- Hover or focus shows a callout.
+- Map positions are layout only, as the legend says; trails are catalogue links, not admission or hiring odds.
+
+The same trail language runs through the console:
+- dashed trail underline on the active tab;
+- industry value chains as a waypoint trail;
+- a role's adjacent directions as a short trail.
+
+**Palette.** Light first, on warm map paper `#f6f4ee` with white panels, survey-ink navy `#1d2a3a` and the trail orange `#c0521d` (`#a3441a` for text on paper) for actions and routes. The survey blue `#2a5d91` is used for links and charts. The night map is `#14171c` with trail `#f0874f` and survey `#8db6e3`. Eight muted region hues are used only as map fills and swatches, never as text or backgrounds. This keeps the blue-and-orange family chosen earlier for this project and the earlier removal of teal and sage washes. It stays clear of the other portfolio projects' palettes.
+
+**Charts.** Charts take their colours from CSS variables, so they follow the theme. Graduate-outcome tables became share bars:
+- rates are scaled to 100%;
+- occupation distributions are scaled to their largest share;
+- undisclosed values stay visibly "未披露".
+
+**Checks.** Rendered locally in the browser pane and in headless Chrome:
+- **Sizes:** 1360px and 1440px light, 1440px dark, and 375px/390px phones.
+- **Phone layout:** no page-level horizontal overflow at 375px; the map scrolls inside its frame.
+- **Console:** no console errors.
+- **Consultation:** the default consultation flow answered with evidence links.
+
+All 48 Python tests and 63 Node tests pass. Screenshots are in `docs/screenshots/`. No model weights were loaded.
+
+## Earlier passes (superseded layout)
+
 The current design follows the user's preference for the category-rich structure of mature Chinese recruitment portals. The public interface uses the author name **Leon Wang**. The previous editorial dashboard direction is superseded.
 
 ## Structure and typography

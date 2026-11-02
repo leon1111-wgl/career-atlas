@@ -1,4 +1,4 @@
-import { scoreRole } from "./scoring.js?v=20261016-data";
+import { scoreRole } from "./scoring.js?v=20261102";
 
 /**
  * Preference ordering is lexicographic, never an employment-success score.

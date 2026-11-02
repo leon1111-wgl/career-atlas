@@ -1,5 +1,5 @@
-import { scoreRole } from "./scoring.js?v=20261016-data";
-import { knowledgeDocuments } from "./research.js?v=20261016-data";
+import { scoreRole } from "./scoring.js?v=20261102";
+import { knowledgeDocuments } from "./research.js?v=20261102";
 /** Local lexical retrieval. It makes no requests and never treats catalog prose as instructions. */
 const safeText = (value) => String(value ?? "");
 const flatten = (value) =>

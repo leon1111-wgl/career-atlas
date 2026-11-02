@@ -3,9 +3,9 @@ import {
   relevantPolicies,
   selectGraduateGroups,
   resolveMajor,
-} from "./research.js?v=20261016-data";
-import { classifyIntent, intentLabels } from "./intent.js?v=20261016-data";
-import { buildDocuments, retrieve } from "./retrieval.js?v=20261016-data";
+} from "./research.js?v=20261102";
+import { classifyIntent, intentLabels } from "./intent.js?v=20261102";
+import { buildDocuments, retrieve } from "./retrieval.js?v=20261102";
 
 /** A trained router chooses a reading order. All answer content remains attributed catalog data. */
 export function advise(question, catalog, data, region, model, knowledge = {}) {
