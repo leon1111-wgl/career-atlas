@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "attemptedAt": "2026-11-06T06:46:27+00:00",
+  "attemptedAt": "2026-11-06T19:25:18+00:00",
   "sources": {
     "bls": {
       "id": "bls",
@@ -14475,7 +14475,7 @@
           }
         }
       },
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
       "error": "curl: (22) The requested URL returned error: 403",
       "unit": "美元/年；就业人数",
       "frequency": "年度"
@@ -14485,8 +14485,8 @@
       "title": "国家统计局：城镇单位行业工资",
       "url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "4ce7e6bf8fe69d52babb53f26ae55359b100f47c977c523ccf9ec630e41cf20a",
       "unit": "人民币/年",
       "frequency": "年度",
@@ -14776,8 +14776,8 @@
       "title": "国家统计局最新发布",
       "url": "https://www.stats.gov.cn/sj/zxfb/",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "e54041ba1f2f5577d748d147d09a1c80bf673902a13946edc6f4840950647132",
       "unit": "",
       "frequency": "按官方发布",
@@ -14864,8 +14864,8 @@
       "title": "世界银行：实际 GDP 增长",
       "url": "https://api.worldbank.org/v2/country/CHN;USA/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2014:2026&per_page=500",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "506fc6b54ed22a1d78e5767982c346b237359ed982f0cb070cc0d3dc01786cd0",
       "unit": "%",
       "frequency": "年度",
@@ -14977,8 +14977,8 @@
       "title": "世界银行：居民消费价格涨幅",
       "url": "https://api.worldbank.org/v2/country/CHN;USA/indicator/FP.CPI.TOTL.ZG?format=json&date=2014:2026&per_page=500",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "95b726507d905f95f68b93232b5ffaa6d6b73a2b49b611e47164893647aa7874",
       "unit": "%",
       "frequency": "年度",
@@ -15086,8 +15086,8 @@
       "title": "世界银行：制造业增加值占 GDP",
       "url": "https://api.worldbank.org/v2/country/CHN;USA/indicator/NV.IND.MANF.ZS?format=json&date=2014:2026&per_page=500",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "be657309428f0eadf6d915e9961c026fdee99bdea110af9c1cd993bd77152179",
       "unit": "%",
       "frequency": "年度",
@@ -15183,8 +15183,8 @@
       "title": "世界银行：失业率（ILO 模型估计）",
       "url": "https://api.worldbank.org/v2/country/CHN;USA/indicator/SL.UEM.TOTL.ZS?format=json&date=2014:2026&per_page=500",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "sha256": "a2a895b5e3d9d2848243447e4e6aaf56536f8f51d8ae5aaf87dbdd6244b4d6c0",
       "unit": "%",
       "frequency": "年度",
@@ -15296,9 +15296,9 @@
       "title": "FRED / BLS：美国失业率（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "2d44da125696d730ae55dd7a79ff6e8b8076f91998f21943e32bdd8319f11342",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "51413ce21eed4aaff16eac13ad94879bd66f2555d38e1cf1901740d9ec11ed52",
       "unit": "%",
       "frequency": "月度",
       "value": [
@@ -15909,6 +15909,10 @@
         {
           "date": "2026-09-01",
           "value": 4.2
+        },
+        {
+          "date": "2026-10-01",
+          "value": 4.1
         }
       ]
     },
@@ -15917,9 +15921,9 @@
       "title": "FRED / BLS：美国信息业就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USINFO&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "a9348fb562ac0ab6c9fd7b7c0d4349300ef577e019c991a0c47c7025628a6b15",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "5ad0854b43334e4722221a0bec2128d5f5c0ec380743131f55a4ebb7d0f4af43",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -16529,11 +16533,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 2749.0
+          "value": 2746.0
         },
         {
           "date": "2026-09-01",
-          "value": 2739.0
+          "value": 2735.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 2734.0
         }
       ]
     },
@@ -16542,9 +16550,9 @@
       "title": "FRED / BLS：美国非农就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "468476bb1882ac219cd2b9b892dc04815b0120e54d254e68a8829d691bf6e5a6",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "af42699ea1a28f008112b280eb76a6beec55ef35804c6bcf695d8c21dbe56196",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -17154,11 +17162,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 159015.0
+          "value": 159068.0
         },
         {
           "date": "2026-09-01",
-          "value": 159044.0
+          "value": 159128.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 159293.0
         }
       ]
     },
@@ -17167,9 +17179,9 @@
       "title": "FRED / BLS：美国制造业就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MANEMP&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "d6d25b682e2819b0927290f9545ede984e3b1e57b5a4d51221d195204618aea9",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "47b2fa777a39a9426cac3816dad1a1796c847f9134f26eb3e8227ba042c79abb",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -17779,11 +17791,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 12643.0
+          "value": 12649.0
         },
         {
           "date": "2026-09-01",
-          "value": 12652.0
+          "value": 12662.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 12681.0
         }
       ]
     },
@@ -17792,9 +17808,9 @@
       "title": "FRED / BLS：美国金融活动就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USFIRE&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "d0f818003be577458d58551b119c400b5b717dc3d2e2a4d39b83ae74d43fcf22",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "2c15f042e014c9f9c2f3e1e9f7a4b81b42ef7318c2da9b8fea4e4de3c47a46ac",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -18404,11 +18420,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 9089.0
+          "value": 9092.0
         },
         {
           "date": "2026-09-01",
-          "value": 9082.0
+          "value": 9078.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 9085.0
         }
       ]
     },
@@ -18417,9 +18437,9 @@
       "title": "FRED / BLS：美国专业与商业服务就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USPBS&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "ea348a1de2494c0d8cb1f86bc2834c24c9ddf2139b4feb5eaf7aa6ab3223eff2",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "eb59dfc814b613032cd27160e32296163dbc0a60dff5777f5a1f379e9e30297d",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -19029,11 +19049,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 22491.0
+          "value": 22526.0
         },
         {
           "date": "2026-09-01",
-          "value": 22482.0
+          "value": 22534.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 22604.0
         }
       ]
     },
@@ -19042,9 +19066,9 @@
       "title": "FRED / BLS：美国教育与卫生服务就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEHS&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "119b4dcb335863904674d202b455c13011db0c75ff6f5f54c23b930cfdce56f1",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "587956720b3cfae167929ed77a90e5d459e46ca429f5094c6dda86dfef9d0632",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -19654,11 +19678,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 27985.0
+          "value": 27984.0
         },
         {
           "date": "2026-09-01",
           "value": 28005.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 28058.0
         }
       ]
     },
@@ -19667,9 +19695,9 @@
       "title": "FRED / BLS：美国休闲与酒店就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USLAH&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "fb9d897f912ac86fbcea1ff92875ebb8e293c6b55934f20cd161f5ea6833bad8",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "1b55cbdc0840069d85849f889de2f3f1d91540b748ad9f4f9ea96127c5e2be9a",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -20279,11 +20307,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 16959.0
+          "value": 16964.0
         },
         {
           "date": "2026-09-01",
-          "value": 16969.0
+          "value": 16977.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 16964.0
         }
       ]
     },
@@ -20292,9 +20324,9 @@
       "title": "FRED / BLS：美国政府就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USGOVT&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "22e515a50c4f97b92c634cb0d8dbe7d8bedd3ac6684926aa6a2bab588c52478f",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "44ea4634b96f5e7dc0ad6ebce2b8004f645b8eab1eea855b7e9c955390feddc1",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -20908,7 +20940,11 @@
         },
         {
           "date": "2026-09-01",
-          "value": 23327.0
+          "value": 23326.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 23332.0
         }
       ]
     },
@@ -20917,9 +20953,9 @@
       "title": "FRED / BLS：美国建筑业就业（季调）",
       "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=USCONS&cosd=2014-01-01",
       "status": "ok",
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
-      "sha256": "ce90e22c5a8b581cbff7005d4218713353d45ff8bf32d47ae700fce418cd8915",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
+      "sha256": "9049a1a39000362ed87ea29c4fbfd60623f8d72fcaee5267924aa3772c223a49",
       "unit": "千人",
       "frequency": "月度",
       "value": [
@@ -21529,11 +21565,15 @@
         },
         {
           "date": "2026-08-01",
-          "value": 8353.0
+          "value": 8354.0
         },
         {
           "date": "2026-09-01",
-          "value": 8364.0
+          "value": 8370.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 8367.0
         }
       ]
     },
@@ -21542,7 +21582,7 @@
       "title": "国家统计局：中国最新月度与季度指标",
       "url": "https://www.stats.gov.cn/sj/zxfb/",
       "status": "ok",
-      "lastSuccess": "2026-11-06T06:46:27+00:00",
+      "lastSuccess": "2026-11-06T19:25:18+00:00",
       "verifiedAt": "2026-10-15T16:04:07+00:00",
       "frequency": "月度 / 季度",
       "unit": "%",
@@ -21738,7 +21778,7 @@
           }
         ]
       },
-      "attemptedAt": "2026-11-06T06:46:27+00:00",
+      "attemptedAt": "2026-11-06T19:25:18+00:00",
       "sha256": "63ec4487f87e0620b69db693ab1f867ee392f077f8d69f67930da3c9e5ddef8f",
       "refreshedIndicators": [
         "cpi",
