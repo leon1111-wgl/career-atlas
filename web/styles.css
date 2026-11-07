@@ -135,6 +135,7 @@ button.chip:hover { border-color: var(--survey); color: var(--survey); }
 .cover-main { max-width: 1240px; width: 100%; margin: 0 auto; padding: 8px 24px 40px; flex: 1; }
 .cover-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .9fr); gap: 40px; align-items: start; padding: 28px 0 36px; }
 .cover-copy h1 { font-size: clamp(30px, 3.6vw, 42px); line-height: 1.28; margin: 14px 0 16px; letter-spacing: .01em; }
+.hero-stack { margin: -6px 0 16px; font: 14px/1.6 var(--mono); letter-spacing: .02em; color: var(--trail-ink); }
 .lede { font-size: 16px; line-height: 1.9; color: var(--text); max-width: 36em; }
 .trailhead { margin-top: 26px; padding: 16px 18px; border: 1px solid var(--rule); border-left: 3px solid var(--trail); border-radius: var(--radius); background: var(--panel); max-width: 560px; }
 .trailhead label { display: block; font-weight: 600; color: var(--ink); font-size: 14px; margin-bottom: 8px; }
