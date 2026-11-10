@@ -1,0 +1,369 @@
+{
+ "set": "blind_v1",
+ "run": "evals/route/runs/blind_v1-3c85af3.json",
+ "commit": "3c85af3",
+ "graded_by": "the assistant's author, by hand, against each case's expect/forbid lists, before any change to the assistant",
+ "rubric": {
+  "correct": "Meets the case's main expect items and violates no forbid item. For must_not_answer: declines the unsupported claim with a reason and states no forbidden figure.",
+  "partial": "Violates no forbid item but misses a main expect item (answers part of the question, or a neighbouring question). For must_not_answer: no forbidden figure, but no explicit decline.",
+  "wrong": "Violates a forbid item, states a figure or claim the data does not hold, or presents content about a different question or entity as the answer.",
+  "abstained": "Gives no substantive answer (asks for a name or says nothing was found) and violates no forbid item."
+ },
+ "totals": {
+  "answer": {
+   "correct": 18,
+   "partial": 6,
+   "abstained": 5,
+   "wrong": 3
+  },
+  "must_not_answer": {
+   "correct": 9,
+   "partial": 5,
+   "abstained": 2
+  },
+  "all": {
+   "correct": 27,
+   "partial": 11,
+   "abstained": 7,
+   "wrong": 3
+  }
+ },
+ "cases": [
+  {
+   "id": "b01",
+   "kind": "answer",
+   "topic": "transfer",
+   "verdict": "correct",
+   "note": "Skill gap from accounting foundations to 数据科学家; no figures."
+  },
+  {
+   "id": "b02",
+   "kind": "answer",
+   "topic": "transfer",
+   "verdict": "partial",
+   "note": "Answered 产品经理 entry and skills, but not as a transfer from 法学: the role came before the verb “转”, so the planner took it as the starting point."
+  },
+  {
+   "id": "b03",
+   "kind": "answer",
+   "topic": "transfer",
+   "verdict": "partial",
+   "note": "“想去做…差多少” was not read as a transfer; answered the 机械类 routes (which list 自动化控制工程师) and never compared against 智能体应用工程师."
+  },
+  {
+   "id": "b04",
+   "kind": "answer",
+   "topic": "transfer",
+   "verdict": "correct",
+   "note": "Transfer from 电商运营专员 with catalog trail 电商运营专员 → 市场研究分析员."
+  },
+  {
+   "id": "b05",
+   "kind": "answer",
+   "topic": "transfer",
+   "verdict": "correct",
+   "note": "Transfer from 注册护士; says there is no adjacent catalog route."
+  },
+  {
+   "id": "b06",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "verdict": "correct",
+   "note": "Used the open 计算机类 page; school tables with school, cohort, sample and source date."
+  },
+  {
+   "id": "b07",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "verdict": "correct",
+   "note": "Catalog routes and one labelled school table."
+  },
+  {
+   "id": "b08",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "verdict": "correct",
+   "note": "Said plainly that no mainland table exists for 护理学."
+  },
+  {
+   "id": "b09",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "verdict": "abstained",
+   "note": "English question; “Computer” was not resolved to 计算机类."
+  },
+  {
+   "id": "b10",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "verdict": "abstained",
+   "note": "“Biology” (English inside Chinese) not resolved to 生物科学."
+  },
+  {
+   "id": "b11",
+   "kind": "answer",
+   "topic": "official_stats",
+   "verdict": "correct",
+   "note": "NBS sector wage with both ownership types, year, source, date and the 行业均值 caveat."
+  },
+  {
+   "id": "b12",
+   "kind": "answer",
+   "topic": "official_stats",
+   "verdict": "partial",
+   "note": "Gave 金融业; 制造业 (an NBS sector name, not a catalog industry) was not looked up, so no comparison."
+  },
+  {
+   "id": "b13",
+   "kind": "answer",
+   "topic": "official_stats",
+   "verdict": "correct",
+   "note": "BLS SOC 15-1252 wage, growth and openings with source and proxy caveat."
+  },
+  {
+   "id": "b14",
+   "kind": "answer",
+   "topic": "official_stats",
+   "verdict": "correct",
+   "note": "Both indicators with period and publication date."
+  },
+  {
+   "id": "b15",
+   "kind": "answer",
+   "topic": "official_stats",
+   "verdict": "partial",
+   "note": "Unemployment only; the US layer did not look up the World Bank inflation series it holds."
+  },
+  {
+   "id": "b16",
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "verdict": "wrong",
+   "note": "“比较接近” was not an adjacency cue; answered with 后端 entry details instead of neighbouring roles (off-target)."
+  },
+  {
+   "id": "b17",
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "verdict": "correct",
+   "note": "Catalog neighbours (审计专员、律师…) with shared majors; follows the catalog rather than the writer's guesses."
+  },
+  {
+   "id": "b18",
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "verdict": "correct",
+   "note": "Neighbours from the catalog."
+  },
+  {
+   "id": "b19",
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "verdict": "wrong",
+   "note": "“平移到哪些岗位” not an adjacency cue; answered with daily tasks (off-target)."
+  },
+  {
+   "id": "b20",
+   "kind": "answer",
+   "topic": "industry_roles",
+   "verdict": "correct",
+   "note": "All five roles and chain stages."
+  },
+  {
+   "id": "b21",
+   "kind": "answer",
+   "topic": "industry_roles",
+   "verdict": "correct",
+   "note": "All four roles and chain stages."
+  },
+  {
+   "id": "b22",
+   "kind": "answer",
+   "topic": "industry_roles",
+   "verdict": "correct",
+   "note": "All four roles."
+  },
+  {
+   "id": "b23",
+   "kind": "answer",
+   "topic": "industry_roles",
+   "verdict": "correct",
+   "note": "All four roles."
+  },
+  {
+   "id": "b24",
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "verdict": "wrong",
+   "note": "“数据” inside 数据科学家 triggered the statistics cue: gave sector wage numbers for a role comparison, which the case forbids."
+  },
+  {
+   "id": "b25",
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "verdict": "partial",
+   "note": "Answered 电工 only; 焊接技能人员 dropped."
+  },
+  {
+   "id": "b26",
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "verdict": "correct",
+   "note": "Entry, credential and skills for both teacher roles."
+  },
+  {
+   "id": "b27",
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "verdict": "abstained",
+   "note": "English role names not resolved."
+  },
+  {
+   "id": "b28",
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "verdict": "correct",
+   "note": "Public-sector path with official entry links."
+  },
+  {
+   "id": "b29",
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "verdict": "correct",
+   "note": "Both public paths side by side."
+  },
+  {
+   "id": "b30",
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "verdict": "abstained",
+   "note": "“联邦政府的岗位” did not match the public-sector cue."
+  },
+  {
+   "id": "b31",
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "verdict": "abstained",
+   "note": "“州政府和市里的公共岗位” did not match the public-sector cue."
+  },
+  {
+   "id": "b32",
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "verdict": "partial",
+   "note": "Gave the civil-service exam path, not the role's duties and related majors."
+  },
+  {
+   "id": "b33",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Declined the starting salary; no figure."
+  },
+  {
+   "id": "b34",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "partial",
+   "note": "No figure, but did not say that admission scores and odds are not held; answered 计算机类 routes instead."
+  },
+  {
+   "id": "b35",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Prediction gap; sector average shown with its caveats, no personal figure."
+  },
+  {
+   "id": "b36",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Ranking gap; no ranking."
+  },
+  {
+   "id": "b37",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "City gap; no figure (the extra 后端 entry block is irrelevant but harmless)."
+  },
+  {
+   "id": "b38",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "partial",
+   "note": "Declined the starting salary, but did not say 复旦大学 is not among the covered reports; showed 上海商学院 金融学 (labelled) instead."
+  },
+  {
+   "id": "b39",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Fit gap plus a neutral comparison."
+  },
+  {
+   "id": "b40",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "partial",
+   "note": "No figure, but no explicit statement that pass rates and personal odds are not held."
+  },
+  {
+   "id": "b41",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Said the role is not in the catalog; no pay figure."
+  },
+  {
+   "id": "b42",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Said the role is not in the catalog."
+  },
+  {
+   "id": "b43",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Starting-salary gap; school tables labelled."
+  },
+  {
+   "id": "b44",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "correct",
+   "note": "Prediction gap; no figure."
+  },
+  {
+   "id": "b45",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "abstained",
+   "note": "English question not resolved; nothing stated."
+  },
+  {
+   "id": "b46",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "abstained",
+   "note": "English question not resolved; nothing stated."
+  },
+  {
+   "id": "b47",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "partial",
+   "note": "Gave the latest published indicators with dates, but did not say it does not forecast."
+  },
+  {
+   "id": "b48",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "verdict": "partial",
+   "note": "Showed 升学率 with source, but did not say 保研率 and 考研成功率 are not held."
+  }
+ ]
+}
