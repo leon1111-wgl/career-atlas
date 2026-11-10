@@ -36,11 +36,12 @@ The assistant answers a visitor's own Chinese (or simple English) question about
 
 ## Rules the answers keep
 
-- **No number without a source and date.** Tests fail if a statistics item lacks its citation, or if any other number in any answer does not already exist in the published data files.
+- **No number without a source and date.** In route-tool answers every number carries its inline citation (source, period, date). 资料检索 answers quote the earlier router's text; their source list carries each record's date. Tests fail if a statistics item lacks its citation, if any source in a retrieval answer has no date, or if any number in any answer does not already exist in the published data files.
+- **China and the US are never compared.** A question naming both gets each region's figures in separate blocks with a note that the measures differ (sector average versus occupation median) and cannot be compared or converted.
 - **Caveats survive.** China wages are labelled 行业均值 for the whole NBS sector, with the catalog industries that share the sector; US wages name the SOC occupation as a broad proxy, "not a starting wage", and openings "include replacement demand". China and US figures are never compared or converted.
 - **Approximate names are said to be approximate.** "数据分析" is not a catalog title; the answer says so and names the closest entries (数据科学家, 统计师, 市场研究分析员).
 - **Gaps instead of guesses.** Starting salary, admission/hiring odds and score lines, school-background advantage, working hours, a named employer's pay, forecasts, personal fit, rankings, city pay, match rate, 保研率/考研成功率, and time to first job each return a named gap with the reason and what does exist. A starting-salary, employer or city pay question gets no wage number at all.
-- **Off-target is worse than not found.** A role, major or university the data does not cover is named as missing; another school's numbers are not shown in its place.
+- **Off-target is worse than not found.** A role, major or university the data does not cover is named as missing; another school's numbers are not shown in its place. Words inside a university's name (师范 in 湖北师范大学) never name a major, and retrieval sections about majors or roles the question did not name are dropped.
 - The optional Qwen model (click to load, [MODEL_CARD.md](MODEL_CARD.md)) only re-selects excerpts for 资料检索 answers. Route answers are fully deterministic.
 
 ## Evaluation
@@ -61,7 +62,9 @@ Failure classes in the 21 non-correct cases: English names (5), missing gap rule
 
 **After fixes, on `cd933dd`** (`evals/route/runs/blind_v1-cd933dd.json`): re-graded by the same hand, all 48 cases meet the rubric. **This is not a blind result**: the fixes were made against this set, so it shows only that the failure classes above are closed. Each fix has a test with new wording that fails on `3c85af3` and passes after.
 
-**Coverage tests.** Every topic the page says it handles, and every gap rule, has a plain and a colloquial wording in `tests/route.test.mjs` (20 topic cases and 24 gap cases), plus tests for number provenance, caveat survival, entity resolution and the trace.
+**Coverage tests.** Every topic the page says it handles, and every gap rule, has a plain and a colloquial wording in `tests/route.test.mjs` (20 topic cases and 24 gap cases), plus tests for number provenance, caveat survival, entity resolution and the trace. Tests that need a specific live series (for example a BLS occupation line or an NBS indicator) skip instead of failing if the 6-hourly refresh ever drops it, so a feed change cannot block a deploy; the provenance test reads whatever data is present.
+
+**Read-only review of `09aca34`.** A second model (Fable) asked about 45 questions of its own through the same code path. It found two P0s (师范 in a university name taken as the major; "工资差多少" planned as a transfer) and five P1s (China and US named together answered for one silently; a comparison dropping the second named role; retrieval answers with undated sources; 统计学/生物/医学 not resolved; another major's research leading an answer). Each was reproduced, fixed and pinned by a test that fails on `09aca34`; see the CHANGELOG. No second review round was run.
 
 ## Limits
 
