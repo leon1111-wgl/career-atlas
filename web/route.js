@@ -232,7 +232,7 @@ const MAJOR_ALIASES = [
   [/统计学/, "math"],
   [/法律|法务/, "law"],
   [/农学|园艺|林学/, "agriculture"],
-  [/中医|口腔/, "medicine"],
+  [/口腔/, "medicine"],
   [/传播学|新闻学|广告学/, "journalism"],
   [/生物学|生物(?!医药|研发|技术员)/, "bio"],
   [/医学(?!检验|技术|影像)/, "medicine"],

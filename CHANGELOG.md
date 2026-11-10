@@ -4,7 +4,7 @@
 
 ### What changed
 
-- "学法律但不想当律师，还能干嘛？" no longer falls to 需要补充信息: 法律/法务 resolve to 法学, so the negation handling excludes 律师 and shows the major's other routes. Sibling everyday names added: 农学/园艺/林学 (农业与林业), 中医/口腔 (临床与口腔医学), 传播学/新闻学/广告学 (新闻传播).
+- "学法律但不想当律师，还能干嘛？" no longer falls to 需要补充信息: 法律/法务 resolve to 法学, so the negation handling excludes 律师 and shows the major's other routes. Sibling everyday names added: 农学/园艺/林学 (农业与林业), 口腔 (临床与口腔医学; 中医 is deliberately not mapped there, because its training and licensing route differs and the major's routes include 口腔医师), 传播学/新闻学/广告学 (新闻传播).
 - A pay question naming 事业单位 now says what the data has (the NBS 公共管理、社会保障和社会组织 sector average) and what it lacks (no separate figure for 公务员 or for 事业单位, so it cannot say which is higher). This was the one known gap carried over from 0.2.0.
 - Version 0.2.1. Data, scoring, the classifier and the Qwen tier are unchanged.
 

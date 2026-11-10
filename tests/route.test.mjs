@@ -443,8 +443,10 @@ test("whether a major is easy to find a job in is a stated gap", () => {
 /* 0.2.1: everyday names of majors, and what the data has and lacks for 事业单位 pay. */
 test("法律 and its sibling names resolve to a major, and a negated role is excluded", () => {
   const ids = (q) => resolveEntities(q, base.catalog, {}).majors.map((m) => m.id);
-  for (const [q, id] of [["学法律出来干嘛", "law"], ["读法务的就业方向", "law"], ["学农学能做什么", "agriculture"], ["学园艺毕业去哪", "agriculture"], ["学中医能做什么", "medicine"], ["学口腔以后去哪", "medicine"], ["读传播学的出路", "journalism"], ["学广告学能干嘛", "journalism"]])
+  for (const [q, id] of [["学法律出来干嘛", "law"], ["读法务的就业方向", "law"], ["学农学能做什么", "agriculture"], ["学园艺毕业去哪", "agriculture"], ["学口腔以后去哪", "medicine"], ["读传播学的出路", "journalism"], ["学广告学能干嘛", "journalism"]])
     assert(ids(q).includes(id), `${q} -> ${ids(q)}`);
+  // 中医 is not 临床与口腔医学: its licensing route differs, so it must not borrow that major's routes (dentist, clinician).
+  assert(!ids("学中医能做什么").includes("medicine"), "中医 must not resolve to medicine");
   for (const q of ["学法律但不想当律师，还能干嘛？", "法律专业不想做律师，有别的出路吗"]) {
     const a = ask(q);
     assert.equal(a.goal, "destinations", q);
