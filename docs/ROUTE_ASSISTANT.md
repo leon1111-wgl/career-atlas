@@ -1,6 +1,6 @@
 # 路线助手 (career route assistant)
 
-Author: Leon Wang. Release 0.2.0. Code: [`web/route.js`](../web/route.js). Tests: [`tests/route.test.mjs`](../tests/route.test.mjs).
+Author: Leon Wang. Release 0.2.1. Code: [`web/route.js`](../web/route.js). Tests: [`tests/route.test.mjs`](../tests/route.test.mjs).
 
 The assistant answers a visitor's own Chinese (or simple English) question about routes between majors, roles and industries. It runs in the browser with **no language model**: a rule planner reads the question, writes a plan of tool calls, and runs pure functions over the published catalog and statistics. The answer shows the plan and every tool call.
 
