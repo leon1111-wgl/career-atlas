@@ -193,6 +193,7 @@
         <div class="chat-bubble assistant">
           <p>用自己的话问：转方向要补什么、某个专业毕业去哪、某行业的官方工资统计、相邻岗位、行业里有哪些岗位、岗位比较、入门资格、公共部门与政策。</p>
           <p>每个数字都写明来源和日期；现有数据回答不了的，会直接说明。展开“规划与工具轨迹”可以看每一步查了什么。</p>
+          <p class="assistant-practice">做法参照招聘平台的智能体：先把问题拆成计划，再调用岗位与技能工具，并附上依据（<a href="https://www.linkedin.com/blog/engineering/ai/how-we-engineered-linkedins-hiring-assistant" target="_blank" rel="noopener">LinkedIn Engineering，2025-10-21</a>）。这里的规划由规则完成，数据只来自本站目录与公开统计。</p>
         </div>
       </div>
       <div class="prompt-chips">
@@ -207,7 +208,6 @@
         ><button id="send-chat" class="button primary" type="submit">查询</button
         ><button id="stop-chat" class="button subtle" type="button" hidden>停止</button>
       </form>
-      <p class="assistant-practice">做法参照招聘平台的智能体：先把问题拆成计划，再调用岗位与技能工具，并附上依据（<a href="https://www.linkedin.com/blog/engineering/ai/how-we-engineered-linkedins-hiring-assistant" target="_blank" rel="noopener">LinkedIn Engineering，2025-10-21</a>）。这里的规划由规则完成，数据只来自本站目录与公开统计。</p>
     </dialog>
     <div id="toast" role="status" class="toast" hidden></div>
     <script type="module" src="./app.js?v=20261110"></script>

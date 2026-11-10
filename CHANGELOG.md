@@ -1,0 +1,30 @@
+# Changelog
+
+## 0.2.0 — 路线助手 (career route assistant), 2026-11-10
+
+### What changed
+
+- **路线助手** replaces the 职业咨询 dialog (top bar → 路线助手). A rule planner with no language model resolves majors, roles and industries in the visitor's own question, plans calls to pure data tools, and shows the plan and every call under 规划与工具轨迹. Tools: major → roles → industries, skill gap against a major's course foundations or a current role, adjacent-role trails, NBS sector wages and BLS SOC figures, official university outcome tables, NBS/FRED/World Bank macro indicators, industry value chains, public-sector entry routes, and the earlier topic router for policies, recruitment conditions and company types. See [docs/ROUTE_ASSISTANT.md](docs/ROUTE_ASSISTANT.md).
+- Every number is rendered from a typed fact with source, statistical period and date. Twelve named gaps (starting salary, odds and score lines, school background, hours, employer pay, forecasts, personal fit, rankings, city pay, match rate, 保研率/考研成功率, time to first job) say what the data cannot answer and what it can.
+- On a major page, "这个专业…" refers to that major.
+- The 12 KB intent classifier is one planner signal and appears in the trace; it is unchanged. The optional Qwen tier is unchanged and still only re-selects excerpts for catalog-retrieval answers.
+- The page carries one sourced line on the practice it mirrors (LinkedIn Engineering, 2025-10-21). The intro stack line now lists the planner and the tool trace.
+- `docs/FRONTIER_REVIEW.md`: candidates with adopt/skip, and what LinkedIn, Indeed, BOSS直聘, 智联招聘, the U.S. DOL and Chinese universities run in production, with dated sources.
+- `.github/workflows/ci.yml`: pull requests run the Python and Node tests, the classifier reproduction check, the report build, the blind-set routing record and a module-reference check, so branch CI gates main.
+- README: homepage link, route assistant section and commands. Version 0.2.0.
+
+Scoring, data, the refresh pipeline and model behaviour are unchanged. The cache-busting query on the page's modules moved to `v=20261110` so returning visitors get the new code.
+
+### What was checked
+
+- Blind set `evals/route/blind_v1.json` (48 questions by Claude Sonnet 5.5 from a public brief only), committed in `03d26f7` before any assistant code. **First run on `3c85af3`, graded by hand before any change:** answer cases 18 correct / 6 partial / 3 wrong / 5 abstained of 32; must-not-answer cases 9 correct / 5 partial / 0 wrong / 2 abstained of 16, with no forbidden figure stated on that set. The fixes in `cd933dd` target the failure classes found; the re-run on that commit meets the rubric on all 48, which is **not** a blind result.
+- `tests/route.test.mjs`: 63 tests. Two wordings (plain and colloquial) for each of the 10 topics the page lists and each of the 12 gaps; every statistics item carries source, period and date; no answer contains a number that is not in the published data; China wage answers keep 行业均值 and the shared-sector note, US answers keep the SOC-proxy and not-a-starting-wage notes; entity resolution; trace shape. The 15 tests written for the blind-run failure classes fail on `3c85af3` and pass now.
+- Full local gate: Python 48 tests, Node 126 tests, `train-intent.py --check` byte-identical, `pipeline.build` offline.
+- Walked a local static build of `web/` in the desktop app's browser at 1366px and 375px, light and dark: cover, all six tabs, an industry, a role and a major page; the assistant on a major page ("这个专业…"), all four prompt chips, a statistics answer, a gap-only answer and an out-of-catalog role; trace expanded; internal source links close the dialog and navigate; external ones open in a new tab. No console errors and no horizontal overflow on any page or inside the dialog.
+
+### Left out
+
+- No real browser model run in this release: the Qwen tier was not loaded (no weight downloads on the development machine, no GPU on Actions runners). Its code path is unchanged from 0.1, and the assistant does not depend on it.
+- No second blind set yet, so there is no blind measure of the fixes; new phrasings can still fall to 需要补充信息.
+- English support is a short alias list for US-layer majors and roles.
+- No live job index, no applications or messages, no stored questions.

@@ -499,7 +499,7 @@ dialog::backdrop { background: rgb(14 18 24 / 45%); }
 .prompt-chips button { border: 1px solid var(--rule-strong); background: var(--panel); border-radius: 3px; padding: 3px 10px; font-size: 13px; color: var(--text); }
 .prompt-chips button:hover { border-color: var(--trail); color: var(--trail-ink); }
 .assistant-context { margin: 0; padding: 6px 18px; font-size: 12.5px; color: var(--survey); background: var(--survey-soft); border-bottom: 1px solid var(--rule); }
-.assistant-practice { margin: 0; padding: 0 18px 14px; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
+.chat-bubble .assistant-practice { margin-top: 8px; padding-top: 6px; border-top: 1px dashed var(--rule); font-size: 12px; line-height: 1.6; color: var(--muted); }
 .assistant-practice a { color: var(--survey); }
 .route-block { padding-left: 10px; border-left: 2px solid var(--rule); }
 .route-block.is-stat { border-left-color: var(--survey); }

@@ -1,0 +1,54 @@
+name: 检查（PR）
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python 单元测试（采集、解析、口径隔离）
+        run: python -m unittest discover -s tests -p 'test_*.py' -v 2>&1 | tee python-tests.log
+        shell: bash -o pipefail {0}
+      - name: Node 测试（评分、检索、分类器、路线助手）
+        run: node --test tests/*.test.mjs 2>&1 | tee node-tests.log
+        shell: bash -o pipefail {0}
+      - name: 问题分类器可复现
+        run: python scripts/train-intent.py --check
+      - name: 报告可生成
+        run: python -m pipeline.build
+      - name: 路线助手跑一遍盲测集（记录，不评分）
+        run: |
+          node scripts/route-eval.mjs evals/route/blind_v1.json --out route-run.json
+          node -e 'const r=require("./route-run.json");const c={};for(const x of r.runs)c[x.kind+" → "+x.goal]=(c[x.kind+" → "+x.goal]||0)+1;console.log(Object.entries(c).map(([k,v])=>`| ${k} | ${v} |`).join("\n"))' > goals.md
+          { echo "### blind_v1 routing on ${GITHUB_SHA::7}"; echo; echo "| kind → goal | cases |"; echo "|---|---:|"; cat goals.md; echo; echo "Recorded only. Grades are by hand; the reported first run is in docs/ROUTE_ASSISTANT.md."; } >> "$GITHUB_STEP_SUMMARY"
+      - name: 页面引用的模块都存在
+        run: |
+          node -e '
+          const fs=require("fs");const seen=new Set();const bad=[];
+          const walk=f=>{if(seen.has(f))return;seen.add(f);const s=fs.readFileSync(f,"utf8");
+            for(const m of s.matchAll(/(?:from|import)\s*\(?\s*"(\.\/[^"?]+)(?:\?[^"]*)?"/g)){const p="web/"+m[1].slice(2);if(!fs.existsSync(p))bad.push(f+" → "+p);else if(p.endsWith(".js"))walk(p);}};
+          const html=fs.readFileSync("web/index.html","utf8");
+          for(const m of html.matchAll(/(?:src|href)="\.\/([^"?#]+)/g)){const p="web/"+m[1];if(!fs.existsSync(p))bad.push("index.html → "+p);else if(p.endsWith(".js"))walk(p);}
+          if(bad.length){console.error(bad.join("\n"));process.exit(1)}console.log(seen.size+" modules resolve");'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-logs
+          path: |
+            python-tests.log
+            node-tests.log
+            route-run.json
+          if-no-files-found: warn
