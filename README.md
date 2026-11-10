@@ -2,7 +2,7 @@
 
 By [Leon Wang](https://leon1111-wgl.github.io/)
 
-**从行业与专业，找到可核对的职业方向。** 面向年轻人的中美行业、专业与岗位图册。中文首版，开放源码，官方统计自动更新；浏览器里的路线助手用规则规划、调用数据工具作答，每个数字写明来源和日期，并显示工具轨迹。当前版本 0.2.0，见[更新记录](CHANGELOG.md)。
+**从行业与专业，找到可核对的职业方向。** 面向年轻人的中美行业、专业与岗位图册。中文首版，开放源码，官方统计自动更新；浏览器里的路线助手用规则规划、调用数据工具作答，每个数字写明来源和日期，并显示工具轨迹。当前版本 0.2.1，见[更新记录](CHANGELOG.md)。
 
 **[打开网站](https://leon1111-wgl.github.io/career-atlas/)** · [路线助手说明](docs/ROUTE_ASSISTANT.md) · [前沿与业界做法](docs/FRONTIER_REVIEW.md) · [观察报告](reports/latest.md) · [评分代码](web/scoring.js) · [模型卡](docs/MODEL_CARD.md) · [设计说明](docs/DESIGN_REVIEW.md)
 
