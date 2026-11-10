@@ -49,6 +49,8 @@ const COVERAGE = [
   ["entry", "律师需要什么资格", ["role_profile"]],
   ["entry", "零基础怎么入门网络安全", ["role_profile"]],
   ["public", "考公和事业单位招聘有什么区别", ["public_paths"]],
+  ["destinations", "学法律但不想当律师，还能干嘛？", ["major_routes"]],
+  ["destinations", "法律专业毕业以后都去哪", ["major_routes"]],
   ["public", "美国联邦政府的岗位怎么申请", ["public_paths"]],
   ["legacy", "国家对人工智能有啥支持政策", ["catalog_answer"]],
   ["legacy", "新能源方面最近有什么政策", ["catalog_answer"]],
@@ -436,4 +438,27 @@ test("whether a major is easy to find a job in is a stated gap", () => {
   assert(a.gaps.some((g) => g.title === GAP_RULES.find((r) => r.id === "admission_odds").title));
   assert(text(a).includes("好不好找工作"));
   assert(a.blocks.some((b) => b.title.includes("生物科学")));
+});
+
+/* 0.2.1: everyday names of majors, and what the data has and lacks for 事业单位 pay. */
+test("法律 and its sibling names resolve to a major, and a negated role is excluded", () => {
+  const ids = (q) => resolveEntities(q, base.catalog, {}).majors.map((m) => m.id);
+  for (const [q, id] of [["学法律出来干嘛", "law"], ["读法务的就业方向", "law"], ["学农学能做什么", "agriculture"], ["学园艺毕业去哪", "agriculture"], ["学中医能做什么", "medicine"], ["学口腔以后去哪", "medicine"], ["读传播学的出路", "journalism"], ["学广告学能干嘛", "journalism"]])
+    assert(ids(q).includes(id), `${q} -> ${ids(q)}`);
+  for (const q of ["学法律但不想当律师，还能干嘛？", "法律专业不想做律师，有别的出路吗"]) {
+    const a = ask(q);
+    assert.equal(a.goal, "destinations", q);
+    assert(a.plan.entities.negatedRoles.includes("lawyer"), q);
+    assert(!a.blocks.some((b) => /律师/.test(b.title) && b.kind !== "note"), `${q}: 律师 still listed`);
+    assert(/按你的说法排除：律师/.test(text(a)), q);
+  }
+});
+test("公务员 vs 事业单位 pay says what the data has and lacks for each", () => {
+  for (const q of ["公务员和事业单位哪个工资高", "考公还是进事业单位，待遇哪个好，工资差多少"]) {
+    const t = text(ask(q));
+    assert(/事业单位[^。]{0,20}没有单独的(工资|统计)/.test(t), q);
+    assert(/公务员[^。]{0,20}没有单独的(工资|统计)/.test(t), q);
+    assert(t.includes("无法说明哪个更高"), q);
+    assert(t.includes("公共管理、社会保障和社会组织"), `${q}: the one sector the data does have`);
+  }
 });

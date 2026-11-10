@@ -230,6 +230,10 @@ const MAJOR_ALIASES = [
   [/通信工程|微电子/, "electronics"],
   [/学前教育|小学教育|师范专业|师范生/, "education"],
   [/统计学/, "math"],
+  [/法律|法务/, "law"],
+  [/农学|园艺|林学/, "agriculture"],
+  [/中医|口腔/, "medicine"],
+  [/传播学|新闻学|广告学/, "journalism"],
   [/生物学|生物(?!医药|研发|技术员)/, "bio"],
   [/医学(?!检验|技术|影像)/, "medicine"],
   [/computer|software engineering/, "cs"],
@@ -822,6 +826,9 @@ export function plan(question, ctx, extra = {}) {
   };
   const regionsAsked = ent.bothRegions ? ["CN", "US"] : [region];
   if (ent.bothRegions) notes.push("问题同时提到中国和美国：两地分别列出。中国是统计门类的行业均值，美国是职业中位数，口径不同，不能直接比较或换算。");
+  // 公务员 and 事业单位 are two employers with one shared NBS sector: say what the data has and lacks for each.
+  if (pay && /事业单位/.test(q) && !ent.bothRegions && region === "CN")
+    notes.push("数据里有的：国家统计局“公共管理、社会保障和社会组织”门类的年平均工资，是整个门类的行业均值。数据里没有的：公务员没有单独的工资统计，事业单位也没有单独的统计（学校、医院等事业单位分别落在教育、卫生等其他门类里，门类里还有非事业单位）。所以无法说明哪个更高；各单位的待遇以招聘公告和当地政策为准。");
   if (unknownAlias && knownRoles.length) notes.push(`目录里没有“${unknownAlias.term}”这个岗位条目，下面只回答目录里有的岗位。`);
 
   // Where the visitor stands: a role named as the current job, else (without a major) a role before the transfer verb.
