@@ -18,6 +18,8 @@ export const GOAL_LABELS = Object.freeze({
   adjacent: "相邻岗位",
   industry: "行业里的岗位",
   compare: "岗位比较",
+  majors: "专业比较",
+  industryMajors: "行业对应的专业",
   entry: "入门与资格",
   public: "公共部门入口",
   legacy: "资料检索",
@@ -40,7 +42,7 @@ const ROLE_ALIASES = [
   [/后端|服务端|后台开发|java/i, ["backend"], "后端"],
   [/前端|web\s*开发/i, ["frontend"], "前端"],
   [/软件测试|测试开发|测试工程|做测试|\bqa\b|测试(?=转|岗|的|工作)/i, ["qa"], "测试"],
-  [/(?<=转|做|去|干)开发|开发岗/, ["backend", "frontend"], "开发"],
+  [/(?<=转|做|去|干)开发|开发岗|(?<=和|与|跟|及|还是|或)开发(?=哪|谁|的|和|与|比|[,，。？?\s]|$)/, ["backend", "frontend"], "开发"],
   [/产品经理|做产品|\bpm\b/i, ["product"], "产品经理"],
   [/算法工程|算法岗|做算法|搞算法|深度学习|大模型/, ["mlengineer", "mlresearch"], "算法"],
   [/算法研究|机器学习研究|研究科学家/, ["mlresearch"], "算法研究"],
@@ -90,6 +92,7 @@ const GENERIC_INDUSTRY_TERMS = new Set(["数据", "设施", "内容", "品牌", 
 const TITLE_SUFFIX = /(工程师|专业人员|技术人员|技能人员|技术员|专员|人员|分析员|分析师)$/;
 
 const INDUSTRY_ALIASES = [
+  [/新能源汽车|新能源车|电动汽车|电动车/, "mobility"],
   [/新能源|光伏|风电|电网/, "power"],
   [/互联网|it行业|软件行业/i, "software"],
   [/人工智能|\bai\s*行业|大数据/i, "ai"],
@@ -130,9 +133,9 @@ export const GAP_RULES = [
   },
   {
     id: "admission_odds",
-    test: (q) => /录用(率|概率|几率|机会)|录取(率|概率|分)|分数线|上岸(率|概率|几率|机会)|概率有多大|能考上|考得上|考上的?(概率|几率)|能上.{0,8}吗|分能上|高考.{0,12}(能|可以)上|(能|可以)不能进|能进.{0,8}吗|进得去吗|进得了|好不好进|难不难进|好进吗|难进吗|(进|去).{0,8}难不难|几成|概率多大|多大(把握|机会|概率)|有没有希望|稳进/.test(q),
+    test: (q) => /录用(率|概率|几率|机会)|录取(率|概率|分)|分数线|上岸(率|概率|几率|机会)|概率有多大|能考上|考得上|考上的?(概率|几率)|能上.{0,8}吗|分能上|高考.{0,12}(能|可以)上|(能|可以)不能进|能进.{0,8}吗|进得去吗|进得了|好不好进|好找工作|好找吗|好不好找|好就业|容易找工作|找工作(难|容易)|难不难进|好进吗|难进吗|(进|去).{0,8}难不难|几成|概率多大|多大(把握|机会|概率)|有没有希望|稳进/.test(q),
     title: "录用、录取或上岸概率",
-    why: "本站没有招生分数线，也没有同岗位、同批次的申请人数与实际录用人数，无法估计任何人的录取、录用或上岸概率。",
+    why: "本站没有招生分数线，也没有同岗位、同批次的申请人数与实际录用人数，无法估计任何人的录取、录用或上岸概率，也无法说明某个专业或岗位好不好找工作。",
     instead: "可以核对岗位的入门要求、资格条件和公告原文；公共部门看当年职位表。",
   },
   {
@@ -144,8 +147,8 @@ export const GAP_RULES = [
   },
   {
     id: "working_hours",
-    test: (q) => /加班|工时|996|累不累|辛苦吗|作息|几点下班|双休|周末休/.test(q),
-    title: "工时与强度",
+    test: (q) => /加班|工时|工作时长|几个小时|多少个?小时|几小时|每天.{0,6}小时|996|累不累|辛苦吗|作息|几点下班|双休|周末休/.test(q),
+    title: "工作时长与强度",
     why: "本站没有带样本说明的实际工时或加班统计，不用岗位描述推算工作强度。",
     instead: "面试时可以问值班、交付节奏和旺季安排；岗位页列出了面试核对问题。",
   },
@@ -165,7 +168,7 @@ export const GAP_RULES = [
   },
   {
     id: "personal_fit",
-    test: (q) => /适合我|我适合|我适不适合|适不适合我|性格|mbti|内向|外向|天赋|我能做什么/i.test(q),
+    test: (q) => /我(该|应该)选|应该选|该选.{0,10}还是|怎么选|适合我|我适合|我适不适合|适不适合我|性格|mbti|内向|外向|天赋|我能做什么/i.test(q),
     title: "是否适合你",
     why: "本站不评估个人性格、能力或适合程度，也不做测评。",
     instead: "可以从专业的三条路线和岗位的试做项目里挑一个，用一次小项目或见习来验证兴趣。",
@@ -297,6 +300,8 @@ function patternSpans(lower, list, make) {
   }
   return found;
 }
+// A role the visitor rules out: "不想当医生", "不做程序员", "不当老师".
+const NEGATED = /(不想|不愿意?|不要|不打算|不准备|不想再|不再|不想去|不用)(去?当|去?做|成为|干|从事|去)?$|不(当|做|干|从事)$/;
 const RANK = { role: 3, major: 2, industry: 1 };
 
 /** Every candidate span competes; the longest wins, so "网络安全" beats "网络", "电力与新能源" beats "新能源". */
@@ -334,12 +339,20 @@ export function resolveEntities(question, catalog, extra = {}) {
   kept.sort((a, b) => a.at - b.at);
   const majors = [];
   const roles = [];
+  const roleSpans = [];
+  const negatedRoles = [];
   const industries = [];
   for (const c of kept) {
     if (c.kind === "major" && !majors.some((x) => x.id === c.id)) majors.push({ id: c.id, at: c.at, term: c.term, phrased: c.majorContext });
     if (c.kind === "industry" && !industries.some((x) => x.id === c.id)) industries.push({ id: c.id, at: c.at, term: c.term });
+    if (c.kind === "role" && NEGATED.test(q.slice(Math.max(0, c.at - 6), c.at))) {
+      // "不想当医生": the role is named only to be left out.
+      for (const id of c.ids || [c.id]) if (id && !negatedRoles.includes(id)) negatedRoles.push(id);
+      continue;
+    }
     if (c.kind === "role") {
       const ids = c.ids || [c.id];
+      if (ids.length && ids[0]) roleSpans.push({ ids, at: c.at, term: c.term, approx: c.approx || null, exact: !!c.exact });
       if (!ids.length) roles.push({ id: null, at: c.at, term: c.term, approx: c.approx });
       for (const id of ids) if (!roles.some((x) => x.id === id)) roles.push({ id, at: c.at, term: c.term, exact: !!c.exact, approx: c.approx || null });
     }
@@ -363,7 +376,7 @@ export function resolveEntities(question, catalog, extra = {}) {
   if (refersToPage && extra.contextMajor && catalog.majors.some((x) => x.id === extra.contextMajor)) contextMajor = extra.contextMajor;
   // A major phrased as one ("会计专业") outranks an earlier bare mention.
   majors.sort((a, b) => Number(b.phrased) - Number(a.phrased) || a.at - b.at);
-  return { majors, roles, industries, unknownRoles, region, regionFrom, bothRegions: namesCN && namesUS, contextMajor, refersToPage };
+  return { majors, roles, roleSpans, negatedRoles, industries, unknownRoles, region, regionFrom, bothRegions: namesCN && namesUS, contextMajor, refersToPage };
 }
 
 /* ---------- Tools (pure, data only) ---------- */
@@ -405,11 +418,11 @@ function statSource(s, fallbackTitle) {
 }
 
 export const TOOLS = {
-  major_routes(ctx, { majorId }) {
+  major_routes(ctx, { majorId, exclude = [] }) {
     const m = ctx.major(majorId);
     if (!m) return { ok: false, summary: "专业未找到" };
     const groups = new Map();
-    for (const id of m.roleIds) {
+    for (const id of m.roleIds.filter((x) => !exclude.includes(x))) {
       const r = ctx.role(id);
       if (!r) continue;
       if (!groups.has(r.industryId)) groups.set(r.industryId, []);
@@ -423,6 +436,15 @@ export const TOOLS = {
       byIndustry,
       source: CATALOG_SOURCE(ctx),
     };
+  },
+  industry_majors(ctx, { industryId }) {
+    const ind = ctx.industry(industryId);
+    if (!ind) return { ok: false, summary: "行业未找到" };
+    const rows = ctx.catalog.majors
+      .map((m) => ({ major: m, roles: m.roleIds.map(ctx.role).filter((r) => r && r.industryId === ind.id) }))
+      .filter((x) => x.roles.length)
+      .sort((a, b) => b.roles.length - a.roles.length);
+    return { ok: rows.length > 0, summary: `${ind.name}：${rows.length} 个专业在目录里通向它`, industry: ind, rows, source: CATALOG_SOURCE(ctx) };
   },
   major_guide(ctx, { majorId }) {
     const g = ctx.research?.majors?.find((x) => x.id === majorId);
@@ -609,7 +631,7 @@ export const TOOLS = {
     const paths = (ctx.catalog.publicPaths || []).filter((p) => p.region === region);
     return { ok: paths.length > 0, summary: `${paths.length} 条${REGION_NAME[region]}公共部门入口`, paths };
   },
-  catalog_answer(ctx, { question, region, roleIds = [], majorIds = [] }) {
+  catalog_answer(ctx, { question, region, roleIds = [], majorIds = [], industryIds = [] }) {
     const r = advise(question, ctx.catalog, ctx.data, region, ctx.intentModel, {
       research: ctx.research,
       outcomes: ctx.outcomes,
@@ -622,6 +644,7 @@ export const TOOLS = {
     const keep = (s) => {
       const id = s.source || "";
       if (/^role:/.test(id)) return !roleIds.length || roleIds.includes(id.slice(5));
+      if (/^(industry|research):/.test(id) && (roleIds.length || majorIds.length || industryIds.length)) return industryIds.includes(id.split(":")[1]);
       if (/^(guide|major):/.test(id)) return majorIds.includes(id.split(":")[1]);
       if (/^outcome:/.test(id) && majorIds.length) return (outcomeGroup(id)?.majorIds || []).some((m) => majorIds.includes(m));
       return true;
@@ -718,12 +741,13 @@ const CUES = {
   destinations: /去哪|去向|出路|方向|做什么工作|干什么|干啥|干嘛|能做什么|找什么工作|哪些行业|哪些岗位|什么岗位|什么行业|就业|毕业后|毕业以后|毕业了|以后做|work as|jobs?\b|careers?\b|get a job|majors?\b/i,
   industry: /岗位|职位|工作|做什么|干什么|产业链|上下游|有哪些(人|角色|工种)|招什么人|分工/,
   compare: /区别|比较|对比|哪个好|选哪个|差别|不同|还是/,
-  entry: /入门|怎么进|进入|要求|资格|证书|执照|准备|学什么|门槛|零基础|条件|需要什么|考什么|怎么当|怎么成为/,
+  entry: /要会什么|需要会|会什么|得会|入门|怎么进|进入|要求|资格|证书|执照|准备|学什么|门槛|零基础|条件|需要什么|考什么|怎么当|怎么成为/,
   stats: /统计|数据|官方/,
   macro: /gdp|cpi|物价|通胀|通货膨胀|inflation|失业率|unemployment rate|工业增加值|社会消费品|零售总额|非农|经济数据|宏观/i,
   publicPath: /考公|公务员(考试|招录|怎么考|要怎么)|事业单位|公共部门|公共岗位|政府(的)?岗位|联邦|州政府|地方政府|市政府|市里的|usajobs|government jobs?/i,
   roleDuty: /干什么的|做什么的|是干嘛的|职责|工作内容|对口|什么专业|哪些专业/,
   legacy: /考公|公务员|事业单位|公共部门|联邦岗位|政策|补贴|行动计划|国家支持|招聘条件|公告|公司类型|不同公司|什么样的公司|雇主类型|985|211|双非|一本|二本|海归|留学生/i,
+  majorsFor: /什么专业|哪些专业|哪个专业|需要.{0,3}专业|专业.{0,3}(要求|限制)/,
   work: /每天|日常|平时.{0,4}(做|干)|具体做什么|具体干什么|工作内容/,
 };
 const MACRO_IDS = [
@@ -740,7 +764,7 @@ export function plan(question, ctx, extra = {}) {
   const ent = resolveEntities(q, ctx.catalog, extra);
   // Cue words are read with entity names blanked out, so "数据" in 数据科学家 is not a request for statistics.
   let masked = q;
-  for (const e of [...ent.majors, ...ent.roles, ...ent.industries]) masked = masked.slice(0, e.at) + "＿".repeat(e.term.length) + masked.slice(e.at + e.term.length);
+  for (const e of [...ent.majors, ...ent.roles, ...ent.roleSpans, ...ent.industries]) masked = masked.slice(0, e.at) + "＿".repeat(e.term.length) + masked.slice(e.at + e.term.length);
   // Sector words ("公务员", "政策") are tested on the full question: they name the topic, not an entity.
   const cue = (name) => CUES[name].test(["publicPath", "legacy"].includes(name) ? q : masked);
   const classification = classifyIntent(q, ctx.intentModel);
@@ -768,7 +792,24 @@ export function plan(question, ctx, extra = {}) {
     if (!notes.includes(note)) notes.push(note);
   };
   // One role per named span: "程序员" maps to two catalog roles but is one thing the visitor named.
-  const distinct = knownRoles.filter((r, i) => knownRoles.findIndex((x) => x.at === r.at) === i);
+  // A role named by its own span keeps its place even when an approximate span also lists it; the approximate one takes its next entry.
+  const taken = new Set();
+  const picks = new Map();
+  for (const sp of ent.roleSpans.filter((x) => !x.approx)) {
+    picks.set(sp, sp.ids[0]);
+    taken.add(sp.ids[0]);
+  }
+  for (const sp of ent.roleSpans.filter((x) => x.approx)) {
+    const id = sp.ids.find((x) => !taken.has(x)) || sp.ids[0];
+    picks.set(sp, id);
+    taken.add(id);
+  }
+  const distinct = ent.roleSpans
+    .filter((sp) => ctx.role(picks.get(sp)))
+    .map((sp) => {
+      const known = knownRoles.find((r) => r.id === picks.get(sp));
+      return { id: picks.get(sp), at: sp.at, term: sp.term, approx: sp.approx, exact: sp.exact || !!known?.exact };
+    });
   const distinctIds = [...new Set(distinct.map((r) => r.id))];
   // Wage lookups deduplicated by what they read: one NBS sector, or one SOC line.
   const wageKeys = new Set();
@@ -789,8 +830,9 @@ export function plan(question, ctx, extra = {}) {
   const sourceMajor = ent.majors.find((m) => verb < 0 || m.at < verb)?.id || ent.contextMajor;
   const sourceRoles = current.length ? current : !sourceMajor && verb >= 0 ? knownRoles.filter((r) => r.at < verb) : [];
   const targets = knownRoles.filter((r) => !sourceRoles.includes(r));
-  const payGap = pay && /差多少|差距|哪个高|谁高|哪个多|比较/.test(masked);
+  const payGap = pay && /差多少|差距|哪个.{0,4}(高|多)|谁.{0,4}(高|多)|比较/.test(masked);
   const compareAsk = distinctIds.length >= 2 && (cue("compare") || payGap) && !current.length && !ent.majors.some((m) => m.phrased);
+  const majorCompare = ent.majors.length >= 2 && cue("compare") && verb < 0 && !knownRoles.length && !current.length;
   const wantsTransfer = !compareAsk && !payGap && targets.length && (cue("transfer") || (verb >= 0 && (sourceMajor || sourceRoles.length)));
 
   if (ent.refersToPage && !ent.contextMajor && !ent.majors.length) {
@@ -805,6 +847,20 @@ export function plan(question, ctx, extra = {}) {
     for (const r of pair) step("role_profile", { roleId: r.id, region });
     if (pay) for (const r of pair) for (const rg of regionsAsked) wageStep({ roleId: r.id, region: rg });
     for (const r of pair) approxNote(r, "比较", true);
+    if (pay && pair.length === 2 && regionsAsked.includes("CN")) {
+      const sector = (r) => ctx.industry(ctx.role(r.id)?.industryId)?.cnWageIndustry;
+      const [a, b] = pair.map((r) => ctx.role(r.id).title);
+      if (sector(pair[0]) && sector(pair[0]) === sector(pair[1]))
+        notes.push(`中国：“${a}”和“${b}”都属于同一统计门类“${sector(pair[0])}”，国家统计局只发布这个门类的行业均值，没有按岗位拆分，所以数据无法说明两者谁高谁低。`);
+      else notes.push(`中国：国家统计局只发布统计门类的行业均值，不是岗位工资；门类均值的高低不等于“${a}”和“${b}”的高低。`);
+    }
+  } else if (majorCompare) {
+    goal = "majors";
+    for (const m of ent.majors.slice(0, 2)) {
+      step("major_routes", { majorId: m.id });
+      step("major_guide", { majorId: m.id });
+    }
+    if (ent.majors.length > 2) notes.push(`问题里提到了 ${ent.majors.length} 个专业，下面只并排列出前两个：${ent.majors.slice(0, 2).map((m) => ctx.major(m.id).name).join("、")}。`);
   } else if ((unknownAlias || ent.unknownRoles.length) && !knownRoles.length && !majorId) {
     goal = "none";
     const name = unknownAlias?.term || ent.unknownRoles[0];
@@ -848,8 +904,11 @@ export function plan(question, ctx, extra = {}) {
   }
   if (!goal && majorId && !knownRoles.length && (cue("destinations") || classification.intent === "fit" || ent.refersToPage || pay || gaps.some((g) => ["starting_salary", "match_rate", "further_study", "time_to_job"].includes(g.id)) || school)) {
     goal = "destinations";
-    step("major_routes", { majorId });
-    step("major_guide", { majorId });
+    const exclude = ent.negatedRoles.filter((id) => ctx.role(id));
+    step("major_routes", { majorId, exclude });
+    // The research routes are written per direction and cannot be filtered by role, so an exclusion leaves them out.
+    if (!exclude.length) step("major_guide", { majorId });
+    else notes.push(`按你的说法排除：${exclude.map((id) => ctx.role(id).title).join("、")}。下面是目录里这个专业通向的其他岗位；编辑研究的路线按方向成组，不能逐个排除，这里不列。`);
     if (school && !school.covered) notes.push(`已收录的高校报告来自：${SCHOOLS.map((x) => x.name).join("、")}；没有${school.name}的报告，所以不列任何学校的去向数字，以免被当作${school.name}的结果。`);
     else step("graduate_outcomes", { majorId, region, school: school?.covered ? school.name : null });
     if (pay && region === "CN") {
@@ -863,6 +922,10 @@ export function plan(question, ctx, extra = {}) {
       step("graduate_outcomes", { majorId: null, region: "CN", school: school.name });
       notes.push(`下面是${school.name}报告里已收录的表；写上专业可以只看该专业。`);
     } else notes.push(`已收录的高校报告来自：${SCHOOLS.map((x) => x.name).join("、")}；没有${school.name}的报告，不列其他学校的数字。`);
+  }
+  if (!goal && ent.industries.length && !knownRoles.length && !majorId && cue("majorsFor") && !cue("legacy")) {
+    goal = "industryMajors";
+    step("industry_majors", { industryId: ent.industries[0].id });
   }
   if (!goal && ent.industries.length && !knownRoles.length && !majorId && cue("industry") && !cue("legacy") && !cue("publicPath")) {
     goal = "industry";
@@ -905,7 +968,13 @@ export function plan(question, ctx, extra = {}) {
   }
   if (!goal && (knownRoles.length || cue("legacy"))) {
     goal = "legacy";
-    step("catalog_answer", { question: q, region, roleIds: knownRoles.map((r) => r.id), majorIds: ent.majors.map((m) => m.id) });
+    step("catalog_answer", {
+      question: q,
+      region,
+      roleIds: knownRoles.map((r) => r.id),
+      majorIds: ent.majors.map((m) => m.id),
+      industryIds: [...new Set([...ent.industries.map((i) => i.id), ...knownRoles.map((r) => ctx.role(r.id)?.industryId)].filter(Boolean))],
+    });
   }
   if (!goal) {
     goal = gaps.length ? "gap" : "none";
@@ -1155,6 +1224,40 @@ function compose(p, results, ctx) {
     }
   }
 
+  if (p.goal === "majors") {
+    const rs = by("major_routes").map((r) => r.out).filter((x) => x.ok);
+    const gs = by("major_guide").map((r) => r.out).filter((x) => x.ok);
+    for (const r of rs) {
+      block(`${r.major.name}在目录里通向的行业与岗位`, "catalog", r.byIndustry.map((g) => `${g.industry.name}：${g.roles.map((x) => x.title).join("、")}`), r.source);
+      const g = gs.find((x) => x.guide.id === r.major.id);
+      if (g) block(`${r.major.name}的职业路线（编辑研究）`, "catalog", g.guide.routes.map((x) => `${x.title}：${x.entry}`), g.source);
+    }
+    if (rs.length === 2) {
+      const inds = rs.map((r) => new Set(r.byIndustry.map((g) => g.industry.id)));
+      const both = [...inds[0]].filter((id) => inds[1].has(id)).map((id) => ctx.industry(id)?.name);
+      block(
+        "两个专业的重合与差别",
+        "catalog",
+        [
+          both.length ? `目录里两者都通向的行业：${both.join("、")}。` : "目录里两者没有共同通向的行业。",
+          "目录关联表示可以探索的方向，不是毕业去向比例，也不代表录用概率；本站不替你在两个专业里做选择。",
+        ],
+        rs[0].source,
+      );
+    }
+  }
+
+  if (p.goal === "industryMajors") {
+    const r = out("industry_majors");
+    if (r?.ok)
+      block(
+        `目录里通向${r.industry.name}的专业`,
+        "catalog",
+        [...r.rows.map((x) => `${x.major.name}：${x.roles.map((y) => y.title).join("、")}`), "这是目录把专业与岗位关联起来的编辑研究，不是招聘公告的专业要求；具体岗位的专业限制以用人单位公告为准。"],
+        r.source,
+      );
+  }
+
   if (p.goal === "public") {
     const pp = out("public_paths");
     for (const path of pp?.paths || [])
@@ -1215,6 +1318,9 @@ function compose(p, results, ctx) {
     }
   }
 
+  // An answer is never empty: when no tool produced anything, say that nothing was found.
+  if (!blocks.length && !p.gaps.length)
+    block("没有找到", "gap", ["本站的目录与已收录的统计里没有足够相关的资料回答这个问题；不拿不相关的内容充数。可以改写成专业、岗位或行业的名称再问，例如“会计”“数据科学家”“电力与新能源”。"], null);
   const gapItems = p.gaps.map((g) => ({ title: g.title, why: g.why, instead: g.instead }));
   const answered = blocks.some((b) => b.kind !== "note" && b.kind !== "gap");
   return {

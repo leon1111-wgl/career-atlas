@@ -345,3 +345,95 @@ test("bare 测试/开发, a target that is already one of the major's routes, a 
   const e = ask("教育行业有哪些岗位，平均工资多少");
   assert(e.blocks.some((b) => b.kind === "stat") && e.blocks.some((b) => b.title.includes("全部岗位")));
 });
+
+/* Found by the main session's own probe of 3499c26. */
+const bodyOf = (a) => a.blocks.length + a.gaps.length;
+test("no answer body is ever empty, across the coverage, gap and probe wordings", () => {
+  const probe = ["数据分析岗位每天工作几个小时？", "做UI设计要会什么？", "新能源汽车产业链有哪些环节？", "医学生不想当医生还能干嘛", "数据分析师和数据科学家有什么区别？", "我该选金融还是计算机？", "软件测试和开发哪个工资高？", "想进银行，需要什么专业？", "生物专业好找工作吗？", "区块链工程师怎么入行", "今天天气怎么样"];
+  const qs = [...COVERAGE.map((c) => c[1]), ...GAP_COVERAGE.flatMap((g) => g.slice(1)), ...probe];
+  for (const q of qs) {
+    const a = ask(q);
+    assert(bodyOf(a) > 0 && text(a).trim().length > 0, `${q}: empty answer body (plan ${a.label})`);
+  }
+});
+test("a question about hours per day states the working-hours gap instead of an empty answer", () => {
+  const a = ask("数据分析岗位每天工作几个小时？");
+  assert(a.gaps.some((g) => g.title === GAP_RULES.find((r) => r.id === "working_hours").title));
+  assert(bodyOf(a) > 0);
+});
+test("a retrieval plan with no usable section says nothing was found", () => {
+  const a = ask("区块链工程师的政策补贴");
+  assert(bodyOf(a) > 0 && !a.answered);
+});
+test("a design question never shows an unrelated industry", () => {
+  const a = ask("做UI设计要会什么？");
+  const t = text(a);
+  assert(!t.includes("机械与工业自动化"), "unrelated industry shown");
+  assert(a.blocks.some((b) => b.title.includes("用户体验设计师")), "the closest real role answers, with the approximation said");
+  assert(t.includes("不是目录里的岗位名称"));
+});
+test("新能源汽车 is the automotive industry, not 电力与新能源", () => {
+  const a = ask("新能源汽车产业链有哪些环节？");
+  assert.deepEqual(a.plan.entities.industries.map((i) => i.id), ["mobility"]);
+  assert(a.blocks.some((b) => b.title.startsWith("汽车与交通装备")));
+  assert(!text(a).includes("电力与新能源"));
+  assert.deepEqual(ask("新能源方面最近有什么政策").plan.entities.industries.map((i) => i.id), ["power"], "bare 新能源 still means power");
+});
+test("a negated target is excluded and the major's other routes are shown", () => {
+  for (const q of ["医学生不想当医生还能干嘛", "学临床医学的，不做医生还能干什么"]) {
+    const a = ask(q);
+    assert.notEqual(a.goal, "transfer", q);
+    assert(!tools(a).includes("skill_gap"), q);
+    const t = text(a);
+    assert(t.includes("临床研究协调员"), `${q}: other route missing`);
+    assert(t.includes("按你的说法排除：临床医师"), `${q}: the exclusion is not said`);
+    assert(!t.replace(/按你的说法排除[^\n]*/g, "").includes("临床医师"), `${q}: the excluded role is still listed`);
+  }
+  const cs = ask("我学计算机，不想做程序员，还能做什么");
+  assert(!tools(cs).includes("skill_gap"));
+  assert(!/后端开发工程师|前端开发工程师/.test(text(cs).replace(/按你的说法排除[^\n]*/g, "")), "excluded roles are not routes");
+  assert.equal(ask("我学临床医学，想当数据科学家，要补什么").goal, "transfer", "a plain target is not negated");
+});
+test("a question about the difference between two roles compares profiles, not wages", () => {
+  const a = ask("数据分析师和数据科学家有什么区别？");
+  assert.equal(a.goal, "compare");
+  assert(!tools(a).includes("wage_stat"));
+  assert.equal(tools(a).filter((t) => t === "role_profile").length, 2);
+  assert(text(a).includes("数据科学家") && /日常：/.test(text(a)) && /入门：/.test(text(a)));
+  const b = ask("前端和后端有什么不同");
+  assert.equal(b.goal, "compare");
+});
+test("choosing between two majors shows both routes and the personal-fit gap", () => {
+  const a = ask("我该选金融还是计算机？");
+  assert.equal(a.goal, "majors");
+  const t = text(a);
+  assert(t.includes("金融学") && t.includes("计算机类"));
+  assert(tools(a).filter((x) => x === "major_routes").length === 2);
+  assert(a.gaps.some((g) => g.title === GAP_RULES.find((r) => r.id === "personal_fit").title));
+});
+test("a pay comparison resolves both roles and says one NBS sector cannot rank them", () => {
+  const a = ask("软件测试和开发哪个工资高？");
+  assert.deepEqual(a.plan.entities.roles.map((r) => r.id).slice(0, 2), ["qa", "backend"]);
+  const t = text(a);
+  assert(t.includes("软件测试工程师") && /同一统计门类|都属于统计门类/.test(t) && t.includes("无法说明两者谁高"));
+  assert.equal(a.blocks.filter((b) => b.kind === "stat").length, 1, "one shared sector gives one block");
+  if (hasSOC("15-1253") && hasSOC("15-1252")) {
+    const us = ask("软件测试和开发哪个工资高？", { region: "US" });
+    const stats = us.blocks.filter((b) => b.kind === "stat");
+    assert.equal(stats.length, 2);
+    assert(stats.every((b) => b.title.includes("美国")));
+  }
+});
+test("which majors lead into an industry is a reverse lookup", () => {
+  const a = ask("想进银行，需要什么专业？");
+  assert(tools(a).includes("industry_majors"));
+  const t = text(a);
+  assert(t.includes("金融学") && t.includes("会计与审计"));
+  assert(!tools(a).includes("industry_map"));
+});
+test("whether a major is easy to find a job in is a stated gap", () => {
+  const a = ask("生物专业好找工作吗？");
+  assert(a.gaps.some((g) => g.title === GAP_RULES.find((r) => r.id === "admission_odds").title));
+  assert(text(a).includes("好不好找工作"));
+  assert(a.blocks.some((b) => b.title.includes("生物科学")));
+});
