@@ -39,7 +39,8 @@ const ROLE_ALIASES = [
   [/程序员|码农|写代码|软件开发|搞开发|做开发/, ["backend", "frontend"], "软件开发"],
   [/后端|服务端|后台开发|java/i, ["backend"], "后端"],
   [/前端|web\s*开发/i, ["frontend"], "前端"],
-  [/软件测试|测试开发|测试工程|做测试|\bqa\b/i, ["qa"], "测试"],
+  [/软件测试|测试开发|测试工程|做测试|\bqa\b|测试(?=转|岗|的|工作)/i, ["qa"], "测试"],
+  [/(?<=转|做|去|干)开发|开发岗/, ["backend", "frontend"], "开发"],
   [/产品经理|做产品|\bpm\b/i, ["product"], "产品经理"],
   [/算法工程|算法岗|做算法|搞算法|深度学习|大模型/, ["mlengineer", "mlresearch"], "算法"],
   [/算法研究|机器学习研究|研究科学家/, ["mlresearch"], "算法研究"],
@@ -210,7 +211,7 @@ export const GAP_RULES = [
 
 const MAJOR_CONTEXT_BEFORE = /(学|读|念|主修|学的是|专业是|本科是|我是|读的|学的|念的|读的是|学了|读了)$/;
 const MAJOR_CONTEXT_AFTER = /^学?(专业|类|系|学院|出身|毕业|的学生|本科|硕士|研究生|方向的?学生)/;
-const TRANSFER = /转行|转型|转岗|转方向|转到|转去|转做|转成|跨专业|跨行|改行|换行|换到|跳到|想转|想去做|想去当|想做|想当|改做|转/;
+const TRANSFER = /转行|转型|转岗|转方向|转到|转去|转做|转成|跨专业|跨行|改行|换行|换到|跳到|想转|想去做|想去当|想做|想当|能做|能当|可以做|可以当|改做|转/;
 // A role named as the visitor's current job ("现在做电商运营") is a starting point, not a target.
 const CURRENT_JOB = /(现在做|现在是|目前是|目前做|在做|干了|做了|当了|从事|我是)[^，。,]{0,4}$/;
 // Everyday names of majors that are not catalog names.
@@ -429,7 +430,9 @@ export const TOOLS = {
     return { ok: true, summary: `${g.routes.length} 条职业路线，${g.foundations.length} 项课程基础`, guide: g, source: RESEARCH_SOURCE(ctx) };
   },
   graduate_outcomes(ctx, { majorId, region, school = null }) {
-    let groups = majorEvidence(ctx.outcomes, majorId, region);
+    let groups = majorId
+      ? majorEvidence(ctx.outcomes, majorId, region)
+      : (ctx.outcomes?.groups || []).filter((g) => g.region === region).sort((a, b) => a.majorIds.length - b.majorIds.length);
     if (school) groups = groups.filter((g) => schoolNames(g).some((n) => n === school));
     const sorted = groups
       .slice()
@@ -554,7 +557,8 @@ export const TOOLS = {
     const target = ctx.role(toRole);
     if (!target) return { ok: false, summary: "目标岗位未找到" };
     const guide = fromMajor ? ctx.research?.majors?.find((x) => x.id === fromMajor) : null;
-    const sourceRoles = (fromRoles?.length ? fromRoles : ctx.major(fromMajor)?.roleIds || []).map(ctx.role).filter(Boolean);
+    const listed = !fromRoles?.length && (ctx.major(fromMajor)?.roleIds || []).includes(toRole);
+    const sourceRoles = (fromRoles?.length ? fromRoles : ctx.major(fromMajor)?.roleIds || []).filter((id) => id !== toRole).map(ctx.role).filter(Boolean);
     const background = [
       ...(guide?.foundations || []).map((t) => ({ text: t, from: "专业课程基础" })),
       ...sourceRoles.flatMap((r) => r.skills.map((t) => ({ text: t, from: r.title }))),
@@ -569,6 +573,8 @@ export const TOOLS = {
       target,
       rows,
       sourceRoles,
+      listed,
+      major: ctx.major(fromMajor),
       source: CATALOG_SOURCE(ctx),
     };
   },
@@ -835,6 +841,7 @@ export function plan(question, ctx, extra = {}) {
     } else if (region === "US" && !ent.bothRegions) notes.push("美国统计按职业发布；请写出一个具体岗位。");
     else {
       for (const i of ent.industries.slice(0, 2)) wageStep({ industryId: i.id, region: "CN" });
+      if (ent.industries.length && cue("industry")) step("industry_map", { industryId: ent.industries[0].id, region });
       for (const name of sectors.slice(0, 2)) wageStep({ sectorName: name, region: "CN" });
       if (ent.bothRegions) notes.push("美国统计按职业发布，没有行业均值；要看美国数字请写出一个具体岗位。");
     }
@@ -849,6 +856,13 @@ export function plan(question, ctx, extra = {}) {
       const m = ctx.major(majorId);
       for (const id of [...new Set(m.roleIds.map((r) => ctx.role(r)?.industryId).filter(Boolean))].slice(0, 3)) wageStep({ industryId: id, region });
     }
+  }
+  if (!goal && school && !majorId && !knownRoles.length) {
+    goal = "destinations";
+    if (school.covered) {
+      step("graduate_outcomes", { majorId: null, region: "CN", school: school.name });
+      notes.push(`下面是${school.name}报告里已收录的表；写上专业可以只看该专业。`);
+    } else notes.push(`已收录的高校报告来自：${SCHOOLS.map((x) => x.name).join("、")}；没有${school.name}的报告，不列其他学校的数字。`);
   }
   if (!goal && ent.industries.length && !knownRoles.length && !majorId && cue("industry") && !cue("legacy") && !cue("publicPath")) {
     goal = "industry";
@@ -1004,7 +1018,8 @@ function compose(p, results, ctx) {
         `转到${g.target.title}：技能对照`,
         "catalog",
         [
-          need.length ? `需要补：${need.map((r) => r.skill).join("、")}` : null,
+          g.listed ? `目录已把${g.target.title}列为${g.major.name}的方向之一；下面对照的是专业课程基础和同专业其他方向的技能。` : null,
+          need.length ? `需要补：${need.map((r) => r.skill).join("、")}` : "目录列出的技能在原背景里都有相近内容；仍需用下面的证明逐项核对。",
           have.length ? `原背景里有相近内容：${have.map((r) => `${r.skill}（${r.have.from}：${r.have.text}）`).join("；")}` : null,
           `可以先做的证明：${g.target.portfolio}`,
         ],
@@ -1012,7 +1027,7 @@ function compose(p, results, ctx) {
       );
     }
     const trail = out("multi_trail");
-    if (trail)
+    if (trail && !(trail.path && trail.path.length < 2))
       block(
         "目录里的相邻路线",
         "catalog",
@@ -1045,7 +1060,7 @@ function compose(p, results, ctx) {
         block(
           `官方去向统计（${REGION_NAME[region]}）`,
           "gap",
-          [`本站还没有收录${outcomes.school ? outcomes.school + "的" : ""}${ctx.major(p.majorId).name}在${REGION_NAME[region]}的官方毕业去向表，不从其他专业、学校或国家推算。`],
+          [`本站还没有收录${outcomes.school ? outcomes.school + "的" : ""}${ctx.major(p.majorId)?.name || ""}在${REGION_NAME[region]}的官方毕业去向表，不从其他专业、学校或国家推算。`],
           null,
         );
       for (const g of outcomes.groups.slice(0, 3)) {
@@ -1067,7 +1082,7 @@ function compose(p, results, ctx) {
           src,
         );
       }
-      if (outcomes.groups.length > 3) block("还有更多去向表", "note", [`另有 ${outcomes.groups.length - 3} 组同专业的去向表，可在专业页查看完整列表。`], null);
+      if (outcomes.groups.length > 3) block("还有更多去向表", "note", [`另有 ${outcomes.groups.length - 3} 组${p.majorId ? "同专业的" : ""}去向表，${p.majorId ? "可在专业页查看完整列表" : "写上专业可以只看对应的表"}。`], null);
     }
   }
 
@@ -1106,7 +1121,7 @@ function compose(p, results, ctx) {
       );
   }
 
-  if (p.goal === "industry") {
+  {
     const m = out("industry_map");
     if (m?.ok) {
       block(

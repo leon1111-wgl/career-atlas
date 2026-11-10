@@ -327,3 +327,21 @@ test("national average wage, asked years and duplicate sectors", { skip: !hasSec
   const d = ask("What is the salary of a software developer?");
   assert.equal(d.blocks.filter((b) => b.kind === "stat").length, 1, "two roles reading one sector give one block");
 });
+
+/* Found by the author's own probe after the review. */
+test("bare 测试/开发, a target that is already one of the major's routes, a school without a major, and industry roles with wages", () => {
+  const t = ask("测试转开发难吗");
+  assert.equal(t.goal, "transfer");
+  assert.deepEqual(t.plan.steps.find((s) => s.tool === "skill_gap").args.fromRoles, ["qa"]);
+  const c = ask("我是学土木的，想去做工程造价，要补啥");
+  const gap = c.blocks.find((b) => b.title.includes("技能对照"));
+  assert(gap.items.some((x) => x.includes("目录已把工程造价专员列为土木与交通工程的方向之一")));
+  assert(!gap.items.some((x) => x.includes("工程造价专员："))), "the target is not compared with itself";
+  const h = ask("我女朋友学心理学的，毕业能做HR吗");
+  assert.equal(h.goal, "transfer");
+  const x = ask("西安电子科技大学毕业生都去哪些行业");
+  const outs = x.blocks.filter((b) => b.kind === "outcome");
+  assert(outs.length >= 1 && outs.every((b) => b.title.includes("西安电子科技大学")));
+  const e = ask("教育行业有哪些岗位，平均工资多少");
+  assert(e.blocks.some((b) => b.kind === "stat") && e.blocks.some((b) => b.title.includes("全部岗位")));
+});
