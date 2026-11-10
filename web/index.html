@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#14171c" media="(prefers-color-scheme: dark)" />
     <meta
       name="description"
-      content="向野 Career Atlas：面向年轻人的中美行业、专业与岗位图册。26个行业、111个岗位、44个专业，官方统计自动更新，每个数字保留来源与统计期；浏览器本地问题分类器与可选本地语言模型。"
+      content="向野 Career Atlas：面向年轻人的中美行业、专业与岗位图册。26个行业、111个岗位、44个专业，官方统计自动更新，每个数字保留来源与统计期；浏览器里的路线助手（规则规划、工具轨迹）、问题分类器与可选本地语言模型。"
     />
     <meta property="og:title" content="向野 · Career Atlas" />
     <meta property="og:description" content="从行业与专业，找到可核对的职业方向。中美官方统计，每个数字都能追到来源。" />
@@ -15,8 +15,8 @@
     <meta property="og:url" content="https://leon1111-wgl.github.io/career-atlas/" />
     <link rel="canonical" href="https://leon1111-wgl.github.io/career-atlas/" />
     <title>向野 · Career Atlas｜中美行业与职业图册 | Leon Wang</title>
-    <link rel="icon" href="./favicon.svg?v=20261102" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=20261102" />
+    <link rel="icon" href="./favicon.svg?v=20261110" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css?v=20261110" />
     <script>
       try {
         const t = localStorage.getItem("career-atlas-theme");
@@ -51,7 +51,7 @@
           <div class="cover-copy">
             <p class="eyebrow"><span translate="no">CAREER ATLAS</span> · 中美行业与职业图册</p>
             <h1>向野 Career Atlas</h1>
-            <p class="hero-stack">WebLLM · Qwen3-0.6B · 意图分类器 · Python 数据管线</p>
+            <p class="hero-stack">规则规划器 · 工具轨迹 · 意图分类器 · WebLLM · Qwen3-0.6B · Python 数据管线</p>
             <p class="lede">
               26 个行业、111 个岗位、44 个专业放在同一张地图上。选一个专业，看它通往哪些行业与岗位；每个统计数字都写明来源、统计期和缺失项。
             </p>
@@ -114,7 +114,7 @@
           <ul class="boundaries">
             <li>岗位条目是职业研究资料，不是正在招聘的职位。</li>
             <li>中国行业均薪与美国职业中位数各自使用，不跨国排名，也不是应届起薪。</li>
-            <li>问题分类器和可选语言模型都在浏览器里运行，问题不上传。</li>
+            <li>路线助手、问题分类器和可选语言模型都在浏览器里运行，问题不上传。</li>
           </ul>
         </section>
       </main>
@@ -137,7 +137,7 @@
             ><input id="search-input" aria-label="搜索行业、岗位或专业" placeholder="搜索行业、岗位或专业" autocomplete="off" /><kbd aria-hidden="true">/</kbd>
           </form>
           <div class="bar-tools">
-            <button id="open-assistant" class="button" type="button">职业咨询</button>
+            <button id="open-assistant" class="button" type="button">路线助手</button>
             <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="切换外观">
               <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="M10 3.5a6.5 6.5 0 0 1 0 13z" /></svg>
             </button>
@@ -168,15 +168,15 @@
     <dialog id="assistant-dialog" class="assistant-dialog" aria-labelledby="assistant-title">
       <header>
         <div>
-          <span class="eyebrow">本地资料库 · 不上传问题</span>
-          <h2 id="assistant-title">职业咨询</h2>
+          <span class="eyebrow">规则规划 · 本站资料 · 不上传问题</span>
+          <h2 id="assistant-title">路线助手</h2>
         </div>
-        <button class="icon-button" data-close="assistant-dialog" aria-label="关闭咨询">×</button>
+        <button class="icon-button" data-close="assistant-dialog" aria-label="关闭路线助手">×</button>
       </header>
       <details class="model-settings">
         <summary>可选：在本机加载 Qwen 语言模型</summary>
         <div class="model-intro">
-          <p>默认直接检索本站的专业、岗位、政策与就业资料。加载模型后，它只在已检索到的资料里挑选补充依据，不生成未经核验的事实。</p>
+          <p>路线助手默认不用语言模型：规则规划器调用本站的数据工具作答。加载模型后，它只在“资料检索”类回答里挑选补充依据，不生成未经核验的事实，也不改动统计数字。</p>
           <div class="model-actions">
             <button id="load-model" class="button" type="button">加载本机模型</button
             ><button id="unload-model" class="button subtle" type="button" hidden>停止并释放内存</button>
@@ -188,25 +188,28 @@
           </p>
         </div>
       </details>
+      <p id="assistant-context" class="assistant-context" hidden></p>
       <div class="chat-log" id="chat-log" aria-live="polite">
         <div class="chat-bubble assistant">
-          <p>可以问岗位区别、入门准备、公司类型、薪酬口径和公共部门招录。</p>
-          <p>回答由本站带来源的资料整理，末尾列出检索依据。</p>
+          <p>用自己的话问：转方向要补什么、某个专业毕业去哪、某行业的官方工资统计、相邻岗位、行业里有哪些岗位、岗位比较、入门资格、公共部门与政策。</p>
+          <p>每个数字都写明来源和日期；现有数据回答不了的，会直接说明。展开“规划与工具轨迹”可以看每一步查了什么。</p>
         </div>
       </div>
       <div class="prompt-chips">
-        <button type="button" data-prompt="AI 应用工程师和算法研究有什么区别？">AI 岗位怎么选</button
-        ><button type="button" data-prompt="机械专业可以去哪些行业？">从专业找方向</button
-        ><button type="button" data-prompt="考公和事业单位招聘有什么区别？">了解公共部门</button>
+        <button type="button" data-prompt="我学会计，想转数据分析要补什么？">会计转数据分析</button
+        ><button type="button" data-prompt="机械专业毕业去哪些行业？起薪有官方数据吗？">专业去向与起薪</button
+        ><button type="button" data-prompt="软件测试还能转什么岗位？">相邻岗位</button
+        ><button type="button" data-prompt="考公和事业单位招聘有什么区别？">公共部门</button>
       </div>
       <form id="chat-form">
         <label class="sr-only" for="chat-input">职业问题</label
-        ><textarea id="chat-input" maxlength="500" rows="2" placeholder="例如：机械设计在整机厂和零部件公司有什么区别？"></textarea
+        ><textarea id="chat-input" maxlength="500" rows="2" placeholder="例如：我学英语，想转产品经理要补什么？"></textarea
         ><button id="send-chat" class="button primary" type="submit">查询</button
         ><button id="stop-chat" class="button subtle" type="button" hidden>停止</button>
       </form>
+      <p class="assistant-practice">做法参照招聘平台的智能体：先把问题拆成计划，再调用岗位与技能工具，并附上依据（<a href="https://www.linkedin.com/blog/engineering/ai/how-we-engineered-linkedins-hiring-assistant" target="_blank" rel="noopener">LinkedIn Engineering，2025-10-21</a>）。这里的规划由规则完成，数据只来自本站目录与公开统计。</p>
     </dialog>
     <div id="toast" role="status" class="toast" hidden></div>
-    <script type="module" src="./app.js?v=20261102"></script>
+    <script type="module" src="./app.js?v=20261110"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
-import { majorEvidence, relevantPolicies } from "./research.js?v=20261102";
-import { shareBars } from "./charts.js?v=20261102";
+import { majorEvidence, relevantPolicies } from "./research.js?v=20261110";
+import { shareBars } from "./charts.js?v=20261110";
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"']/g,
