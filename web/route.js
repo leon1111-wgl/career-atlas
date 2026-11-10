@@ -19,6 +19,7 @@ export const GOAL_LABELS = Object.freeze({
   industry: "行业里的岗位",
   compare: "岗位比较",
   entry: "入门与资格",
+  public: "公共部门入口",
   legacy: "资料检索",
   gap: "数据回答不了",
   none: "需要补充信息",
@@ -71,6 +72,17 @@ const ROLE_ALIASES = [
   [/造价/, ["cost"], "造价"],
   [/社工/, ["socialwork"], "社工"],
   [/药剂师/, ["pharmacist"], "药剂师"],
+  [/software (developer|engineer)s?/, ["backend", "frontend"], "software developer"],
+  [/registered nurses?|\bnurses?\b/, ["nurse"], "registered nurse"],
+  [/data scientists?/, ["datascience"], "data scientist"],
+  [/accountants?\b/, ["accountant"], "accountant"],
+  [/lawyers?\b|attorneys?\b/, ["lawyer"], "lawyer"],
+  [/teachers?\b/, ["teacher"], "teacher"],
+  [/electricians?\b/, ["electrician"], "electrician"],
+  [/pharmacists?\b/, ["pharmacist"], "pharmacist"],
+  [/civil engineers?/, ["civileng"], "civil engineer"],
+  [/mechanical engineers?/, ["mechanical"], "mechanical engineer"],
+  [/physical therapists?|physiotherapists?/, [], "physical therapist"],
 ];
 // Halves of industry names that are too generic to name an industry on their own.
 const GENERIC_INDUSTRY_TERMS = new Set(["数据", "设施", "内容", "品牌", "技术服务", "社会服务", "生活服务", "技能职业", "学习科技", "城市空间", "文娱"]);
@@ -104,7 +116,7 @@ const INDUSTRY_ALIASES = [
 const EMPLOYERS =
   /腾讯|阿里|字节|抖音|华为|百度|京东|美团|拼多多|网易|小米|比亚迪|宁德时代|国家电网|南方电网|中石油|中石化|工商银行|工行|建设银行|建行|招商银行|招行|中国银行|农业银行|中信|四大|德勤|普华永道|安永|毕马威|大厂|谷歌|google|微软|microsoft|苹果|apple|亚马逊|amazon|meta|特斯拉|tesla|英伟达|nvidia|中芯|大疆|蔚来|理想汽车|小鹏|这家公司|那家公司/i;
 
-const PAY = /工资|薪资|薪酬|薪水|收入|待遇|年薪|月薪|挣多少|赚多少|多少钱|给多少|开多少/;
+const PAY = /工资|薪资|薪酬|薪水|收入|待遇|年薪|月薪|挣多少|赚多少|多少钱|给多少|开多少|salary|salaries|\bearn|\bpay\b|wages?\b|income/i;
 
 /* What the published data cannot support. Each gap names why and what does exist. */
 export const GAP_RULES = [
@@ -117,9 +129,9 @@ export const GAP_RULES = [
   },
   {
     id: "admission_odds",
-    test: (q) => /录用(率|概率|几率|机会)|录取(率|概率)|上岸(率|概率|几率|机会)|(能|可以)不能进|能进.{0,8}吗|进得去吗|进得了|好不好进|难不难进|好进吗|难进吗|(进|去).{0,8}难不难|几成|概率多大|多大(把握|机会|概率)|有没有希望|稳进/.test(q),
-    title: "录用或上岸概率",
-    why: "本站没有同岗位、同批次的申请人数与实际录用人数，无法估计任何人的录用或上岸概率。",
+    test: (q) => /录用(率|概率|几率|机会)|录取(率|概率|分)|分数线|上岸(率|概率|几率|机会)|概率有多大|能考上|考得上|考上的?(概率|几率)|能上.{0,8}吗|分能上|高考.{0,12}(能|可以)上|(能|可以)不能进|能进.{0,8}吗|进得去吗|进得了|好不好进|难不难进|好进吗|难进吗|(进|去).{0,8}难不难|几成|概率多大|多大(把握|机会|概率)|有没有希望|稳进/.test(q),
+    title: "录用、录取或上岸概率",
+    why: "本站没有招生分数线，也没有同岗位、同批次的申请人数与实际录用人数，无法估计任何人的录取、录用或上岸概率。",
     instead: "可以核对岗位的入门要求、资格条件和公告原文；公共部门看当年职位表。",
   },
   {
@@ -145,7 +157,7 @@ export const GAP_RULES = [
   },
   {
     id: "prediction",
-    test: (q) => /(三|五|十|3|5|10|几)年后|未来.{0,6}(会不会|还会|能不能|怎么样|前景)|会不会被.{0,8}(取代|替代|淘汰)|会被.{0,6}(取代|替代|淘汰)吗|会不会消失|还有前途|没前途|夕阳|铁饭碗|稳定吗|饱和/.test(q),
+    test: (q) => /(三|五|十|3|5|10|几)年后|会是多少|会不会(上升|下降|涨|跌|变)|下半年|明年|后年|预计会|next year|in \d+ years|\bwill\b.{0,30}(earn|be|make)|未来.{0,6}(会不会|还会|能不能|怎么样|前景)|会不会被.{0,8}(取代|替代|淘汰)|会被.{0,6}(取代|替代|淘汰)吗|会不会消失|还有前途|没前途|夕阳|铁饭碗|稳定吗|饱和/.test(q),
     title: "未来走势与个人前景",
     why: "本站不预测某个岗位或某个人的未来。可用的只有已发布的统计；美国 BLS 十年就业预测是官方预测口径，中国没有同口径的职业预测。",
     instead: "可以看岗位页的 AI 分工说明（编辑研究，不是测算）和行业的需求与风险。",
@@ -166,10 +178,10 @@ export const GAP_RULES = [
   },
   {
     id: "city",
-    test: (q) => /(北京|上海|深圳|广州|杭州|成都|武汉|南京|西安|苏州|重庆|天津|一线城市|二线城市|老家|本地).{0,10}(工资|薪|收入|待遇|月薪|挣)/.test(q),
+    test: (q) => /(北京|上海|深圳|广州|杭州|成都|武汉|南京|西安|苏州|重庆|天津|一线城市|二线城市|老家|本地).{0,10}(工资|薪|收入|待遇|月薪|挣)/.test(q) || (/san francisco|new york|seattle|boston|chicago|los angeles|bay area/.test(q) && PAY.test(q)),
     title: "分城市的收入",
-    why: "本站的中国工资统计是全国统计门类数据，没有分城市或分地区的数字。",
-    instead: "可以看全国门类均值及其年份；地方数据请查当地统计局发布。",
+    why: "本站的工资统计都是全国口径：中国按统计门类，美国按职业（全美），没有分城市或分地区的数字。",
+    instead: "可以看全国口径的数字及其年份；地方数据请查当地统计机构的发布。",
   },
   {
     id: "match_rate",
@@ -178,13 +190,29 @@ export const GAP_RULES = [
     why: "已收录的毕业去向表报告的是落实率、就业率或职业分布，没有专业对口率。",
     instead: "可以看该专业已收录的去向表，并注意每张表的学校、届别和分母。",
   },
+  {
+    id: "further_study",
+    test: (q) => /保研率|保研(的)?(比例|概率)|考研(成功率|上岸率|录取率|通过率)|读研(成功率|概率)/.test(q),
+    title: "保研率与考研成功率",
+    why: "已收录的高校报告只给出升学率（含国内外读研等），没有保研率、考研报考人数或录取率。",
+    instead: "可以看该专业已收录表格里的升学率，并核对学校、届别与分母。",
+  },
+  {
+    id: "time_to_job",
+    test: (q) => /within \d+ months?|几个月内.{0,6}(找到|就业)|多久.{0,4}(能)?找到工作|毕业\s*\d+\s*个月/.test(q),
+    title: "毕业后多久就业",
+    why: "美国的表是在职学位持有者的职业分布，中国的表是学校公布的落实率等；都没有“毕业若干个月内就业”的比例。",
+    instead: "可以看该专业已收录的去向表，并注意每张表的统计时点和人群。",
+  },
 ];
 
 /* ---------- Entity resolution ---------- */
 
 const MAJOR_CONTEXT_BEFORE = /(学|读|念|主修|学的是|专业是|本科是|我是|读的|学的|念的|读的是|学了|读了)$/;
 const MAJOR_CONTEXT_AFTER = /^(专业|类|系|学院|出身|毕业|的学生|本科|硕士|研究生|方向的?学生)/;
-const TRANSFER = /转行|转型|转岗|转方向|转到|转去|转做|转成|跨专业|跨行|改行|换行|换到|跳到|想转|转/;
+const TRANSFER = /转行|转型|转岗|转方向|转到|转去|转做|转成|跨专业|跨行|改行|换行|换到|跳到|想转|想去做|想去当|想做|想当|改做|转/;
+// A role named as the visitor's current job ("现在做电商运营") is a starting point, not a target.
+const CURRENT_JOB = /(现在做|现在是|目前是|目前做|在做|干了|做了|当了|从事|我是)[^，。,]{0,4}$/;
 // Everyday names of majors that are not catalog names.
 const MAJOR_ALIASES = [
   [/英语|日语|德语|法语|俄语|西班牙语|汉语言|外语|翻译专业|小语种/, "language"],
@@ -197,6 +225,24 @@ const MAJOR_ALIASES = [
   [/临床医学/, "medicine"],
   [/通信工程|微电子/, "electronics"],
   [/学前教育|小学教育|师范/, "education"],
+  [/computer|software engineering/, "cs"],
+  [/biology|life sciences?/, "bio"],
+  [/business/, "business"],
+  [/nursing/, "nursing"],
+  [/accounting/, "accounting"],
+  [/finance\b/, "finance"],
+  [/economics/, "economics"],
+  [/psychology/, "psychology"],
+  [/mechanical engineering/, "mech"],
+  [/electrical engineering/, "electrical"],
+  [/civil engineering/, "civil"],
+  [/chemistry/, "chem"],
+  [/physics/, "physics"],
+  [/mathematics|statistics/, "math"],
+  [/journalism|communications/, "journalism"],
+  [/architecture/, "architecture"],
+  [/pharmacy/, "pharmacy"],
+  [/public health/, "publichealth"],
 ];
 // Name halves too vague to name a major without "学…/…专业" around them.
 const MAJOR_VAGUE = new Set(["设计", "技能", "语言", "工商", "文学", "表演", "营养", "统计", "审计", "职业技术"]);
@@ -264,7 +310,9 @@ export function resolveEntities(question, catalog, extra = {}) {
   const context = (c) => MAJOR_CONTEXT_BEFORE.test(q.slice(Math.max(0, c.at - 4), c.at)) || MAJOR_CONTEXT_AFTER.test(q.slice(c.end, c.end + 5));
   for (const c of candidates) c.majorContext = c.kind === "major" && context(c);
   // A vague or direction-only major word counts only when phrased as a major ("学金融", "银行方向的学生").
-  const usable = candidates.filter((c) => c.kind !== "major" || !c.needsContext || c.majorContext);
+  // "金融业", "教育行业": a major word followed by an industry word names the industry.
+  const industryAfter = (c) => /^(业|行业|领域|公司|企业|单位)/.test(q.slice(c.end, c.end + 2));
+  const usable = candidates.filter((c) => c.kind !== "major" || c.majorContext || (!c.needsContext && !industryAfter(c)));
   const score = (c) => (c.end - c.at) * 10 + (c.kind === "major" && c.majorContext ? 5 : 0) + RANK[c.kind] + (c.exact ? 1 : 0);
   usable.sort((a, b) => score(b) - score(a) || a.at - b.at);
   const kept = [];
@@ -366,18 +414,20 @@ export const TOOLS = {
     if (!g) return { ok: false, summary: "没有该专业的深入研究" };
     return { ok: true, summary: `${g.routes.length} 条职业路线，${g.foundations.length} 项课程基础`, guide: g, source: RESEARCH_SOURCE(ctx) };
   },
-  graduate_outcomes(ctx, { majorId, region }) {
-    const groups = majorEvidence(ctx.outcomes, majorId, region);
+  graduate_outcomes(ctx, { majorId, region, school = null }) {
+    let groups = majorEvidence(ctx.outcomes, majorId, region);
+    if (school) groups = groups.filter((g) => schoolNames(g).some((n) => n === school));
     const sorted = groups
       .slice()
       .sort((a, b) => (b.sampleSize || 0) - (a.sampleSize || 0) || String(b.source?.publishedAt || "").localeCompare(String(a.source?.publishedAt || "")));
     return {
       ok: true,
-      summary: groups.length ? `${groups.length} 组${REGION_NAME[region]}官方去向表` : `没有${REGION_NAME[region]}的该专业去向表`,
+      summary: (groups.length ? `${groups.length} 组${REGION_NAME[region]}官方去向表` : `没有${REGION_NAME[region]}的该专业去向表`) + (school ? `（只看${school}）` : ""),
+      school,
       groups: sorted,
     };
   },
-  wage_stat(ctx, { industryId, roleId, region }) {
+  wage_stat(ctx, { industryId, roleId, sectorName, region }) {
     if (region === "US") {
       const r = roleId ? ctx.role(roleId) : null;
       const s = ctx.data?.sources?.bls;
@@ -404,7 +454,9 @@ export const TOOLS = {
         source: src,
       };
     }
-    const ind = ctx.industry(industryId || ctx.role(roleId)?.industryId);
+    const ind = sectorName
+      ? { id: null, name: `统计门类“${sectorName}”`, cnWageIndustry: sectorName }
+      : ctx.industry(industryId || ctx.role(roleId)?.industryId);
     if (!ind) return { ok: false, summary: "中国工资统计需要一个行业或岗位", missing: "中国工资按统计门类发布，需要能对应到一个行业。" };
     const s = ctx.data?.sources?.["nbs-wages"];
     const v = s?.value;
@@ -424,12 +476,12 @@ export const TOOLS = {
     return {
       ok: facts.length > 0,
       summary: `国家统计局门类“${ind.cnWageIndustry}”：${facts.length} 个数值`,
-      title: `${ind.name} · 统计门类“${ind.cnWageIndustry}”工资`,
+      title: sectorName ? `统计门类“${sectorName}”工资` : `${ind.name} · 统计门类“${ind.cnWageIndustry}”工资`,
       facts,
       caveats: [
         "这是整个统计门类单位就业人员的年平均工资（行业均值），不是某个岗位、某家公司或应届生的工资。",
         ...(roleId ? [`“${ctx.role(roleId).title}”只用所属门类的均值作背景，岗位本身没有中国工资统计。`] : []),
-        ...(shared.length ? [`同一统计门类也覆盖：${shared.join("、")}，它们共用这个数。`] : []),
+        ...(shared.length ? [sectorName ? `目录里属于这个门类的行业：${shared.join("、")}，它们共用这个数。` : `同一统计门类也覆盖：${shared.join("、")}，它们共用这个数。`] : []),
         ...(missing.length ? [`${missing.join("、")}数据缺失，未补值。`] : []),
         "中国行业均值不能与美国职业中位数直接比较或换算。",
       ],
@@ -451,14 +503,25 @@ export const TOOLS = {
           });
     } else {
       for (const [key, id, label, unit] of [
-        ["fred-UNRATE", "unemployment", "美国失业率（季调）", "%"],
-        ["fred-PAYEMS", "payrolls", "美国非农就业人数（季调）", "千人"],
+        ["fred-UNRATE", "unemployment", "美国失业率（季调，月度）", "%"],
+        ["fred-PAYEMS", "payrolls", "美国非农就业人数（季调，月度）", "千人"],
       ]) {
         if (ids.length && !ids.includes(id)) continue;
         const s = ctx.data?.sources?.[key];
         const point = s?.value?.at?.(-1);
         if (point && finite(point.value))
           facts.push({ label, value: point.value, unit, period: point.date.slice(0, 7), source: statSource(s, label) });
+      }
+      // Annual World Bank series fill in what the monthly US feeds do not carry; the period says it is annual.
+      for (const [key, id, label] of [
+        ["wb-inflation", "cpi", "美国居民消费价格涨幅（世界银行，年度）"],
+        ["wb-gdpGrowth", "gdp", "美国实际 GDP 增长（世界银行，年度）"],
+      ]) {
+        if (!ids.includes(id)) continue;
+        const s = ctx.data?.sources?.[key];
+        const point = s?.value?.US?.at?.(-1);
+        if (point && finite(point.value))
+          facts.push({ label, value: Math.round(point.value * 100) / 100, unit: "%", period: `${point.year} 年（年度）`, source: statSource(s, label) });
       }
     }
     return { ok: facts.length > 0, summary: `${facts.length} 个最新指标`, facts };
@@ -517,6 +580,10 @@ export const TOOLS = {
     const roles = ctx.catalog.roles.filter((r) => r.industryId === ind.id);
     return { ok: true, summary: `${ind.name}：${roles.length} 个岗位，${ind.chain.length} 段产业链`, industry: ind, roles, region, source: CATALOG_SOURCE(ctx) };
   },
+  public_paths(ctx, { region }) {
+    const paths = (ctx.catalog.publicPaths || []).filter((p) => p.region === region);
+    return { ok: paths.length > 0, summary: `${paths.length} 条${REGION_NAME[region]}公共部门入口`, paths };
+  },
   catalog_answer(ctx, { question, region, roleIds = [] }) {
     const r = advise(question, ctx.catalog, ctx.data, region, ctx.intentModel, {
       research: ctx.research,
@@ -539,6 +606,32 @@ export const TOOLS = {
     };
   },
 };
+
+// Universities whose official reports are in the outcome tables, matched by the report's host.
+const SCHOOLS = [
+  { name: "上海商学院", pattern: /上海商学院/, host: "sbs.edu.cn" },
+  { name: "华中科技大学", pattern: /华中科技大学|华科|中欧(清洁与可再生)?能源学院/, host: "hust.edu.cn" },
+  { name: "西安电子科技大学", pattern: /西安电子科技大学|西电/, host: "xidian.edu.cn" },
+  { name: "华东师范大学", pattern: /华东师范大学|华东师大|华师大/, host: "ecnu.edu.cn" },
+  { name: "湖北师范大学", pattern: /湖北师范大学|湖北师大/, host: "hbnu.edu.cn" },
+];
+function schoolNames(g) {
+  let host = "";
+  try {
+    host = new URL(g.source.url).hostname;
+  } catch {}
+  return SCHOOLS.filter((x) => host === x.host || host.endsWith("." + x.host)).map((x) => x.name);
+}
+/** A named university: the covered one it matches, or the uncovered name as written. */
+export function findSchool(q) {
+  const covered = SCHOOLS.find((x) => x.pattern.test(q));
+  if (covered) return { name: covered.name, covered: true };
+  const m = q.match(/[\u4e00-\u9fff]{2,10}?(大学|学院)/);
+  if (!m || /^(大学|学院)$/.test(m[0])) return null;
+  const name = m[0].replace(/^(我是|我在|我读|读完|读的|在读|在|从|上了|考上|考进)/, "");
+  if (name.length < 4) return null;
+  return { name, covered: false };
+}
 
 function bigrams(s) {
   const t = String(s).toLowerCase().replace(/[^a-z0-9㐀-鿿]/g, "");
@@ -582,21 +675,23 @@ function shortestTrail(ctx, fromIds, toId) {
 /* ---------- Planner ---------- */
 
 const CUES = {
-  transfer: /补什么|补哪些|要补|需要补|还缺|差什么|缺什么|差哪些|怎么转|转.{0,8}(要|需要|得)|能转|可以转.{0,6}吗|转得了|转行|转型|跨专业|改行|零基础转/,
-  adjacent: /相邻|相近|类似的(岗位|工作)|还能(转|做|去|干)|可以转(什么|哪)|能转(什么|哪)|转什么|跳到哪|换什么|换到哪|其他出路|退路|还有什么方向|还有哪些方向/,
-  destinations: /去哪|去向|出路|方向|做什么工作|干什么|干啥|能做什么|找什么工作|哪些行业|哪些岗位|什么岗位|什么行业|就业|毕业后|毕业以后|毕业了|以后做/,
+  transfer: /补什么|补哪些|要补|需要补|还缺|差什么|缺什么|差哪些|差多少|差在哪|怎么转|转.{0,8}(要|需要|得)|能转|可以转.{0,6}吗|转得了|转行|转型|跨专业|改行|零基础转/,
+  adjacent: /相邻|相近|接近|类似的(岗位|工作)|还能(转|做|去|干)|可以转(什么|哪)|能转(什么|哪)|转什么|跳到哪|换什么|换到哪|平移|横向|其他出路|退路|还有什么方向|还有哪些方向/,
+  destinations: /去哪|去向|出路|方向|做什么工作|干什么|干啥|干嘛|能做什么|找什么工作|哪些行业|哪些岗位|什么岗位|什么行业|就业|毕业后|毕业以后|毕业了|以后做|work as|jobs?\b|careers?\b|get a job|majors?\b/i,
   industry: /岗位|职位|工作|做什么|干什么|产业链|上下游|有哪些(人|角色|工种)|招什么人|分工/,
   compare: /区别|比较|对比|哪个好|选哪个|差别|不同|还是/,
   entry: /入门|怎么进|进入|要求|资格|证书|执照|准备|学什么|门槛|零基础|条件|需要什么|考什么|怎么当|怎么成为/,
   stats: /统计|数据|官方/,
-  macro: /gdp|cpi|物价|失业率|工业增加值|社会消费品|零售总额|非农|经济数据|宏观/i,
+  macro: /gdp|cpi|物价|通胀|通货膨胀|inflation|失业率|unemployment rate|工业增加值|社会消费品|零售总额|非农|经济数据|宏观/i,
+  publicPath: /考公|公务员(考试|招录|怎么考|要怎么)|事业单位|公共部门|公共岗位|政府(的)?岗位|联邦|州政府|地方政府|市政府|市里的|usajobs|government jobs?/i,
+  roleDuty: /干什么的|做什么的|是干嘛的|职责|工作内容|对口|什么专业|哪些专业/,
   legacy: /考公|公务员|事业单位|公共部门|联邦岗位|政策|补贴|行动计划|国家支持|招聘条件|公告|公司类型|不同公司|什么样的公司|雇主类型|985|211|双非|一本|二本|海归|留学生/i,
   work: /每天|日常|平时.{0,4}(做|干)|具体做什么|具体干什么|工作内容/,
 };
 const MACRO_IDS = [
   [/gdp/i, "gdp"],
-  [/cpi|物价/i, "cpi"],
-  [/失业率/, "unemployment"],
+  [/cpi|物价|通胀|通货膨胀|inflation/i, "cpi"],
+  [/失业率|unemployment/i, "unemployment"],
   [/工业增加值/, "industrial"],
   [/社会消费品|零售总额/, "retail"],
   [/非农/, "payrolls"],
@@ -605,6 +700,11 @@ const MACRO_IDS = [
 export function plan(question, ctx, extra = {}) {
   const q = String(question || "").trim().slice(0, 500);
   const ent = resolveEntities(q, ctx.catalog, extra);
+  // Cue words are read with entity names blanked out, so "数据" in 数据科学家 is not a request for statistics.
+  let masked = q;
+  for (const e of [...ent.majors, ...ent.roles, ...ent.industries]) masked = masked.slice(0, e.at) + "＿".repeat(e.term.length) + masked.slice(e.at + e.term.length);
+  // Sector words ("公务员", "政策") are tested on the full question: they name the topic, not an entity.
+  const cue = (name) => CUES[name].test(["publicPath", "legacy"].includes(name) ? q : masked);
   const classification = classifyIntent(q, ctx.intentModel);
   const gaps = GAP_RULES.filter((g) => g.test(q.toLowerCase())).map(({ test, ...g }) => g);
   const gapIds = new Set(gaps.map((g) => g.id));
@@ -613,114 +713,130 @@ export function plan(question, ctx, extra = {}) {
   const unknownAlias = ent.roles.find((r) => !r.id);
   const majorId = ent.majors[0]?.id || ent.contextMajor;
   const majorFrom = ent.majors[0] ? `问题中的“${ent.majors[0].term}”` : ent.contextMajor ? "当前页面" : null;
+  const school = findSchool(q);
+  const sectors = Object.keys(ctx.data?.sources?.["nbs-wages"]?.value?.sectors || {}).filter((name) => name !== "合计" && /业$/.test(name) && q.includes(name));
   const steps = [];
   const notes = [];
   let goal = null;
-  // A starting-salary question never gets a wage number: the gap explains why.
+  // A starting-salary, employer or city pay question never gets a wage number: the gap explains why.
   const pay = PAY.test(q) && !gapIds.has("starting_salary") && !gapIds.has("employer_pay") && !gapIds.has("city");
   const step = (tool, args) => steps.push([tool, args]);
   const approxNote = (r, verb) => r.approx && notes.push(`“${r.term}”不是目录里的岗位名称，按最接近的“${ctx.role(r.id).title}”${verb}。`);
+  if (unknownAlias && knownRoles.length) notes.push(`目录里没有“${unknownAlias.term}”这个岗位条目，下面只回答目录里有的岗位。`);
 
-  // Where the visitor stands comes before the transfer verb; where they want to go comes after it.
-  const verb = q.search(TRANSFER);
-  const targets = knownRoles.filter((r) => verb >= 0 && r.at > verb);
-  const sourceRoles = knownRoles.filter((r) => verb >= 0 && r.at < verb);
+  // Where the visitor stands: a role named as the current job, else (without a major) a role before the transfer verb.
+  const verb = masked.search(TRANSFER);
+  const current = knownRoles.filter((r) => CURRENT_JOB.test(q.slice(Math.max(0, r.at - 8), r.at)));
   const sourceMajor = ent.majors.find((m) => verb < 0 || m.at < verb)?.id || ent.contextMajor;
-  const wantsTransfer = CUES.transfer.test(q) || (verb >= 0 && (sourceMajor || sourceRoles.length) && targets.length);
+  const sourceRoles = current.length ? current : !sourceMajor && verb >= 0 ? knownRoles.filter((r) => r.at < verb) : [];
+  const targets = knownRoles.filter((r) => !sourceRoles.includes(r));
+  const wantsTransfer = targets.length && (cue("transfer") || (verb >= 0 && (sourceMajor || sourceRoles.length)));
 
   if (ent.refersToPage && !ent.contextMajor && !ent.majors.length) {
     goal = "none";
     notes.push("问题提到“这个专业”，但当前页面不是专业页。请写出专业名称，或先打开一个专业页再问。");
-  } else if (CUES.macro.test(q)) {
+  } else if (cue("macro")) {
     goal = "stats";
     step("macro_lookup", { ids: MACRO_IDS.filter(([p]) => p.test(q)).map(([, id]) => id), region });
-  } else if ((unknownAlias || ent.unknownRoles.length) && !knownRoles.length) {
+  } else if ((unknownAlias || ent.unknownRoles.length) && !knownRoles.length && !majorId) {
     goal = "none";
     const name = unknownAlias?.term || ent.unknownRoles[0];
     notes.push(`目录里没有“${name}”这个岗位条目，不借用其他岗位作答。可以在“岗位”页按名称查找相近的条目。`);
-  } else if (CUES.adjacent.test(q) && knownRoles.length && !targets.length) {
+  } else if (cue("adjacent") && knownRoles.length && !(wantsTransfer && (sourceMajor || sourceRoles.length))) {
     goal = "adjacent";
     step("adjacent_trail", { roleId: knownRoles[0].id });
     approxNote(knownRoles[0], "查找");
-  } else if (wantsTransfer && knownRoles.length) {
-    const tgt = (targets.length ? targets : knownRoles.filter((r) => !sourceRoles.includes(r))).slice(0, 3);
-    if (tgt.length && (sourceMajor || sourceRoles.length || CUES.transfer.test(q))) {
-      goal = "transfer";
-      const fromRoles = sourceRoles.map((r) => r.id);
-      const fromMajor = fromRoles.length ? null : sourceMajor;
-      if (fromMajor) {
-        step("major_routes", { majorId: fromMajor });
-        step("major_guide", { majorId: fromMajor });
-      }
-      for (const t of tgt) step("skill_gap", { fromMajor, fromRoles, toRole: t.id });
-      const startRoles = fromRoles.length ? fromRoles : ctx.major(fromMajor)?.roleIds || [];
-      if (startRoles.length) step("multi_trail", { fromRoles: startRoles, toRole: tgt[0].id });
-      for (const t of tgt) step("role_profile", { roleId: t.id, region });
-      if (pay) step("wage_stat", { roleId: tgt[0].id, region });
-      const approx = tgt.find((t) => t.approx);
-      if (approx) notes.push(`目录里没有名为“${approx.term}”的岗位；按工作内容最接近的条目是：${tgt.filter((t) => t.approx === approx.approx).map((t) => ctx.role(t.id).title).join("、")}。`);
-      if (!fromMajor && !fromRoles.length) notes.push("问题里没有写起点专业或岗位，下面只列目标岗位需要的技能；写上专业（例如“我学会计”）可以对照已有基础。");
+  } else if (wantsTransfer) {
+    goal = "transfer";
+    const tgt = targets.slice(0, 3);
+    const fromRoles = sourceRoles.map((r) => r.id);
+    const fromMajor = fromRoles.length ? null : sourceMajor;
+    if (fromMajor) {
+      step("major_routes", { majorId: fromMajor });
+      step("major_guide", { majorId: fromMajor });
     }
+    for (const t of tgt) step("skill_gap", { fromMajor, fromRoles, toRole: t.id });
+    const startRoles = fromRoles.length ? fromRoles : ctx.major(fromMajor)?.roleIds || [];
+    if (startRoles.length) step("multi_trail", { fromRoles: startRoles, toRole: tgt[0].id });
+    for (const t of tgt) step("role_profile", { roleId: t.id, region });
+    if (pay) step("wage_stat", { roleId: tgt[0].id, region });
+    const approx = tgt.find((t) => t.approx);
+    if (approx) notes.push(`目录里没有名为“${approx.term}”的岗位；按工作内容最接近的条目是：${tgt.filter((t) => t.approx === approx.approx).map((t) => ctx.role(t.id).title).join("、")}。`);
+    if (!fromMajor && !fromRoles.length) notes.push("问题里没有写起点专业或岗位，下面只列目标岗位需要的技能；写上专业（例如“我学会计”）可以对照已有基础。");
   }
-  if (!goal && knownRoles.length && CUES.adjacent.test(q)) {
-    goal = "adjacent";
-    step("adjacent_trail", { roleId: knownRoles[0].id });
-    approxNote(knownRoles[0], "查找");
-  }
-  const statTargets = knownRoles.length || (ent.industries.length && !majorId);
-  if (!goal && statTargets && (pay || (CUES.stats.test(q) && !CUES.destinations.test(q) && !CUES.legacy.test(q)))) {
+  const statTargets = knownRoles.length || ((ent.industries.length || sectors.length) && !majorId);
+  const usOutlook = region === "US" && /预测|前景|增长|outlook|projection|growth/i.test(masked);
+  if (!goal && statTargets && (pay || usOutlook || (cue("stats") && !cue("destinations") && !cue("legacy")))) {
     goal = "stats";
     if (knownRoles.length) for (const r of knownRoles.slice(0, 2)) step("wage_stat", { roleId: r.id, region });
     else if (region === "US") notes.push("美国统计按职业发布；请写出一个具体岗位。");
-    else for (const i of ent.industries.slice(0, 2)) step("wage_stat", { industryId: i.id, region });
+    else {
+      const covered = new Set();
+      for (const i of ent.industries.slice(0, 2)) {
+        step("wage_stat", { industryId: i.id, region });
+        covered.add(ctx.industry(i.id).cnWageIndustry);
+      }
+      for (const name of sectors.filter((n) => !covered.has(n)).slice(0, 2)) step("wage_stat", { sectorName: name, region });
+    }
     if (knownRoles[0]) approxNote(knownRoles[0], "查找");
   }
-  if (!goal && majorId && !knownRoles.length && (CUES.destinations.test(q) || classification.intent === "fit" || ent.refersToPage || pay || gapIds.has("starting_salary") || gapIds.has("match_rate"))) {
+  if (!goal && majorId && !knownRoles.length && (cue("destinations") || classification.intent === "fit" || ent.refersToPage || pay || gaps.some((g) => ["starting_salary", "match_rate", "further_study", "time_to_job"].includes(g.id)) || school)) {
     goal = "destinations";
     step("major_routes", { majorId });
     step("major_guide", { majorId });
-    step("graduate_outcomes", { majorId, region });
+    if (school && !school.covered) notes.push(`已收录的高校报告来自：${SCHOOLS.map((x) => x.name).join("、")}；没有${school.name}的报告，所以不列任何学校的去向数字，以免被当作${school.name}的结果。`);
+    else step("graduate_outcomes", { majorId, region, school: school?.covered ? school.name : null });
     if (pay && region === "CN") {
       const m = ctx.major(majorId);
       for (const id of [...new Set(m.roleIds.map((r) => ctx.role(r)?.industryId).filter(Boolean))].slice(0, 3)) step("wage_stat", { industryId: id, region });
     }
   }
-  if (!goal && ent.industries.length && !knownRoles.length && !majorId && CUES.industry.test(q) && !CUES.legacy.test(q)) {
+  if (!goal && ent.industries.length && !knownRoles.length && !majorId && cue("industry") && !cue("legacy") && !cue("publicPath")) {
     goal = "industry";
     step("industry_map", { industryId: ent.industries[0].id, region });
   }
-  if (!goal && knownRoles.length >= 2 && CUES.compare.test(q)) {
+  if (!goal && knownRoles.length >= 2 && cue("compare")) {
     goal = "compare";
     for (const r of knownRoles.slice(0, 2)) step("role_profile", { roleId: r.id, region });
   }
-  if (!goal && knownRoles.length && !CUES.legacy.test(q) && (CUES.entry.test(q) || (classification.intent === "entry" && !gaps.length))) {
+  const namedRole = knownRoles.find((r) => r.exact);
+  if (!goal && cue("publicPath") && !namedRole) {
+    goal = "public";
+    step("public_paths", { region });
+  }
+  if (!goal && knownRoles.length && (cue("entry") || (namedRole && cue("roleDuty")) || (classification.intent === "entry" && !gaps.length)) && (!cue("legacy") || namedRole)) {
     goal = "entry";
-    step("role_profile", { roleId: knownRoles[0].id, region });
+    for (const r of knownRoles.slice(0, 2)) step("role_profile", { roleId: r.id, region });
     approxNote(knownRoles[0], "回答");
   }
+  if (!goal && cue("publicPath")) {
+    goal = "public";
+    step("public_paths", { region });
+  }
   // Questions that are mostly about something the data cannot hold: say so, then show what can be checked.
-  if (!goal && gaps.length && !CUES.legacy.test(q)) {
+  if (!goal && gaps.length && !cue("legacy")) {
     goal = "gap";
-    if (knownRoles.length) step("role_profile", { roleId: knownRoles[0].id, region });
+    const roleHelps = gaps.some((g) => ["working_hours", "admission_odds", "school_background"].includes(g.id)) || (gapIds.has("prediction") && /取代|替代|淘汰|\bai\b|人工智能|自动化|前途|消失/i.test(q));
+    if (knownRoles.length && roleHelps) step("role_profile", { roleId: knownRoles[0].id, region });
     else if (majorId) step("major_routes", { majorId });
   }
-  if (!goal && majorId && !CUES.legacy.test(q)) {
+  if (!goal && majorId && !cue("legacy")) {
     goal = "destinations";
     step("major_routes", { majorId });
     step("major_guide", { majorId });
     step("graduate_outcomes", { majorId, region });
   }
-  if (!goal && ent.industries.length && !knownRoles.length && !CUES.legacy.test(q)) {
+  if (!goal && ent.industries.length && !knownRoles.length && !cue("legacy")) {
     goal = "industry";
     step("industry_map", { industryId: ent.industries[0].id, region });
   }
-  if (!goal && (knownRoles.length || CUES.legacy.test(q))) {
+  if (!goal && (knownRoles.length || cue("legacy"))) {
     goal = "legacy";
     step("catalog_answer", { question: q, region, roleIds: knownRoles.map((r) => r.id) });
   }
   if (!goal) {
-    goal = "none";
-    if (!notes.length) notes.push("没有在问题里找到目录中的专业、岗位或行业名称。请补充一个名称，例如“会计”“数据科学家”“电力与新能源”。");
+    goal = gaps.length ? "gap" : "none";
+    if (!notes.length && !gaps.length) notes.push("没有在问题里找到目录中的专业、岗位或行业名称。请补充一个名称，例如“会计”“数据科学家”“电力与新能源”。");
   }
   return {
     question: q,
@@ -815,7 +931,7 @@ function compose(p, results, ctx) {
   const out = (tool) => by(tool)[0]?.out;
   const region = p.region;
 
-  for (const note of p.notes) block("先说明", "note", [note], null);
+  if (p.notes.length) block("先说明", "note", p.notes, null);
 
   if (p.goal === "transfer") {
     const routes = out("major_routes");
@@ -870,7 +986,7 @@ function compose(p, results, ctx) {
         block(
           `官方去向统计（${REGION_NAME[region]}）`,
           "gap",
-          [`本站还没有收录${ctx.major(p.majorId).name}在${REGION_NAME[region]}的官方毕业去向表，不从其他专业、学校或国家推算。`],
+          [`本站还没有收录${outcomes.school ? outcomes.school + "的" : ""}${ctx.major(p.majorId).name}在${REGION_NAME[region]}的官方毕业去向表，不从其他专业、学校或国家推算。`],
           null,
         );
       for (const g of outcomes.groups.slice(0, 3)) {
@@ -965,9 +1081,21 @@ function compose(p, results, ctx) {
     }
   }
 
-  if (p.goal === "entry") {
-    const rp = out("role_profile");
-    if (rp?.ok)
+  if (p.goal === "public") {
+    const pp = out("public_paths");
+    for (const path of pp?.paths || [])
+      block(path.title, "catalog", [path.summary, ...path.steps.map((x) => `步骤：${x}`), ...path.checks.map((x) => `报名前核对：${x}`), "资格和岗位条件以当年、当地官方公告为准；本站不收录招录人数、分数线或通过率。"], {
+        key: path.url,
+        title: `${path.title}（官方入口）`,
+        url: path.url,
+        date: ctx.catalog.reviewedAt || null,
+        dateLabel: "目录复核",
+        kind: "官方入口",
+      });
+  }
+
+  if (p.goal === "entry")
+    for (const rp of by("role_profile").map((r) => r.out).filter((x) => x.ok))
       block(
         `${rp.role.title}：入门准备与资格（${REGION_NAME[region]}）`,
         "catalog",
@@ -977,11 +1105,11 @@ function compose(p, results, ctx) {
           `技能：${rp.role.skills.join("、")}`,
           `可以先做的证明：${rp.role.portfolio}`,
           ...(rp.role.jobReality?.entryRoutes || []).map((x) => `进入路径：${x}`),
+          `日常：${rp.role.daily.join("；")}`,
           `目录里关联的专业：${rp.role.majors.map((m) => ctx.major(m)?.name).filter(Boolean).join("、")}`,
         ],
         rp.source,
       );
-  }
 
   if (p.goal === "gap") {
     const rp = out("role_profile");

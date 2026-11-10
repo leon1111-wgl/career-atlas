@@ -17,6 +17,12 @@ const ask = (q, extra = {}) => routeAnswer(q, base, { region: "CN", ...extra });
 const tools = (a) => a.trace.slice(1).map((t) => t.tool);
 const text = (a) => answerText(a);
 const corpus = JSON.stringify([base.catalog, base.research, base.policies, base.recruitment, base.outcomes, base.data]);
+// Published numbers, also rounded to two decimals (annual World Bank series are shown rounded).
+const published = new Set();
+for (const n of corpus.match(/-?\d+(\.\d+)?/g)) {
+  published.add(n.replace(/^-/, ""));
+  published.add(String(Math.round(Math.abs(Number(n)) * 100) / 100));
+}
 
 /* Coverage: every topic the assistant says it handles, one plain and one colloquial wording. */
 const COVERAGE = [
@@ -36,8 +42,10 @@ const COVERAGE = [
   ["compare", "产品经理跟用户体验设计师选哪个", ["role_profile", "role_profile"]],
   ["entry", "律师需要什么资格", ["role_profile"]],
   ["entry", "零基础怎么入门网络安全", ["role_profile"]],
-  ["legacy", "考公和事业单位招聘有什么区别", ["catalog_answer"]],
+  ["public", "考公和事业单位招聘有什么区别", ["public_paths"]],
+  ["public", "美国联邦政府的岗位怎么申请", ["public_paths"]],
   ["legacy", "国家对人工智能有啥支持政策", ["catalog_answer"]],
+  ["legacy", "新能源方面最近有什么政策", ["catalog_answer"]],
 ];
 for (const [goal, q, expectTools] of COVERAGE)
   test(`coverage · ${goal} · ${q}`, () => {
@@ -60,6 +68,8 @@ const GAP_COVERAGE = [
   ["ranking", "哪个专业最赚钱", "什么专业最好就业"],
   ["city", "上海做护士月薪多少", "在北京做后端工资高吗"],
   ["match_rate", "法学专业对口率多少", "学会计的有多少人专业对口"],
+  ["further_study", "法学专业保研率多少", "学会计考研上岸率高吗"],
+  ["time_to_job", "毕业几个月内能找到工作吗", "What percent of nursing majors get a job within 6 months?"],
 ];
 for (const [id, plain, colloquial] of GAP_COVERAGE)
   for (const q of [plain, colloquial])
@@ -98,7 +108,7 @@ test("no answer introduces a number that is not in the published data", () => {
           const body = item.replace(/〔[^〕]*〕/g, "");
           for (const n of body.match(/\d[\d,]*(\.\d+)?/g) || []) {
             const plain = n.replace(/,/g, "");
-            assert(corpus.includes(plain), `${q} (${region}): number ${n} is not in the data: ${item}`);
+            assert(published.has(plain) || published.has(String(Number(plain))), `${q} (${region}): number ${n} is not in the data: ${item}`);
           }
         }
     }
@@ -189,4 +199,71 @@ test("a retrieval answer drops sections about roles the question did not name", 
   assert(["legacy", "entry", "gap"].includes(p.goal));
   const a = ask("程序员每天具体做什么");
   for (const b of a.blocks.filter((x) => x.kind === "legacy")) assert(!/数控|加工/.test(b.title), b.title);
+});
+
+/* Failure classes found by the first blind run (blind_v1 on 3c85af3), tested with new wordings. */
+test("cue words ignore entity names: 数据 inside a role title is not a statistics request", () => {
+  for (const q of ["数据科学家和统计师有什么区别", "数据平台工程师跟后端开发工程师差别在哪"]) {
+    const a = ask(q);
+    assert.equal(a.goal, "compare", q);
+    assert(!a.blocks.some((b) => b.kind === "stat"), q);
+  }
+});
+test("adjacency is recognised in everyday wordings", () => {
+  for (const q of ["产品经理和哪些岗位比较接近", "做嵌入式软件的能平移去哪些岗位"]) assert.equal(ask(q).goal, "adjacent", q);
+});
+test("a transfer names the major or current job as the start and the other role as the target", () => {
+  const a = ask("我是学历史的，现在想做内容运营要准备啥");
+  assert.equal(a.goal, "transfer");
+  assert.equal(a.plan.majorId, "history");
+  assert.equal(a.plan.steps.find((s) => s.tool === "skill_gap").args.toRole, "content");
+  const b = ask("我现在做软件测试，想转后端要补什么");
+  const gap = b.plan.steps.find((s) => s.tool === "skill_gap");
+  assert.deepEqual(gap.args.fromRoles, ["qa"]);
+  assert.equal(gap.args.toRole, "backend");
+});
+test("English major and role names reach the United States tables", () => {
+  const a = ask("What jobs do psychology majors hold in the US?");
+  assert.equal(a.region, "US");
+  assert.equal(a.goal, "destinations");
+  assert(a.blocks.some((b) => b.kind === "outcome" && b.items.join("").includes("BLS Field of degree")));
+  const n = ask("registered nurse median pay in the US");
+  assert.equal(n.goal, "stats");
+  assert(text(n).includes("SOC 29-1141"));
+  const pt = ask("physical therapist median pay in the US");
+  assert.equal(pt.goal, "none");
+  assert(!pt.blocks.some((b) => b.kind === "stat"));
+});
+test("an NBS sector named directly is looked up with the catalog industries that share it", () => {
+  const a = ask("制造业和金融业的工资对比一下");
+  assert.equal(a.goal, "stats");
+  const t = text(a);
+  assert(t.includes("统计门类“制造业”") && t.includes("统计门类“金融业”"));
+  assert(t.includes("目录里属于这个门类的行业"));
+});
+test("US inflation and GDP come from the annual World Bank series and say so", () => {
+  const a = ask("美国通胀率是多少");
+  assert(text(a).includes("世界银行，年度") && /统计期 \d{4} 年（年度）/.test(text(a)));
+});
+test("public-sector entry routes answer from the layer the question names", () => {
+  const us = ask("美国州政府的公共岗位从哪里找");
+  assert.equal(us.goal, "public");
+  assert(us.sources.every((s) => !/scs\.gov\.cn|mohrss/.test(s.url)));
+  const cn = ask("事业单位招聘怎么报名");
+  assert.equal(cn.goal, "public");
+  assert(cn.sources.every((s) => !/usajobs|usa\.gov/.test(s.url)));
+});
+test("a university that has no report gets no other school's numbers; a covered one gets only its own", () => {
+  const a = ask("北京大学会计专业就业率多少");
+  assert(!a.blocks.some((b) => b.kind === "outcome"));
+  assert(text(a).includes("没有北京大学的报告"));
+  const b = ask("湖北师范大学法学专业就业率多少");
+  const outs = b.blocks.filter((x) => x.kind === "outcome");
+  assert(outs.length >= 1 && outs.every((x) => x.title.includes("湖北师范大学")));
+});
+test("a forecast question shows the latest published value and says it does not forecast", () => {
+  const a = ask("明年失业率会不会上升");
+  assert.equal(a.goal, "stats");
+  assert(a.gaps.some((g) => g.title === "未来走势与个人前景"));
+  assert(a.blocks.some((b) => b.kind === "stat"));
 });
