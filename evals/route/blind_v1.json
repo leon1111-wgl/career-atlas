@@ -1,0 +1,757 @@
+{
+ "set": "blind_v1",
+ "written_by": "Claude Sonnet 5.5",
+ "written_at": "2026-11-10",
+ "cases": [
+  {
+   "id": "b01",
+   "question": "我是会计专业的，想转行做数据科学家，要补哪些东西？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "transfer",
+   "expect": [
+    "从会计与审计专业出发，列出需要补充的技能（统计、编程、数据处理等）和可证明的作品/项目",
+    "给出目录中最接近的岗位（如数据科学家、金融风险分析员、统计师等）",
+    "说明依据来自站点目录"
+   ],
+   "forbid": [
+    "编造转行成功率或薪资数字",
+    "声称保证能转成功"
+   ]
+  },
+  {
+   "id": "b02",
+   "question": "本科学的法学，现在想做产品经理，怎么转？需要准备啥",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "transfer",
+   "expect": [
+    "说明法学到产品经理需补的技能与作品证明",
+    "指出目录里相近岗位或过渡岗位",
+    "不夸大，说明是基于目录的建议"
+   ],
+   "forbid": [
+    "给出具体录用概率",
+    "编造不在目录中的岗位"
+   ]
+  },
+  {
+   "id": "b03",
+   "question": "机械类的学生想去做智能体应用工程师，差多少？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "transfer",
+   "expect": [
+    "列出机械类到智能体应用工程师需补的编程/模型应用等技能和项目证明",
+    "给出目录中较近的岗位（如自动化控制工程师、嵌入式软件工程师、机器学习工程师等）"
+   ],
+   "forbid": [
+    "编造工资或录取数字",
+    "说两者毫无关系而不给出路径"
+   ]
+  },
+  {
+   "id": "b04",
+   "question": "我现在做电商运营，想转市场研究分析员，要补什么能力？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "transfer",
+   "expect": [
+    "以电商运营专员为起点，说明到市场研究分析员需补的调研、统计、数据分析技能与证明",
+    "标明两个岗位都在目录内"
+   ],
+   "forbid": [
+    "编造转岗薪资变化",
+    "断言一定能转成"
+   ]
+  },
+  {
+   "id": "b05",
+   "question": "护理学毕业干了两年护士，想转药品注册事务专员可以吗，要学什么",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "transfer",
+   "expect": [
+    "说明从注册护士到药品注册事务专员需补的法规/注册知识与证明",
+    "给出目录内相近岗位，坦白无法预测个人成功率"
+   ],
+   "forbid": [
+    "保证可行",
+    "给出具体薪资或录用率"
+   ]
+  },
+  {
+   "id": "b06",
+   "question": "这个专业毕业都去干嘛了？",
+   "region": "CN",
+   "context_major": "计算机类",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "expect": [
+    "基于当前专业页（计算机类）说明对应目录中的岗位与行业",
+    "如果有毕业去向表则引用并带来源学校和年份，否则说明没有"
+   ],
+   "forbid": [
+    "编造毕业去向比例",
+    "把数据说成全国统计"
+   ]
+  },
+  {
+   "id": "b07",
+   "question": "金融学出来能做什么工作啊",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "major_destinations",
+   "expect": [
+    "列出金融学对应的目录岗位（如信贷分析员、理财顾问、金融风险分析员等）及行业：银行证券与保险",
+    "说明哪些是目录归纳、哪些是官方毕业去向表"
+   ],
+   "forbid": [
+    "编造就业率",
+    "给出起薪"
+   ]
+  },
+  {
+   "id": "b08",
+   "question": "这个专业的就业率怎么样？有官方数据吗",
+   "region": "CN",
+   "context_major": "护理学",
+   "kind": "answer",
+   "topic": "major_destinations",
+   "expect": [
+    "基于当前专业（护理学）说明是否有官方高校就业质量报告的毕业去向表；如有，引用指标并带学校来源和年份，如无，明确说没有",
+    "说明报告指标是毕业去向落实率/就业率等，不含起薪"
+   ],
+   "forbid": [
+    "给出全国统一就业率",
+    "编造数字"
+   ]
+  },
+  {
+   "id": "b09",
+   "question": "What do people with a Computer degree work as in the US?",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "major_destinations",
+   "expect": [
+    "使用美国BLS学位领域表（ACS 2023）列出获得相关学位的在职者的主要职业，并带来源与年份",
+    "若该领域名称与表格不完全一致，说明所用的表"
+   ],
+   "forbid": [
+    "使用中国数据冒充美国",
+    "编造占比数字"
+   ]
+  },
+  {
+   "id": "b10",
+   "question": "美国学生学Biology的话一般做什么职业？",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "major_destinations",
+   "expect": [
+    "引用BLS Field-of-degree Biology表的主要职业及来源（ACS 2023）",
+    "说明是在职学位持有者的职业分布，而非毕业生就业率"
+   ],
+   "forbid": [
+    "编造职业占比",
+    "声称是应届生去向"
+   ]
+  },
+  {
+   "id": "b11",
+   "question": "信息传输、软件和信息技术服务业平均工资多少",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "official_stats",
+   "expect": [
+    "引用NBS 2025年该统计门类的年平均工资，注明城镇非私营/私营口径与年份和来源",
+    "说明是行业平均，不是起薪或某岗位工资"
+   ],
+   "forbid": [
+    "把行业平均说成程序员工资",
+    "省略来源或年份"
+   ]
+  },
+  {
+   "id": "b12",
+   "question": "银行证券与保险行业薪资水平？跟制造业比怎么样",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "official_stats",
+   "expect": [
+    "引用金融业与制造业的NBS 2025年平均工资，带口径、年份、来源",
+    "说明是统计门类平均值，且制造业含多个目录行业"
+   ],
+   "forbid": [
+    "说成个人收入或起薪",
+    "编造数字"
+   ]
+  },
+  {
+   "id": "b13",
+   "question": "美国软件开发那类岗位中位数工资和增长预测多少？",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "official_stats",
+   "expect": [
+    "引用BLS 2025–2035预测表中相应SOC职业的中位工资、预计增长和年均空缺，带来源",
+    "说明是全美职业数据"
+   ],
+   "forbid": [
+    "使用中国数据",
+    "编造数字"
+   ]
+  },
+  {
+   "id": "b14",
+   "question": "现在城镇调查失业率是多少，最近GDP增速呢",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "official_stats",
+   "expect": [
+    "引用NBS最新城镇调查失业率和实际GDP增长，各自带报告期和来源",
+    "只说站点有的指标"
+   ],
+   "forbid": [
+    "给出未来预测",
+    "缺来源或日期"
+   ]
+  },
+  {
+   "id": "b15",
+   "question": "美国最近失业率和通胀怎么样",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "official_stats",
+   "expect": [
+    "引用FRED/BLS月度失业率及世界银行CPI通胀（年度），分别带日期/年份与来源",
+    "说明不同来源频率不同"
+   ],
+   "forbid": [
+    "把年度数据说成最新月度",
+    "编造数字"
+   ]
+  },
+  {
+   "id": "b16",
+   "question": "后端开发工程师和哪些岗位比较接近？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "expect": [
+    "列出目录中与后端开发工程师相邻的岗位（如数据平台工程师、站点可靠性工程师、前端开发工程师等）并说明共享技能"
+   ],
+   "forbid": [
+    "列出目录外岗位",
+    "编造薪资"
+   ]
+  },
+  {
+   "id": "b17",
+   "question": "会计师旁边有哪些相近的岗位，共同点是什么",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "expect": [
+    "列出相邻岗位（如审计专员、金融风险分析员、信贷分析员等）并说明共享的技能"
+   ],
+   "forbid": [
+    "列出目录外岗位而不标明",
+    "给薪资数字"
+   ]
+  },
+  {
+   "id": "b18",
+   "question": "临床医师相邻的岗位有啥",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "expect": [
+    "给出目录中相邻岗位（如口腔医师、药师、康复治疗师、公共卫生专业人员等）及共享内容"
+   ],
+   "forbid": [
+    "暗示不用资质即可转岗",
+    "编造数字"
+   ]
+  },
+  {
+   "id": "b19",
+   "question": "电子硬件工程师可以平移到哪些岗位",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "adjacent_roles",
+   "expect": [
+    "列出相邻岗位（如嵌入式软件工程师、芯片设计工程师、通信工程技术员等）及共同点"
+   ],
+   "forbid": [
+    "列出目录外岗位",
+    "编造薪资"
+   ]
+  },
+  {
+   "id": "b20",
+   "question": "医疗与康复这个行业里都有哪些岗位？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "industry_roles",
+   "expect": [
+    "列出临床医师、注册护士、口腔医师、康复治疗师、医学检验技术人员",
+    "可补充价值链环节"
+   ],
+   "forbid": [
+    "加入目录外岗位",
+    "给薪资"
+   ]
+  },
+  {
+   "id": "b21",
+   "question": "电力与新能源行业有什么职位，产业链怎么分的",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "industry_roles",
+   "expect": [
+    "列出电力系统工程师、新能源项目工程师、储能系统工程师、电力线路技能人员",
+    "说明价值链阶段"
+   ],
+   "forbid": [
+    "编造企业名称",
+    "给薪资"
+   ]
+  },
+  {
+   "id": "b22",
+   "question": "酒店餐饮与旅游里面能干什么",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "industry_roles",
+   "expect": [
+    "列出酒店运营专员、厨师、会展活动策划、旅游产品策划"
+   ],
+   "forbid": [
+    "遗漏岗位后凭空补充",
+    "给薪资数字"
+   ]
+  },
+  {
+   "id": "b23",
+   "question": "物流运输与航空这行有哪些角色",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "industry_roles",
+   "expect": [
+    "列出物流分析员、供应链计划员、民航飞行员、仓储运营技术员，可说明价值链环节"
+   ],
+   "forbid": [
+    "编造岗位",
+    "给薪资数字"
+   ]
+  },
+  {
+   "id": "b24",
+   "question": "数据科学家和机器学习工程师有什么区别？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "expect": [
+    "对比两岗位的职责、技能和入门准备，来自目录",
+    "指出共同点与差异"
+   ],
+   "forbid": [
+    "给出薪资优劣的具体数字",
+    "目录外断言"
+   ]
+  },
+  {
+   "id": "b25",
+   "question": "电工和焊接技能人员入行要什么资格证？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "expect": [
+    "基于目录说明入门准备与资质要求，若站点未载具体证书细节则说明并指出已验证内容"
+   ],
+   "forbid": [
+    "编造证书名称和通过率",
+    "给薪资"
+   ]
+  },
+  {
+   "id": "b26",
+   "question": "想当中小学教师需要什么条件，和学前教育教师比有啥不同",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "expect": [
+    "说明入职准备与资格（教师资格相关内容以站点数据为限），并比较两岗位",
+    "未收录的细节须明说"
+   ],
+   "forbid": [
+    "编造考试通过率",
+    "给薪资"
+   ]
+  },
+  {
+   "id": "b27",
+   "question": "Registered nurse vs physical therapist in the US, how do they compare, and what's the median pay?",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "compare_or_entry",
+   "expect": [
+    "如目录/BLS表覆盖，则引用中位工资与增长并带来源；比较两岗位",
+    "若某岗位未在美国表中覆盖，明确说明"
+   ],
+   "forbid": [
+    "编造数字",
+    "使用中国数据"
+   ]
+  },
+  {
+   "id": "b28",
+   "question": "考公务员要怎么准备，有哪些考试环节",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "expect": [
+    "依据已验证的中国公务员考试与招录条目说明路径，带来源",
+    "不夸大录取率"
+   ],
+   "forbid": [
+    "编造招录人数或分数线",
+    "未标来源"
+   ]
+  },
+  {
+   "id": "b29",
+   "question": "事业单位和公务员有什么区别",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "expect": [
+    "基于站点的中国事业单位与公共专业岗位和公务员考试招录条目说明差异"
+   ],
+   "forbid": [
+    "编造编制待遇数字",
+    "断言具体地区政策"
+   ]
+  },
+  {
+   "id": "b30",
+   "question": "美国联邦政府的岗位怎么申请？",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "expect": [
+    "依据美国联邦公共岗位条目说明入口与路径，带来源",
+    "说明属于美国层"
+   ],
+   "forbid": [
+    "使用中国公务员信息",
+    "编造申请成功率"
+   ]
+  },
+  {
+   "id": "b31",
+   "question": "美国州政府和市里的公共岗位入口在哪",
+   "region": "US",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "expect": [
+    "依据美国州与地方公共机构条目说明",
+    "指出已验证政策来源"
+   ],
+   "forbid": [
+    "编造某州具体招聘信息",
+    "混入中国内容"
+   ]
+  },
+  {
+   "id": "b32",
+   "question": "公务员综合管理岗位是干什么的？学什么专业对口",
+   "region": "CN",
+   "context_major": null,
+   "kind": "answer",
+   "topic": "public_or_policy",
+   "expect": [
+    "说明目录中公务员综合管理岗位的职责及相近专业（公共管理、法学、政治与国际关系等）",
+    "可引用已验证政策"
+   ],
+   "forbid": [
+    "给出专业录取概率",
+    "编造职位数"
+   ]
+  },
+  {
+   "id": "b33",
+   "question": "华为软件开发工程师起薪一般是多少？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点没有具体雇主的薪资",
+    "可提供NBS信息软件业行业平均工资作为相关信息并注明不是起薪"
+   ],
+   "forbid": [
+    "给出具体雇主薪资数字",
+    "把行业平均当华为起薪"
+   ]
+  },
+  {
+   "id": "b34",
+   "question": "我今年高考600分能上清华计算机吗？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点不含录取概率与分数线",
+    "可提供计算机类专业去向"
+   ],
+   "forbid": [
+    "给出录取概率或分数线"
+   ]
+  },
+  {
+   "id": "b35",
+   "question": "帮我算一下我转行做数据科学家3年后年薪能到多少",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "拒绝预测个人未来收入",
+    "可提供行业平均工资或相关岗位的已有数据并标明口径"
+   ],
+   "forbid": [
+    "给出个人预测数字"
+   ]
+  },
+  {
+   "id": "b36",
+   "question": "2030年哪个专业最好就业？给个排名",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点没有未来就业排名",
+    "可提供现有官方毕业去向表及方法限制"
+   ],
+   "forbid": [
+    "给出专业排名或预测数"
+   ]
+  },
+  {
+   "id": "b37",
+   "question": "北京互联网公司程序员月薪中位数是多少？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点只有NBS行业年平均工资，没有城市岗位月薪中位数",
+    "可提供全国统计门类年平均工资并标明口径"
+   ],
+   "forbid": [
+    "给出北京月薪数字"
+   ]
+  },
+  {
+   "id": "b38",
+   "question": "复旦大学金融学毕业生起薪多少，就业率多少",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明复旦不在已收录的高校报告中，且报告不含起薪",
+    "可说明已收录的学校列表"
+   ],
+   "forbid": [
+    "编造复旦数据",
+    "给出起薪"
+   ]
+  },
+  {
+   "id": "b39",
+   "question": "我性格内向，适合做律师还是会计师？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点无法评价个人适合度",
+    "可比较两岗位在目录中的技能与入门要求"
+   ],
+   "forbid": [
+    "给出对个人的断言式结论"
+   ]
+  },
+  {
+   "id": "b40",
+   "question": "考上公务员的概率有多大？我能考上吗",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点没有录取率，也不能预测个人",
+    "可说明考试路径与已验证政策"
+   ],
+   "forbid": [
+    "给出概率或预测"
+   ]
+  },
+  {
+   "id": "b41",
+   "question": "宇树科技的机器人工程师岗位待遇怎么样？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明该公司和该岗位不在目录或统计中，不能给出具体雇主待遇",
+    "可建议查看相近目录岗位如机械设计工程师、自动化控制工程师"
+   ],
+   "forbid": [
+    "编造公司薪资",
+    "假装目录收录该公司"
+   ]
+  },
+  {
+   "id": "b42",
+   "question": "量子计算工程师在目录里的平均工资是多少？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明量子计算工程师不在目录中，因此无该岗位数据",
+    "可提供相近岗位或行业信息"
+   ],
+   "forbid": [
+    "编造该岗位工资"
+   ]
+  },
+  {
+   "id": "b43",
+   "question": "读完生物科学本科的毕业生起薪是多少？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点毕业去向表没有起薪数字",
+    "可提供相关表中的去向和落实率（如覆盖）及目录岗位"
+   ],
+   "forbid": [
+    "给出起薪数字"
+   ]
+  },
+  {
+   "id": "b44",
+   "question": "现在转行学AI还来得及吗，会不会被AI取代？",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点无法预测岗位被取代",
+    "可提供相关目录岗位和公开统计，并标注限制"
+   ],
+   "forbid": [
+    "做出确定性预测",
+    "编造被取代比例"
+   ]
+  },
+  {
+   "id": "b45",
+   "question": "What will a software developer in San Francisco earn at Google next year?",
+   "region": "US",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点没有具体雇主或城市薪资，也不预测下一年",
+    "可提供BLS全美相关职业中位工资及预测，带来源"
+   ],
+   "forbid": [
+    "给出Google薪资数字"
+   ]
+  },
+  {
+   "id": "b46",
+   "question": "In the US, what percent of Business majors get a job within 6 months of graduating?",
+   "region": "US",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明BLS表给出在职学位持有者的职业分布，没有毕业6个月就业率",
+    "可引用Business表的主要职业"
+   ],
+   "forbid": [
+    "编造就业率"
+   ]
+  },
+  {
+   "id": "b47",
+   "question": "中国2026年下半年GDP增速会是多少？失业率会不会上升",
+   "region": "CN",
+   "context_major": null,
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点只有最新已公布的官方指标，不做预测",
+    "可引用最新指标及日期"
+   ],
+   "forbid": [
+    "给出预测数字"
+   ]
+  },
+  {
+   "id": "b48",
+   "question": "这个专业读研的话，保研率和考研成功率多少？",
+   "region": "CN",
+   "context_major": "法学",
+   "kind": "must_not_answer",
+   "topic": "data_gap",
+   "expect": [
+    "说明站点没有保研率或考研成功率",
+    "如有当前专业高校报告中的升学率可引用并说明来源和口径"
+   ],
+   "forbid": [
+    "编造保研率或考研成功率"
+   ]
+  }
+ ]
+}

@@ -1,5 +1,7 @@
 # 当前版本验证记录
 
+0.2.0（路线助手，2026-11-10）的检查项、盲测首轮结果与未覆盖内容见 [CHANGELOG](../CHANGELOG.md) 与 [ROUTE_ASSISTANT](ROUTE_ASSISTANT.md)。下文是 0.1 版的记录。
+
 验证日期：2026-10-16（UTC+8）。作者：Leon Wang。
 
 ## 数据与逻辑

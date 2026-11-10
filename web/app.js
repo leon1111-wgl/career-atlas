@@ -1,26 +1,26 @@
 import {
   normalizePreferences,
   rankPreferredRoles,
-} from "./preferences.js?v=20261102";
-import { roleOutcomes, resolveMajor, majorEvidence } from "./research.js?v=20261102";
+} from "./preferences.js?v=20261110";
+import { roleOutcomes, resolveMajor, majorEvidence } from "./research.js?v=20261110";
 import {
   majorGuideHTML,
   industryResearchHTML,
   policiesHTML,
   evidenceLibraryHTML,
-} from "./research-views.js?v=20261102";
+} from "./research-views.js?v=20261110";
 import {
   scoreRole,
   industryScore,
   roleObservation,
   freshness,
   DIMENSIONS,
-} from "./scoring.js?v=20261102";
-import { sparkline, lineChart } from "./charts.js?v=20261102";
-import { advise } from "./advisor.js?v=20261102";
-import { ModelClient } from "./model.js?v=20261102";
-import { evidenceTask, selectEvidence } from "./grounded.js?v=20261102";
-import { atlasSVG, GROUPS, PLACES, gridRef, groupOf } from "./atlas.js?v=20261102";
+} from "./scoring.js?v=20261110";
+import { sparkline, lineChart } from "./charts.js?v=20261110";
+import { routeAnswer } from "./route.js?v=20261110";
+import { ModelClient } from "./model.js?v=20261110";
+import { evidenceTask, selectEvidence } from "./grounded.js?v=20261110";
+import { atlasSVG, GROUPS, PLACES, gridRef, groupOf } from "./atlas.js?v=20261110";
 
 const $ = (s, root = document) => root.querySelector(s);
 const esc = (s) =>
@@ -733,16 +733,6 @@ function downloadPlan() {
 
 /* ---------- Assistant ---------- */
 const evidenceURL = (url) => (url.startsWith("#") ? url : safeURL(url));
-function evidenceHTML(evidence) {
-  return `<div class="chat-evidence">本次检索依据（${regions[state.region]}）：${evidence
-    .map(
-      (d, i) =>
-        `<a href="${esc(evidenceURL(d.url))}" ${d.url.startsWith("#") ? "data-evidence-internal" : 'target="_blank" rel="noopener"'}>[${i + 1}] ${esc(d.title)} · ${
-          ["official-fact", "macro-fact", "graduate-fact"].includes(d.kind) ? "官方统计" : d.kind === "recruitment-fact" ? "官方招聘条件" : d.kind === "public-path" ? "官方入口" : d.kind === "policy-fact" ? "政策原文与分析" : "研究资料"
-        }</a>`,
-    )
-    .join("")}</div>`;
-}
 function appendChat(kind, text) {
   const el = document.createElement("div");
   el.className = "chat-bubble " + kind;
@@ -752,6 +742,7 @@ function appendChat(kind, text) {
   return el;
 }
 async function openAssistant() {
+  syncAssistantContext();
   if (!$("#assistant-dialog").open) $("#assistant-dialog").showModal();
   $("#chat-input").focus();
   if (!state.modelLoaded && !(await ModelClient.available()))
@@ -773,7 +764,6 @@ async function loadModel() {
     $("#model-status").textContent = "本机模型已就绪 · 问题留在当前设备";
     $("#load-model").hidden = true;
     $("#unload-model").textContent = "卸载并释放内存";
-    $("#send-chat").textContent = "整理";
   } catch (e) {
     state.modelLoaded = false;
     $("#model-status").textContent = e.message;
@@ -796,38 +786,55 @@ async function unloadModel() {
   $("#send-chat").disabled = false;
   $("#stop-chat").hidden = true;
 }
+const answerBase = () => ({ catalog, data, research, outcomes, policies, recruitment, intentModel });
+const contextMajorId = () => (state.route.view === "major" && majorById(state.route.id) ? state.route.id : null);
+function syncAssistantContext() {
+  const id = contextMajorId();
+  const el = $("#assistant-context");
+  if (!el) return;
+  el.hidden = !id;
+  el.textContent = id ? `当前专业：${majorById(id).name}。问“这个专业…”时按它回答。` : "";
+}
+function sourceLinkHTML(s, i) {
+  const internal = s.url.startsWith("#");
+  const date = s.date ? ` · ${s.dateLabel} ${s.date}` : "";
+  return `<a href="${esc(evidenceURL(s.url))}" ${internal ? "data-evidence-internal" : 'target="_blank" rel="noopener"'}>[${i + 1}] ${esc(s.title)}${esc(date)} · ${esc(s.kind)}</a>`;
+}
+function routeAnswerHTML(a) {
+  const blocks = a.blocks
+    .map(
+      (b) =>
+        `<section class="route-block ${b.kind === "note" ? "is-note" : b.kind === "gap" ? "is-gap" : b.kind === "stat" || b.kind === "outcome" ? "is-stat" : ""}"><h3>${esc(b.title)}${b.ref ? ` <small>[${b.ref}]</small>` : ""}</h3>${list(b.items)}</section>`,
+    )
+    .join("");
+  const gaps = a.gaps.length
+    ? `<section class="route-gaps"><h3>这些，现有数据回答不了</h3><ul>${a.gaps.map((g) => `<li><strong>${esc(g.title)}</strong>：${esc(g.why)}<span>${esc(g.instead)}</span></li>`).join("")}</ul></section>`
+    : "";
+  const trace = `<details class="route-trace"><summary>规划与工具轨迹 · ${a.trace.length} 步 · 未调用语言模型</summary><ol>${a.trace
+    .map((t) => `<li><code>${esc(t.tool)}</code><span class="trace-in">${esc(t.input)}</span><span class="trace-out">→ ${esc(t.output)}</span></li>`)
+    .join("")}</ol></details>`;
+  const sources = a.sources.length ? `<div class="chat-evidence">来源（${regions[a.region]}）：${a.sources.map(sourceLinkHTML).join("")}</div>` : "";
+  return `<div class="structured-answer">${blocks}${gaps}<p class="note">${esc(a.note)}</p></div>${sources}${trace}`;
+}
 async function ask(question) {
   if (state.generating) return;
   question = question.trim().slice(0, 500);
   if (!question) return;
   $("#chat-input").value = "";
   appendChat("user", question);
-  const result = advise(question, catalog, data, state.region, intentModel, { research, outcomes, policies, recruitment });
-  const evidence = result.evidence;
+  const result = routeAnswer(question, answerBase(), { region: state.region, contextMajor: contextMajorId() });
   const bubble = appendChat("assistant", "");
   const label = document.createElement("div");
   label.className = "answer-label";
-  label.textContent = state.modelLoaded ? "资料整理" : `资料咨询 · ${result.label}`;
+  label.textContent = `路线助手 · ${result.label} · 规则规划`;
   bubble.append(label);
-  const answer = document.createElement("div");
-  bubble.append(answer);
-  if (!result.sections.length) {
-    answer.textContent = "当前资料中没有找到足够相关的依据。可以补充一个行业、专业或岗位名称，我会继续帮你找。";
-    return;
-  }
-  answer.className = "structured-answer";
-  answer.innerHTML =
-    result.sections
-      .map(
-        (section) =>
-          `<section><h3>${esc(section.title)} ${evidence.some((d) => d.id === section.source) ? `<small>[${evidence.findIndex((d) => d.id === section.source) + 1}]</small>` : ""}</h3>${list(section.items)}</section>`,
-      )
-      .join("") + `<p class="note">${esc(result.note)}</p>`;
-  if (!state.modelLoaded || !evidence.length) {
-    if (evidence.length) bubble.insertAdjacentHTML("beforeend", evidenceHTML(evidence));
-    $("#chat-log").scrollTop = $("#chat-log").scrollHeight;
-    return;
-  }
+  const body = document.createElement("div");
+  body.innerHTML = routeAnswerHTML(result);
+  bubble.append(body);
+  $("#chat-log").scrollTop = $("#chat-log").scrollHeight;
+  // The optional model only re-selects excerpts for catalog-retrieval answers; route answers are fully deterministic.
+  const evidence = result.legacy?.evidence || [];
+  if (!state.modelLoaded || result.goal !== "legacy" || !evidence.length) return;
   state.generating = true;
   $("#send-chat").disabled = true;
   $("#stop-chat").hidden = false;
@@ -836,10 +843,10 @@ async function ask(question) {
     const task = evidenceTask(question, evidence);
     const full = await model.generate(task.messages, () => (label.textContent = "正在核对补充资料…"), task.schema);
     const selected = selectEvidence(full, task.choices);
-    label.textContent = `资料整理 · ${result.label}`;
-    answer.insertAdjacentHTML("beforeend", `<details><summary>模型选中的补充依据</summary>${selected.map((c) => `<p>[${c.docIndex + 1}] ${esc(c.text)}</p>`).join("")}</details>`);
+    label.textContent = `路线助手 · ${result.label} · 本机模型挑选了补充依据`;
+    body.querySelector(".structured-answer").insertAdjacentHTML("beforeend", `<details><summary>模型选中的补充依据</summary>${selected.map((c) => `<p>[${c.docIndex + 1}] ${esc(c.text)}</p>`).join("")}</details>`);
   } catch {
-    label.textContent = `保留已查到的资料 · ${result.label}`;
+    label.textContent = `路线助手 · ${result.label} · 保留已查到的资料`;
     state.modelLoaded = model.loaded;
     if (!model.loaded) {
       $("#load-model").hidden = false;
@@ -851,7 +858,6 @@ async function ask(question) {
     state.generating = false;
     $("#send-chat").disabled = false;
     $("#stop-chat").hidden = true;
-    bubble.insertAdjacentHTML("beforeend", evidenceHTML(evidence));
     $("#chat-log").scrollTop = $("#chat-log").scrollHeight;
   }
 }
